@@ -9,5 +9,6 @@ __pycache__/
 showcase-report.json
 showcase-report.md
 artifacts/
-results/
+# Top-level pipeline outputs only (do not ignore fixtures/**/results/)
+/results/
 *.log
