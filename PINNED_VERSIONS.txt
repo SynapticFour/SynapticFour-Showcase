@@ -1,0 +1,7 @@
+# Pinned sibling revisions for reproducible demos (auto-generated).
+# Regenerate: ./scripts/refresh-pinned-versions.sh
+# Generated: 2026-04-18T07:28:58Z
+
+Ferrum-GA4GH-Demo=54d11de74e53f069225e555c3a300e8fe752bfff
+HELIOS=a65671f2b73d96fb1a086f4ea119d4746fb6cec9
+bioresearch-assistant=34b3f282d758f45a716f50113ee05c43317f6187

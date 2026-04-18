@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+concurrency:
+  group: showcase-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  scripts:
+    name: Scripts & report assembler
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Syntax-check shell scripts
+        run: |
+          set -euo pipefail
+          for f in scripts/*.sh scripts/lib/*.sh; do
+            [[ -f "$f" ]] || continue
+            echo "bash -n $f"
+            bash -n "$f"
+          done
+
+      - name: Check assemble_showcase_report.py
+        run: |
+          python3 -m py_compile scripts/assemble_showcase_report.py
+
+      - name: Smoke-test report assembler (fixtures)
+        run: |
+          python3 scripts/assemble_showcase_report.py \
+            --showcase-root . \
+            --demo-root fixtures/ci/demo \
+            --helios-report fixtures/ci/helios/report.json \
+            --output /tmp/showcase-ci-report.json \
+            --markdown-output /tmp/showcase-ci-report.md
+          test -s /tmp/showcase-ci-report.json
+          test -s /tmp/showcase-ci-report.md

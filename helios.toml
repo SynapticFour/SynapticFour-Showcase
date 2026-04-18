@@ -1,0 +1,15 @@
+# HELIOS config for SynapticFour-Showcase (local audit DB + keys under .cache/).
+# GA4GH demo uses GRCh37; default HELIOS reference check expects GRCh38 — we run a
+# minimal check set so the golden path documents container hygiene without false fails.
+
+signing_key = ".cache/helios/keys/helios.key"
+audit_db = ".cache/helios/audit.db"
+cache_dir = ".cache/helios/cache"
+log_level = "INFO"
+
+[export]
+output_dir = "helios-reports"
+default_format = "json"
+
+[checks]
+enabled = ["SEC-CONTAINER-001"]

@@ -1,0 +1,13 @@
+# Local HELIOS keys / DB (never commit)
+.cache/
+*.key
+
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+showcase-report.json
+showcase-report.md
+artifacts/
+results/
+*.log

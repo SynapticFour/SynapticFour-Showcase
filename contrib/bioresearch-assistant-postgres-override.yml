@@ -1,0 +1,6 @@
+# Use with: docker compose -f docker-compose.yml -f path/to/this/file.yml ...
+# Maps Postgres to host port 15432 so Ferrum-GA4GH-Demo (5432) can run in parallel.
+services:
+  postgres:
+    ports:
+      - "15432:5432"
