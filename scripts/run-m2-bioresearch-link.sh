@@ -4,6 +4,13 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SHOWCASE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+# shellcheck source=lib/bra-compose.sh
+source "$SCRIPT_DIR/lib/bra-compose.sh"
+
+BRA_ROOT="${SHOWCASE_BRA_ROOT:-$SHOWCASE_ROOT/../bioresearch-assistant}"
+if [[ -d "$BRA_ROOT" ]]; then
+  BRA_ROOT="$(cd "$BRA_ROOT" && pwd)"
+fi
 
 M2_DIR="${SHOWCASE_M2_DIR:-$SHOWCASE_ROOT/artifacts/m2}"
 IMPORT_JSON="${SHOWCASE_M2_IMPORT_RESULT:-$M2_DIR/m2-import-result.json}"
@@ -31,6 +38,8 @@ Environment:
   SHOWCASE_BRA_API_PREFIX      API prefix (default: /api/v1)
   SHOWCASE_M2_PSEUDONYM_ID     Override pseudonym_id (default: showcase-{wes_run_id})
   SHOWCASE_M2_DRY_RUN          1 = write planned URLs only
+  SHOWCASE_BRA_ROOT            Path to bioresearch-assistant (for alembic via compose)
+  SHOWCASE_M2_BRA_RUN_ALEMBIC  1 = run alembic upgrade head before POST (default: 1 on localhost)
 EOF
 }
 
@@ -90,6 +99,18 @@ if [[ "$DRY_RUN" == "1" ]]; then
 EOF
   echo "{\"ok\":true,\"wrote\":\"$RESULT_JSON\",\"dry_run\":true}"
   exit 0
+fi
+
+if [[ "${SHOWCASE_M2_BRA_RUN_ALEMBIC:-1}" == "1" && -f "$BRA_ROOT/docker-compose.yml" ]]; then
+  case "${BRA_BASE_URL}" in
+    http://localhost:8000|http://127.0.0.1:8000)
+      echo "[m2.2] alembic upgrade head (patient_records / phenopacket tables)..."
+      bra_compose_alembic_upgrade "$BRA_ROOT" "$SHOWCASE_ROOT" || {
+        echo "run-m2-bioresearch-link: alembic upgrade head failed" >&2
+        exit 1
+      }
+      ;;
+  esac
 fi
 
 export PSEUDO DRS_ID

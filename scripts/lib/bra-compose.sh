@@ -24,3 +24,10 @@ bra_docker_compose() {
   done
   ( cd "$bra_root" && docker compose "${args[@]}" "$@" )
 }
+
+# Apply SQL schema (patient_records, etc.). Compose does not run this on container start.
+bra_compose_alembic_upgrade() {
+  local bra_root="$1"
+  local showcase_root="$2"
+  bra_docker_compose "$bra_root" "$showcase_root" exec -T backend alembic upgrade head
+}

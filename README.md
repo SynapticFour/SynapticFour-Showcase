@@ -152,6 +152,8 @@ SHOWCASE_M2_AUTO_BOOTSTRAP_BRA_ENV=0 ./scripts/run-m2-bioresearch-import.sh
 
 The template contains **placeholder** `PSEUDONYMIZATION_ENCRYPTION_KEY` / `JWT_SECRET` values that **prevent the FastAPI app from starting** (Pydantic validation). After bootstrap (or if your `.env` still has those placeholders), `run-m2-bioresearch-import.sh` rewrites them with cryptographically random values and **force-recreates** the `backend` container so the new env is applied.
 
+**Database schema:** Docker Compose does **not** run Alembic automatically. For localhost, `run-m2-bioresearch-import.sh` and `run-m2-bioresearch-link.sh` run `alembic upgrade head` in the `backend` container (creates `patient_records` and other tables). Disable with `SHOWCASE_M2_BRA_RUN_ALEMBIC=0` if you manage migrations yourself.
+
 **Docker logs** must be run from the `bioresearch-assistant` directory, with the same `-f` files Showcase uses (Postgres override is on by default):
 
 ```bash

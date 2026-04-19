@@ -34,6 +34,7 @@ Environment:
   SHOWCASE_M2_AUTO_START_BRA  1 = auto-start BRA compose if API is not reachable
   SHOWCASE_M2_AUTO_BOOTSTRAP_BRA_ENV  1 = if BRA .env is missing, copy from .env.example
   SHOWCASE_M2_BRA_READY_WAIT_ATTEMPTS  curl retries after compose up (default: 90, ~2s each)
+  SHOWCASE_M2_BRA_RUN_ALEMBIC  1 = run alembic upgrade head via compose (default: 1 for localhost)
 EOF
 }
 
@@ -203,6 +204,19 @@ if ! curl -fsS "$SERVICE_INFO_URL" >/dev/null 2>&1; then
   echo "Then: cd \"$BRA_ROOT\" && docker compose up -d" >&2
   echo "Or set SHOWCASE_BRA_BASE_URL if the API runs elsewhere." >&2
   exit 1
+fi
+
+# Fresh Postgres has no app tables; DRS may work without them, but M2.2 phenopackets need Alembic.
+if [[ "${SHOWCASE_M2_BRA_RUN_ALEMBIC:-1}" == "1" && -f "$BRA_ROOT/docker-compose.yml" ]]; then
+  case "${BRA_BASE_URL}" in
+    http://localhost:8000|http://127.0.0.1:8000)
+      echo "[m2.1] alembic upgrade head (application DB schema for Phenopacket/link steps)..."
+      bra_compose_alembic_upgrade "$BRA_ROOT" "$SHOWCASE_ROOT" || {
+        echo "run-m2-bioresearch-import: alembic upgrade head failed (see backend logs)" >&2
+        exit 1
+      }
+      ;;
+  esac
 fi
 
 UPLOAD_RESP="$(
