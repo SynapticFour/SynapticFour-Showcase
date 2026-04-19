@@ -33,6 +33,7 @@ Environment:
   SHOWCASE_BRA_ROOT       Path to bioresearch-assistant (default: ../bioresearch-assistant)
   SHOWCASE_M2_AUTO_START_BRA  1 = auto-start BRA compose if API is not reachable
   SHOWCASE_M2_AUTO_BOOTSTRAP_BRA_ENV  1 = if BRA .env is missing, copy from .env.example
+  SHOWCASE_M2_BRA_READY_WAIT_ATTEMPTS  curl retries after compose up (default: 90, ~2s each)
 EOF
 }
 
@@ -107,9 +108,16 @@ if ! curl -fsS "$SERVICE_INFO_URL" >/dev/null 2>&1; then
     bootstrap_bra_env_if_missing "$BRA_ROOT" || exit 1
     echo "[m2.1] bioresearch-assistant not reachable at $BRA_BASE_URL, starting compose stack..."
     bra_docker_compose "$BRA_ROOT" "$SHOWCASE_ROOT" up -d
-    for _ in $(seq 1 40); do
+    # Cold start can exceed 80s (migrations, large Python import graph, uvicorn bind).
+    max_wait="${SHOWCASE_M2_BRA_READY_WAIT_ATTEMPTS:-90}"
+    i=0
+    while [[ "$i" -lt "$max_wait" ]]; do
       if curl -fsS "$SERVICE_INFO_URL" >/dev/null 2>&1; then
         break
+      fi
+      i=$((i + 1))
+      if [[ "$((i % 15))" -eq 0 ]]; then
+        echo "[m2.1] still waiting for DRS service-info (${i}/${max_wait} attempts, ~2s each)..." >&2
       fi
       sleep 2
     done
