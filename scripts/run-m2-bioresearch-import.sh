@@ -37,6 +37,69 @@ Environment:
 EOF
 }
 
+# .env.example placeholders fail Pydantic (64 hex encryption key, JWT >=32 chars when set).
+# Patch only when invalid; exit 0 if file was changed (caller may force-recreate backend).
+bra_fix_invalid_env_secrets() {
+  local root="$1"
+  local env_file="$root/.env"
+  [[ -f "$env_file" ]] || return 1
+  python3 - "$env_file" <<'PY'
+import re
+import secrets
+import sys
+from pathlib import Path
+
+
+path = Path(sys.argv[1])
+text = path.read_text(encoding="utf-8")
+enc_val = jwt_val = None
+for line in text.splitlines():
+    if line.startswith("PSEUDONYMIZATION_ENCRYPTION_KEY="):
+        enc_val = line.split("=", 1)[1].strip()
+    if line.startswith("JWT_SECRET="):
+        jwt_val = line.split("=", 1)[1].strip()
+
+def valid_enc(v: str | None) -> bool:
+    if not v:
+        return False
+    return len(v) == 64 and all(c in "0123456789abcdefABCDEF" for c in v)
+
+def valid_jwt(v: str | None) -> bool:
+    if v is None:
+        return True
+    if v == "":
+        return True
+    return len(v) >= 32
+
+changed = False
+if not valid_enc(enc_val):
+    enc = secrets.token_hex(32)
+    text, n = re.subn(
+        r"^PSEUDONYMIZATION_ENCRYPTION_KEY=.*$",
+        f"PSEUDONYMIZATION_ENCRYPTION_KEY={enc}",
+        text,
+        flags=re.M,
+    )
+    if n:
+        changed = True
+if not valid_jwt(jwt_val):
+    jwt = secrets.token_hex(32)
+    text, n = re.subn(r"^JWT_SECRET=.*$", f"JWT_SECRET={jwt}", text, flags=re.M)
+    if n:
+        changed = True
+
+if changed:
+    path.write_text(text, encoding="utf-8")
+    print(
+        "[m2.1] updated invalid PSEUDONYMIZATION_ENCRYPTION_KEY / JWT_SECRET in .env "
+        "(was placeholder or too short — API cannot start otherwise)",
+        file=sys.stderr,
+    )
+    sys.exit(0)
+sys.exit(1)
+PY
+}
+
 while [[ $# -gt 0 ]]; do
   case "$1" in
     -h|--help)
@@ -106,8 +169,16 @@ fi
 if ! curl -fsS "$SERVICE_INFO_URL" >/dev/null 2>&1; then
   if [[ "$AUTO_START_BRA" == "1" && -f "$BRA_ROOT/docker-compose.yml" ]]; then
     bootstrap_bra_env_if_missing "$BRA_ROOT" || exit 1
+    bra_env_patched=0
+    if bra_fix_invalid_env_secrets "$BRA_ROOT"; then
+      bra_env_patched=1
+    fi
     echo "[m2.1] bioresearch-assistant not reachable at $BRA_BASE_URL, starting compose stack..."
     bra_docker_compose "$BRA_ROOT" "$SHOWCASE_ROOT" up -d
+    if [[ "$bra_env_patched" == "1" ]]; then
+      echo "[m2.1] recreating backend so new secrets from .env take effect..."
+      bra_docker_compose "$BRA_ROOT" "$SHOWCASE_ROOT" up -d --force-recreate --no-deps backend
+    fi
     # Cold start can exceed 80s (migrations, large Python import graph, uvicorn bind).
     max_wait="${SHOWCASE_M2_BRA_READY_WAIT_ATTEMPTS:-90}"
     i=0
@@ -126,9 +197,11 @@ fi
 
 if ! curl -fsS "$SERVICE_INFO_URL" >/dev/null 2>&1; then
   echo "run-m2-bioresearch-import: cannot reach $SERVICE_INFO_URL" >&2
-  echo "Start bioresearch-assistant and retry, e.g.:" >&2
-  echo "  cd \"$BRA_ROOT\" && docker compose up -d" >&2
-  echo "Or set SHOWCASE_BRA_BASE_URL if service runs on a different port/host." >&2
+  echo "Check backend logs (from bioresearch-assistant repo; Showcase often uses a second compose file for Postgres):" >&2
+  echo "  cd \"$BRA_ROOT\" && docker compose -f docker-compose.yml -f \"$SHOWCASE_ROOT/contrib/bioresearch-assistant-postgres-override.yml\" logs backend --tail=120" >&2
+  echo "If you do not use the Postgres override, omit the second -f. Fix .env secrets if API exits on startup (64 hex PSEUDONYMIZATION_ENCRYPTION_KEY, JWT_SECRET empty or >=32 chars)." >&2
+  echo "Then: cd \"$BRA_ROOT\" && docker compose up -d" >&2
+  echo "Or set SHOWCASE_BRA_BASE_URL if the API runs elsewhere." >&2
   exit 1
 fi
 
