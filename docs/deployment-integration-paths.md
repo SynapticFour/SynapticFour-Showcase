@@ -95,3 +95,5 @@ Technical anchors:
 - Need user-facing research assistant on private data: **Path D**
 
 Most customers eventually combine **A + B + C**, with **D** added for high-value user workflows.
+
+For workshop-ready decision support, use the [Decision Matrix](decision-matrix.md).

@@ -12,6 +12,8 @@ This repository is built to answer two questions at once:
 - **Understand customer fit first:** [Customer Personas](docs/customer-personas.md)
 - **Browse practical customer questions:** [Question Catalog](docs/customer-question-catalog.md)
 - **Jump to implementation paths:** [Deployment and Integration Paths](docs/deployment-integration-paths.md)
+- **Pick the right path quickly in workshops:** [Decision Matrix](docs/decision-matrix.md)
+- **Run customer discovery sessions consistently:** [Workshop Playbook (90 Minutes)](docs/workshop-playbook.md)
 - **See the full integrated manufacturer reference flow:** [Reference Use Case](docs/reference-use-case.md)
 
 If you only need one answer quickly, start with the question catalog and follow the "Path to answer" links.
