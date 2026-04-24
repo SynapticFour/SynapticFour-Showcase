@@ -12,6 +12,7 @@ This page helps teams quickly identify where they fit and which questions matter
 
 Start with:
 
+- [Sales One-Pager](sales-one-pager.md)
 - [Question Catalog](customer-question-catalog.md)
 - [Deployment and Integration Paths](deployment-integration-paths.md)
 
@@ -26,6 +27,7 @@ Start with:
 Start with:
 
 - [Deployment and Integration Paths](deployment-integration-paths.md)
+- [Technical Evaluation Kit](technical-evaluation-kit.md)
 - [Reference Use Case](reference-use-case.md)
 
 ## 3) Data / Bioinformatics / MLOps Lead
@@ -39,6 +41,7 @@ Start with:
 Start with:
 
 - [Question Catalog](customer-question-catalog.md)
+- [Technical Evaluation Kit](technical-evaluation-kit.md)
 - [Reference Use Case](reference-use-case.md)
 
 ## 4) Compliance / Quality / Security Stakeholder
@@ -52,6 +55,7 @@ Start with:
 Start with:
 
 - [Deployment and Integration Paths](deployment-integration-paths.md)
+- [Technical Evaluation Kit](technical-evaluation-kit.md)
 - [Reference Use Case](reference-use-case.md)
 
 ## 5) Technical Evaluator / Solution Architect
@@ -65,5 +69,6 @@ Start with:
 Start with:
 
 - [DEMO.md](../DEMO.md)
+- [Technical Evaluation Kit](technical-evaluation-kit.md)
 - [Question Catalog](customer-question-catalog.md)
 - [Reference Use Case](reference-use-case.md)

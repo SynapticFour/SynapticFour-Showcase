@@ -10,10 +10,13 @@ This repository is built to answer two questions at once:
 ## Start Here
 
 - **Understand customer fit first:** [Customer Personas](docs/customer-personas.md)
+- **Pitch in one page for decision-makers:** [Sales One-Pager](docs/sales-one-pager.md)
 - **Browse practical customer questions:** [Question Catalog](docs/customer-question-catalog.md)
 - **Jump to implementation paths:** [Deployment and Integration Paths](docs/deployment-integration-paths.md)
 - **Pick the right path quickly in workshops:** [Decision Matrix](docs/decision-matrix.md)
 - **Run customer discovery sessions consistently:** [Workshop Playbook (90 Minutes)](docs/workshop-playbook.md)
+- **Validate deeply with technical teams:** [Technical Evaluation Kit](docs/technical-evaluation-kit.md)
+- **Use safe claim language and legal framing:** [Legal and Claims Boundaries](docs/legal-and-claims-boundaries.md)
 - **See the full integrated manufacturer reference flow:** [Reference Use Case](docs/reference-use-case.md)
 
 If you only need one answer quickly, start with the question catalog and follow the "Path to answer" links.
@@ -56,6 +59,13 @@ The showcase composes the core Synaptic Four building blocks into one guided cus
 
 - `Ferrum-GA4GH-Demo` remains benchmark-centric and reference-measurement focused.
 - `SynapticFour-Showcase` is the customer conversation layer: questions, decision paths, and end-to-end integration story.
+
+## Claims and Compliance Notice
+
+- Content in this repository is for technical evaluation and planning.
+- It is not legal advice, medical advice, or a regulatory certification statement.
+- Compliance outcomes depend on customer implementation and governance decisions.
+- Use [Legal and Claims Boundaries](docs/legal-and-claims-boundaries.md) for external-facing messaging.
 
 ## License
 

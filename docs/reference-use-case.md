@@ -39,6 +39,8 @@ The reference use case should always state:
 - they support compliance programs and audits,
 - they do not replace formal legal/compliance obligations.
 
+For wording guardrails in customer-facing materials, see [Legal and Claims Boundaries](legal-and-claims-boundaries.md).
+
 ## Phased demonstration plan (manufacturer view)
 
 ### Phase 1 (Days 1-10): prove technical fit quickly

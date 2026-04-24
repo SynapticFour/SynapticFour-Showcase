@@ -157,6 +157,7 @@ Path to answer:
 
 - [Deployment and Integration Paths](deployment-integration-paths.md) (Path C section)
 - [Reference Use Case: compliance framing](reference-use-case.md#compliance-and-evidence-framing)
+- [Legal and Claims Boundaries](legal-and-claims-boundaries.md)
 
 ## D. RAG and Research Assistant
 
