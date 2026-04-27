@@ -43,7 +43,7 @@ Deliverable:
 
 ### 25-45 min: path selection (A/B/C/D)
 
-- Use the [Decision Matrix](decision-matrix.md) to choose initial path.
+- Use [Which path fits me?](../for-customers/which-path.md) to choose initial path.
 - Confirm why this path is first and what is out of scope.
 
 Deliverable:
@@ -174,8 +174,8 @@ Week 2 deliverables:
 
 ## Related pages
 
-- [Customer Personas](customer-personas.md)
-- [Question Catalog](customer-question-catalog.md)
-- [Deployment and Integration Paths](deployment-integration-paths.md)
-- [Decision Matrix](decision-matrix.md)
-- [Reference Use Case](reference-use-case.md)
+- [Internal personas](internal-personas.md)
+- [FAQ](../for-customers/faq.md)
+- [Deployment and Integration Paths](../deployment-integration-paths.md)
+- [Which path fits me?](../for-customers/which-path.md)
+- [Scenarios](../for-customers/scenarios.md)

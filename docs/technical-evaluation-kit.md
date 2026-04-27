@@ -86,12 +86,12 @@ Define and freeze these before execution:
 
 This kit evaluates technical evidence quality and operational fit.  
 It does not constitute legal advice or a regulatory certification decision.  
-For approved wording in external communications, use [Legal and Claims Boundaries](legal-and-claims-boundaries.md).
+For approved wording in external communications, use [Compliance framing (customers)](for-customers/compliance-framing.md).
 
 ## Recommended document flow
 
-1. Start from [Decision Matrix](decision-matrix.md)
-2. Plan with [Workshop Playbook](workshop-playbook.md)
-3. Answer stakeholder concerns via [Question Catalog](customer-question-catalog.md)
-4. Anchor integrated narrative in [Reference Use Case](reference-use-case.md)
+1. Start from [Which path fits me?](for-customers/which-path.md)
+2. Plan discovery with [Workshop guide (internal)](internal/workshop-guide.md)
+3. Answer stakeholder concerns via [FAQ (customers)](for-customers/faq.md)
+4. Anchor integrated narrative in [Scenarios (customers)](for-customers/scenarios.md)
 5. Execute operational steps from [DEMO.md](../DEMO.md)

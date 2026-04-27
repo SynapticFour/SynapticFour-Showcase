@@ -26,8 +26,8 @@ SynapticFour Showcase is a customer-ready adoption framework that helps teams:
 
 ## Typical customer journey
 
-1. Pick a path with the [Decision Matrix](decision-matrix.md)
-2. Run a 90-minute discovery with the [Workshop Playbook](workshop-playbook.md)
+1. Pick a path with [Which path fits me?](../for-customers/which-path.md)
+2. Run a 90-minute discovery with the [Workshop guide](workshop-guide.md)
 3. Execute a 2-week scoped proof and review results
 4. Decide scale-up path (A/B/C/D combination)
 
@@ -46,8 +46,8 @@ SynapticFour Showcase is a customer-ready adoption framework that helps teams:
 
 ## Next step
 
-Run the first customer workshop using [Workshop Playbook (90 Minutes)](workshop-playbook.md).
+Run the first customer workshop using [Workshop guide (90 Minutes)](workshop-guide.md).
 
 ## Claims boundary
 
-For external communication guardrails, use [Legal and Claims Boundaries](legal-and-claims-boundaries.md).
+For external communication guardrails, use [Compliance framing](../for-customers/compliance-framing.md).

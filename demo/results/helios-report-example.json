@@ -1,0 +1,316 @@
+{
+  "run_id": "561679fc-daa2-47b3-87fe-e6d0f9d56814",
+  "pipeline_name": "unknown-pipeline",
+  "pipeline_version": null,
+  "executor": "nextflow",
+  "start_time": "2026-04-17T10:11:32.645508Z",
+  "end_time": "2026-04-17T10:11:34.136636Z",
+  "input_files": [],
+  "output_files": [
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/metrics.json",
+      "sha256": "a2fa9b57218123f0fbb8e1d0247a06bb81ac26eb877b9cf8480df378065ec166",
+      "size_bytes": 912
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/happy.roc.Locations.SNP.PASS.csv.gz",
+      "sha256": "c9419de41d89d0a0f4f32d697224a553648b3c2ef11d94f6e9b077e6d7b2dff0",
+      "size_bytes": 392
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/happy.vcf.gz.tbi",
+      "sha256": "947c26ebfa4ea3ffbdcba8b00fd77c1dd5fdfbaa0461843d7fe5e1d88b70468c",
+      "size_bytes": 105
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/engine_compare.json",
+      "sha256": "94a45f5ea2a8b1d139deb78da22924159f01cb6d3b26e4ad397e33ebe516d475",
+      "size_bytes": 180
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/phase2_pass_primary.json",
+      "sha256": "babcaae148f586e979dd6b6fd3d2181528e800c8e03bf0184f49edb42023d01f",
+      "size_bytes": 975
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes_request.json",
+      "sha256": "1141bce53f7e08e8c4d9e6fa7b794d7781e117a0e3589be1f555d07b3d47cae7",
+      "size_bytes": 870
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/benchmark.json",
+      "sha256": "cea1483d8f62f83b5143036f8d8be1e9f82577cd62c13e9c0f2058eeb954593f",
+      "size_bytes": 168
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/interval.txt",
+      "sha256": "e3bf05b67d27e6f0b66ada98222561ea4f9647b3e07eee6d0a43abc0313adbfc",
+      "size_bytes": 13
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/happy.summary.csv",
+      "sha256": "a8566e40e57cbeb08886cb583a13e0ae4a919593fad8b730ff98ee60db8c1f95",
+      "size_bytes": 358
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/happy.extended.csv",
+      "sha256": "99a5961bd0809dbcc5af668a373a93c58d3fd3ff9a40185dcfcb0d6123bb24dc",
+      "size_bytes": 2467
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/happy.runinfo.json",
+      "sha256": "f3c01a0ea05c34d51aaf8c8d5da233eecbe2677b73ba3547a465814e108f69a6",
+      "size_bytes": 3142
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/happy.vcf.gz",
+      "sha256": "c332b43a23f2081e8ba2556dc0d4d25b668b860a330872aefcee68147aee8030",
+      "size_bytes": 901
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/happy.roc.all.csv.gz",
+      "sha256": "433437255ce840ba5a525ffe186cfc40f14224018399dd9a2a143d9b68cf039d",
+      "size_bytes": 472
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/dataset_profile.json",
+      "sha256": "3e4037a0701aba968790a10f525153226a9920a154c05513f591e75be6dd9e66",
+      "size_bytes": 915
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/happy.metrics.json.gz",
+      "sha256": "d604c85338b10d0dca591e07476c67e06804444bebeba0e99225335b4c3fc52f",
+      "size_bytes": 1976
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/drs_micro.json",
+      "sha256": "d0a6d7dde481741ca8f8d910dc1ec9f6ca173247d93d21b70534c34ddebb66af",
+      "size_bytes": 539
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/query.vcf.gz",
+      "sha256": "07af1dc689583ceb68682aeaac86974c1be3b5a3f8f52b2481b778062788404e",
+      "size_bytes": 4035
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/happy.roc.Locations.SNP.csv.gz",
+      "sha256": "7f249b363150ccee498d1eecfc943eb91024e0ee6d93d5314fb2038bfff7c3ae",
+      "size_bytes": 387
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/state.json",
+      "sha256": "1976dd9ab59dac55de5acb99ccf0c5472044b8312c3891f91601bba54075735f",
+      "size_bytes": 197
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/params.json",
+      "sha256": "528b5a645442af4d9b536f54304c162864882d0b7d5888138257cdaf154c3490",
+      "size_bytes": 650
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/.nextflow.log",
+      "sha256": "ed9b8c311098229ff9b4f73b9febcfcea3bd2830b8b7cd671c37eb0c0ca92383",
+      "size_bytes": 9419
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/nextflow.config",
+      "sha256": "cbec4477cef1d664b5a771b30922069dc5bbc562359c0e92aa2f12fb38217d2c",
+      "size_bytes": 30
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/workflow.nf",
+      "sha256": "345f3247c38a8ff8020994016f70091ef4ec083f34a877ea3b2e1e7ec9462f6e",
+      "size_bytes": 1947
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/.nextflow/history",
+      "sha256": "1929f7e7f8e83d7c621616f951ac02a3a6c79f51754d55a553bedb3b8f27a077",
+      "size_bytes": 179
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/truth.vcf.gz.tbi",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/.command.begin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/truth.vcf.gz",
+      "sha256": "4ea789af35c4c91b7819cdc3ccb045fe7fb29821c4352f13d962ab84b371a0f2",
+      "size_bytes": 385
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/drs_ref.fa",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/ref_local.fa",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/.command.run",
+      "sha256": "5d760bd90d5305cb348ed17a3a7c0451736a6c2bd2999933fe2dbbd754ad93ff",
+      "size_bytes": 4930
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/drs_input.bam.bai",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/.command.log",
+      "sha256": "43285154902248f413d824afadd07be21de05c2218da509dbc190ac8ecb19aac",
+      "size_bytes": 6531
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/ref_local.fa.fai",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/.command.sh",
+      "sha256": "04bd889a43a570b5621562c3b7f6d8bad94e6738e99609acc7d9edb1ad1067ae",
+      "size_bytes": 669
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/drs_truth.vcf.gz",
+      "sha256": "4ea789af35c4c91b7819cdc3ccb045fe7fb29821c4352f13d962ab84b371a0f2",
+      "size_bytes": 385
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/output.vcf.gz.tbi",
+      "sha256": "9ef124a48ac98725d8542c4e837b8aa1b511e32dbaad18411436b58a651135d9",
+      "size_bytes": 104
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/drs_input.bam",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/input_local.bam.bai",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/input_local.bam",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/drs_ref.fa.fai",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/output.vcf.gz",
+      "sha256": "07af1dc689583ceb68682aeaac86974c1be3b5a3f8f52b2481b778062788404e",
+      "size_bytes": 4035
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/.command.err",
+      "sha256": "d9fef5a348724e2981b4bc5fe70b8f8b2069490c6b48ed67e70019b636307870",
+      "size_bytes": 6514
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/drs_truth.vcf.gz.tbi",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/.command.out",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/3a/34e4d6206edf5dab3c52881a617579/ref_local.dict",
+      "sha256": "1abe60532477f517fffcb0fdc4a095cbb9a1ffd11ac5cfe8d2eab4735b1bd8a6",
+      "size_bytes": 226
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/stage-2e8b6ade-9c00-4cc0-9865-e373cd4de69b/a3/9413f36b2a7c709e7858ec465c3448/stream",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/stage-2e8b6ade-9c00-4cc0-9865-e373cd4de69b/c7/f899eb0e3fe2cffed9502d5f932583/stream",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/stage-2e8b6ade-9c00-4cc0-9865-e373cd4de69b/fb/22e0042744895d2e2dc7c32995f086/stream",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/stage-2e8b6ade-9c00-4cc0-9865-e373cd4de69b/9a/ec1d20142c53da88e1efa5b9b2a717/stream",
+      "sha256": "4ea789af35c4c91b7819cdc3ccb045fe7fb29821c4352f13d962ab84b371a0f2",
+      "size_bytes": 385
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/stage-2e8b6ade-9c00-4cc0-9865-e373cd4de69b/31/0ef0b124afdda56ce932962af7d987/stream",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/work/stage-2e8b6ade-9c00-4cc0-9865-e373cd4de69b/e9/6f569c2777c69a2633195cb5c4ab00/stream",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/.nextflow/cache/2e8b6ade-9c00-4cc0-9865-e373cd4de69b/index.special_turing",
+      "sha256": "e2448c826886881bc751bfde38f969817b11efe6097d7926394a5825217e1a06",
+      "size_bytes": 17
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/.nextflow/cache/2e8b6ade-9c00-4cc0-9865-e373cd4de69b/db/000003.log",
+      "sha256": "48be6149842e279a93b42b2980a39a54c39607bf3ee978e1907b388fe1fdecf6",
+      "size_bytes": 1453
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/.nextflow/cache/2e8b6ade-9c00-4cc0-9865-e373cd4de69b/db/LOCK",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/.nextflow/cache/2e8b6ade-9c00-4cc0-9865-e373cd4de69b/db/CURRENT",
+      "sha256": "1005a525006f148c86efcbfb36c6eac091b311532448010f70f7de9a68007167",
+      "size_bytes": 16
+    },
+    {
+      "path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/wes-work/01KPDEK8BTTP01RK8P6040PX3X/.nextflow/cache/2e8b6ade-9c00-4cc0-9865-e373cd4de69b/db/MANIFEST-000002",
+      "sha256": "e292f241daafc3df90f3e2d339c61c6e2787a0d0739aac764e1ea9bb8544ee97",
+      "size_bytes": 50
+    }
+  ],
+  "containers": [],
+  "parameters": {},
+  "checks": [
+    {
+      "check_id": "SEC-CONTAINER-001",
+      "status": "pass",
+      "message": "All container definitions are pinned.",
+      "evidence": {
+        "containers_scanned": "0"
+      }
+    }
+  ],
+  "reference_genome": null,
+  "signature": {
+    "algorithm": "Ed25519",
+    "public_key_fingerprint": "6e92d256215fbb786761f90636eff32dde053090a30ecb6a933c8772a79fa661",
+    "signature_b64": "/tUydv0IK5kdWC14oHN3jNRaIU0z+VThLGWvLqQXlsvQuZXqlxfhxwTHBjjdjnHkL+BA6EzMjDvVStmCqhIWDg==",
+    "signed_at": "2026-04-17T10:11:34.142808Z"
+  },
+  "schema_version": "1.0"
+}
