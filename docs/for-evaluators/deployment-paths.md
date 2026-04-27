@@ -96,4 +96,4 @@ Technical anchors:
 
 Most customers eventually combine **A + B + C**, with **D** added for high-value user workflows.
 
-For workshop-ready decision support, use [Which path fits me?](for-customers/which-path.md).
+For workshop-ready decision support, use [Which path fits me?](../for-customers/which-path.md).

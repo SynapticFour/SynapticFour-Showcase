@@ -14,7 +14,7 @@ Start with:
 
 - [Sales One-Pager](sales-one-pager.md)
 - [FAQ](../for-customers/faq.md)
-- [Deployment and Integration Paths](../deployment-integration-paths.md)
+- [Deployment and Integration Paths](../for-evaluators/deployment-paths.md)
 
 ## 2) CTO / Platform Owner
 
@@ -26,7 +26,7 @@ Start with:
 
 Start with:
 
-- [Deployment and Integration Paths](../deployment-integration-paths.md)
+- [Deployment and Integration Paths](../for-evaluators/deployment-paths.md)
 - [Technical Evaluation Kit](../for-evaluators/technical-evaluation-kit.md)
 - [Scenarios](../for-customers/scenarios.md)
 
@@ -54,7 +54,7 @@ Start with:
 
 Start with:
 
-- [Deployment and Integration Paths](../deployment-integration-paths.md)
+- [Deployment and Integration Paths](../for-evaluators/deployment-paths.md)
 - [Technical Evaluation Kit](../for-evaluators/technical-evaluation-kit.md)
 - [Scenarios](../for-customers/scenarios.md)
 

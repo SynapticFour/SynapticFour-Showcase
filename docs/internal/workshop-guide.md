@@ -176,6 +176,6 @@ Week 2 deliverables:
 
 - [Internal personas](internal-personas.md)
 - [FAQ](../for-customers/faq.md)
-- [Deployment and Integration Paths](../deployment-integration-paths.md)
+- [Deployment and Integration Paths](../for-evaluators/deployment-paths.md)
 - [Which path fits me?](../for-customers/which-path.md)
 - [Scenarios](../for-customers/scenarios.md)
