@@ -1,5 +1,7 @@
 # Local HELIOS keys / DB (never commit)
 .cache/
+# HELIOS default export dir (local runs; examples live under demo/results/)
+helios-reports/
 *.key
 
 .venv/
