@@ -1,0 +1,8 @@
+DRS object id:
+showcase-01KPGN3PY1AN257VRBK3NBENM9-query.vcf.gz
+
+DRS self URI:
+drs://localhost:8000/showcase-01KPGN3PY1AN257VRBK3NBENM9-query.vcf.gz
+
+DRS access endpoint:
+http://localhost:8000/ga4gh/drs/v1/objects/showcase-01KPGN3PY1AN257VRBK3NBENM9-query.vcf.gz/access/showcase-01KPGN3PY1AN257VRBK3NBENM9-query.vcf.gz

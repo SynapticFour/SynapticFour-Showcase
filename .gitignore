@@ -6,8 +6,8 @@
 __pycache__/
 *.pyc
 .DS_Store
-showcase-report.json
-showcase-report.md
+/showcase-report.json
+/showcase-report.md
 artifacts/
 # Top-level pipeline outputs only (do not ignore fixtures/**/results/)
 /results/

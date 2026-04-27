@@ -1,34 +1,70 @@
-# Demo-Runbook — SynapticFour Showcase
+# Demo — SynapticFour Showcase
 
-Kurzanleitung für **Live-Demo**, **Kunden-Termin** oder **lokales Durchtesten**. Technische Details zu einzelnen Komponenten bleiben in den jeweiligen Upstream-Repos; hier geht es um **Reihenfolge**, **Artefakte** und **typische Laufzeiten**.
+[🇬🇧 Jump to English intro](#english-intro) · [⚙️ Technische Ausführung](#technical)
 
 ---
 
-## Voraussetzungen
+## Was diese Demo zeigt
 
-| Requirement | Notes |
-|-------------|--------|
-| Docker Desktop | Ausreichend RAM (oft **8–12 GB** für Ferrum-Demo) |
-| Python **3.11+** | Für HELIOS und Report-Assembler (`python3.12` empfohlen auf macOS) |
-| Git-Checkouts | `Ferrum-GA4GH-Demo`, `HELIOS`, optional `bioresearch-assistant` **nebeneinander** zum Showcase-Ordner (siehe Defaults in `README.md`) |
+Der SynapticFour-Showcase demonstriert wie drei Bausteine in einer realen Pipeline zusammenspielen:
+
+1. **Ferrum** nimmt einen Variant-Calling-Job über seine WES-Schnittstelle entgegen und führt ihn aus
+2. **HELIOS** erzeugt dabei automatisch einen signierten Audit-Trail mit SHA256-Hashes aller Input- und Output-Dateien
+3. **BioResearch Assistant** bekommt das Ergebnis-VCF und die Run-Metadaten übergeben — bereit für Downstream-Analyse
+
+Am Ende haben Sie: einen Benchmark-Report, eine HELIOS-Audit-Datei, einen DRS-Objektlink und eine menschenlesbare Zusammenfassung für Stakeholder-Reviews.
+
+**Sie müssen nichts installieren um die Ergebnisse zu sehen.**
+
+→ **[demo/results/](demo/results/)** — Benchmark, Metrics, HELIOS-Report, DRS-Link, Zusammenfassung — alles direkt lesbar
+
+---
+
+<a name="english-intro"></a>
+
+## What this demo shows (English)
+
+The SynapticFour Showcase demonstrates how three building blocks work together in a real pipeline:
+
+1. **Ferrum** accepts a variant calling job via its WES interface and executes it
+2. **HELIOS** automatically generates a signed audit trail with SHA256 hashes of all input and output files
+3. **BioResearch Assistant** receives the result VCF and run metadata — ready for downstream analysis
+
+**You don't need to install anything to see the results.**
+
+→ **[demo/results/](demo/results/)** — all artefacts from a real run, directly readable
+
+---
+
+<a name="technical"></a>
+
+---
+
+# Für technische Teams — Lokale Demo-Ausführung
+
+---
+
+## Voraussetzungen / Prerequisites
+
+| Anforderung | Hinweis |
+|-------------|---------|
+| Docker Desktop | 8–12 GB RAM empfohlen |
+| Python 3.11+ | Für HELIOS und Report-Assembler |
+| Git-Checkouts | `Ferrum-GA4GH-Demo`, `HELIOS`, optional `bioresearch-assistant` nebeneinander zum Showcase |
 | Netzwerk | Erster Lauf: Image-Pulls und ggf. öffentliche Testdaten |
 
-Optional: `pip install helios-audit` **oder** `pip install -e ../HELIOS` mit demselben Python 3.11+.
-
 **Schnellcheck vor dem Termin:**
-
 ```bash
 ./scripts/preflight.sh
-# Streng (Exit-Code bei Problem): ./scripts/preflight.sh --strict
+# Streng (Exit-Code bei Problem):
+./scripts/preflight.sh --strict
 ```
 
-**Reproduzierbare Stände:** [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) enthält die Git-HEADs der Nachbar-Repos; aktualisieren mit `./scripts/refresh-pinned-versions.sh`.
+Reproduzierbare Stände: [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) enthält die Git-HEADs der Nachbar-Repos.
 
 ---
 
 ## Ein Befehl (Happy Path)
-
-Aus dem **Showcase-Repo-Root**:
 
 ```bash
 chmod +x scripts/run-golden-path.sh
@@ -37,26 +73,21 @@ SHOWCASE_HELIOS_ROOT=/path/to/HELIOS \
 ./scripts/run-golden-path.sh
 ```
 
-Ergebnis:
+**Ergebnisse:**
 
 | Artefakt | Bedeutung |
-|----------|-----------|
-| `../Ferrum-GA4GH-Demo/results/metrics.json` | Demo-Kennzahlen, `wes_run_id` |
-| `../Ferrum-GA4GH-Demo/results/benchmark.json` | hap.py-Kurzsummary (Precision / Recall / F1) |
-| `../Ferrum-GA4GH-Demo/results/query.vcf.gz` | Abfrage-VCF |
+|----------|-----------| 
+| `../Ferrum-GA4GH-Demo/results/metrics.json` | Demo-Kennzahlen, WES Run ID |
+| `../Ferrum-GA4GH-Demo/results/benchmark.json` | Precision / Recall / F1 |
 | `helios-reports/<uuid>.json` | HELIOS-Audit-Export |
-| `showcase-report.json` | **Zusammenführung** Demo + HELIOS + Timings |
+| `showcase-report.json` | Zusammenführung Demo + HELIOS |
 | `showcase-report.md` | Kurztext für Slides / E-Mail |
 
-**Typische Wall-Clock:** erste Ausführung oft **10–20+ Minuten** (Build/Pulls); Folgeläufe schneller.
-
-**Heartbeat** (optional): `SHOWCASE_HEARTBEAT_SECONDS=20 ./scripts/run-golden-path.sh`
+**Typische Laufzeit:** erste Ausführung 10–20+ Minuten (Image-Pulls); Folgeläufe schneller.
 
 ---
 
 ## Nur HELIOS + Report (Demo schon gelaufen)
-
-Wenn `Ferrum-GA4GH-Demo/results/metrics.json` bereits existiert:
 
 ```bash
 SHOWCASE_SKIP_DEMO=1 ./scripts/run-golden-path.sh
@@ -64,77 +95,44 @@ SHOWCASE_SKIP_DEMO=1 ./scripts/run-golden-path.sh
 
 ---
 
-## M2 Downstream (bioresearch-assistant)
-
-### Variante A — nur Handoff (VCF kopieren + `m2-handoff.json`)
+## M2 Downstream (BioResearch Assistant)
 
 ```bash
+# Nur Handoff (VCF + m2-handoff.json):
 ./scripts/run-m2-bioresearch.sh
-```
 
-Artefakte unter `artifacts/m2/`: `m2-handoff.json`, `input/query.vcf.gz`.
-
-### Variante B — volle Kette (Handoff → DRS-Import → Phenopacket + VCF-Link)
-
-Erfordert erreichbares Backend (`http://localhost:8000`) oder Auto-Start (siehe `README.md`).
-
-```bash
+# Volle Kette (erfordert laufendes Backend):
 ./scripts/run-m2-bioresearch-downstream.sh
-```
 
-Zusätzlich: `artifacts/m2/m2-import-result.json`, `m2-link-result.json`.
-
-### In `run-golden-path.sh` integriert
-
-```bash
+# Integriert in golden-path:
 SHOWCASE_ENABLE_M2=1 SHOWCASE_M2_PIPELINE=full ./scripts/run-golden-path.sh
 ```
 
-**Postgres-Parallelbetrieb** mit Ferrum: Showcase nutzt standardmäßig `contrib/bioresearch-assistant-postgres-override.yml` (Host-Port **15432**). Details: `README.md` → *bioresearch-assistant + Ferrum in parallel*.
-
 ---
 
-## Aufräumen / Stop
-
-Normales Herunterfahren der Showcase-Stacks:
+## Aufräumen
 
 ```bash
 ./scripts/stop-showcase.sh
-```
-
-Wenn Container „hängen“ bleiben:
-
-```bash
+# Bei hängenden Containern:
 ./scripts/stop-showcase.sh --hard
 ```
 
 ---
 
-## CI / Qualität lokal
+## Troubleshooting
 
-```bash
-./scripts/ci-check.sh
-```
-
----
-
-## Weitere Optimierungsideen
-
-Dinge, die sich beim Zusammenbau aufgefallen haben — **nicht** alle müssen umgesetzt werden; Priorität nach Teambedarf.
-
-1. ~~**Versionen pinnen**~~ — **Erledigt:** [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt), Pflege via `./scripts/refresh-pinned-versions.sh`.
-2. ~~**Preflight-Skript**~~ — **Erledigt:** `./scripts/preflight.sh` (Docker, Python ≥3.11, Nachbar-Ordner, Speicher, Ports; in GitHub Actions werden Docker-Checks übersprungen).
-3. **Wartezeit BRA** — Statt fester Sleep-Schleifen in M2.1: `curl`-Retry auf `/ga4gh/drs/v1/service-info` bis HTTP 200 (teilweise schon vorhanden).
-4. **Ein CLI-Einstieg** — Dünner Wrapper `showcase` (z. B. `showcase run`, `showcase stop`, `showcase m2`) reduziert dokumentierte Env-Variablen.
-5. **Strukturiertes Log** — Optionales Append in `artifacts/run.jsonl` (Timestamp, Schritt, Exit-Code) für Post-Mortem nach Demos.
-6. **HelixTest-Gate** — Separater dokumentierter Schritt oder Job: `HelixTest` gegen laufendes Ferrum-Profil, ohne es ins gleiche Shell-Skript zu verzwängen.
-7. **Sicherheit** — Auto-kopierte `bioresearch-assistant/.env` nie committen; `.gitignore` in BRA prüfen; keine Secrets in Showcase-Artefakten.
-8. **Schwere CI** — Nightly-Workflow mit Docker (nur wenn Runner-Ressourcen da sind); PR bleibt bei leichtem `ci-check` wie heute.
-9. **UX** — Einseitige PDF/HTML aus `showcase-report.md` (später: pandoc o. Ä., optional).
+| Problem | Lösung |
+|---------|--------|
+| Docker nicht genug RAM | Docker Desktop → Settings → Resources → Memory auf 12 GB |
+| Python-Version zu alt | `SHOWCASE_PYTHON=/path/to/python3.12 ./scripts/run-golden-path.sh` |
+| Port bereits belegt | `./scripts/stop-showcase.sh --hard` dann neu starten |
+| Nachbar-Repos fehlen | Checkouts neben dem Showcase-Ordner anlegen |
 
 ---
 
-## Siehe auch
+## Weiterführendes
 
-- [README.md](README.md) — Env-Variablen, Troubleshooting-Tabelle, M1–M3
-- [contrib/bioresearch-assistant-postgres-override.yml](contrib/bioresearch-assistant-postgres-override.yml) — Postgres-Host-Port für Parallelbetrieb
+- [README.md](README.md) — Kundenorientierter Einstieg
+- [demo/results/](demo/results/) — Vorgeneriete Artefakte
+- [docs/for-evaluators/technical-evaluation-kit.md](docs/for-evaluators/technical-evaluation-kit.md)
