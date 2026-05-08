@@ -12,7 +12,6 @@ This is a customer-facing showcase for Synaptic Four's bioinformatics infrastruc
 |-------------|----------|---------|
 | `docs/for-customers/` | Potentielle Kunden / Prospective customers | FAQ, Pfadauswahl, Compliance, Szenarien |
 | `docs/for-evaluators/` | Technical Leads, Solution Architects | Technische Tiefenevaluation |
-| `docs/internal/` | Synaptic Four Team | Interne Ops, Workshop-Guides |
 | `demo/results/` | Alle / Everyone | Vorgeneriete Artefakte |
 | `scripts/` | Technische Teams | Demo-Orchestrierung und CI |
 
@@ -29,4 +28,3 @@ Bitte Issues in den jeweiligen Upstream-Repos öffnen:
 
 Kunden-Docs: Deutsch zuerst, Englisch am Ende der Datei.
 Technische Scripts und Code: Englisch.
-Interne Docs: beides möglich.
