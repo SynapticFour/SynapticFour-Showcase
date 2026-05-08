@@ -27,6 +27,23 @@ Ferrum, HELIOS und der BioResearch Assistant sind drei Bausteine die diesen Knot
 
 ---
 
+## Einordnung im deutschen Ökosystem
+
+Ferrum ist komplementär zu bestehenden nationalen Infrastrukturen —
+kein Ersatz, sondern die lokale Schicht die davor fehlt.
+
+| Infrastruktur | Rolle | Ferrum-Verhältnis |
+|---------------|-------|-------------------|
+| GHGA | Nationales Genomdaten-Archiv | Ferrum ist die lokale GA4GH-Schicht vor der Übermittlung zu GHGA. Crypt4GH und DRS sind kompatibel. |
+| FDPG / MII | Klinische Routinedaten, FHIR-basiert | Ferrum ergänzt mit GA4GH-Workflow-Execution und Genomik-Infrastruktur. MII Connect für FHIR-Profilprüfung. |
+| genomDE Datenknoten | Dezentrale Sequenzierungsdaten | Ferrum ist für genau diesen Use Case gebaut: on-premise, GA4GH-konform, ohne Cloud-Zwischenschritt. |
+| ELIXIR / de.NBI | Europäische Forschungsinfrastruktur | GA4GH-Schnittstellen ermöglichen Interoperabilität ohne Datentransfer. |
+
+Wenn Sie bereits Teil dieser Ökosysteme sind: Ferrum fügt sich ein,
+es ersetzt nicht.
+
+---
+
 ## Was dieser Stack konkret tut
 
 ### 🦀 Ferrum — Das Daten- und API-Rückgrat
@@ -88,7 +105,7 @@ Realistisch: 10–30 Tage, abhängig von Ihrer Infrastruktur und Daten-Readiness
 Nein. Wir sagen das offen: Ferrum und HELIOS erzeugen technische Evidenz-Artefakte, die Compliance-Prozesse unterstützen. Die formale Compliance-Verantwortung liegt beim Betreiber. [Details dazu](docs/for-customers/compliance-framing.md).
 
 **„Was kostet das?"**
-Ferrum: BUSL-1.1 (für zulässige nicht-kommerzielle Forschung kostenfrei nutzbar, nach 4 Jahren Apache-2.0). BioResearch Assistant: Institutionslizenz ab €5.000 einmalig + €3.000/Jahr. HELIOS-Kern: Apache-2.0, kostenfrei. [Vollständige Preisinformation](https://synapticfour.com/de/software).
+Ferrum: BUSL-1.1 (für zulässige nicht-kommerzielle Forschung kostenfrei nutzbar, nach 4 Jahren Apache-2.0). BioResearch Assistant: Pilot (erster Kunde) kostenlos oder symbolisch. Ab zweitem Kunden: €3.500–4.000/Jahr all-in. Onboarding: €2.500 einmalig. HELIOS-Kern: Apache-2.0, kostenfrei. [Vollständige Preisinformation](https://synapticfour.com/de/software).
 
 **„Wer steht dahinter?"**
 Ein kleines Team aus Stuttgart, spezialisiert auf Bioinformatik-Infrastruktur, mit gelebtem Engagement für Neurodiversität und Inklusion. Keine VC-Finanzierung, kein Cloud-Abhängigkeits-Geschäftsmodell.
@@ -118,6 +135,14 @@ Wir sind klein genug, dass Sie mit dem Entwickler sprechen — nicht mit einem A
 Was wir nicht sind: ein Team mit hundert Referenzkunden und zertifizierten Installationen weltweit. Wir sind präzise in dem was wir anbieten, und ehrlich über was wir noch nicht sind.
 
 → [Über uns](https://synapticfour.com/de/about)
+
+---
+
+**Für genomDE und MII-Standorte:** Wir suchen aktiv einen ersten
+produktiven Piloten an einem DIZ-Standort oder genomDE-Datenknoten.
+Kein klassischer Software-Kauf — eine echte Zusammenarbeit mit
+transparenten Schritten und einem prüfbaren Ergebnis.
+[Direkt schreiben →](mailto:contact@synapticfour.com?subject=Ferrum%20Pilot)
 
 ---
 
@@ -151,6 +176,23 @@ Your institution works with genomic data. You have:
 - Compliance pressure that demands concrete technical evidence, not policy slides
 
 Ferrum, HELIOS, and BioResearch Assistant are three building blocks that untangle this. Deployable individually. Stronger together.
+
+---
+
+## Positioning within the German ecosystem
+
+Ferrum is complementary to existing national infrastructures —
+not a replacement, but the local layer that precedes them.
+
+| Infrastructure | Role | Ferrum relationship |
+|----------------|------|---------------------|
+| GHGA | National genomic data archive | Ferrum is the local GA4GH layer before submission to GHGA. Crypt4GH and DRS are compatible. |
+| FDPG / MII | Clinical routine data, FHIR-based | Ferrum adds GA4GH workflow execution and genomics infrastructure. MII Connect for FHIR profile checks. |
+| genomDE data nodes | Decentralised sequencing data | Ferrum is built exactly for this use case: on-premise, GA4GH-compliant, no cloud intermediary. |
+| ELIXIR / de.NBI | European research infrastructure | GA4GH interfaces enable interoperability without data transfer. |
+
+If you are already part of these ecosystems: Ferrum fits in,
+it does not replace.
 
 ---
 
@@ -215,7 +257,7 @@ Realistically: 10–30 days, depending on your infrastructure and data readiness
 No. We say this openly: Ferrum and HELIOS generate technical evidence artefacts that support compliance processes. Formal compliance responsibility rests with the operator. [Details here](docs/for-customers/compliance-framing.md).
 
 **"What does it cost?"**
-Ferrum: BUSL-1.1 (free for permitted non-commercial research, Apache-2.0 after 4 years). BioResearch Assistant: institutional licence from €5,000 one-time + €3,000/year. HELIOS core: Apache-2.0, free. [Full pricing](https://synapticfour.com/en/software).
+Ferrum: BUSL-1.1 (free for permitted non-commercial research, Apache-2.0 after 4 years). BioResearch Assistant: pilot (first customer) free or symbolic. From second customer: €3,500–4,000/year all-in. Onboarding: €2,500 one-time. HELIOS core: Apache-2.0, free. [Full pricing](https://synapticfour.com/en/software).
 
 → [All questions and answers](docs/for-customers/faq.md)
 
@@ -242,6 +284,14 @@ We're small enough that you speak with the developer — not with an account man
 What we're not: a team with a hundred reference customers and certified installations worldwide. We are precise about what we offer, and honest about what we're not yet.
 
 → [About us](https://synapticfour.com/en/about)
+
+---
+
+**For genomDE and MII sites:** We are actively looking for a first
+productive pilot at a DIC site or genomDE data node. Not a classical
+software purchase — a genuine collaboration with transparent steps
+and a verifiable result.
+[Write directly →](mailto:contact@synapticfour.com?subject=Ferrum%20Pilot)
 
 ---
 
