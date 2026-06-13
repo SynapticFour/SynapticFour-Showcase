@@ -25,8 +25,11 @@
 
 ## Was zuletzt fertig wurde
 
+- ✅ Sync mit Nachbar-Repos (Ferrum-GA4GH-Demo, HELIOS, bioresearch-assistant) — Juni 2026
+- ✅ `demo/results/` Artefakte neu generiert (Nextflow-Golden-Path, HELIOS-Audit)
+- ✅ `PINNED_VERSIONS.txt` auf aktuelle Git-HEADs
+- ✅ Evaluator-Docs: Ferrum-Gateway-Port **18080**, HELIOS-CLI (`helios run`)
 - ✅ Kunden-orientiertes README mit DE/EN (April 2026)
-- ✅ `demo/results/` mit vorgenerierten Artefakten (April 2026)
 - ✅ Neue Dokumentenstruktur: `for-customers/` / `for-evaluators/` / `internal/` (April 2026)
 - ✅ Zweisprachige Docs (DE/EN in einer Datei) (April 2026)
 - ✅ PINNED_VERSIONS.txt + Preflight-Skript
@@ -79,6 +82,15 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 - PDF/HTML export of showcase report
 - Expanded pre-generated demo artefacts
 - Beacon v2 demo scenario as standalone showcase path
+
+---
+
+## Recently completed
+
+- ✅ Neighbor-repo sync (Ferrum-GA4GH-Demo, HELIOS, bioresearch-assistant) — June 2026
+- ✅ Regenerated `demo/results/` artefacts (Nextflow golden path + HELIOS audit)
+- ✅ Updated `PINNED_VERSIONS.txt` to current Git HEADs
+- ✅ Evaluator docs: Ferrum gateway port **18080**, HELIOS CLI (`helios run`)
 
 ---
 

@@ -49,7 +49,7 @@ The SynapticFour Showcase demonstrates how three building blocks work together i
 | Anforderung | Hinweis |
 |-------------|---------|
 | Docker Desktop | 8–12 GB RAM empfohlen |
-| Python 3.11+ | Für HELIOS und Report-Assembler |
+| Python 3.11+ | Für HELIOS und Report-Assembler (`pip install helios-audit` oder Projekt-`.venv`) |
 | Git-Checkouts | `Ferrum-GA4GH-Demo`, `HELIOS`, optional `bioresearch-assistant` nebeneinander zum Showcase |
 | Netzwerk | Erster Lauf: Image-Pulls und ggf. öffentliche Testdaten |
 
@@ -70,7 +70,9 @@ Reproduzierbare Stände: [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) enthält die
 make up
 # oder ausführlich:
 chmod +x scripts/run-golden-path.sh
-SHOWCASE_PYTHON="$(command -v python3.12 || command -v python3.11)" \
+# Optional: lokales venv mit HELIOS (empfohlen auf macOS/Homebrew-Python)
+python3.12 -m venv .venv && .venv/bin/pip install -e ../HELIOS
+SHOWCASE_PYTHON="$(pwd)/.venv/bin/python" \
 SHOWCASE_HELIOS_ROOT=/path/to/HELIOS \
 ./scripts/run-golden-path.sh
 ```
@@ -131,8 +133,8 @@ make destroy     # Volumes + --hard cleanup
 | Problem | Lösung |
 |---------|--------|
 | Docker nicht genug RAM | Docker Desktop → Settings → Resources → Memory auf 12 GB |
-| Python-Version zu alt | `SHOWCASE_PYTHON=/path/to/python3.12 ./scripts/run-golden-path.sh` |
-| Port bereits belegt | `./scripts/stop-showcase.sh --hard` dann neu starten |
+| Python-Version zu alt / HELIOS-Deps fehlen | `python3.12 -m venv .venv && .venv/bin/pip install -e ../HELIOS` dann `SHOWCASE_PYTHON=./.venv/bin/python ./scripts/run-golden-path.sh` |
+| Port bereits belegt (18080) | Ferrum-Demo nutzt Gateway **18080** — `./scripts/stop-showcase.sh --hard` oder `make down` im Ferrum-GA4GH-Demo, dann neu starten |
 | Nachbar-Repos fehlen | Checkouts neben dem Showcase-Ordner anlegen |
 
 ---

@@ -1,7 +1,7 @@
 # Synaptic Four Showcase — Run Report
 
-**Erstellt / Generated:** 2026-04-24T10:27:00Z  
-**Run ID:** 561679fc-daa2-47b3-87fe-e6d0f9d56814  
+**Erstellt / Generated:** 2026-06-13T09:18:52Z  
+**Run ID:** e758638a-c1ed-4506-bc47-6283929e5a01  
 **Stack:** Ferrum GA4GH Demo + HELIOS Audit + BioResearch Assistant Handoff
 
 ---
@@ -18,9 +18,9 @@ All three showcase stages completed successfully. Artefacts are available for st
 
 | Metric | Value |
 |--------|-------|
-| WES Run ID | `01CI00SHOWCASE00000000000000` |
+| WES Run ID | `01KV049TTY664RMPQV3M020HYB` |
 | Pipeline Engine | Nextflow |
-| Elapsed Time | 42 Sekunden / seconds |
+| Elapsed Time | 26 Sekunden / seconds |
 | Status | ✅ Abgeschlossen / Completed |
 
 **Benchmark-Ergebnisse / Benchmark results (hap.py vs. reference callset):**
@@ -39,9 +39,9 @@ All three showcase stages completed successfully. Artefacts are available for st
 
 | Metric | Value |
 |--------|-------|
-| HELIOS Report ID | `561679fc-daa2-47b3-87fe-e6d0f9d56814` |
+| HELIOS Report ID | `e758638a-c1ed-4506-bc47-6283929e5a01` |
 | Executor | Nextflow |
-| Output Files Hashed | 14 |
+| Output Files Hashed | 59 |
 | Checks Run | 1 (SEC-CONTAINER-001) |
 | Check Results | ✅ Alle bestanden / All passed |
 
@@ -61,7 +61,7 @@ All three showcase stages completed successfully. Artefacts are available for st
 |--------|-------|
 | Handoff Status | ✅ Abgeschlossen / Completed |
 | VCF übertragen / transferred | query.vcf.gz |
-| DRS Object ID | `drs://ferrum.local/01CI00SHOWCASE00000000000000/query.vcf.gz` |
+| DRS Object ID | `drs://ferrum-gateway:8080/01KV049TTY664RMPQV3M020HYB/query.vcf.gz` |
 
 ---
 

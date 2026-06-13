@@ -43,9 +43,9 @@ Definieren Sie diese vier Punkte bevor Sie anfangen:
 ### Path A — Ferrum
 
 ```bash
-# Service-Info prüfen
-curl http://localhost:8080/ga4gh/drs/v1/service-info
-curl http://localhost:8090/ga4gh/wes/v1/service-info
+# Service-Info prüfen (Ferrum-GA4GH-Demo: Gateway auf Host-Port 18080)
+curl http://127.0.0.1:18080/ga4gh/drs/v1/service-info
+curl http://127.0.0.1:18080/ga4gh/wes/v1/service-info
 
 # Preflight
 ./scripts/preflight.sh --strict
@@ -56,10 +56,15 @@ Erfolgskriterium: Ein API/Datenpfad ist vollständig end-to-end getestet; Output
 ### Path B — HELIOS
 
 ```bash
-# HELIOS auf bestehendem Nextflow-Workdir
-helios-audit run --workdir /path/to/your/nextflow/work --export-dir ./helios-reports
+# HELIOS auf bestehendem Nextflow-Workdir (Python 3.11+, pip install helios-audit)
+helios key generate
+helios run --pipeline nextflow \
+  --work-dir /path/to/your/nextflow/work \
+  --output-dir /path/to/pipeline/results \
+  --config helios.toml \
+  --export json
 
-# Report lesen
+# Report lesen (Export unter helios.toml [export] output_dir)
 cat helios-reports/<uuid>.json | jq '.checks'
 ```
 

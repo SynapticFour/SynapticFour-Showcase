@@ -26,9 +26,9 @@
 
 ```json
 {
-  "wes_run_id": "01CI00SHOWCASE00000000000000",
+  "wes_run_id": "01KV049TTY664RMPQV3M020HYB",
   "wes_engine": "nextflow",
-  "pipeline_elapsed_seconds": 42
+  "pipeline_elapsed_seconds": 26
 }
 ```
 
@@ -54,13 +54,13 @@
 
 ```json
 {
-  "object_id": "drs://ferrum.local/01CI00SHOWCASE00000000000000/query.vcf.gz",
-  "size": 901,
-  "checksums": [{"type": "sha-256", "checksum": "c332b43a..."}]
+  "object_id": "drs://ferrum-gateway:8080/01KV049TTY664RMPQV3M020HYB/query.vcf.gz",
+  "size": 4034,
+  "checksums": [{"type": "sha-256", "checksum": "8d5b3933..."}]
 }
 ```
 
-**Was das bedeutet:** Ferrum's DRS-Endpunkt hat das Ergebnis-VCF als adressierbares, verifizierbares Objekt registriert. Partner-Institutionen mit GA4GH-kompatiblen Systemen können dieses Objekt direkt referenzieren.
+**Was das bedeutet:** Illustratives Beispiel, wie ein Ergebnis-VCF als adressierbares DRS-Objekt referenziert werden kann (URI-Schema und Checksummen aus einem echten Lauf). Der Demo-Workflow kopiert `query.vcf.gz` nach `results/`; automatische DRS-Registrierung des Outputs ist nicht Teil des Standard-Golden-Paths — Partner-Institutionen nutzen ingest/import oder WES-Provenance je nach Deployment.
 
 ---
 
@@ -96,7 +96,7 @@ Das ist das Dokument das Sie nach einem Lauf an Stakeholder schicken können —
 
 **helios-report-example.json:** Contains run_id, pipeline_name, executor, timestamps, input file hashes, output file hashes, and check results. Every run is immutably documented.
 
-**drs-link-example.json:** Ferrum's DRS endpoint registered the result VCF as an addressable, verifiable object. Partner institutions with GA4GH-compatible systems can reference this directly.
+**drs-link-example.json:** Illustrative DRS object reference for the result VCF (URI scheme and checksums from a real run). The demo copies `query.vcf.gz` to `results/`; automatic DRS registration of outputs is not part of the default golden path.
 
 **showcase-report-example.md:** The document you can send to stakeholders after a run.
 
