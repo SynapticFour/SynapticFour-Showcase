@@ -8,6 +8,7 @@ SHOWCASE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 source "$SCRIPT_DIR/lib/bra-compose.sh"
 
 DEMO_ROOT="${SHOWCASE_DEMO_ROOT:-$SHOWCASE_ROOT/../Ferrum-GA4GH-Demo}"
+DEMO_ROOT="$(cd "$DEMO_ROOT" && pwd)"
 BRA_ROOT="${SHOWCASE_BRA_ROOT:-$SHOWCASE_ROOT/../bioresearch-assistant}"
 if [[ -d "$BRA_ROOT" ]]; then
   BRA_ROOT="$(cd "$BRA_ROOT" && pwd)"
@@ -69,7 +70,13 @@ stop_demo() {
   local overlay_compose="$root/demo/docker-compose.ga4gh.yml"
 
   if [[ ! -f "$base_compose" || ! -f "$overlay_compose" ]]; then
-    echo "[stop] Ferrum-GA4GH-Demo compose files not found, skipping: $root"
+    echo "[stop] Ferrum-GA4GH-Demo compose files not found under $root"
+    if [[ ! -f "$base_compose" ]]; then
+      echo "[stop]   missing Ferrum clone: $base_compose (run ./run once or set FERUM_SRC)"
+    fi
+    if [[ ! -f "$overlay_compose" ]]; then
+      echo "[stop]   missing overlay: $overlay_compose"
+    fi
     return 0
   fi
 
