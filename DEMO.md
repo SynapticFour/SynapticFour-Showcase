@@ -67,11 +67,15 @@ Reproduzierbare Stände: [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) enthält die
 ## Ein Befehl (Happy Path)
 
 ```bash
+make up
+# oder ausführlich:
 chmod +x scripts/run-golden-path.sh
 SHOWCASE_PYTHON="$(command -v python3.12 || command -v python3.11)" \
 SHOWCASE_HELIOS_ROOT=/path/to/HELIOS \
 ./scripts/run-golden-path.sh
 ```
+
+**Aufräumen:** `make down` · `make destroy` (Volumes + hängende Container)
 
 **Ergebnisse:**
 
@@ -113,8 +117,10 @@ SHOWCASE_ENABLE_M2=1 SHOWCASE_M2_PIPELINE=full ./scripts/run-golden-path.sh
 ## Aufräumen
 
 ```bash
+make down
+make destroy     # Volumes + --hard cleanup
+# oder:
 ./scripts/stop-showcase.sh
-# Bei hängenden Containern:
 ./scripts/stop-showcase.sh --hard
 ```
 
