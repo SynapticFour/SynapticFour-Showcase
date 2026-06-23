@@ -25,7 +25,8 @@
 
 ## Was zuletzt fertig wurde
 
-- ✅ Sync mit Nachbar-Repos (Ferrum-GA4GH-Demo, HELIOS, bioresearch-assistant) — Juni 2026
+- ✅ Sync mit Nachbar-Repos (Ferrum-GA4GH-Demo, HELIOS, bioresearch-assistant) — Juni 2026 (23.06.)
+- ✅ `demo/results/` Host-Pfade bereinigt; `scripts/publish-demo-results.sh` für künftige Golden-Path-Läufe
 - ✅ `demo/results/` Artefakte neu generiert (Nextflow-Golden-Path, HELIOS-Audit)
 - ✅ `PINNED_VERSIONS.txt` auf aktuelle Git-HEADs
 - ✅ Evaluator-Docs: Ferrum-Gateway-Port **18080**, HELIOS-CLI (`helios run`)
@@ -87,7 +88,8 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 
 ## Recently completed
 
-- ✅ Neighbor-repo sync (Ferrum-GA4GH-Demo, HELIOS, bioresearch-assistant) — June 2026
+- ✅ Neighbor-repo sync (Ferrum-GA4GH-Demo, HELIOS, bioresearch-assistant) — June 2026 (23 Jun)
+- ✅ Sanitized `demo/results/` host paths; added `scripts/publish-demo-results.sh` for future golden-path runs
 - ✅ Regenerated `demo/results/` artefacts (Nextflow golden path + HELIOS audit)
 - ✅ Updated `PINNED_VERSIONS.txt` to current Git HEADs
 - ✅ Evaluator docs: Ferrum gateway port **18080**, HELIOS CLI (`helios run`)

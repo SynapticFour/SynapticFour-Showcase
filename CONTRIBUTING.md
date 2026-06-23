@@ -15,6 +15,8 @@ This is a customer-facing showcase for Synaptic Four's bioinformatics infrastruc
 | `demo/results/` | Alle / Everyone | Vorgeneriete Artefakte |
 | `scripts/` | Technische Teams | Demo-Orchestrierung und CI |
 
+Nach einem lokalen Golden-Path-Lauf: `./scripts/publish-demo-results.sh` aktualisiert `demo/results/` (portable Pfade, keine Host-Identifikatoren).
+
 ## Bugs in Ferrum, HELIOS oder BioResearch Assistant?
 
 Bitte Issues in den jeweiligen Upstream-Repos öffnen:

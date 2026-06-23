@@ -2,5 +2,5 @@
   "precision": 1.0,
   "recall": 1.0,
   "f1_score": 1.0,
-  "summary_source": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/happy.metrics.json.gz"
+  "summary_source": "../Ferrum-GA4GH-Demo/results/happy.metrics.json.gz"
 }

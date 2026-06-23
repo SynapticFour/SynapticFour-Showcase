@@ -1,5 +1,42 @@
 {
-  "wes_run_id": "01KV049TTY664RMPQV3M020HYB",
+  "pipeline_elapsed_seconds": 115,
+  "wes_run_id": "01KVTCN5H7BRXN1RS4C39PDQJ1",
+  "wes_workflow_url": "http://host.docker.internal:51062/workflows/tiny_hc.nf",
   "wes_engine": "nextflow",
-  "pipeline_elapsed_seconds": 26
+  "encrypt_at_ingest": false,
+  "query_vcf": "results/query.vcf.gz",
+  "docker_stats_gateway_sample": "34.45MiB / 7.653GiB",
+  "drs_micro": {
+    "drs_stream_url": "http://127.0.0.1:18080/ga4gh/drs/v1/objects/01KVTCN5DZZ7E2XRA192QGQR18/stream",
+    "object_id": "01KVTCN5DZZ7E2XRA192QGQR18",
+    "repeat_n": 3,
+    "max_bytes": 8000000,
+    "plain": {
+      "wall_seconds": {
+        "median": 0.007154832999999999,
+        "p95": 0.022416417
+      },
+      "bytes_transferred": 4071,
+      "throughput_mib_s": 0.5426273600082412,
+      "samples": [
+        0.022416417,
+        0.007154832999999999,
+        0.005171792000000008
+      ]
+    },
+    "crypt4gh_at_rest": null,
+    "crypt4gh": null
+  },
+  "africa": {
+    "available_features": 6,
+    "scenarios_ran": 3,
+    "scenarios_skipped": 3,
+    "all_passed": true
+  },
+  "co_deploy": {
+    "available_services": 0,
+    "scenarios_ran": 0,
+    "scenarios_skipped": 4,
+    "all_passed": true
+  }
 }

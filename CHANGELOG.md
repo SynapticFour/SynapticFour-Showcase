@@ -6,6 +6,15 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Changed
 
+- **PINNED_VERSIONS.txt** — Updated sibling Git HEADs (June 2026 sync #2):
+  - Ferrum-GA4GH-Demo: `0e487af` (paper bundle redaction; benchmark refresh `d00744b`)
+  - HELIOS: `af1c5a5` (dependabot hygiene; no CLI/API changes)
+  - bioresearch-assistant: `08cefef` (cryptography security bump; compose ports unchanged)
+- **demo/results/** — Regenerated from golden path (23 Jun 2026); sanitized host paths; added `drs-micro-example.json`.
+- **scripts/publish-demo-results.sh** — New helper to copy golden-path outputs into `demo/results/` with portable paths after `./scripts/run-golden-path.sh` (stakeholder report + illustrative DRS object).
+
+### Changed (June 2026 sync #1)
+
 - **PINNED_VERSIONS.txt** — Updated sibling Git HEADs (June 2026):
   - Ferrum-GA4GH-Demo: `115ebe0` (ferrum-field link update)
   - HELIOS: `a519e03` (includes `python -m helios.cli` fix)

@@ -91,6 +91,12 @@ SHOWCASE_HELIOS_ROOT=/path/to/HELIOS \
 
 **Typische Laufzeit:** erste Ausführung 10–20+ Minuten (Image-Pulls); Folgeläufe schneller.
 
+**Für eingecheckte Demo-Artefakte aktualisieren:**
+```bash
+./scripts/publish-demo-results.sh
+```
+(kopiert `benchmark.json`, `metrics.json`, HELIOS-Report und DRS-Beispiel nach `demo/results/` — ohne absolute Host-Pfade)
+
 ---
 
 ## Nur HELIOS + Report (Demo schon gelaufen)
