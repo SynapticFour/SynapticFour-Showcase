@@ -6,6 +6,10 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Changed
 
+- **PINNED_VERSIONS.txt** — Ferrum-GA4GH-Demo pin `41d7b89` (benchmark artefacts committed upstream after showcase run).
+
+### Changed (June 2026 sync #2)
+
 - **PINNED_VERSIONS.txt** — Updated sibling Git HEADs (June 2026 sync #2):
   - Ferrum-GA4GH-Demo: `0e487af` (paper bundle redaction; benchmark refresh `d00744b`)
   - HELIOS: `af1c5a5` (dependabot hygiene; no CLI/API changes)
