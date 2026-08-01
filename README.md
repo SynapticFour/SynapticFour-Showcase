@@ -295,4 +295,10 @@ and a verifiable result.
 
 ---
 
+## License / Lizenz
+
+Apache License 2.0 — see [LICENSE](LICENSE).
+
+---
+
 *Synaptic Four · Stuttgart, Germany · [synapticfour.com](https://synapticfour.com/en)*
