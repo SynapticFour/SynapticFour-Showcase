@@ -6,6 +6,7 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Added
 
+- **H2.3 Ops polish signed off** — collector visa path + thin health checks; [H2-SECOND-PASS.md](docs/pilots/H2-SECOND-PASS.md) backlog; `make h23-ops-polish`.
 - **H2.2 Org CAP signed off** — sidecar OIDC groups → CAP_*; [ADR 0002](docs/adr/0002-solum-org-iam-cap.md); `make h22-org-cap`.
 - **H2.1 Teeth signed off** — Solum revoke → Ferrum DRS/WES 403 when configured; [ADR 0001](docs/adr/0001-solum-ferrum-consent-access.md); `make h21-teeth`.
 - **H2 spine v1 signed off** — WES fail-closed under `require_auth`, visa/ops honesty, Solum zeroize cross-links; see `docs/pilots/H2-*.md`.

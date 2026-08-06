@@ -221,12 +221,14 @@ Horizon language (not calendar promises): **H0 now**, **H1 pilot-ready**, **H2 p
 | **1b. H2 spine v1** | [pilots/H2-PILOT-CHECKLIST.md](pilots/H2-PILOT-CHECKLIST.md) · [H2-EXECUTION-RECORD.md](pilots/H2-EXECUTION-RECORD.md) · [H2-OPS-RUNBOOK.md](pilots/H2-OPS-RUNBOOK.md) | **SIGNED OFF** spine v1 |
 | **1c. H2.1 Teeth** | [adr/0001-solum-ferrum-consent-access.md](adr/0001-solum-ferrum-consent-access.md) · `make h21-teeth` | **SIGNED OFF** — Solum revoke → Ferrum DRS/WES 403 when configured |
 | **1d. H2.2 Org CAP** | [adr/0002-solum-org-iam-cap.md](adr/0002-solum-org-iam-cap.md) · `make h22-org-cap` | **SIGNED OFF** — sidecar OIDC groups → CAP_* when org-IAM enabled |
+| **1e. H2.3 Ops polish** | [pilots/H2-OPS-RUNBOOK.md](pilots/H2-OPS-RUNBOOK.md) · `make h23-ops-polish` | **SIGNED OFF** — collector visa path + thin health checks |
+| **1f. H2 second pass** | [pilots/H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) | Backlog to full H2 exit (KMS, Prometheus, HELIOS clinical, CLI org-IAM decision) |
 | **2. H3 design** | Solum [ADR 0001](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0001-openehr-cdr-and-migration.md) + [ADR 0002 EHRbase](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0002-cdr-engine-ehrbase.md) + [MIGRATION-STRANGLER.md](https://github.com/SynapticFour/Solum/blob/main/docs/MIGRATION-STRANGLER.md) | Architecture + engine choice accepted; CDR coding still deferred |
-| **3. H4 geography** | [pilots/H4-GEOGRAPHY-DECISION.md](pilots/H4-GEOGRAPHY-DECISION.md) · Solum [KENYA-K1-BRIEF](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md) | Kenya first; counsel brief ready for external review |
+| **3. H4 geography** | [pilots/H4-GEOGRAPHY-DECISION.md](pilots/H4-GEOGRAPHY-DECISION.md) · Solum [KENYA-K1-BRIEF](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md) · [KENYA-K1-SEND-CHECKLIST](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md) | Kenya first; counsel brief ready to send |
 
 SaaS (H5) stays documentation + tenancy hygiene until a customer pays for managed hosting.
 
-**Immediate execution order:** send Kenya K1 brief to counsel; timebox EHRbase compose spike; remaining H2 (Solum KMS CLI, observability) as product backlog.
+**Immediate execution order:** send Kenya K1 brief to counsel ([send checklist](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md)); timebox EHRbase compose spike; full H2 exit via [H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) when scheduled.
 
 ---
 
@@ -248,7 +250,8 @@ SaaS (H5) stays documentation + tenancy hygiene until a customer pays for manage
 | H1 pilot checklist + execution record | Showcase `docs/pilots/H1-*.md` |
 | H4 geography decision | Showcase `docs/pilots/H4-GEOGRAPHY-DECISION.md` |
 | H3 CDR ADRs + migration | Solum `docs/adr/0001-…` · `0002-…` · `docs/MIGRATION-STRANGLER.md` |
-| Kenya counsel brief | Solum `docs/counsel/KENYA-K1-BRIEF.md` |
+| Kenya counsel brief + send checklist | Solum `docs/counsel/KENYA-K1-BRIEF.md` · `KENYA-K1-SEND-CHECKLIST.md` |
+| H2 second-pass backlog | Showcase `docs/pilots/H2-SECOND-PASS.md` |
 | Product roadmaps | Each product’s `docs/roadmap.md` |
 | Solum dual-track product boundary | Solum `PRODUCT-DEFINITION.md` |
 | Customer “what exists” | Showcase `docs/for-customers/overview.md` |

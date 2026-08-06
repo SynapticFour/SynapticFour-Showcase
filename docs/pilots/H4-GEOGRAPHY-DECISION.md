@@ -29,7 +29,7 @@
 - [x] Draft TOML exists with schema_version aligned to `eu-ehds`
 - [x] Open legal items listed in `docs/profiles.md` and profile `regulatory.notes`
 - [ ] Synaptic Four commits eng time to close **technical** gaps (tests, startup validation, transfer checks)
-- [ ] Counsel path identified (external) for retention / transfer / purposes catalogue — even if schedule is TBD
+- [ ] Counsel path identified (external) for retention / transfer / purposes catalogue — brief ready; **send** via [KENYA-K1-SEND-CHECKLIST](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md)
 
 ### No-go — do not claim production Kenya
 
