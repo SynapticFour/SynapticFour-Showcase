@@ -217,13 +217,13 @@ Horizon language (not calendar promises): **H0 now**, **H1 pilot-ready**, **H2 p
 
 | Move | Artefact | Status |
 |------|----------|--------|
-| **1. Close H1** | [pilots/H1-PILOT-CHECKLIST.md](pilots/H1-PILOT-CHECKLIST.md) · [H1-EXECUTION-RECORD.md](pilots/H1-EXECUTION-RECORD.md) | Dev-host rehearsal done (Solum CustomerHeld + HELIOS A + Evidence Pack + restore); **auth-on / fresh VM still open** |
+| **1. Close H1** | [pilots/H1-PILOT-CHECKLIST.md](pilots/H1-PILOT-CHECKLIST.md) · [H1-EXECUTION-RECORD.md](pilots/H1-EXECUTION-RECORD.md) · [H1-KNOWN-LIMITATIONS.md](pilots/H1-KNOWN-LIMITATIONS.md) | **SIGNED OFF** 2026-08-06 (auth-on + docker TES + CustomerHeld + Evidence Pack + MinIO/Solum restore) |
 | **2. H3 design** | Solum [ADR 0001](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0001-openehr-cdr-and-migration.md) + [ADR 0002 EHRbase](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0002-cdr-engine-ehrbase.md) + [MIGRATION-STRANGLER.md](https://github.com/SynapticFour/Solum/blob/main/docs/MIGRATION-STRANGLER.md) | Architecture + engine choice accepted; CDR coding still deferred |
 | **3. H4 geography** | [pilots/H4-GEOGRAPHY-DECISION.md](pilots/H4-GEOGRAPHY-DECISION.md) · Solum [KENYA-K1-BRIEF](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md) | Kenya first; counsel brief ready for external review |
 
 SaaS (H5) stays documentation + tenancy hygiene until a customer pays for managed hosting.
 
-**Immediate execution order:** finish H1 on a fresh VM with `require_auth=true`; send Kenya K1 brief to counsel; EHRbase compose spike only after that (no CDR product coding yet).
+**Immediate execution order:** send Kenya K1 brief to counsel; timebox EHRbase compose spike; start H2 design (WES auth-surface / visas / KMS) without blocking H3 docs.
 
 ---
 

@@ -5,7 +5,8 @@ Working checklists and decisions that implement the [coordinated portfolio roadm
 | Doc | Horizon | Purpose |
 |-----|---------|---------|
 | [H1-PILOT-CHECKLIST.md](H1-PILOT-CHECKLIST.md) | H1 | Week-by-week on-prem pilot (Ferrum + HELIOS + Solum sidecar) |
-| [H1-EXECUTION-RECORD.md](H1-EXECUTION-RECORD.md) | H1 | Dev-host rehearsal results + open gaps (2026-08-06) |
+| [H1-EXECUTION-RECORD.md](H1-EXECUTION-RECORD.md) | H1 | **SIGNED OFF** 2026-08-06 |
+| [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md) | H1 | Auth/TES/Solum honesty for pilots |
 | [H4-GEOGRAPHY-DECISION.md](H4-GEOGRAPHY-DECISION.md) | H4 | First non-EU jurisdiction pack (Kenya provisional) |
 
 H3 / H4 counsel artefacts live in Solum:

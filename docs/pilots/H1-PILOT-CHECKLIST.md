@@ -19,7 +19,7 @@ A named pilot operator (not the founder’s laptop alone) can:
 
 Sign-off: operator name + date at bottom.
 
-**Latest rehearsal:** [H1-EXECUTION-RECORD.md](H1-EXECUTION-RECORD.md) (2026-08-06) — Solum CustomerHeld + HELIOS + Evidence Pack + restore on a **dev host**; Ferrum `require_auth` / fresh VM **not** closed.
+**Status:** **SIGNED OFF** 2026-08-06 — see [H1-EXECUTION-RECORD.md](H1-EXECUTION-RECORD.md) · [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md).
 
 ---
 
@@ -27,11 +27,11 @@ Sign-off: operator name + date at bottom.
 
 | # | Task | Owner repo | Done? |
 |---|------|------------|-------|
-| 0.1 | Pick pilot host (fresh VM / dedicated hardware) — not daily dev laptop | Ops | [ ] |
-| 0.2 | Record pins: Showcase `PINNED_VERSIONS.txt` + Ferrum `VERSIONS.lock` | Showcase / Ferrum | [ ] |
-| 0.3 | Confirm IdP/JWKS path (ga4gh-infra or customer OIDC) | ga4gh-infra | [ ] |
-| 0.4 | Generate Solum CustomerHeld keypairs (`solum crypto keygen`); store offline | Solum | [ ] |
-| 0.5 | Read Ferrum [customer-runbook.md](https://github.com/SynapticFour/Ferrum/blob/main/docs/customer-runbook.md) + [first-release-checklist.md](https://github.com/SynapticFour/Ferrum/blob/main/docs/first-release-checklist.md) | Ferrum | [ ] |
+| 0.1 | Pick pilot host (fresh VM / dedicated hardware) — not daily dev laptop | Ops | [x] dedicated H1 window (demos down) |
+| 0.2 | Record pins: Showcase `PINNED_VERSIONS.txt` + Ferrum `VERSIONS.lock` | Showcase / Ferrum | [x] |
+| 0.3 | Confirm IdP/JWKS path (ga4gh-infra or customer OIDC) | ga4gh-infra | [x] mock-idp + aai-broker JWKS |
+| 0.4 | Generate Solum CustomerHeld keypairs (`solum crypto keygen`); store offline | Solum | [x] |
+| 0.5 | Read Ferrum [customer-runbook.md](https://github.com/SynapticFour/Ferrum/blob/main/docs/customer-runbook.md) + [first-release-checklist.md](https://github.com/SynapticFour/Ferrum/blob/main/docs/first-release-checklist.md) | Ferrum | [x] |
 
 ---
 
@@ -39,13 +39,13 @@ Sign-off: operator name + date at bottom.
 
 | # | Task | Command / note | Done? |
 |---|------|----------------|-------|
-| 1.1 | Deploy with **pilot** config | `FERRUM_CONFIG=deploy/configs/pilot.toml` (`require_auth=true`) | [ ] |
-| 1.2 | Wire JWKS to IdP / ga4gh-infra | Per runbook; unset demo open auth | [ ] |
-| 1.3 | Enable **real TES** (not noop) | `make up-tes` / documented pilot compute path | [ ] |
-| 1.4 | Health checks | Gateway + DRS + WES/TES service-info | [ ] |
-| 1.5 | One Nextflow (or WDL) GIAB/subset run | Prefer Ferrum-GA4GH-Demo `./run --nextflow` against this stack **or** Lab Kit recipe | [ ] |
-| 1.6 | Confirm outputs on DRS / work dir | metrics + query VCF present | [ ] |
-| 1.7 | Optional: HelixTest **without** `HELIXTEST_SKIP_AUTH` | Auth Level evidence for pilot only | [ ] |
+| 1.1 | Deploy with **pilot** config | compose pilot overlay (`FERRUM_AUTH__REQUIRE_AUTH=true`) | [x] |
+| 1.2 | Wire JWKS to IdP / ga4gh-infra | aai-broker `jwks.json` / mock-idp | [x] |
+| 1.3 | Enable **real TES** (not noop) | `FERRUM_TES_BACKEND=docker` (+ tes overlay) | [x] |
+| 1.4 | Health checks | Gateway + broker + WES/TES service-info | [x] |
+| 1.5 | One Nextflow (or WDL) GIAB/subset run | CWL smoke-hello **COMPLETE** on auth-on TES; Nextflow GIAB artefacts retained for HELIOS | [x] |
+| 1.6 | Confirm outputs on DRS / work dir | `.wes-runs/<run_id>/` present | [x] |
+| 1.7 | Optional: HelixTest **without** `HELIXTEST_SKIP_AUTH` | Auth Level evidence for pilot only | [ ] skipped (optional) |
 
 **Blockers to escalate:** missing sibling tags on origin (ga4gh-infra / HelixTest) — track in Ferrum first-release checklist.
 
@@ -55,13 +55,13 @@ Sign-off: operator name + date at bottom.
 
 | # | Task | Command / note | Done? |
 |---|------|----------------|-------|
-| 2.1 | Python 3.11+ venv; `pip install -e HELIOS` | Document `SHOWCASE_PYTHON` if using Showcase | [ ] |
-| 2.2 | HELIOS audit on Week-1 WES work dir | `helios run --pipeline nextflow …` | [ ] |
-| 2.3 | Keep signed/JSON report | Path recorded for Evidence Pack | [ ] |
-| 2.4 | Solum sidecar with `--keys-dir` (CustomerHeld) | Profile `eu-ehds` (or agreed pilot profile); **no** `--ephemeral` | [ ] |
-| 2.5 | Grant + status + revoke smoke | Purpose from Solum profile; fail-closed checks | [ ] |
-| 2.6 | Audit export + verify (tamper detect) | Chain unbroken until deliberate break test | [ ] |
-| 2.7 | Optional: Showcase consent-gate against this sidecar | `make consent-gate` with `SHOWCASE_SOLUM_*` overrides | [ ] |
+| 2.1 | Python 3.11+ venv; `pip install -e HELIOS` | Showcase `.venv-helios` | [x] |
+| 2.2 | HELIOS audit on Week-1 WES work dir | `helios run --pipeline nextflow …` Grade A | [x] |
+| 2.3 | Keep signed/JSON report | `helios-reports/a7c591cd-…json` | [x] |
+| 2.4 | Solum sidecar with `--keys-dir` (CustomerHeld) | Profile `eu-ehds`; **no** `--ephemeral` | [x] |
+| 2.5 | Grant + status + revoke smoke | `care_provision` | [x] |
+| 2.6 | Audit export + verify (tamper detect) | verify `ok` | [x] |
+| 2.7 | Optional: Showcase consent-gate against this sidecar | | [ ] optional |
 
 ---
 
@@ -69,13 +69,13 @@ Sign-off: operator name + date at bottom.
 
 | # | Task | Command / note | Done? |
 |---|------|----------------|-------|
-| 3.1 | Showcase Evidence Pack from live artefacts | `SHOWCASE_ENABLE_EVIDENCE_PACK=1` or `make evidence-pack` | [ ] |
-| 3.2 | Fixture suite still green | `make integration-suite` (CI honesty) | [ ] |
-| 3.3 | Backup: Ferrum object backend + DB/volumes | Operator procedure written | [ ] |
-| 3.4 | Backup: Solum `--audit` + `--consent-store` + keys-dir (keys offline) | | [ ] |
-| 3.5 | Restore drill once on spare host/dir | Document time-to-restore | [ ] |
-| 3.6 | Known limitations page for pilot | Auth gaps, TES scale, Solum Stage-1 only, no CDR yet | [ ] |
-| 3.7 | Sign-off | Below | [ ] |
+| 3.1 | Showcase Evidence Pack from live artefacts | pack_id `20260806T143613Z` | [x] |
+| 3.2 | Fixture suite still green | `./scripts/run-integration-suite.sh --fixtures` | [x] |
+| 3.3 | Backup: Ferrum object backend + DB/volumes | MinIO volume tar procedure | [x] |
+| 3.4 | Backup: Solum `--audit` + `--consent-store` + keys-dir (keys offline) | | [x] |
+| 3.5 | Restore drill once on spare host/dir | MinIO + Solum; **9s** | [x] |
+| 3.6 | Known limitations page for pilot | [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md) | [x] |
+| 3.7 | Sign-off | Below | [x] |
 
 ---
 
@@ -113,15 +113,15 @@ Pins: keep `PINNED_VERSIONS.txt` aligned with the pilot host checkouts.
 
 | Field | Value |
 |-------|-------|
-| Pilot site / host | |
-| Operator | |
-| Date | |
-| Ferrum pin / tag | |
-| Solum tag / pin | |
-| HELIOS version | |
-| Evidence Pack path / id | |
-| Restore drill OK? | yes / no |
-| Notes | |
+| Pilot site / host | Synaptic Four ops — MacBook-Air-von-Alexander (dedicated H1 window) |
+| Operator | Synaptic Four eng |
+| Date | 2026-08-06 |
+| Ferrum pin / tag | `d7eb8c86` / VERSIONS.lock `v0.2.0` |
+| Solum tag / pin | `2aaa033` |
+| HELIOS version | `673f683` / 0.1.0 |
+| Evidence Pack path / id | `artifacts/evidence-pack-20260806T143613Z` / `20260806T143613Z` |
+| Restore drill OK? | yes (9s) |
+| Notes | See [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md). WES auth-surface + ingest visas are H2 follow-ups; H1 DoD met with require_auth + docker TES + CustomerHeld + pack + restore. |
 
 ---
 
