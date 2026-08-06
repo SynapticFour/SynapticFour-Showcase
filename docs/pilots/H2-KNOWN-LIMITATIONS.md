@@ -3,7 +3,7 @@
 **Date:** 2026-08-06
 **Companion:** [H2-PILOT-CHECKLIST.md](H2-PILOT-CHECKLIST.md) · [H2-EXECUTION-RECORD.md](H2-EXECUTION-RECORD.md)
 
-H2 **spine v1** + **H2.1 Teeth** + **H2.2 Org CAP** + **H2.3 Ops polish** are signed. This is still **not** the full roadmap exit — see [H2-SECOND-PASS.md](H2-SECOND-PASS.md).
+**Full H2 exit signed** (spine v1 + H2.1–H2.4 + second-pass B–D). Outstanding items below are **documented**, not silent gaps.
 
 | Area | Status |
 |------|--------|
@@ -12,15 +12,18 @@ H2 **spine v1** + **H2.1 Teeth** + **H2.2 Org CAP** + **H2.3 Ops polish** are si
 | OIDC groups → Solum capabilities | **Closed (H2.2)** when sidecar `--org-iam-config` + JWKS — see [ADR 0002](../adr/0002-solum-org-iam-cap.md) |
 | Collector visa operator how-to | **Closed (H2.3)** — Edge account + IdP paths in [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md) §2.1 |
 | Ingest without `ferrum:collector` | Still **403** (correct); mock-idp Passports lack collector visa by design |
-| Thin health checks | **Closed (H2.3)** — gateway `/health` + optional Solum status curl; not Prometheus |
-| Solum KMS CLI/sidecar | **Closed (H2.4)** optional `--features aws-kms` — wrap-seed / `--wrapped-keypair` / `--wrapped-keys-dir`; not HSM |
+| Thin health checks | **Closed (H2.3)** — gateway `/health` + optional Solum status curl |
+| Observability (Prometheus/alerts) | **Closed** — blackbox + alert pack in [observability/](observability/) (not Ferrum `/metrics`) |
+| HELIOS clinical evidence | **Closed** — `CLIN-ACCESS-001` over Solum chain export |
+| Solum KMS CLI/sidecar | **Closed (H2.4)** optional `--features aws-kms` — AWS CMK envelope only; **on-prem CustomerHeld remains default** |
+| CLI CAP_* / org-IAM | **Intentional** — CLI `--capability` offline; org-IAM **sidecar-only** (ADR 0002 wontfix) |
 | Zeroize | **Best-effort** ZeroizeOnDrop on held seeds; not a TEE / not proof against memory dump |
-| CLI CAP_* | Still `--capability` (offline); org-IAM is sidecar-only — second pass decision |
 | SAML | ga4gh-infra: OIDC bridge only; SAML via Keycloak if demanded |
-| HELIOS clinical evidence types | **Second pass** |
-| Observability (Prometheus/alerts) | **Second pass** — thin curls only in H2.3 |
 | HelixTest Auth Level live | Optional; not required for this sign-off |
+| Kenya counsel / ODPC PRODUCTION | **Outstanding (H4)** — Vorprüfung is engineering prior art; real counsel still required |
+| Non-AWS cloud KMS adapters | **Outstanding** — Azure/Alibaba/Hetzner/custom use CustomerHeld files |
+| KMS EncryptionContext / IRSA | **Outstanding** — env credentials only; no AAD binding |
 
 ## Claims ban
 
-Do **not** claim: production SoR, EHDS certification, or “HSM-backed Solum” from this pack alone. Consent enforcement across Ferrum applies **only** when Solum integration is configured and bindings resolve. Org CAP applies **only** when sidecar org-IAM is enabled.
+Do **not** claim: production SoR, EHDS/ODPC certification, or “HSM-backed Solum” from this pack alone. Consent enforcement across Ferrum applies **only** when Solum integration is configured and bindings resolve. Org CAP applies **only** when sidecar org-IAM is enabled. AWS KMS does **not** make Solum AWS-only — on-prem CustomerHeld is the default/target.

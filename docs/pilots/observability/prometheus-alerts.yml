@@ -1,0 +1,45 @@
+# H2 baseline Prometheus alert rules (illustrative)
+
+# Pair with blackbox probes from README.md. Thresholds are starting points —
+# tune per site. On-prem default; cloud-agnostic.
+
+groups:
+  - name: synapticfour-h2-baseline
+    rules:
+      - alert: FerrumGatewayDown
+        expr: probe_success{job="ferrum-health"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Ferrum gateway /health probe failing"
+
+      - alert: SolumSidecarUnreachable
+        expr: probe_success{job="solum-sidecar-status"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Solum sidecar consent status probe failing"
+
+      - alert: ProxyHttp5xxHigh
+        expr: |
+          sum(rate(nginx_http_requests_total{status=~"5.."}[5m]))
+            /
+          clamp_min(sum(rate(nginx_http_requests_total[5m])), 1)
+            > 0.05
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Reverse proxy 5xx rate > 5% (adapt metric name to site proxy)"
+
+      # Degraded / disk: often scraped via script exporter or JSON metric —
+      # keep as documentation until site wires a JSON→metric bridge.
+      - alert: FerrumHealthDegradedDoc
+        expr: vector(0) # placeholder — replace with site JSON exporter
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Wire /health status!=ok via JSON exporter; see observability README"

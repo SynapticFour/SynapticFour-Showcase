@@ -116,4 +116,4 @@ if [[ -n "${SOLUM_SIDECAR:-}" && -n "${SOLUM_TOKEN:-}" ]]; then
 fi
 ```
 
-**Full Prometheus / alert pack:** deferred to second pass ([H2-SECOND-PASS.md](H2-SECOND-PASS.md) §B). Do not claim SRE-grade observability from health curls alone.
+**Full Prometheus / alert pack:** [observability/README.md](observability/README.md) + [prometheus-alerts.yml](observability/prometheus-alerts.yml). Prefer blackbox probes of `/health` and sidecar status over inventing Ferrum `/metrics`. Do not claim SRE-grade observability from health curls alone.

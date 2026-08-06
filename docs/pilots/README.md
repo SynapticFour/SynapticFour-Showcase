@@ -11,7 +11,8 @@ Working checklists and decisions that implement the [coordinated portfolio roadm
 | [H2-EXECUTION-RECORD.md](H2-EXECUTION-RECORD.md) | H2 | **SIGNED OFF** spine v1 2026-08-06 |
 | [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md) | H2 | Remaining full-H2 gaps |
 | [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md) | H2 / H2.3 | TLS, collector visa path, thin metrics, backup |
-| [H2-SECOND-PASS.md](H2-SECOND-PASS.md) | H2 exit | Backlog: KMS, Prometheus, HELIOS clinical, CLI org-IAM |
+| [H2-SECOND-PASS.md](H2-SECOND-PASS.md) | H2 exit | Closed B–D; outstanding (counsel, non-AWS KMS, …) documented |
+| [observability/](observability/) | H2 exit | Prometheus blackbox + alert baseline |
 | [ADR 0001 consent access](../adr/0001-solum-ferrum-consent-access.md) | H2.1 | Solum revoke → Ferrum DRS/WES deny |
 | [ADR 0002 org IAM CAP](../adr/0002-solum-org-iam-cap.md) | H2.2 | OIDC groups → Solum CAP_* |
 | [H4-GEOGRAPHY-DECISION.md](H4-GEOGRAPHY-DECISION.md) | H4 | First non-EU jurisdiction pack (Kenya provisional) |

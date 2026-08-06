@@ -222,14 +222,14 @@ Horizon language (not calendar promises): **H0 now**, **H1 pilot-ready**, **H2 p
 | **1c. H2.1 Teeth** | [adr/0001-solum-ferrum-consent-access.md](adr/0001-solum-ferrum-consent-access.md) · `make h21-teeth` | **SIGNED OFF** — Solum revoke → Ferrum DRS/WES 403 when configured |
 | **1d. H2.2 Org CAP** | [adr/0002-solum-org-iam-cap.md](adr/0002-solum-org-iam-cap.md) · `make h22-org-cap` | **SIGNED OFF** — sidecar OIDC groups → CAP_* when org-IAM enabled |
 | **1e. H2.3 Ops polish** | [pilots/H2-OPS-RUNBOOK.md](pilots/H2-OPS-RUNBOOK.md) · `make h23-ops-polish` | **SIGNED OFF** — collector visa path + thin health checks |
-| **1f. H2.4 KMS** | Solum `--features aws-kms` · [H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) §A | **SIGNED OFF** — CLI wrap-seed / sidecar `--wrapped-keys-dir` (envelope, not HSM) |
-| **1g. H2 second pass (remainder)** | [pilots/H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) | Prometheus, HELIOS clinical, CLI org-IAM decision |
+| **1f. H2.4 KMS** | Solum `--features aws-kms` · [H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) §A | **SIGNED OFF** — optional AWS CMK envelope; **on-prem CustomerHeld default** |
+| **1g. H2 exit (second pass B–D)** | [pilots/H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) · [observability/](pilots/observability/) · HELIOS `CLIN-ACCESS-001` | **SIGNED OFF** — Prometheus blackbox/alerts; clinical HELIOS check; CLI org-IAM wontfix |
 | **2. H3 design** | Solum [ADR 0001](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0001-openehr-cdr-and-migration.md) + [ADR 0002 EHRbase](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0002-cdr-engine-ehrbase.md) + [MIGRATION-STRANGLER.md](https://github.com/SynapticFour/Solum/blob/main/docs/MIGRATION-STRANGLER.md) | Architecture + engine choice accepted; CDR coding still deferred |
 | **3. H4 geography** | [pilots/H4-GEOGRAPHY-DECISION.md](pilots/H4-GEOGRAPHY-DECISION.md) · Solum [KENYA-K1-BRIEF](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md) · [VORPRUEFUNG](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-VORPRUEFUNG.md) · [SEND](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md) | Kenya first; **provisional** profile after non-counsel Vorprüfung; real counsel still required |
 
 SaaS (H5) stays documentation + tenancy hygiene until a customer pays for managed hosting.
 
-**Immediate execution order:** send Kenya K1 brief to counsel ([send checklist](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md)); timebox EHRbase compose spike; full H2 exit via [H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) when scheduled.
+**Immediate execution order:** send Kenya K1 brief to counsel ([send checklist](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md)); timebox EHRbase compose spike. **H2 exit is signed** — remaining items are H4 counsel and optional hardening (see [H2-KNOWN-LIMITATIONS.md](pilots/H2-KNOWN-LIMITATIONS.md)).
 
 ---
 

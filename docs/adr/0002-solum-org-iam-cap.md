@@ -2,7 +2,7 @@
 
 **Status:** Accepted
 **Date:** 2026-08-06
-**Horizon:** H2.2 (not full H2 exit)
+**Horizon:** H2.2 Org CAP; CLI decision closed as **wontfix** for H2 exit (2026-08-06)
 
 ## Context
 
@@ -19,17 +19,19 @@ Optional **org-IAM mode** on `solum-sidecar`:
 | Mapping | Local TOML (`claim_path` + `[[map]]` rows) — ADS pattern, not ADS tables |
 | Fail-closed | Missing Bearer / bad JWT / no matching groups → 401/403 |
 | Transport | Sidecar token still required |
-| CLI | Keeps `--capability` (offline ops) |
+| CLI | Keeps `--capability` (offline ops) — **intentional**; no CLI JWT/org-IAM for H2 |
 
-Example mapping: Solum `config/org-iam/pilot-groups.toml`.
+### CLI org-IAM (H2 exit decision)
+
+**wontfix / intentional:** production IdP-backed CAP_* lives on the sidecar only. Offline CLI remains explicit `--capability` for break-glass and air-gapped ops. Sites that need fail-closed org IAM use the HTTP sidecar path.
 
 ## Consequences
 
 - Integrators must issue IdP groups that match the site mapping file.
 - ADS dataset grants and Solum CAP_* remain separate planes.
-- Full H2 still needs KMS CLI/sidecar wiring and observability.
+- Full H2 exit does **not** require CLI JWT wiring.
 
 ## Links
 
 - Solum pin: `545711c` — [SIDECAR-INTEGRATION.md](https://github.com/SynapticFour/Solum/blob/545711c3c431612320f15ccd5da7d780c1061acf/docs/customer/SIDECAR-INTEGRATION.md)
-- Pilots: [H2-KNOWN-LIMITATIONS.md](../pilots/H2-KNOWN-LIMITATIONS.md)
+- Pilots: [H2-KNOWN-LIMITATIONS.md](../pilots/H2-KNOWN-LIMITATIONS.md) · [H2-SECOND-PASS.md](../pilots/H2-SECOND-PASS.md) §D

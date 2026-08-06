@@ -1,24 +1,22 @@
-# H2 — Second pass (unblock remaining exit items)
+# H2 — Second pass (exit items)
 
-**Purpose:** Single backlog so a later eng pass can close full roadmap H2 without rediscovering scope.
-**Status:** Documented 2026-08-06 — **not** started as implementation.
-**Depends on:** H2 spine v1 + H2.1 Teeth + H2.2 Org CAP + **H2.3 Ops polish** (docs).
+**Purpose:** Track what closed the full roadmap H2 exit vs what remains outstanding.
+**Status:** **B–D closed for H2 exit** (2026-08-06). Outstanding non-exit items listed below.
+**Depends on:** H2 spine v1 + H2.1–H2.4.
 **Not this pass:** H3 CDR coding, Kenya PRODUCTION flip (H4 / counsel), SaaS (H5).
-
-Nothing here is blocked by an external gate except where noted. Items are **deferred by priority**.
 
 ---
 
-## Order of attack (recommended)
+## Workstream status
 
-| # | Workstream | Owner | Unblocks | Effort (rough) |
-|---|------------|-------|----------|----------------|
-| A | Solum KMS CLI + sidecar wiring | Solum | Honest “KMS path” for buyers who require AWS KMS | **Done (H2.4)** |
-| B | Observability baseline (metrics + alerts) | Ferrum + Solum sidecar | Unsupervised on-prem without Synaptic Four on laptop | Few days |
-| C | HELIOS clinical access evidence types | HELIOS + Solum export | Continuous clinical-plane evidence in packs | 1–2 weeks (design + ship) |
-| D | CLI org-IAM (optional) | Solum | Same CAP authority on offline CLI as sidecar | Days — **product decision first** |
+| # | Workstream | Status |
+|---|------------|--------|
+| A | Solum KMS CLI + sidecar (`aws-kms`) | **Done (H2.4)** — AWS CMK envelope only; on-prem CustomerHeld remains default |
+| B | Observability baseline (metrics + alerts) | **Done** — [observability/README.md](observability/README.md) + [prometheus-alerts.yml](observability/prometheus-alerts.yml) |
+| C | HELIOS clinical access evidence | **Done** — `CLIN-ACCESS-001` over `solum-audit-helios-chain-v1` |
+| D | CLI org-IAM | **wontfix / intentional** — sidecar-only org-IAM; CLI keeps `--capability` (offline) |
 
-Optional / pull-only: HelixTest Auth Level live; SAML (Keycloak if demanded).
+Optional / pull-only (not required for H2 exit): HelixTest Auth Level live; SAML (Keycloak if demanded).
 
 ---
 
@@ -26,60 +24,63 @@ Optional / pull-only: HelixTest Auth Level live; SAML (Keycloak if demanded).
 
 | Fact | Detail |
 |------|--------|
-| Shipped | Feature `aws-kms`: CLI `wrap-seed` / `--wrapped-keypair`; sidecar `--wrapped-keys-dir`; `WrappedSeedFile` + mocked `load_aws_kms_from_dir` tests |
-| Toolchain | Feature build needs **rustc ≥ 1.94.1**; default Solum MSRV stays 1.91.1 without the feature |
-| Credentials | Env keys (`AWS_REGION`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`); not full IRSA/`aws-config` |
-| Honesty | Envelope + in-process unwrap (`ZeroizeOnDrop`); **not** HSM/TEE/FIPS |
-
-Remaining second-pass items: B–D below.
+| Shipped | Feature `aws-kms`: CLI `wrap-seed` / `--wrapped-keypair`; sidecar `--wrapped-keys-dir` |
+| Default | **On-prem CustomerHeld** files — cloud-agnostic; Azure/Alibaba/Hetzner/custom use files until adapters exist |
+| Honesty | Envelope + in-process unwrap; **not** HSM/TEE; not an AWS-only product |
 
 ---
 
-## B — Observability baseline
+## B — Observability baseline — **DONE**
 
 | Fact | Detail |
 |------|--------|
-| Today | Gateway `/health` (+ clock/disk fields); sidecar stdout + audit files; reverse-proxy access logs |
-| Gap | No Prometheus scrape contract, no alert pack, no documented “red/yellow” for consent/KMS failures |
-| Done when | Documented scrape targets + 3–5 alerts (gateway down, health degraded, sidecar unreachable, consent status errors rate, disk low); optional `/metrics` if already cheap — prefer thin over perfect |
-| Parallel with | H2.3 thin-metrics section already lists curl checks; second pass adds scrape + alert YAML or Compose sidecar |
-
-**Entry points:** Ferrum `GET /health`; Solum sidecar token-gated status; Showcase ops runbook § Observability.
+| Shipped | Blackbox scrape guidance + 3–5 alert rules in [observability/](observability/) |
+| Honesty | Prefer blackbox over inventing Ferrum `/metrics`; not an SRE platform |
+| Cloud | Same pack on bare metal / any cloud — only URLs change |
 
 ---
 
-## C — HELIOS clinical evidence types
+## C — HELIOS clinical evidence — **DONE**
 
 | Fact | Detail |
 |------|--------|
-| Today | HELIOS genomic / pipeline evidence; Solum Stage-1 artefacts optional in Evidence Pack |
-| Gap | No versioned “clinical access / consent decision” evidence type exported from Solum into HELIOS/Showcase packs |
-| Done when | Schema + Solum export (grant/revoke/status decision events) + Showcase Evidence Pack role; honesty: technical evidence ≠ certification |
-| Prefer after | H3 export schemas stabilize — can start design now, avoid double rewrite |
-
-**Entry points:** HELIOS check/report schemas; Solum audit.jsonl; Showcase `evidence_pack.py`.
+| Shipped | HELIOS check `CLIN-ACCESS-001` (`helios.checks.clinical_access`) |
+| Input | `parameters.solum_audit_export` or artefact matching `*solum-audit*.json` / `*-helios-chain.json` |
+| Format | `solum-audit-helios-chain-v1` (Solum `FileAuditStore::export_helios_json`) |
+| Honesty | Technical evidence ≠ ODPC/EHDS certification |
 
 ---
 
-## D — CLI org-IAM (product decision)
+## D — CLI org-IAM — **wontfix (intentional)**
 
 | Fact | Detail |
 |------|--------|
-| Today | Sidecar org-IAM (H2.2) maps OIDC groups → CAP_*; CLI keeps `--capability` for offline |
-| Gap | Offline CLI can still assert CAP without JWT |
-| Decision gate | Do operators need fail-closed JWT on CLI, or is sidecar-only enough for production spine? |
-| Done when | If yes: CLI accepts `--org-iam-config` + Bearer/JWKS (or refuses CAP flags when config set); tests + docs. If no: close this row as **wontfix / intentional** in limitations |
+| Decision | Production org CAP lives on the **sidecar** (`--org-iam-config` + JWKS). Offline CLI keeps explicit `--capability`. |
+| Rationale | ADR 0002; operators who need IdP-backed CAP use HTTP integration; CLI is break-glass / offline. |
+| Closed | Limitations row updated; no CLI JWT work planned for H2. |
+
+---
+
+## Outstanding after H2 exit (documented, not blocking)
+
+| Item | Why still open |
+|------|----------------|
+| Kenya counsel verification / ODPC PRODUCTION flip | H4 — external counsel; Vorprüfung is engineering prior art only |
+| EncryptionContext / AAD on AWS KMS unwrap | Hardening; optional buyers |
+| IRSA / `aws-config` credential chain | Env keys only today |
+| Ferrum native Prometheus `/metrics` | Prefer blackbox until a buyer needs counters |
+| Azure Key Vault / Alibaba KMS / other cloud KMS providers | Use CustomerHeld files; adapters not wired |
+| HelixTest Auth Level live | Optional; fixture gate remains via Showcase suite |
+| SAML | Keycloak bridge if demanded |
 
 ---
 
 ## Sign-off criteria for “full H2 exit”
 
-Update [H2-PILOT-CHECKLIST.md](H2-PILOT-CHECKLIST.md) 2.7 / remaining notes and [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md) only when:
-
-1. A shipped (or explicit “CustomerHeld-only sites OK” customer waiver recorded), **and**
-2. B shipped (thin metrics + alerts), **and**
-3. C either shipped **or** deferred with a dated HELIOS ticket and limitations row updated, **and**
-4. D decided (shipped or wontfix).
+1. ~~A shipped~~ **Done**
+2. ~~B shipped~~ **Done**
+3. ~~C shipped~~ **Done**
+4. ~~D decided~~ **wontfix / intentional**
 
 Claim language: **full H2 exit** — operator runbook + pack with teeth across planes. Still do **not** claim EHDS/ODPC certification or HSM.
 
@@ -87,7 +88,7 @@ Claim language: **full H2 exit** — operator runbook + pack with teeth across p
 
 ## Related
 
-- [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md) — H2.3 collector path + thin metrics
+- [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md)
 - [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md)
 - [COORDINATED-PORTFOLIO-ROADMAP.md](../COORDINATED-PORTFOLIO-ROADMAP.md) §7
-- Kenya counsel (parallel, not H2): Solum [KENYA-K1-BRIEF.md](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md)
+- Kenya counsel: Solum [KENYA-K1-BRIEF.md](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md)
