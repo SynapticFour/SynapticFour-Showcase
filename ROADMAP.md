@@ -13,6 +13,7 @@
 - Strukturiertes Run-Log (`artifacts/run.jsonl`)
 
 📋 **Geplant:**
+- Coordinated portfolio H1–H4 — siehe [`docs/COORDINATED-PORTFOLIO-ROADMAP.md`](docs/COORDINATED-PORTFOLIO-ROADMAP.md)
 - PDF/HTML-Export des Showcase-Reports (pandoc-basiert, optional)
 - Erweiterung der vorgenerierten Demo-Artefakte (mehr Szenarien, mehr Produkte)
 - Beacon v2 Demo-Szenario als eigenständiger Showcase-Pfad
@@ -83,6 +84,7 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 - Structured run log (`artifacts/run.jsonl`)
 
 📋 **Planned:**
+- Coordinated portfolio H1–H4 — see [`docs/COORDINATED-PORTFOLIO-ROADMAP.md`](docs/COORDINATED-PORTFOLIO-ROADMAP.md)
 - PDF/HTML export of showcase report
 - Expanded pre-generated demo artefacts
 - Beacon v2 demo scenario as standalone showcase path

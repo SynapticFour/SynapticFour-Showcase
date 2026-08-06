@@ -3,6 +3,7 @@
 Start here:
 
 - [**Overview — offerings, components, tested constellations**](overview.md)
+- [**Coordinated portfolio roadmap**](../COORDINATED-PORTFOLIO-ROADMAP.md) (on-prem first; Solum dual-track; SaaS-ready)
 - [Integration verification — re-run our claims](integration-verification.md)
 - [FAQ](faq.md)
 - [Which path fits me?](which-path.md)

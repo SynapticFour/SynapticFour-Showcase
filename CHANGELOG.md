@@ -6,6 +6,7 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Added
 
+- **Coordinated portfolio roadmap** — `docs/COORDINATED-PORTFOLIO-ROADMAP.md` (H0–H5 on-prem first; Solum dual-track; SaaS-ready backseat).
 - **Customer integration suite** — `scripts/run-integration-suite.sh`, `make integration-suite`, published `demo/verification/`, overview + verification docs.
 - **W4 Phase B** — optional Ferrum `--gatk-rs` via `run-gatk-rs-wes.sh` / `SHOWCASE_ENABLE_GATK_RS_WES` (soft-fail; does not replace Broad Nextflow).
 - **W4 gatk-rs / S4MP (Phase A)** — soft-fail `run-gatk-rs-smoke.sh` + `attach-s4mp-evidence.sh`, fixtures, Evidence Pack roles, honesty doc; opt-in via `SHOWCASE_ENABLE_GATK_RS` / `SHOWCASE_ENABLE_S4MP`.
