@@ -5,6 +5,7 @@ helios-reports/
 *.key
 
 .venv/
+.venv-helios/
 __pycache__/
 *.pyc
 .DS_Store

@@ -107,15 +107,15 @@ Note: script name is `run-consent-gate.sh` (plan typo “phenofloat” corrected
 | Step | Where | Work | Status |
 |------|-------|------|--------|
 | 1 | Decision memo | Default path stays Nextflow GIAB; gatk-rs is `SHOWCASE_ENABLE_GATK_RS=1` optional | Done — `docs/for-customers/gatk-rs-s4mp.md` |
-| 2 | Ferrum-GA4GH-Demo | Workflow/TRS entry that invokes gatk-rs binary or container at pin | **Deferred (Phase B)** — products Alpha/unstable; `wes_integration: not_wired` |
-| 3 | Showcase | Script stage + pin `gatk-rs=<sha>`; soft-fail smoke (not HELIOS-wrapped WES) | Done — `run-gatk-rs-smoke.sh`, fixtures, soft-fail |
+| 2 | Ferrum-GA4GH-Demo | Workflow/TRS entry that invokes gatk-rs binary or container at pin | Done (Phase B) — `./run --gatk-rs` + `tiny_hc_gatk_rs.nf`; soft-skip if image missing |
+| 3 | Showcase | Script stage + pin `gatk-rs=<sha>`; soft-fail smoke; optional WES wrapper | Done — `run-gatk-rs-smoke.sh`, `run-gatk-rs-wes.sh` |
 | 4 | S4MP | Optional: attach S4MP method report into Evidence Pack MANIFEST (link/hash), not execute as WES | Done — `attach-s4mp-evidence.sh`, fixtures |
 
 **Exit (Phase A):** Optional soft-fail path documented; Evidence Pack roles `gatk_rs_smoke` / `s4mp_port_diff`; default Nextflow untouched. ✅
 
-**Exit (Phase B, later):** Optional Ferrum WES entry for gatk-rs under HELIOS when Demo is ready — do not block W0–W3.
+**Exit (Phase B):** Optional Ferrum `./run --gatk-rs` under Showcase soft wrapper; integration suite + `demo/verification/` for customer re-run. ✅
 
-**Estimate:** Demo/Ferrum-side heavier (~1–2 weeks); Showcase Phase A wiring done with soft-fail.
+Also: `scripts/run-integration-suite.sh` + customer overview (`docs/for-customers/overview.md`).
 
 ---
 

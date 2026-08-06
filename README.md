@@ -129,7 +129,9 @@ Ein kleines Team aus Stuttgart, spezialisiert auf Bioinformatik-Infrastruktur, m
 
 | Ich möchte… | →  |
 |-------------|-----|
-| Ergebnisse sehen, ohne etwas zu installieren | [demo/results/](demo/results/) |
+| Überblick: Angebote, Komponenten, getestete Konstellationen | [Kunden-Übersicht](docs/for-customers/overview.md) |
+| Claims lokal nachprüfen (Fixture-Suite + Repo-Evidenz) | [Integration verification](docs/for-customers/integration-verification.md) · [`demo/verification/`](demo/verification/) |
+| Ergebnisse sehen, ohne etwas zu installieren | [demo/results/](demo/results/) · [demo/verification/](demo/verification/) |
 | Die Demo lokal laufen lassen | [DEMO.md](DEMO.md) |
 | Verstehen welcher Teil des Stacks zu mir passt | [Welcher Einstieg passt zu mir?](docs/for-customers/which-path.md) |
 | Als Technical Lead tief evaluieren | [Technical Evaluation Kit](docs/for-evaluators/technical-evaluation-kit.md) |
@@ -289,7 +291,9 @@ Ferrum: BUSL-1.1 (free for permitted non-commercial research, Apache-2.0 after 4
 
 | I want to… | →  |
 |------------|-----|
-| See results without installing anything | [demo/results/](demo/results/) |
+| See offerings, components, tested constellations | [Customer overview](docs/for-customers/overview.md) |
+| Re-run our claims locally (fixture suite + repo evidence) | [Integration verification](docs/for-customers/integration-verification.md) · [`demo/verification/`](demo/verification/) |
+| See results without installing anything | [demo/results/](demo/results/) · [demo/verification/](demo/verification/) |
 | Run the demo locally | [DEMO.md](DEMO.md) |
 | Understand which part of the stack fits my problem | [Which path fits me?](docs/for-customers/which-path.md) |
 | Evaluate deeply as technical lead | [Technical Evaluation Kit](docs/for-evaluators/technical-evaluation-kit.md) |

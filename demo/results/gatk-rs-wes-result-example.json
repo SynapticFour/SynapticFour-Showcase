@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "stage": "gatk_rs_wes",
+  "generated_at": "2026-08-06T12:33:46.883671Z",
+  "status": "skipped",
+  "reason": "demo_soft_skip",
+  "demo_root": "/Users/SynapticFour/devel/SynapticFour/SynapticFour-Showcase/../Ferrum-GA4GH-Demo",
+  "wes_integration": "optional_ferrum_ga4gh_demo",
+  "honesty": "Optional Ferrum-GA4GH-Demo ./run --gatk-rs path (Alpha). Default Showcase golden path remains --nextflow + Broad GATK. Soft-skip/fail is expected when the gatk-rs image is missing or the caller is unstable.",
+  "note": "Demo soft-skipped gatk-rs path",
+  "demo_result": {
+    "schema_version": 1,
+    "stage": "gatk_rs_wes",
+    "generated_at": "2026-08-06T12:33:46.831081Z",
+    "status": "skipped",
+    "reason": "image_missing",
+    "image": "gatkr/gatk-rs:latest",
+    "soft": true,
+    "honesty": "Optional gatk-rs WES path soft-skipped: Docker image not present. Default Ferrum Nextflow + Broad GATK path is unchanged. gatk-rs is Alpha \u2014 absence of the image is not a Ferrum product failure."
+  }
+}

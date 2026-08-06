@@ -82,11 +82,11 @@ out = {
   "binary_or_image": bin_path or None,
   "vcf": vcf_name or None,
   "pin_sha": pin_sha or None,
-  "wes_integration": "not_wired",
+  "wes_integration": "optional_via_run_gatk_rs_wes",
   "honesty": (
     "gatk-rs Alpha smoke only — tiny fixture HC, not GIAB/clinical equivalence. "
     "Default Showcase WES remains Ferrum Nextflow + Broad GATK. "
-    "Ferrum-GA4GH-Demo gatk-rs workflow is deferred (Phase B)."
+    "Optional Ferrum ./run --gatk-rs is available via run-gatk-rs-wes.sh (soft-skip if image missing)."
   ),
   "note": note or None,
 }

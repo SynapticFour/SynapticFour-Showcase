@@ -126,6 +126,21 @@ SHOWCASE_ENABLE_GATK_RS=1 SHOWCASE_ENABLE_S4MP=1 make golden-path
 Default Nextflow GIAB path unchanged. Ferrum WES + gatk-rs deferred (Phase B).
 → [gatk-rs / S4MP honesty](docs/for-customers/gatk-rs-s4mp.md)
 
+### Customer verification suite (claims / integrations)
+
+```bash
+# No Docker — same checks CI runs; publishes demo/verification/
+make integration-suite
+
+# Opt-in live soft stages (gatk-rs smoke, S4MP, Solum, consent, …)
+./scripts/run-integration-suite.sh --live
+
+# Full genomic golden path (long)
+./scripts/run-integration-suite.sh --live golden-path
+```
+
+→ [Overview](docs/for-customers/overview.md) · [Integration verification](docs/for-customers/integration-verification.md) · [`demo/verification/`](demo/verification/)
+
 **Ergebnisse:**
 
 | Artefakt | Bedeutung |

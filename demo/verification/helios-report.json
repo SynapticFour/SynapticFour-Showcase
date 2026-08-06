@@ -1,0 +1,13 @@
+{
+  "run_id": "00000000-0000-4000-8000-00000000c1a1",
+  "pipeline_name": "tiny_hc_nextflow",
+  "executor": "nextflow",
+  "checks": [
+    {
+      "check_id": "SEC-CONTAINER-001",
+      "status": "pass",
+      "message": "ok",
+      "evidence": {}
+    }
+  ]
+}

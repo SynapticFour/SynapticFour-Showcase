@@ -47,6 +47,7 @@ HELIXTEST_JSON="${SHOWCASE_HELIXTEST_JSON:-}"
 SOLUM_RESULT="${SHOWCASE_SOLUM_RESULT:-}"
 CONSENT_GATE="${SHOWCASE_CONSENT_GATE_JSON:-}"
 GATK_RS_SMOKE="${SHOWCASE_GATK_RS_SMOKE_JSON:-}"
+GATK_RS_WES="${SHOWCASE_GATK_RS_WES_JSON:-}"
 S4MP_EVIDENCE="${SHOWCASE_S4MP_EVIDENCE_JSON:-}"
 S4MP_REPORT="${SHOWCASE_S4MP_REPORT:-}"
 SHOWCASE_REPORT_JSON="${SHOWCASE_REPORT:-$SHOWCASE_ROOT/showcase-report.json}"
@@ -208,6 +209,11 @@ else
   elif [[ -z "$GATK_RS_SMOKE" && -f "$SHOWCASE_ROOT/demo/results/gatk-rs-smoke-result-example.json" ]]; then
     GATK_RS_SMOKE="$SHOWCASE_ROOT/demo/results/gatk-rs-smoke-result-example.json"
   fi
+  if [[ -z "$GATK_RS_WES" && -f "$SHOWCASE_ROOT/artifacts/gatk-rs-wes/gatk-rs-wes-result.json" ]]; then
+    GATK_RS_WES="$SHOWCASE_ROOT/artifacts/gatk-rs-wes/gatk-rs-wes-result.json"
+  elif [[ -z "$GATK_RS_WES" && -f "$SHOWCASE_ROOT/demo/results/gatk-rs-wes-result-example.json" ]]; then
+    GATK_RS_WES="$SHOWCASE_ROOT/demo/results/gatk-rs-wes-result-example.json"
+  fi
   if [[ -z "$S4MP_EVIDENCE" && -f "$SHOWCASE_ROOT/artifacts/s4mp/s4mp-evidence.json" ]]; then
     S4MP_EVIDENCE="$SHOWCASE_ROOT/artifacts/s4mp/s4mp-evidence.json"
   elif [[ -z "$S4MP_EVIDENCE" && -f "$SHOWCASE_ROOT/demo/results/s4mp-evidence-example.json" ]]; then
@@ -253,6 +259,7 @@ ARGS=(
 [[ -n "${SOLUM_RESULT:-}" && -f "$SOLUM_RESULT" ]] && ARGS+=(--solum-result "$SOLUM_RESULT")
 [[ -n "${CONSENT_GATE:-}" && -f "$CONSENT_GATE" ]] && ARGS+=(--consent-gate "$CONSENT_GATE")
 [[ -n "${GATK_RS_SMOKE:-}" && -f "$GATK_RS_SMOKE" ]] && ARGS+=(--gatk-rs-smoke "$GATK_RS_SMOKE")
+[[ -n "${GATK_RS_WES:-}" && -f "$GATK_RS_WES" ]] && ARGS+=(--gatk-rs-wes "$GATK_RS_WES")
 [[ -n "${S4MP_EVIDENCE:-}" && -f "$S4MP_EVIDENCE" ]] && ARGS+=(--s4mp-evidence "$S4MP_EVIDENCE")
 [[ -n "${S4MP_REPORT:-}" && -f "$S4MP_REPORT" ]] && ARGS+=(--s4mp-report "$S4MP_REPORT")
 [[ -n "${SHOWCASE_REPORT_JSON:-}" && -f "$SHOWCASE_REPORT_JSON" ]] && ARGS+=(--showcase-report "$SHOWCASE_REPORT_JSON")

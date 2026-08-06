@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "suite_kind": "synapticfour-showcase-integration-suite",
+  "mode": "fixtures",
+  "generated_at": "2026-08-06T12:48:09.112259Z",
+  "pins": {
+    "Ferrum-GA4GH-Demo": "f1a0436465be8bcf0b946750231c3ea88664fb49",
+    "HELIOS": "af1c5a5e58c7ff53bec1a40c5351e6dbb8c0de4f",
+    "bioresearch-assistant": "08cefef8afb9b4f2f1b81ea599f0b57dfa39b17b",
+    "Solum-Demo": "08462bda1ed6306662541fff003856137ea9663d",
+    "Solum-tag": "stage1-baseline-sidecar-custody-2026-08-01",
+    "HelixTest": "725ea7f2c03aba70384846723b75eedfefac0262",
+    "gatk-rs": "4dce5e14b1273f502d811c2c84274295575201b2",
+    "S4MP": "fc39fb433d521c91890d038c7b1c513cccf18fb3"
+  },
+  "stages": [
+    {
+      "id": "ci_check",
+      "status": "ok",
+      "hard": true,
+      "detail": null,
+      "at": "2026-08-06T12:48:09.078934Z"
+    }
+  ],
+  "summary": {
+    "stages_total": 1,
+    "hard_failed": 0,
+    "soft_issues": 0,
+    "ok": true
+  },
+  "honesty": {
+    "proves": [
+      "Fixture spine scripts compile and produce expected Evidence Pack roles",
+      "Documented opt-in integrations can be re-run locally by customers",
+      "Soft stages record skip/fail honestly when Alpha products are unavailable"
+    ],
+    "does_not_prove": [
+      "Formal certification, EHDS/DSGVO compliance, or legal consent validity",
+      "gatk-rs clinical/GIAB equivalence to Broad GATK",
+      "S4MP port certification (heuristic map; certify stub)",
+      "That a customer production deployment matches this demo environment"
+    ],
+    "docs": [
+      "docs/for-customers/overview.md",
+      "docs/for-customers/integration-verification.md",
+      "docs/for-customers/evidence-pack.md",
+      "docs/for-customers/gatk-rs-s4mp.md"
+    ]
+  }
+}

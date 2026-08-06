@@ -6,7 +6,9 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Added
 
-- **W4 gatk-rs / S4MP (Phase A)** — soft-fail `run-gatk-rs-smoke.sh` + `attach-s4mp-evidence.sh`, fixtures, Evidence Pack roles, honesty doc; opt-in via `SHOWCASE_ENABLE_GATK_RS` / `SHOWCASE_ENABLE_S4MP`. Ferrum WES gatk-rs workflow deferred (Phase B).
+- **Customer integration suite** — `scripts/run-integration-suite.sh`, `make integration-suite`, published `demo/verification/`, overview + verification docs.
+- **W4 Phase B** — optional Ferrum `--gatk-rs` via `run-gatk-rs-wes.sh` / `SHOWCASE_ENABLE_GATK_RS_WES` (soft-fail; does not replace Broad Nextflow).
+- **W4 gatk-rs / S4MP (Phase A)** — soft-fail `run-gatk-rs-smoke.sh` + `attach-s4mp-evidence.sh`, fixtures, Evidence Pack roles, honesty doc; opt-in via `SHOWCASE_ENABLE_GATK_RS` / `SHOWCASE_ENABLE_S4MP`.
 - **W3 Consent gate** — `scripts/run-consent-gate.sh`, allow/deny before WES, fixtures, customer honesty doc; golden-path opt-in via `SHOWCASE_ENABLE_CONSENT_GATE`.
 - **W2 Evidence Pack** — `scripts/evidence-pack.sh` / `evidence_pack.py`, `make evidence-pack` / `evidence-pack-fixtures`, customer honesty doc, HelixTest gate doc, CI fixture pack.
 - **W0 complete / W1 landed** — Solum pins, evaluator Path E, preflight Solum-Demo check, `scripts/run-solum-stage.sh`, `make solum-stage` / `make golden-path-with-solum`, example Solum artefacts, report assembler Solum section.

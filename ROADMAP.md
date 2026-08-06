@@ -16,7 +16,6 @@
 - PDF/HTML-Export des Showcase-Reports (pandoc-basiert, optional)
 - Erweiterung der vorgenerierten Demo-Artefakte (mehr Szenarien, mehr Produkte)
 - Beacon v2 Demo-Szenario als eigenständiger Showcase-Pfad
-- Ferrum-GA4GH-Demo gatk-rs WES-Workflow (W4 Phase B), wenn Produkte stabil genug sind
 
 💡 **Wird evaluiert:**
 - Interaktiver Setup-Guide für erste Demo-Ausführung
@@ -25,6 +24,7 @@
 
 ## Was zuletzt fertig wurde
 
+- ✅ Evidence-Chain W4 Phase B — Ferrum `--gatk-rs` Soft-Path + Integration Suite + `demo/verification/` (Aug 2026)
 - ✅ Evidence-Chain W4 Phase A — gatk-rs smoke + S4MP sidecar (soft-fail; Ferrum WES deferred) (Aug 2026)
 - ✅ Evidence-Chain W3 — Consent gate (PhenoFlow purpose → Solum before WES; allow/deny) (Aug 2026)
 - ✅ Evidence-Chain W2 — Evidence Pack CLI (`make evidence-pack` / `--fixtures`) (Aug 2026)
@@ -86,12 +86,12 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 - PDF/HTML export of showcase report
 - Expanded pre-generated demo artefacts
 - Beacon v2 demo scenario as standalone showcase path
-- Ferrum-GA4GH-Demo gatk-rs WES workflow (W4 Phase B) when products are stable enough
 
 ---
 
 ## Recently completed
 
+- ✅ Evidence-chain W4 Phase B — Ferrum `--gatk-rs` soft path + integration suite + `demo/verification/` (Aug 2026)
 - ✅ Evidence-chain W4 Phase A — gatk-rs smoke + S4MP sidecar (soft-fail; Ferrum WES deferred) (Aug 2026)
 - ✅ Evidence-chain W3 — Consent gate (PhenoFlow purpose → Solum before WES; allow/deny) (Aug 2026)
 - ✅ Evidence-chain W2 — Evidence Pack CLI (`make evidence-pack` / `--fixtures`) (Aug 2026)

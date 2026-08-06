@@ -2,6 +2,8 @@
 
 Start here:
 
+- [**Overview — offerings, components, tested constellations**](overview.md)
+- [Integration verification — re-run our claims](integration-verification.md)
 - [FAQ](faq.md)
 - [Which path fits me?](which-path.md)
 - [Compliance framing](compliance-framing.md)

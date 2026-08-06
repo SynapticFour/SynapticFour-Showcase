@@ -2,7 +2,8 @@
 
 .PHONY: help up down destroy golden-path golden-path-with-solum solum-stage \
 	evidence-pack evidence-pack-fixtures consent-gate consent-gate-deny consent-gate-fixtures \
-	gatk-rs-smoke gatk-rs-smoke-fixtures s4mp-evidence s4mp-evidence-fixtures preflight
+	gatk-rs-smoke gatk-rs-smoke-fixtures gatk-rs-wes s4mp-evidence s4mp-evidence-fixtures \
+	integration-suite integration-suite-fixtures verification-publish preflight
 
 help:
 	@echo "SynapticFour Showcase — local lifecycle"
@@ -16,15 +17,19 @@ help:
 	@echo "  make consent-gate-fixtures  CI fixtures for consent gate"
 	@echo "  make gatk-rs-smoke          Optional gatk-rs HC smoke (soft-fail)"
 	@echo "  make gatk-rs-smoke-fixtures CI fixtures for gatk-rs smoke"
+	@echo "  make gatk-rs-wes            Optional Ferrum --gatk-rs WES path (soft-fail)"
 	@echo "  make s4mp-evidence          Optional S4MP port-diff sidecar (soft-fail)"
 	@echo "  make s4mp-evidence-fixtures CI fixtures for S4MP sidecar"
+	@echo "  make integration-suite      Customer verification suite (fixtures + optional live)"
+	@echo "  make integration-suite-fixtures  Fixtures only + publish demo/verification/"
+	@echo "  make verification-publish   Re-publish demo/verification/ from fixtures"
 	@echo "  make evidence-pack          Build Evidence Pack from latest/local artefacts"
 	@echo "  make evidence-pack-fixtures Evidence Pack from committed fixtures"
 	@echo "  make preflight              Local environment checks"
 	@echo "  make down / make destroy    Stop stacks"
 	@echo ""
+	@echo "Customer start: docs/for-customers/overview.md"
 	@echo "Consent before WES: SHOWCASE_ENABLE_CONSENT_GATE=1 make golden-path"
-	@echo "Deny demo: SHOWCASE_ENABLE_CONSENT_GATE=1 SHOWCASE_CONSENT_GATE_MODE=deny make golden-path"
 	@echo "W4 opt-in: SHOWCASE_ENABLE_GATK_RS=1 SHOWCASE_ENABLE_S4MP=1 make golden-path"
 	@echo "See: docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md"
 
@@ -62,6 +67,10 @@ gatk-rs-smoke-fixtures:
 	@chmod +x scripts/run-gatk-rs-smoke.sh 2>/dev/null || true
 	./scripts/run-gatk-rs-smoke.sh --fixtures --publish-examples
 
+gatk-rs-wes:
+	@chmod +x scripts/run-gatk-rs-wes.sh 2>/dev/null || true
+	./scripts/run-gatk-rs-wes.sh
+
 s4mp-evidence:
 	@chmod +x scripts/attach-s4mp-evidence.sh 2>/dev/null || true
 	./scripts/attach-s4mp-evidence.sh
@@ -69,6 +78,16 @@ s4mp-evidence:
 s4mp-evidence-fixtures:
 	@chmod +x scripts/attach-s4mp-evidence.sh 2>/dev/null || true
 	./scripts/attach-s4mp-evidence.sh --fixtures --publish-examples
+
+integration-suite:
+	@chmod +x scripts/run-integration-suite.sh 2>/dev/null || true
+	./scripts/run-integration-suite.sh --fixtures --publish-verification
+
+integration-suite-fixtures: integration-suite
+
+verification-publish:
+	@chmod +x scripts/run-integration-suite.sh 2>/dev/null || true
+	./scripts/run-integration-suite.sh --fixtures --publish-verification
 
 evidence-pack:
 	@chmod +x scripts/evidence-pack.sh 2>/dev/null || true

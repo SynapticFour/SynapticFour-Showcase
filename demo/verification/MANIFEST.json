@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "pack_kind": "synapticfour-showcase-evidence-pack",
+  "pack_id": "fixtures",
+  "generated_at": "2026-08-06T12:48:09.032861Z",
+  "mode": "fixtures-published",
+  "showcase_root": "(portable; see repo SynapticFour-Showcase)",
+  "honesty": {
+    "proves": [
+      "Presence of signed/structured HELIOS audit artefacts from a run or fixture",
+      "Declared DRS checksums when a DRS object JSON is included",
+      "Optional HelixTest / Solum Stage-1 digests when included",
+      "Optional gatk-rs smoke / S4MP port-diff sidecars when included",
+      "Integrity of files inside this pack via SHA-256 in MANIFEST.json"
+    ],
+    "does_not_prove": [
+      "Formal certification or regulatory compliance (EHDS, DSGVO, \u2026)",
+      "Production equivalence to the demo/fixture environment",
+      "Legal validity of consent (Solum demos are technical only)",
+      "gatk-rs GIAB/clinical equivalence or WES execution of gatk-rs",
+      "S4MP port certification (heuristic map / stub certify only)"
+    ],
+    "docs": [
+      "docs/for-customers/compliance-framing.md",
+      "docs/for-customers/evidence-pack.md",
+      "docs/for-customers/gatk-rs-s4mp.md"
+    ]
+  },
+  "summaries": {
+    "helios": {
+      "run_id": "00000000-0000-4000-8000-00000000c1a1",
+      "pipeline_name": "tiny_hc_nextflow",
+      "executor": "nextflow",
+      "checks_total": 1,
+      "checks_passed": 1,
+      "checks_warned": 0,
+      "checks_failed": 0,
+      "output_file_hashes": []
+    },
+    "drs": {
+      "object_id": "drs://ferrum-gateway:8080/01KVTCN5H7BRXN1RS4C39PDQJ1/query.vcf.gz",
+      "checksums": [
+        {
+          "type": "sha-256",
+          "checksum": "ff81762a18c8846a36fec407fc3b4de51a71bee4ce29a3d58ea78089e3e8fee6"
+        }
+      ]
+    },
+    "helixtest": {
+      "present": true,
+      "overall_level": 2,
+      "overall_score": 0.72,
+      "mode": "ferrum",
+      "profile": "showcase-fixture",
+      "services": {
+        "drs": {
+          "level": 2,
+          "score": 0.8
+        },
+        "wes": {
+          "level": 2,
+          "score": 0.7
+        }
+      }
+    },
+    "solum": {
+      "present": true,
+      "status": "ok",
+      "authz_allow_ok": true,
+      "authz_deny_ok": true,
+      "audit_tamper_detect_ok": true,
+      "product_tag_consumed_by_demo": "stage1-baseline-sidecar-custody-2026-08-01"
+    },
+    "consent_gate": {
+      "present": true,
+      "decision": "allow",
+      "wes_may_proceed": true,
+      "consent_status": "granted",
+      "purpose": "secondary_use_hdab",
+      "subject": "patient/showcase-phenoflow-001"
+    },
+    "gatk_rs": {
+      "present": true,
+      "status": "ok",
+      "method": "fixtures",
+      "wes_integration": "optional_via_run_gatk_rs_wes",
+      "vcf": "smoke.vcf"
+    },
+    "s4mp": {
+      "present": true,
+      "status": "ok",
+      "kind": "s4mp-port-diff",
+      "maturity": "heuristic-map-not-certified",
+      "wes_role": "none",
+      "sha256": null
+    }
+  },
+  "files": [
+    {
+      "role": "helios_report",
+      "name": "helios-report.json",
+      "source": "fixtures/ci/helios/report.json",
+      "sha256": "c6a002954bda96354a5928c1622e2f4758b50bec01c788648d4fa880e5a85230",
+      "size_bytes": 258
+    },
+    {
+      "role": "drs_object",
+      "name": "drs-object.json",
+      "source": "demo/results/drs-link-example.json",
+      "sha256": "dfa9d4d3ef5290fb45e19e983163c1aab70a855b4a12ae6a8438ab12830afc81",
+      "size_bytes": 680
+    },
+    {
+      "role": "metrics",
+      "name": "metrics.json",
+      "source": "fixtures/ci/demo/results/metrics.json",
+      "sha256": "7e0eb7dd51817d41948e41c630bbf1613873a1d01433f422221162e495c2046d",
+      "size_bytes": 113
+    },
+    {
+      "role": "benchmark",
+      "name": "benchmark.json",
+      "source": "fixtures/ci/demo/results/benchmark.json",
+      "sha256": "0127831cd0ae7f1c77cfcfdfac4349409e1f39b5addacac182e9c6b291d70377",
+      "size_bytes": 59
+    },
+    {
+      "role": "helixtest",
+      "name": "helixtest.json",
+      "source": "fixtures/ci/helixtest/scores-example.json",
+      "sha256": "3003e4dc2361511f5b6cbcb21574e6e06d8e2985d26b053f725a22f0020f54c3",
+      "size_bytes": 348
+    },
+    {
+      "role": "solum_stage",
+      "name": "solum-stage-result.json",
+      "source": "fixtures/ci/solum/solum-stage-result.json",
+      "sha256": "b684b60ec1e739328feafb07dde9906c58255ab1c4fcf34b7befd448017f2df7",
+      "size_bytes": 736
+    },
+    {
+      "role": "consent_gate",
+      "name": "consent-gate-result.json",
+      "source": "fixtures/ci/consent-gate/consent-gate-result.json",
+      "sha256": "d2688b7acbaa560e6f694f399e09d4b148d34cf4913b3559c76839736e06045f",
+      "size_bytes": 786
+    },
+    {
+      "role": "gatk_rs_smoke",
+      "name": "gatk-rs-smoke-result.json",
+      "source": "fixtures/ci/gatk-rs/gatk-rs-smoke-result.json",
+      "sha256": "b421ea92e65672f3f39f43bead35b8cefda0aaf7462e35e89ad08c108067f357",
+      "size_bytes": 606
+    },
+    {
+      "role": "s4mp_port_diff",
+      "name": "s4mp-evidence.json",
+      "source": "fixtures/ci/s4mp/s4mp-evidence.json",
+      "sha256": "d16c99bd8d3330ce72c84fbc1dff24575f15a891eacac503d1e41ff4e2d11620",
+      "size_bytes": 607
+    },
+    {
+      "role": "s4mp_port_report",
+      "name": "s4mp-diff-report.md",
+      "source": "fixtures/ci/s4mp/diff-report.md",
+      "sha256": "d8b4883023925030d8c5425f3826e8d5058194d6e918518194018c2ae8026136",
+      "size_bytes": 1061
+    },
+    {
+      "role": "showcase_report",
+      "name": "showcase-report.json",
+      "source": "showcase-report.json",
+      "sha256": "eca02b61b41bd74a08ad05b5f1fa6b97ec43dadc973e49ca1c92c245b6c56664",
+      "size_bytes": 3872
+    },
+    {
+      "role": "showcase_report_md",
+      "name": "showcase-report.md",
+      "source": "demo/results/showcase-report-example.md",
+      "sha256": "e77932747d1f12fc7613ee7a4d4f8ff6975b9d72aa52846d20b99f597c11ed36",
+      "size_bytes": 3309
+    }
+  ]
+}

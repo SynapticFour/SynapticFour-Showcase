@@ -11,8 +11,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  scripts:
-    name: Scripts & report assembler
+  integration-suite:
+    name: Integration suite (fixtures)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,26 +22,16 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Syntax-check shell scripts
+      - name: Run customer-equivalent fixture suite
         run: |
-          set -euo pipefail
-          for f in scripts/*.sh scripts/lib/*.sh; do
-            [[ -f "$f" ]] || continue
-            echo "bash -n $f"
-            bash -n "$f"
-          done
-
-      - name: Check assemble_showcase_report.py
-        run: |
-          python3 -m py_compile scripts/assemble_showcase_report.py
-
-      - name: Smoke-test report assembler (fixtures)
-        run: |
-          python3 scripts/assemble_showcase_report.py \
-            --showcase-root . \
-            --demo-root fixtures/ci/demo \
-            --helios-report fixtures/ci/helios/report.json \
-            --output /tmp/showcase-ci-report.json \
-            --markdown-output /tmp/showcase-ci-report.md
-          test -s /tmp/showcase-ci-report.json
-          test -s /tmp/showcase-ci-report.md
+          chmod +x scripts/*.sh scripts/lib/*.sh 2>/dev/null || true
+          ./scripts/run-integration-suite.sh --fixtures --publish-verification
+          test -f demo/verification/MANIFEST.json
+          test -f demo/verification/SUITE-MANIFEST.json
+          python3 -c "
+          import json
+          m=json.load(open('demo/verification/SUITE-MANIFEST.json'))
+          assert m['suite_kind']=='synapticfour-showcase-integration-suite'
+          assert m['summary']['ok'] is True
+          print('suite ok', m['summary'])
+          "

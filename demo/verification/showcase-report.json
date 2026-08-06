@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-06T12:47:09.078716Z",
+  "paths": {
+    "showcase_root": "/Users/SynapticFour/devel/SynapticFour/SynapticFour-Showcase",
+    "demo_root": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo"
+  },
+  "demo": {
+    "wes_run_id": "01KZBHJJ6NP0R7EANEKCT7RRTB",
+    "wes_engine": "nextflow",
+    "pipeline_elapsed_seconds": 122,
+    "metrics_path": "/Users/SynapticFour/devel/SynapticFour/Ferrum-GA4GH-Demo/results/metrics.json",
+    "benchmark": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "drs_micro_keys": [
+      "drs_stream_url",
+      "object_id",
+      "repeat_n",
+      "max_bytes",
+      "plain",
+      "crypt4gh_at_rest",
+      "crypt4gh"
+    ]
+  },
+  "helios": {
+    "report_path": "/Users/SynapticFour/devel/SynapticFour/SynapticFour-Showcase/helios-reports/fe0f69b5-4a96-43de-8379-2c501d068b80.json",
+    "run_id": "fe0f69b5-4a96-43de-8379-2c501d068b80",
+    "pipeline_name": "unknown-pipeline",
+    "executor": "nextflow",
+    "checks_total": 1,
+    "checks_passed": 1,
+    "checks_warned": 0,
+    "checks_failed": 0,
+    "pipeline_name_display": "tiny_hc_nextflow"
+  },
+  "steps": [
+    {
+      "name": "helios_audit",
+      "status": "ok",
+      "elapsed_seconds": 30.0
+    }
+  ],
+  "m2": {
+    "status": "prepared",
+    "handoff_path": "/Users/SynapticFour/devel/SynapticFour/SynapticFour-Showcase/artifacts/m2/m2-handoff.json",
+    "query_vcf": "/Users/SynapticFour/devel/SynapticFour/SynapticFour-Showcase/artifacts/m2/input/query.vcf.gz",
+    "bra_root": "/Users/SynapticFour/devel/SynapticFour/bioresearch-assistant",
+    "bra_start_attempted": false
+  },
+  "solum": {
+    "status": "ok",
+    "result_path": "/Users/SynapticFour/devel/SynapticFour/SynapticFour-Showcase/artifacts/solum/solum-stage-result.json",
+    "authz_allow_ok": true,
+    "authz_deny_ok": true,
+    "audit_tamper_detect_ok": true,
+    "authz_allow_http_status": 200,
+    "authz_deny_http_status": 403,
+    "verify_http_status": 400,
+    "product_tag_consumed_by_demo": "stage1-baseline-sidecar-custody-2026-08-01",
+    "honesty": "Local Solum-Demo with ephemeral keys \u2014 not production. Separate regulatory perimeter from Ferrum; Showcase only orchestrates.",
+    "artefacts": {
+      "allow": "solum-authz-allow.json",
+      "deny": "solum-authz-deny.json",
+      "verify": "solum-audit-verify.json"
+    }
+  },
+  "consent_gate": {
+    "decision": "allow",
+    "blocked": false,
+    "wes_may_proceed": true,
+    "consent_status": "granted",
+    "subject": "patient/showcase-phenoflow-001",
+    "purpose": "secondary_use_hdab",
+    "honesty": "Technical purpose-binding demo only \u2014 not legal consent. Solum fail-closed status gates Showcase WES when SHOWCASE_ENABLE_CONSENT_GATE=1.",
+    "result_path": "/Users/SynapticFour/devel/SynapticFour/SynapticFour-Showcase/artifacts/consent-gate/consent-gate-result.json"
+  },
+  "gatk_rs": {
+    "status": "ok",
+    "method": "local_binary",
+    "wes_integration": "not_wired",
+    "vcf": "smoke.vcf",
+    "honesty": "gatk-rs Alpha smoke only \u2014 tiny fixture HC, not GIAB/clinical equivalence. Default Showcase WES remains Ferrum Nextflow + Broad GATK. Ferrum-GA4GH-Demo gatk-rs workflow is deferred (Phase B).",
+    "result_path": "/Users/SynapticFour/devel/SynapticFour/SynapticFour-Showcase/artifacts/gatk-rs/gatk-rs-smoke-result.json"
+  },
+  "s4mp": {
+    "status": "ok",
+    "kind": "s4mp-port-diff",
+    "maturity": "heuristic-map-not-certified",
+    "wes_role": "none",
+    "sha256": "d8b4883023925030d8c5425f3826e8d5058194d6e918518194018c2ae8026136",
+    "honesty": "S4MP sidecar evidence only \u2014 Markdown port-diff / heuristic map. Not a WES executor. Not a certification. `s4 certify` remains a stub.",
+    "result_path": "/Users/SynapticFour/devel/SynapticFour/SynapticFour-Showcase/artifacts/s4mp/s4mp-evidence.json"
+  }
+}

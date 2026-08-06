@@ -55,6 +55,19 @@ make evidence-pack-fixtures   # includes gatk-rs + S4MP fixtures
 
 Pins: `gatk-rs=` and `S4MP=` in `PINNED_VERSIONS.txt`.
 
-## Phase B (not in this wave)
+## Phase B (Ferrum WES)
 
-When Ferrum-GA4GH-Demo exposes an optional Nextflow/WDL entry that invokes `gatk-rs` (container or binary), Showcase may pass an extra demo flag **without** replacing `--nextflow` Java GATK. Until then `wes_integration: not_wired` in smoke JSON is intentional.
+Ferrum-GA4GH-Demo supports `./run --gatk-rs` → `workflows/tiny_hc_gatk_rs.nf`. Soft-skips if `gatkr/gatk-rs` (or `FERRUM_GA4GH_GATK_RS_IMAGE`) is missing.
+
+```bash
+# From Showcase (does not replace default golden path):
+make gatk-rs-wes
+# or after Broad path:
+SHOWCASE_ENABLE_GATK_RS_WES=1 make golden-path
+```
+
+`wes_integration` is optional and Alpha — soft-fail/skip is success for honesty, not a greenwash.
+
+## Phase A reminder
+
+Local smoke + S4MP sidecar remain the lightweight path; see commands above.
