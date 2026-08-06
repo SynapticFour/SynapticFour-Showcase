@@ -6,12 +6,13 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Added
 
+- **W0 complete / W1 landed** — Solum pins, evaluator Path E, preflight Solum-Demo check, `scripts/run-solum-stage.sh`, `make solum-stage` / `make golden-path-with-solum`, example Solum artefacts, report assembler Solum section.
 - **Evidence-chain plan** — `docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md` (Solum stage, Evidence Pack CLI, PhenoFlow→consent, optional gatk-rs/S4MP; integrator pattern, not monorepo).
 - **Solum companion narrative** — README DE/EN, `which-path` Scenario E, ROADMAP links.
-- Solum ECOSYSTEM cross-links to Showcase + Solum-Demo (upstream Solum repo).
 
 ### Changed
 
+- **PINNED_VERSIONS.txt** — added `Solum-Demo` + `Solum-tag` (Ferrum/HELIOS/BRA pins retained for committed demo artefacts).
 - **PINNED_VERSIONS.txt** — Ferrum-GA4GH-Demo pin `41d7b89` (benchmark artefacts committed upstream after showcase run).
 
 ### Changed (June 2026 sync #2)

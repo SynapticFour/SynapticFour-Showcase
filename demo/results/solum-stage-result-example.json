@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "stage": "solum",
+  "generated_at": "2026-08-06T11:56:01.492004Z",
+  "solum_demo_root": "/Users/SynapticFour/devel/SynapticFour/Solum-Demo",
+  "base_url": "http://127.0.0.1:8080",
+  "product_tag_consumed_by_demo": "stage1-baseline-sidecar-custody-2026-08-01",
+  "status": "ok",
+  "authz_allow_ok": true,
+  "authz_deny_ok": true,
+  "audit_tamper_detect_ok": true,
+  "authz_allow_http_status": 200,
+  "authz_deny_http_status": 403,
+  "verify_http_status": 400,
+  "artefacts": {
+    "allow": "solum-authz-allow.json",
+    "deny": "solum-authz-deny.json",
+    "verify": "solum-audit-verify.json"
+  },
+  "honesty": "Local Solum-Demo with ephemeral keys \u2014 not production. Separate regulatory perimeter from Ferrum; Showcase only orchestrates."
+}

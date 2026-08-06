@@ -13,6 +13,10 @@ BRA_ROOT="${SHOWCASE_BRA_ROOT:-$SHOWCASE_ROOT/../bioresearch-assistant}"
 if [[ -d "$BRA_ROOT" ]]; then
   BRA_ROOT="$(cd "$BRA_ROOT" && pwd)"
 fi
+SOLUM_DEMO_ROOT="${SHOWCASE_SOLUM_DEMO_ROOT:-$SHOWCASE_ROOT/../Solum-Demo}"
+if [[ -d "$SOLUM_DEMO_ROOT" ]]; then
+  SOLUM_DEMO_ROOT="$(cd "$SOLUM_DEMO_ROOT" && pwd)"
+fi
 REMOVE_VOLUMES=0
 HARD=0
 
@@ -23,15 +27,17 @@ Usage: scripts/stop-showcase.sh [--volumes] [--hard]
 Stops local docker compose stacks used by the showcase flow:
   - Ferrum-GA4GH-Demo stack (project: ferrum-ga4gh-demo)
   - bioresearch-assistant stack (if present)
+  - Solum-Demo stack (if present)
 
 Options:
   --volumes   Also remove volumes (`down -v --remove-orphans`)
-  --hard      Implies --volumes, then force-stops/removes any leftover containers whose
-              names match ferrum-ga4gh-demo or bioresearch-assistant (orphans, manual runs)
+  --hard      Implies --volumes, then force-stops/removes leftover containers whose
+              names match ferrum-ga4gh-demo, bioresearch-assistant, or solum-demo
 
 Environment:
-  SHOWCASE_DEMO_ROOT   Path to Ferrum-GA4GH-Demo (default: ../Ferrum-GA4GH-Demo)
-  SHOWCASE_BRA_ROOT    Path to bioresearch-assistant (default: ../bioresearch-assistant)
+  SHOWCASE_DEMO_ROOT        Path to Ferrum-GA4GH-Demo (default: ../Ferrum-GA4GH-Demo)
+  SHOWCASE_BRA_ROOT         Path to bioresearch-assistant (default: ../bioresearch-assistant)
+  SHOWCASE_SOLUM_DEMO_ROOT  Path to Solum-Demo (default: ../Solum-Demo)
 EOF
 }
 
@@ -98,13 +104,25 @@ stop_bra() {
   bra_docker_compose "$root" "$SHOWCASE_ROOT" "${DOWN_ARGS[@]}" || true
 }
 
+stop_solum_demo() {
+  local root="$1"
+  local compose_file="$root/docker-compose.yml"
+  if [[ ! -d "$root" || ! -f "$compose_file" ]]; then
+    echo "[stop] Solum-Demo compose not found, skipping: $root"
+    return 0
+  fi
+  echo "[stop] stopping Solum-Demo stack..."
+  (cd "$root" && docker compose "${DOWN_ARGS[@]}") || true
+}
+
 stop_demo "$DEMO_ROOT"
 stop_bra "$BRA_ROOT"
+stop_solum_demo "$SOLUM_DEMO_ROOT"
 
 hard_cleanup_leftovers() {
   echo "[stop] hard: removing leftover containers matching showcase project names..."
   local pattern id
-  for pattern in ferrum-ga4gh-demo bioresearch-assistant; do
+  for pattern in ferrum-ga4gh-demo bioresearch-assistant solum-demo; do
     while IFS= read -r id; do
       [[ -z "$id" ]] && continue
       echo "[stop] hard: stopping/removing $id"

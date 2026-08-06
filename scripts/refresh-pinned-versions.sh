@@ -9,6 +9,9 @@ OUT="${SHOWCASE_PINNED_OUT:-$SHOWCASE_ROOT/PINNED_VERSIONS.txt}"
 DEMO="${SHOWCASE_DEMO_ROOT:-$SHOWCASE_ROOT/../Ferrum-GA4GH-Demo}"
 HELI="${SHOWCASE_HELIOS_ROOT:-$SHOWCASE_ROOT/../HELIOS}"
 BRA="${SHOWCASE_BRA_ROOT:-$SHOWCASE_ROOT/../bioresearch-assistant}"
+SOLUM_DEMO="${SHOWCASE_SOLUM_DEMO_ROOT:-$SHOWCASE_ROOT/../Solum-Demo}"
+# Product tag consumed by Solum-Demo Dockerfile/compose (not a git HEAD).
+SOLUM_TAG="${SHOWCASE_SOLUM_TAG:-stage1-baseline-sidecar-custody-2026-08-01}"
 
 rev_or_unknown() {
   local dir="$1"
@@ -23,10 +26,15 @@ rev_or_unknown() {
   echo "# Pinned sibling revisions for reproducible demos (auto-generated)."
   echo "# Regenerate: ./scripts/refresh-pinned-versions.sh"
   echo "# Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+  echo "#"
+  echo "# Solum-tag is the Solum product git tag Solum-Demo builds against"
+  echo "# (see Solum-Demo Dockerfile ARG SOLUM_TAG) — not a local checkout SHA."
   echo ""
   echo "Ferrum-GA4GH-Demo=$(rev_or_unknown "$DEMO")"
   echo "HELIOS=$(rev_or_unknown "$HELI")"
   echo "bioresearch-assistant=$(rev_or_unknown "$BRA")"
+  echo "Solum-Demo=$(rev_or_unknown "$SOLUM_DEMO")"
+  echo "Solum-tag=$SOLUM_TAG"
 } >"$OUT"
 
 echo "{\"ok\":true,\"wrote\":\"$OUT\"}"

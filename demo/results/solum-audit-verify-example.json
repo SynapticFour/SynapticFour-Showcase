@@ -1,0 +1,19 @@
+{
+  "scenario": "tamper_evident_audit",
+  "harness_http_status": 200,
+  "verify_http_status": 400,
+  "harness": {
+    "ok": true,
+    "already_tampered": true,
+    "message": "File already carries the demo tamper marker.",
+    "actor": "practitioner/amina#DEMO-TAMPERED",
+    "path": "/data/audit.jsonl",
+    "warning": "DEMO HARNESS \u2014 this mutation was applied outside solum-sidecar. The product API has no tamper route."
+  },
+  "verify": {
+    "error": "chain_broken",
+    "message": "audit chain broken at seq 1: stored hash does not match recomputed hash \u2014 record was altered"
+  },
+  "ok": true,
+  "notes": "Harness rewrites audit.jsonl on the shared volume (not a Solum API). Product GET /v1/audit/verify should report chain_broken."
+}

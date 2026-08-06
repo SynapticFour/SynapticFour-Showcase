@@ -21,8 +21,11 @@ else
   PY=python3
 fi
 "$PY" -m py_compile scripts/assemble_showcase_report.py
+bash -n scripts/run-solum-stage.sh
 
-echo "[ci-check] assemble_showcase_report.py (fixtures/ci)"
+echo "[ci-check] assemble_showcase_report.py (fixtures/ci + solum)"
+mkdir -p "$ROOT/artifacts/solum"
+cp "$ROOT/fixtures/ci/solum/solum-stage-result.json" "$ROOT/artifacts/solum/solum-stage-result.json"
 "$PY" scripts/assemble_showcase_report.py \
   --showcase-root "$ROOT" \
   --demo-root "$ROOT/fixtures/ci/demo" \
@@ -31,5 +34,6 @@ echo "[ci-check] assemble_showcase_report.py (fixtures/ci)"
   --markdown-output /tmp/showcase-ci-report.md
 test -s /tmp/showcase-ci-report.json
 test -s /tmp/showcase-ci-report.md
+"$PY" -c "import json; r=json.load(open('/tmp/showcase-ci-report.json')); assert r.get('solum',{}).get('status')=='ok', r.get('solum')"
 
 echo "[ci-check] ok"

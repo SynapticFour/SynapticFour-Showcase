@@ -73,6 +73,19 @@ check_dir() {
 check_dir "Ferrum-GA4GH-Demo" "${SHOWCASE_DEMO_ROOT:-$SHOWCASE_ROOT/../Ferrum-GA4GH-Demo}"
 check_dir "HELIOS" "${SHOWCASE_HELIOS_ROOT:-$SHOWCASE_ROOT/../HELIOS}"
 check_dir "bioresearch-assistant (optional M2)" "${SHOWCASE_BRA_ROOT:-$SHOWCASE_ROOT/../bioresearch-assistant}"
+check_dir "Solum-Demo (optional Solum stage)" "${SHOWCASE_SOLUM_DEMO_ROOT:-$SHOWCASE_ROOT/../Solum-Demo}"
+
+# Soft warning only: Solum stage is opt-in (SHOWCASE_ENABLE_SOLUM=1 / make solum-stage).
+if [[ "${SHOWCASE_ENABLE_SOLUM:-0}" == "1" ]]; then
+  SOLUM_DEMO="${SHOWCASE_SOLUM_DEMO_ROOT:-$SHOWCASE_ROOT/../Solum-Demo}"
+  if [[ ! -d "$SOLUM_DEMO" ]]; then
+    note_fail "SHOWCASE_ENABLE_SOLUM=1 but Solum-Demo missing: $SOLUM_DEMO"
+  elif [[ ! -f "$SOLUM_DEMO/docker-compose.yml" ]]; then
+    note_fail "Solum-Demo present but docker-compose.yml missing: $SOLUM_DEMO"
+  else
+    note_ok "Solum stage enabled; Solum-Demo compose found"
+  fi
+fi
 
 if command -v df >/dev/null 2>&1; then
   free_kb="$(df -k "$SHOWCASE_ROOT" 2>/dev/null | awk 'NR==2 {print $4}')"
@@ -97,9 +110,9 @@ port_busy() {
 }
 
 if [[ "$SKIP_DOCKER" != "1" ]]; then
-  for p in 5432 8000 15432 18080; do
+  for p in 5432 8000 8080 15432 18080; do
     if port_busy "$p"; then
-      note_warn "something is listening on port $p (may conflict with Ferrum/BRA/gateway)"
+      note_warn "something is listening on port $p (may conflict with Ferrum/BRA/gateway/Solum-Demo)"
     fi
   done
 fi

@@ -10,7 +10,7 @@
 
 Definieren Sie diese vier Punkte bevor Sie anfangen:
 
-1. **Gewählter Einstiegspfad:** A (Ferrum), B (HELIOS), C (A+B) oder D (BioResearch Assistant) → [Pfad wählen](../for-customers/which-path.md)
+1. **Gewählter Einstiegspfad:** A (Ferrum), B (HELIOS), C (A+B), D (BioResearch Assistant) oder E (Solum) → [Pfad wählen](../for-customers/which-path.md)
 2. **In-Scope-Systeme:** Welche genauen Dienste und Schnittstellen testen Sie?
 3. **Out-of-Scope:** Was verschieben Sie bewusst auf später?
 4. **Datenschutz der Test-Daten:** Welche Datensätze sind für den Pilot genehmigt?
@@ -78,6 +78,19 @@ Erfolgskriterium: Ferrum-Provenance und HELIOS-Evidenz sind in einem Review-Pake
 
 Erfolgskriterium: Erlaubte Quell-Grenzen werden bei der Ingestion durchgesetzt; Antworten werden gegen Quellenprüfungs-Kriterien validiert.
 
+### Path E — Solum (klinischer Companion)
+
+```bash
+# Sibling Solum-Demo + Showcase orchestration
+./scripts/preflight.sh
+make solum-stage
+# oder zusammen mit dem genomic golden path:
+make golden-path-with-solum
+```
+
+Erfolgskriterium: Fail-closed Autorisierung (200 vs 403) und `chain_broken` nach Harness-Tamper sind in `artifacts/solum/` und im Showcase-Report sichtbar.
+Hinweis: Ephemeral Demo-Keys — kein Produktions-Deploy. Produkt: [Solum](https://github.com/SynapticFour/Solum) · Demo: [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) · Plan: [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
+
 ---
 
 ## Schritt 4: Minimales Artefakt-Set für Go/No-Go
@@ -103,9 +116,12 @@ Erfolgskriterium: Erlaubte Quell-Grenzen werden bei der Ingestion durchgesetzt; 
 |-----------|-------|
 | [DEMO.md](../../DEMO.md) | Vollständiges Runbook |
 | [demo/results/](../../demo/results/) | Vorgeneriete Artefakte ohne Installation |
-| [PINNED_VERSIONS.txt](../../PINNED_VERSIONS.txt) | Reproduzierbare Git-HEADs |
+| [PINNED_VERSIONS.txt](../../PINNED_VERSIONS.txt) | Reproduzierbare Git-HEADs (+ Solum-tag) |
+| [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md) | W0–W4 Evidence-Chain Plan |
+| [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) | Lokale Stage-1 Solum-Demo |
 | `./scripts/preflight.sh` | Vorab-Check |
 | `./scripts/run-golden-path.sh` | Vollständiger Demo-Lauf |
+| `./scripts/run-solum-stage.sh` / `make solum-stage` | Solum Stage-1 only |
 
 ---
 
@@ -147,7 +163,7 @@ Teilen Sie uns Ihre Go/No-Go-Entscheidung mit. Wenn es ein No-Go ist, wollen wir
 
 Define these four points before starting:
 
-1. **Chosen entry path:** A (Ferrum), B (HELIOS), C (A+B), or D (BioResearch Assistant) → [Choose a path](../for-customers/which-path.md)
+1. **Chosen entry path:** A (Ferrum), B (HELIOS), C (A+B), D (BioResearch Assistant), or E (Solum) → [Choose a path](../for-customers/which-path.md)
 2. **In-scope systems:** Which exact services and interfaces are you testing?
 3. **Out-of-scope:** What are you deliberately deferring?
 4. **Test data sensitivity:** Which datasets are approved for the pilot?
@@ -173,6 +189,17 @@ Define these four points before starting:
 - Runbook steps are executable by your team
 - Failure modes and troubleshooting routes are documented
 
+### Path E — Solum (clinical companion)
+
+```bash
+./scripts/preflight.sh
+make solum-stage
+# or with the genomic golden path:
+make golden-path-with-solum
+```
+
+Success criterion: fail-closed authorization (200 vs 403) and `chain_broken` after harness tamper appear under `artifacts/solum/` and in the showcase report. Ephemeral demo keys only — not production. See [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
+
 ---
 
 ## Step 3: Go/No-Go rubric
@@ -191,9 +218,12 @@ Define these four points before starting:
 |----------|---------|
 | [DEMO.md](../../DEMO.md) | Complete runbook |
 | [demo/results/](../../demo/results/) | Pre-generated artefacts, no installation needed |
-| [PINNED_VERSIONS.txt](../../PINNED_VERSIONS.txt) | Reproducible Git HEADs |
+| [PINNED_VERSIONS.txt](../../PINNED_VERSIONS.txt) | Reproducible Git HEADs (+ Solum-tag) |
+| [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md) | W0–W4 evidence-chain plan |
+| [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) | Local Stage-1 Solum demo |
 | `./scripts/preflight.sh` | Pre-check |
 | `./scripts/run-golden-path.sh` | Complete demo run |
+| `./scripts/run-solum-stage.sh` / `make solum-stage` | Solum Stage-1 only |
 
 ---
 

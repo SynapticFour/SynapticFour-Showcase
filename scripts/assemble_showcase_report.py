@@ -101,6 +101,21 @@ def _write_markdown_report(path: Path, report: dict[str, Any]) -> None:
                 "",
             ]
         )
+    solum = report.get("solum", {})
+    if solum:
+        lines.extend(
+            [
+                "## Solum Stage (clinical companion)",
+                "",
+                f"- Status: `{solum.get('status', 'n/a')}`",
+                f"- Authz allow (expect 200): `{solum.get('authz_allow_ok', 'n/a')}` HTTP `{solum.get('authz_allow_http_status', 'n/a')}`",
+                f"- Authz deny (expect 403): `{solum.get('authz_deny_ok', 'n/a')}` HTTP `{solum.get('authz_deny_http_status', 'n/a')}`",
+                f"- Tamper detect (chain_broken): `{solum.get('audit_tamper_detect_ok', 'n/a')}`",
+                f"- Product tag (Solum-Demo pin): `{solum.get('product_tag_consumed_by_demo', 'n/a')}`",
+                f"- Honesty: `{solum.get('honesty', 'n/a')}`",
+                "",
+            ]
+        )
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
@@ -171,6 +186,24 @@ def main() -> None:
         report["m2"]["link_status"] = m2_link.get("status")
         report["m2"]["link_result_path"] = str(m2_link_path)
         report["m2"]["phenopacket_pseudonym_id"] = m2_link.get("pseudonym_id")
+
+    solum_root = args.showcase_root.resolve() / "artifacts" / "solum"
+    solum_result_path = solum_root / "solum-stage-result.json"
+    solum_result = _read_json(solum_result_path)
+    if isinstance(solum_result, dict):
+        report["solum"] = {
+            "status": solum_result.get("status"),
+            "result_path": str(solum_result_path),
+            "authz_allow_ok": solum_result.get("authz_allow_ok"),
+            "authz_deny_ok": solum_result.get("authz_deny_ok"),
+            "audit_tamper_detect_ok": solum_result.get("audit_tamper_detect_ok"),
+            "authz_allow_http_status": solum_result.get("authz_allow_http_status"),
+            "authz_deny_http_status": solum_result.get("authz_deny_http_status"),
+            "verify_http_status": solum_result.get("verify_http_status"),
+            "product_tag_consumed_by_demo": solum_result.get("product_tag_consumed_by_demo"),
+            "honesty": solum_result.get("honesty"),
+            "artefacts": solum_result.get("artefacts"),
+        }
 
     if args.demo_seconds is not None:
         report["steps"].append(

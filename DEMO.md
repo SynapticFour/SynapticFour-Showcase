@@ -6,13 +6,14 @@
 
 ## Was diese Demo zeigt
 
-Der SynapticFour-Showcase demonstriert wie drei Bausteine in einer realen Pipeline zusammenspielen:
+Der SynapticFour-Showcase demonstriert wie Bausteine in einer realen Pipeline zusammenspielen:
 
 1. **Ferrum** nimmt einen Variant-Calling-Job über seine WES-Schnittstelle entgegen und führt ihn aus
 2. **HELIOS** erzeugt dabei automatisch einen signierten Audit-Trail mit SHA256-Hashes aller Input- und Output-Dateien
-3. **BioResearch Assistant** bekommt das Ergebnis-VCF und die Run-Metadaten übergeben — bereit für Downstream-Analyse
+3. **BioResearch Assistant** (optional, M2) bekommt das Ergebnis-VCF und die Run-Metadaten übergeben — bereit für Downstream-Analyse
+4. **Solum** (optional, `make solum-stage` / `make golden-path-with-solum`) zeigt fail-closed Autorisierung und tamper-evident Audit als klinischen Companion
 
-Am Ende haben Sie: einen Benchmark-Report, eine HELIOS-Audit-Datei, einen DRS-Objektlink und eine menschenlesbare Zusammenfassung für Stakeholder-Reviews.
+Am Ende haben Sie: einen Benchmark-Report, eine HELIOS-Audit-Datei, einen DRS-Objektlink, optional Solum-Artefakte und eine menschenlesbare Zusammenfassung für Stakeholder-Reviews.
 
 **Sie müssen nichts installieren um die Ergebnisse zu sehen.**
 
@@ -24,11 +25,12 @@ Am Ende haben Sie: einen Benchmark-Report, eine HELIOS-Audit-Datei, einen DRS-Ob
 
 ## What this demo shows (English)
 
-The SynapticFour Showcase demonstrates how three building blocks work together in a real pipeline:
+The SynapticFour Showcase demonstrates how building blocks work together in a real pipeline:
 
 1. **Ferrum** accepts a variant calling job via its WES interface and executes it
 2. **HELIOS** automatically generates a signed audit trail with SHA256 hashes of all input and output files
-3. **BioResearch Assistant** receives the result VCF and run metadata — ready for downstream analysis
+3. **BioResearch Assistant** (optional, M2) receives the result VCF and run metadata — ready for downstream analysis
+4. **Solum** (optional, `make solum-stage` / `make golden-path-with-solum`) demonstrates fail-closed authorization and tamper-evident audit as a clinical companion
 
 **You don't need to install anything to see the results.**
 
@@ -50,7 +52,7 @@ The SynapticFour Showcase demonstrates how three building blocks work together i
 |-------------|---------|
 | Docker Desktop | 8–12 GB RAM empfohlen |
 | Python 3.11+ | Für HELIOS und Report-Assembler (`pip install helios-audit` oder Projekt-`.venv`) |
-| Git-Checkouts | `Ferrum-GA4GH-Demo`, `HELIOS`, optional `bioresearch-assistant` nebeneinander zum Showcase |
+| Git-Checkouts | `Ferrum-GA4GH-Demo`, `HELIOS`, optional `bioresearch-assistant`, optional `Solum-Demo` nebeneinander zum Showcase |
 | Netzwerk | Erster Lauf: Image-Pulls und ggf. öffentliche Testdaten |
 
 **Schnellcheck vor dem Termin:**
@@ -79,10 +81,20 @@ SHOWCASE_HELIOS_ROOT=/path/to/HELIOS \
 
 **Aufräumen:** `make down` · `make destroy` (Volumes + hängende Container)
 
+### Optional: Solum Stage-1
+
+```bash
+make solum-stage
+# oder zusammen mit dem genomic golden path:
+make golden-path-with-solum
+```
+
+Siehe [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md) und [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) (`Solum-Demo`, `Solum-tag`).
+
 **Ergebnisse:**
 
 | Artefakt | Bedeutung |
-|----------|-----------| 
+|----------|-----------|
 | `../Ferrum-GA4GH-Demo/results/metrics.json` | Demo-Kennzahlen, WES Run ID |
 | `../Ferrum-GA4GH-Demo/results/benchmark.json` | Precision / Recall / F1 |
 | `helios-reports/<uuid>.json` | HELIOS-Audit-Export |

@@ -87,13 +87,36 @@ Technical anchors:
 - `bioresearch-assistant` downstream flow
 - Ferrum/HELIOS artifacts as structured context sources
 
+## Path E: Solum Stage-1 (clinical companion)
+
+Use when a customer says: "We need fail-closed authorization and tamper-evident audit for clinical data — separate from the genomic plane."
+
+Suggested scope:
+
+1. Run Solum-Demo locally (or `make solum-stage` from Showcase).
+2. Capture allow/deny encrypt outcomes and `chain_broken` after harness tamper.
+3. Optionally attach artefacts to the genomic golden path (`make golden-path-with-solum`).
+
+What this proves:
+
+- Clinical perimeter can be demonstrated without merging into Ferrum.
+- Stage-1 proofs are machine-readable and reportable alongside HELIOS evidence.
+
+Technical anchors:
+
+- [Solum](https://github.com/SynapticFour/Solum) · [Solum-Demo](https://github.com/SynapticFour/Solum-Demo)
+- Showcase: `scripts/run-solum-stage.sh`, [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
+
+Honesty: ephemeral demo keys only; not a production topology.
+
 ## Path selection guide
 
 - Need fastest starter with low change risk: **Path A**
 - Need governance on existing pipelines first: **Path B**
 - Need EHDS-oriented evidence story: **Path C**
 - Need user-facing research assistant on private data: **Path D**
+- Need clinical authz/audit companion (separate perimeter): **Path E**
 
-Most customers eventually combine **A + B + C**, with **D** added for high-value user workflows.
+Most customers eventually combine **A + B + C**, with **D** and/or **E** added where research UX or clinical compliance is in scope.
 
 For workshop-ready decision support, use [Which path fits me?](../for-customers/which-path.md).

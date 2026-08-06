@@ -1,0 +1,13 @@
+{
+  "scenario": "fail_closed_authorization_deny",
+  "actor": "practitioner/intern",
+  "capability": [],
+  "http_status": 403,
+  "expected_status": 403,
+  "ok": true,
+  "response": {
+    "error": "forbidden",
+    "message": "actor 'practitioner/intern' lacks required capability 'solum:crypto:encrypt'"
+  },
+  "notes": "Empty capability list must fail closed with no ciphertext side effect."
+}

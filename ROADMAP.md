@@ -9,14 +9,14 @@
 ## Was gerade in Arbeit ist
 
 🔨 **In Arbeit:**
-- Evidence-Chain Erweiterung (Solum-Stage, Evidence Pack CLI) — siehe [`docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
+- Evidence Pack CLI (W2) — siehe [`docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
 - One-command Demo-Setup (`showcase` CLI-Wrapper der Environment-Variablen abstrahiert)
 - Strukturiertes Run-Log (`artifacts/run.jsonl`) für bessere Demo-Post-Mortems
 - HelixTest-Gate als dokumentierter separater Schritt (GA4GH-Konformitätsprüfung)
 
 📋 **Geplant:**
-- PhenoFlow → Solum Consent vor WES (BRA + Solum Produktarbeit; Showcase orchestriert)
-- gatk-rs / S4MP als optionaler WES-/Port-Evidence-Pfad (Integrator, kein Monorepo)
+- PhenoFlow → Solum Consent vor WES (W3; BRA + Solum Produktarbeit; Showcase orchestriert)
+- gatk-rs / S4MP als optionaler WES-/Port-Evidence-Pfad (W4)
 - PDF/HTML-Export des Showcase-Reports (pandoc-basiert, optional)
 - Erweiterung der vorgenerierten Demo-Artefakte (mehr Szenarien, mehr Produkte)
 - Beacon v2 Demo-Szenario als eigenständiger Showcase-Pfad
@@ -28,6 +28,7 @@
 
 ## Was zuletzt fertig wurde
 
+- ✅ Evidence-Chain W0 + W1 — Solum pins, Path E, `make solum-stage` / `golden-path-with-solum`, live Stage-1 artefacts (Aug 2026)
 - ✅ Sync mit Nachbar-Repos (Ferrum-GA4GH-Demo, HELIOS, bioresearch-assistant) — Juni 2026 (23.06.)
 - ✅ `demo/results/` Host-Pfade bereinigt; `scripts/publish-demo-results.sh` für künftige Golden-Path-Läufe
 - ✅ `demo/results/` Artefakte neu generiert (Nextflow-Golden-Path, HELIOS-Audit)
@@ -78,14 +79,14 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 ## What's currently in progress
 
 🔨 **In progress:**
-- Evidence-chain expansion (Solum stage, Evidence Pack CLI) — see [`docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
+- Evidence Pack CLI (W2) — see [`docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
 - One-command demo setup (`showcase` CLI wrapper)
 - Structured run log (`artifacts/run.jsonl`)
 - HelixTest gate as a documented separate step
 
 📋 **Planned:**
-- PhenoFlow → Solum consent before WES (BRA + Solum product work; Showcase orchestrates)
-- gatk-rs / S4MP as optional WES / port-evidence path (integrator, not monorepo)
+- PhenoFlow → Solum consent before WES (W3)
+- gatk-rs / S4MP as optional WES / port-evidence path (W4)
 - PDF/HTML export of showcase report
 - Expanded pre-generated demo artefacts
 - Beacon v2 demo scenario as standalone showcase path
@@ -94,6 +95,7 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 
 ## Recently completed
 
+- ✅ Evidence-chain W0 + W1 — Solum pins, Path E, `make solum-stage` / `golden-path-with-solum`, live Stage-1 artefacts (Aug 2026)
 - ✅ Neighbor-repo sync (Ferrum-GA4GH-Demo, HELIOS, bioresearch-assistant) — June 2026 (23 Jun)
 - ✅ Sanitized `demo/results/` host paths; added `scripts/publish-demo-results.sh` for future golden-path runs
 - ✅ Regenerated `demo/results/` artefacts (Nextflow golden path + HELIOS audit)

@@ -28,38 +28,34 @@ Target:    + Solum stage  +  Evidence Pack CLI  +  (later) PhenoFlow→consent  
 
 ## Workstreams
 
-### W0 — Narrative & pins (docs-only foundation) — **started 2026-08-06**
+### W0 — Narrative & pins (docs-only foundation) — **done 2026-08-06**
 
 | Task | Status | Notes |
 |------|--------|-------|
-| README DE/EN: Solum companion + chain honesty | Done in this change | Orchestrated today vs next called out |
+| README DE/EN: Solum companion + chain honesty | Done | Orchestrated today vs next called out |
 | `which-path` Scenario E (Solum) | Done | Points at Solum-Demo |
 | ROADMAP links this plan | Done | |
-| `PINNED_VERSIONS.txt`: add Solum-Demo (and/or Solum tag) | Todo | Mirror BRA pin style; refresh script already exists |
-| Evaluator kit: link Solum-Demo + this plan | Todo | `docs/for-evaluators/` |
-| Preflight: optional Solum-Demo sibling check | Todo | Soft-fail until stage enabled |
+| `PINNED_VERSIONS.txt`: add Solum-Demo (and/or Solum tag) | Done | `Solum-Demo=<sha>` + `Solum-tag=stage1-…` |
+| Evaluator kit: link Solum-Demo + this plan | Done | Path E + resources + deployment-paths |
+| Preflight: optional Solum-Demo sibling check | Done | Soft warn; hard-fail only if `SHOWCASE_ENABLE_SOLUM=1` |
 
-**Exit:** Evaluators see a four-product story without claiming Solum is already in `run-golden-path.sh`.
+**Exit:** Evaluators see a four-product story without claiming Solum is already in the default `run-golden-path.sh`. ✅
 
 ---
 
-### W1 — Showcase as Ferrum + HELIOS + BRA + Solum evidence chain
+### W1 — Showcase as Ferrum + HELIOS + BRA + Solum evidence chain — **done 2026-08-06**
 
 **Goal:** One documented golden path that produces genomic + audit + (optional) BRA + clinical Stage-1 artefacts side-by-side.
 
-| Step | Where | Work |
-|------|-------|------|
-| 1 | Showcase | `scripts/run-solum-stage.sh` — invoke Solum-Demo compose (or Solum sidecar at pin) with `SHOWCASE_SOLUM_ROOT` / `SHOWCASE_SOLUM_DEMO_ROOT` |
-| 2 | Showcase | Makefile targets: `solum-stage`, `golden-path-with-solum` (opt-in flag `SHOWCASE_ENABLE_SOLUM=1`) |
-| 3 | Showcase | Commit redacted example artefacts under `demo/results/solum-*.json` (authz deny + audit hash sample) |
-| 4 | Showcase | Extend `assemble_showcase_report.py` to include Solum stage section when present |
-| 5 | Solum-Demo | Stable machine-readable export paths for harness results (if missing) — small product tweak, not a merge |
+| Step | Where | Work | Status |
+|------|-------|------|--------|
+| 1 | Showcase | `scripts/run-solum-stage.sh` | Done |
+| 2 | Showcase | `make solum-stage` / `make golden-path-with-solum` | Done |
+| 3 | Showcase | `demo/results/solum-*-example.json` + CI fixture | Done (live-verified) |
+| 4 | Showcase | Assembler Solum section | Done |
+| 5 | Solum-Demo | No product change needed — Showcase curls APIs | Done |
 
-**Does not require:** vendoring Solum crates into Showcase.
-
-**Exit:** `make golden-path-with-solum` (or documented env flag) leaves a single stakeholder-facing `showcase-report.md` that mentions all four planes.
-
-**Estimate:** ~3–5 focused days if Solum-Demo export is already good enough; +2 days if export shape needs work.
+**Exit:** `make solum-stage` and `SHOWCASE_ENABLE_SOLUM=1` path produce Solum artefacts; report assembler includes Solum when present. ✅
 
 ---
 

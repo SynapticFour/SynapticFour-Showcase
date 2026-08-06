@@ -78,6 +78,21 @@ Das ist das Dokument das Sie nach einem Lauf an Stakeholder schicken können —
 
 ---
 
+### solum-*-example.json — Solum Stage-1 (klinischer Companion)
+
+| Datei | Was sie zeigt |
+|-------|----------------|
+| `solum-authz-allow-example.json` | Encrypt als Dr. Amina → HTTP 200 |
+| `solum-authz-deny-example.json` | Encrypt als Intern ohne Capability → HTTP 403 (fail-closed) |
+| `solum-audit-verify-example.json` | Nach Harness-Tamper: `chain_broken` |
+| `solum-stage-result-example.json` | Zusammenfassung für den Showcase-Report |
+
+**Was das bedeutet:** Solum bleibt ein eigener regulatorischer Perimeter. Der Showcase orchestriert Solum-Demo nur als Companion-Stage (`make solum-stage`). Ephemeral Demo-Keys — kein Produktions-Deploy.
+
+Live erzeugen: `make solum-stage` (optional `--` → `./scripts/run-solum-stage.sh --publish-examples`).
+
+---
+
 ## Demo selbst ausführen
 
 → [DEMO.md](../../DEMO.md)
@@ -107,6 +122,8 @@ Das ist das Dokument das Sie nach einem Lauf an Stakeholder schicken können —
 **drs-micro-example.json:** DRS `/stream` micro-benchmark timings (median/p95 throughput) from the same run.
 
 **showcase-report-example.md:** The document you can send to stakeholders after a run.
+
+**solum-*-example.json:** Stage-1 clinical companion artefacts (allow 200 / deny 403 / `chain_broken` after harness tamper). Orchestrated via `make solum-stage`; ephemeral demo keys only.
 
 ---
 
