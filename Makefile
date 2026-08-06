@@ -2,7 +2,7 @@
 
 .PHONY: help up down destroy golden-path golden-path-with-solum solum-stage \
 	evidence-pack evidence-pack-fixtures consent-gate consent-gate-deny consent-gate-fixtures \
-	h21-teeth \
+	h21-teeth h22-org-cap \
 	gatk-rs-smoke gatk-rs-smoke-fixtures gatk-rs-wes s4mp-evidence s4mp-evidence-fixtures \
 	integration-suite integration-suite-fixtures verification-publish preflight
 
@@ -17,6 +17,7 @@ help:
 	@echo "  make consent-gate-deny      Deny path (WES must not proceed)"
 	@echo "  make consent-gate-fixtures  CI fixtures for consent gate"
 	@echo "  make h21-teeth              H2.1: Solum revoke → Ferrum WES/DRS 403"
+	@echo "  make h22-org-cap            H2.2: org-IAM mapping artefact gate"
 	@echo "  make gatk-rs-smoke          Optional gatk-rs HC smoke (soft-fail)"
 	@echo "  make gatk-rs-smoke-fixtures CI fixtures for gatk-rs smoke"
 	@echo "  make gatk-rs-wes            Optional Ferrum --gatk-rs WES path (soft-fail)"
@@ -64,6 +65,10 @@ consent-gate-fixtures:
 h21-teeth:
 	@chmod +x scripts/run-h21-teeth.sh 2>/dev/null || true
 	./scripts/run-h21-teeth.sh
+
+h22-org-cap:
+	@chmod +x scripts/run-h22-org-cap.sh 2>/dev/null || true
+	./scripts/run-h22-org-cap.sh
 
 gatk-rs-smoke:
 	@chmod +x scripts/run-gatk-rs-smoke.sh 2>/dev/null || true

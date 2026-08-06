@@ -12,6 +12,7 @@ Working checklists and decisions that implement the [coordinated portfolio roadm
 | [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md) | H2 | Remaining full-H2 gaps |
 | [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md) | H2 | TLS, visas, key/backup rotation |
 | [ADR 0001 consent access](../adr/0001-solum-ferrum-consent-access.md) | H2.1 | Solum revoke → Ferrum DRS/WES deny |
+| [ADR 0002 org IAM CAP](../adr/0002-solum-org-iam-cap.md) | H2.2 | OIDC groups → Solum CAP_* |
 | [H4-GEOGRAPHY-DECISION.md](H4-GEOGRAPHY-DECISION.md) | H4 | First non-EU jurisdiction pack (Kenya provisional) |
 
 H3 / H4 counsel artefacts live in Solum:

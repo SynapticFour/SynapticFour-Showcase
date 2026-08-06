@@ -30,7 +30,7 @@ Dataset / workspace / ADS / outbreak checks run first and are unchanged.
 - Operators must co-deploy Solum sidecar (or reachable status URL) and share the sidecar token with Ferrum when enabling the feature.
 - Unbound objects/runs are outside the consent plane until tagged or defaults are set.
 - No webhook/push revoke in H2.1 — Ferrum polls status per request (short timeout).
-- OIDC → Solum `CAP_*` and KMS CLI remain separate H2 backlog items.
+- OIDC → Solum `CAP_*` closed in **H2.2** (sidecar org-IAM); KMS CLI remains separate H2 backlog.
 
 ## Evidence
 

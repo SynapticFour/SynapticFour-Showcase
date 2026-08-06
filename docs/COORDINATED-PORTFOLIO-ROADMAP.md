@@ -220,12 +220,13 @@ Horizon language (not calendar promises): **H0 now**, **H1 pilot-ready**, **H2 p
 | **1. Close H1** | [pilots/H1-PILOT-CHECKLIST.md](pilots/H1-PILOT-CHECKLIST.md) · [H1-EXECUTION-RECORD.md](pilots/H1-EXECUTION-RECORD.md) · [H1-KNOWN-LIMITATIONS.md](pilots/H1-KNOWN-LIMITATIONS.md) | **SIGNED OFF** 2026-08-06 |
 | **1b. H2 spine v1** | [pilots/H2-PILOT-CHECKLIST.md](pilots/H2-PILOT-CHECKLIST.md) · [H2-EXECUTION-RECORD.md](pilots/H2-EXECUTION-RECORD.md) · [H2-OPS-RUNBOOK.md](pilots/H2-OPS-RUNBOOK.md) | **SIGNED OFF** spine v1 |
 | **1c. H2.1 Teeth** | [adr/0001-solum-ferrum-consent-access.md](adr/0001-solum-ferrum-consent-access.md) · `make h21-teeth` | **SIGNED OFF** — Solum revoke → Ferrum DRS/WES 403 when configured |
+| **1d. H2.2 Org CAP** | [adr/0002-solum-org-iam-cap.md](adr/0002-solum-org-iam-cap.md) · `make h22-org-cap` | **SIGNED OFF** — sidecar OIDC groups → CAP_* when org-IAM enabled |
 | **2. H3 design** | Solum [ADR 0001](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0001-openehr-cdr-and-migration.md) + [ADR 0002 EHRbase](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0002-cdr-engine-ehrbase.md) + [MIGRATION-STRANGLER.md](https://github.com/SynapticFour/Solum/blob/main/docs/MIGRATION-STRANGLER.md) | Architecture + engine choice accepted; CDR coding still deferred |
 | **3. H4 geography** | [pilots/H4-GEOGRAPHY-DECISION.md](pilots/H4-GEOGRAPHY-DECISION.md) · Solum [KENYA-K1-BRIEF](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md) | Kenya first; counsel brief ready for external review |
 
 SaaS (H5) stays documentation + tenancy hygiene until a customer pays for managed hosting.
 
-**Immediate execution order:** send Kenya K1 brief to counsel; timebox EHRbase compose spike; remaining H2 (Solum KMS CLI, OIDC→Solum CAP, observability) as product backlog.
+**Immediate execution order:** send Kenya K1 brief to counsel; timebox EHRbase compose spike; remaining H2 (Solum KMS CLI, observability) as product backlog.
 
 ---
 
