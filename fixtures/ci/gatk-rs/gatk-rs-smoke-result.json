@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "stage": "gatk_rs_smoke",
+  "generated_at": "2026-08-06T12:15:00.000000Z",
+  "status": "ok",
+  "method": "fixtures",
+  "binary_or_image": null,
+  "vcf": "smoke.vcf",
+  "pin_sha": "4dce5e14b1273f502d811c2c84274295575201b2",
+  "wes_integration": "not_wired",
+  "honesty": "gatk-rs Alpha smoke only — tiny fixture HC, not GIAB/clinical equivalence. Default Showcase WES remains Ferrum Nextflow + Broad GATK. Ferrum-GA4GH-Demo gatk-rs workflow is deferred (Phase B).",
+  "note": "CI fixture; no live gatk-rs invocation"
+}

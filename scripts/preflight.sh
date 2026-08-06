@@ -75,6 +75,8 @@ check_dir "HELIOS" "${SHOWCASE_HELIOS_ROOT:-$SHOWCASE_ROOT/../HELIOS}"
 check_dir "bioresearch-assistant (optional M2)" "${SHOWCASE_BRA_ROOT:-$SHOWCASE_ROOT/../bioresearch-assistant}"
 check_dir "Solum-Demo (optional Solum stage)" "${SHOWCASE_SOLUM_DEMO_ROOT:-$SHOWCASE_ROOT/../Solum-Demo}"
 check_dir "HelixTest (optional Evidence Pack)" "${SHOWCASE_HELIXTEST_ROOT:-$SHOWCASE_ROOT/../HelixTest}"
+check_dir "gatk-rs (optional W4 smoke)" "${SHOWCASE_GATK_RS_ROOT:-$SHOWCASE_ROOT/../gatk-rs}"
+check_dir "S4MP (optional W4 sidecar)" "${SHOWCASE_S4MP_ROOT:-$SHOWCASE_ROOT/../S4MP}"
 
 # Soft warning only: Solum stage is opt-in (SHOWCASE_ENABLE_SOLUM=1 / make solum-stage).
 if [[ "${SHOWCASE_ENABLE_SOLUM:-0}" == "1" ]]; then
@@ -85,6 +87,24 @@ if [[ "${SHOWCASE_ENABLE_SOLUM:-0}" == "1" ]]; then
     note_fail "Solum-Demo present but docker-compose.yml missing: $SOLUM_DEMO"
   else
     note_ok "Solum stage enabled; Solum-Demo compose found"
+  fi
+fi
+
+# W4: soft-warn only — products are Alpha/unstable; smoke soft-fails at runtime.
+if [[ "${SHOWCASE_ENABLE_GATK_RS:-0}" == "1" ]]; then
+  GATK_RS="${SHOWCASE_GATK_RS_ROOT:-$SHOWCASE_ROOT/../gatk-rs}"
+  if [[ ! -d "$GATK_RS" ]]; then
+    note_warn "SHOWCASE_ENABLE_GATK_RS=1 but gatk-rs missing: $GATK_RS (smoke will soft-skip)"
+  else
+    note_ok "gatk-rs smoke enabled; checkout present (Alpha — expect soft-fail)"
+  fi
+fi
+if [[ "${SHOWCASE_ENABLE_S4MP:-0}" == "1" ]]; then
+  S4MP="${SHOWCASE_S4MP_ROOT:-$SHOWCASE_ROOT/../S4MP}"
+  if [[ ! -d "$S4MP" ]]; then
+    note_warn "SHOWCASE_ENABLE_S4MP=1 but S4MP missing: $S4MP (attach will use fixtures/soft-skip)"
+  else
+    note_ok "S4MP sidecar enabled; checkout present (heuristic evidence only)"
   fi
 fi
 

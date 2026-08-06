@@ -6,7 +6,7 @@
 
 ## Kurz
 
-Das **Evidence Pack** ist ein Ordner mit technischen Artefakten aus einem Showcase-Lauf (oder aus Fixtures): HELIOS-Report, DRS-Checksummen, optional HelixTest-Scores, optional Solum Stage-1. Dazu `MANIFEST.json` mit SHA-256 jeder Datei und eine `README.md` für Stakeholder.
+Das **Evidence Pack** ist ein Ordner mit technischen Artefakten aus einem Showcase-Lauf (oder aus Fixtures): HELIOS-Report, DRS-Checksummen, optional HelixTest-Scores, optional Solum Stage-1, optional Consent-Gate, optional gatk-rs-Smoke / S4MP-Sidecar. Dazu `MANIFEST.json` mit SHA-256 jeder Datei und eine `README.md` für Stakeholder.
 
 ```bash
 # Ohne Installation / CI:

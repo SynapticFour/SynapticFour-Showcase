@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "stage": "s4mp_port_evidence",
+  "kind": "s4mp-port-diff",
+  "generated_at": "2026-08-06T12:15:00.000000Z",
+  "status": "ok",
+  "report": "diff-report.md",
+  "source": "fixtures/ci/s4mp/diff-report.md",
+  "sha256": null,
+  "pin_sha": "fc39fb433d521c91890d038c7b1c513cccf18fb3",
+  "maturity": "heuristic-map-not-certified",
+  "wes_role": "none",
+  "honesty": "S4MP sidecar evidence only — Markdown port-diff / heuristic map. Not a WES executor. Not a certification. `s4 certify` remains a stub.",
+  "note": "CI fixture; SHA-256 filled when attached by attach-s4mp-evidence.sh"
+}

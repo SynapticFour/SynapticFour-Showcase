@@ -113,6 +113,19 @@ SHOWCASE_ENABLE_CONSENT_GATE=1 SHOWCASE_CONSENT_GATE_MODE=deny make golden-path
 
 → [Consent gate honesty](docs/for-customers/consent-gate.md)
 
+### Optional: gatk-rs / S4MP (W4 — soft-fail)
+
+```bash
+make gatk-rs-smoke-fixtures
+make s4mp-evidence-fixtures
+make gatk-rs-smoke          # live Alpha smoke if binary present
+make s4mp-evidence          # attach .s4 report or fixture
+SHOWCASE_ENABLE_GATK_RS=1 SHOWCASE_ENABLE_S4MP=1 make golden-path
+```
+
+Default Nextflow GIAB path unchanged. Ferrum WES + gatk-rs deferred (Phase B).
+→ [gatk-rs / S4MP honesty](docs/for-customers/gatk-rs-s4mp.md)
+
 **Ergebnisse:**
 
 | Artefakt | Bedeutung |

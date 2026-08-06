@@ -11,6 +11,8 @@ HELI="${SHOWCASE_HELIOS_ROOT:-$SHOWCASE_ROOT/../HELIOS}"
 BRA="${SHOWCASE_BRA_ROOT:-$SHOWCASE_ROOT/../bioresearch-assistant}"
 SOLUM_DEMO="${SHOWCASE_SOLUM_DEMO_ROOT:-$SHOWCASE_ROOT/../Solum-Demo}"
 HELIXTEST="${SHOWCASE_HELIXTEST_ROOT:-$SHOWCASE_ROOT/../HelixTest}"
+GATK_RS="${SHOWCASE_GATK_RS_ROOT:-$SHOWCASE_ROOT/../gatk-rs}"
+S4MP="${SHOWCASE_S4MP_ROOT:-$SHOWCASE_ROOT/../S4MP}"
 # Product tag consumed by Solum-Demo Dockerfile/compose (not a git HEAD).
 SOLUM_TAG="${SHOWCASE_SOLUM_TAG:-stage1-baseline-sidecar-custody-2026-08-01}"
 
@@ -31,6 +33,7 @@ rev_or_unknown() {
   echo "# Solum-tag is the Solum product git tag Solum-Demo builds against"
   echo "# (see Solum-Demo Dockerfile ARG SOLUM_TAG) — not a local checkout SHA."
   echo "# HelixTest is optional (Evidence Pack / conformance gate)."
+  echo "# gatk-rs / S4MP are optional W4 (Alpha smoke + port-diff sidecar; soft-fail)."
   echo ""
   echo "Ferrum-GA4GH-Demo=$(rev_or_unknown "$DEMO")"
   echo "HELIOS=$(rev_or_unknown "$HELI")"
@@ -38,6 +41,8 @@ rev_or_unknown() {
   echo "Solum-Demo=$(rev_or_unknown "$SOLUM_DEMO")"
   echo "Solum-tag=$SOLUM_TAG"
   echo "HelixTest=$(rev_or_unknown "$HELIXTEST")"
+  echo "gatk-rs=$(rev_or_unknown "$GATK_RS")"
+  echo "S4MP=$(rev_or_unknown "$S4MP")"
 } >"$OUT"
 
 echo "{\"ok\":true,\"wrote\":\"$OUT\"}"

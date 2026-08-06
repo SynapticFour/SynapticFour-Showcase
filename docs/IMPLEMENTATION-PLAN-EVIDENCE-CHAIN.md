@@ -104,16 +104,18 @@ Note: script name is `run-consent-gate.sh` (plan typo “phenofloat” corrected
 | **gatk-rs** | Rust HC / calling engine | Package as TRS tool or WES workflow **in Ferrum-GA4GH-Demo** (or a demo overlay), then pin sibling from Showcase |
 | **S4MP** | Method / knowledge / port-verification platform | Better as **sidecar evidence** (“port certification” narrative) than as WES runtime — don’t force S4MP into the executor |
 
-| Step | Where | Work |
-|------|-------|------|
-| 1 | Decision memo | Default path stays Nextflow GIAB; gatk-rs is `SHOWCASE_ENABLE_GATK_RS=1` optional |
-| 2 | Ferrum-GA4GH-Demo | Workflow/TRS entry that invokes gatk-rs binary or container at pin |
-| 3 | Showcase | Script stage + pin `gatk-rs=<tag>`; HELIOS wraps the run like today |
-| 4 | S4MP | Optional: attach S4MP method report artefact into Evidence Pack MANIFEST (link/hash), not execute S4MP as WES |
+| Step | Where | Work | Status |
+|------|-------|------|--------|
+| 1 | Decision memo | Default path stays Nextflow GIAB; gatk-rs is `SHOWCASE_ENABLE_GATK_RS=1` optional | Done — `docs/for-customers/gatk-rs-s4mp.md` |
+| 2 | Ferrum-GA4GH-Demo | Workflow/TRS entry that invokes gatk-rs binary or container at pin | **Deferred (Phase B)** — products Alpha/unstable; `wes_integration: not_wired` |
+| 3 | Showcase | Script stage + pin `gatk-rs=<sha>`; soft-fail smoke (not HELIOS-wrapped WES) | Done — `run-gatk-rs-smoke.sh`, fixtures, soft-fail |
+| 4 | S4MP | Optional: attach S4MP method report into Evidence Pack MANIFEST (link/hash), not execute as WES | Done — `attach-s4mp-evidence.sh`, fixtures |
 
-**Exit:** One optional path documented for “Rust caller under Ferrum WES + HELIOS”; S4MP linked as method evidence when available.
+**Exit (Phase A):** Optional soft-fail path documented; Evidence Pack roles `gatk_rs_smoke` / `s4mp_port_diff`; default Nextflow untouched. ✅
 
-**Estimate:** Demo/Ferrum-side heavier (~1–2 weeks); Showcase wiring ~2 days after Demo exposes the workflow.
+**Exit (Phase B, later):** Optional Ferrum WES entry for gatk-rs under HELIOS when Demo is ready — do not block W0–W3.
+
+**Estimate:** Demo/Ferrum-side heavier (~1–2 weeks); Showcase Phase A wiring done with soft-fail.
 
 ---
 

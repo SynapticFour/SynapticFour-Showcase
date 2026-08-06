@@ -43,6 +43,8 @@ M2_PIPELINE="${SHOWCASE_M2_PIPELINE:-handoff}"
 ENABLE_SOLUM="${SHOWCASE_ENABLE_SOLUM:-0}"
 ENABLE_EVIDENCE_PACK="${SHOWCASE_ENABLE_EVIDENCE_PACK:-0}"
 ENABLE_CONSENT_GATE="${SHOWCASE_ENABLE_CONSENT_GATE:-0}"
+ENABLE_GATK_RS="${SHOWCASE_ENABLE_GATK_RS:-0}"
+ENABLE_S4MP="${SHOWCASE_ENABLE_S4MP:-0}"
 CONSENT_GATE_MODE="${SHOWCASE_CONSENT_GATE_MODE:-allow}"
 # Default: Nextflow only (aligns with HELIOS Nextflow parser). Extra flags: e.g. --macro
 DEMO_FLAGS=(--nextflow)
@@ -70,6 +72,8 @@ Environment:
   SHOWCASE_ENABLE_EVIDENCE_PACK  If 1, build Evidence Pack after stages (see evidence-pack.sh)
   SHOWCASE_ENABLE_CONSENT_GATE  If 1, PhenoFlow-purpose → Solum consent before WES (see run-consent-gate.sh)
   SHOWCASE_CONSENT_GATE_MODE    allow (default) or deny (blocks WES; writes blocked artefacts)
+  SHOWCASE_ENABLE_GATK_RS  If 1, optional gatk-rs HC smoke after HELIOS (soft-fail; see run-gatk-rs-smoke.sh)
+  SHOWCASE_ENABLE_S4MP     If 1, optional S4MP port-diff sidecar after HELIOS (see attach-s4mp-evidence.sh)
 
 Requires: docker, bash, Python 3.11+ (demo scripts + HELIOS). HELIOS: helios on PATH, or HELIOS_ROOT for PYTHONPATH.
 EOF
@@ -317,6 +321,19 @@ fi
 if [[ "$ENABLE_SOLUM" == "1" ]]; then
   echo "[showcase] running Solum stage (Solum-Demo Stage-1 proofs)..."
   run_with_heartbeat "Solum stage" "$SHOWCASE_ROOT/scripts/run-solum-stage.sh"
+  "${ASSEMBLE_CMD[@]}"
+fi
+
+# W4 optional path: soft-fail (products unstable). Never replaces default Nextflow WES.
+if [[ "$ENABLE_GATK_RS" == "1" ]]; then
+  echo "[showcase] optional gatk-rs smoke (soft-fail; does not replace Ferrum WES)..."
+  "$SHOWCASE_ROOT/scripts/run-gatk-rs-smoke.sh" || true
+  "${ASSEMBLE_CMD[@]}"
+fi
+
+if [[ "$ENABLE_S4MP" == "1" ]]; then
+  echo "[showcase] optional S4MP port-evidence sidecar (soft-fail; not a WES executor)..."
+  "$SHOWCASE_ROOT/scripts/attach-s4mp-evidence.sh" || true
   "${ASSEMBLE_CMD[@]}"
 fi
 

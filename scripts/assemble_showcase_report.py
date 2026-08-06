@@ -131,6 +131,32 @@ def _write_markdown_report(path: Path, report: dict[str, Any]) -> None:
                 "",
             ]
         )
+    gatk_rs = report.get("gatk_rs", {})
+    if gatk_rs:
+        lines.extend(
+            [
+                "## gatk-rs smoke (optional W4)",
+                "",
+                f"- Status: `{gatk_rs.get('status', 'n/a')}`",
+                f"- Method: `{gatk_rs.get('method', 'n/a')}`",
+                f"- WES integration: `{gatk_rs.get('wes_integration', 'n/a')}`",
+                f"- Honesty: `{gatk_rs.get('honesty', 'n/a')}`",
+                "",
+            ]
+        )
+    s4mp = report.get("s4mp", {})
+    if s4mp:
+        lines.extend(
+            [
+                "## S4MP port evidence (optional W4 sidecar)",
+                "",
+                f"- Status: `{s4mp.get('status', 'n/a')}`",
+                f"- Maturity: `{s4mp.get('maturity', 'n/a')}`",
+                f"- WES role: `{s4mp.get('wes_role', 'n/a')}`",
+                f"- Honesty: `{s4mp.get('honesty', 'n/a')}`",
+                "",
+            ]
+        )
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
@@ -233,6 +259,31 @@ def main() -> None:
             "purpose": consent_result.get("purpose"),
             "honesty": consent_result.get("honesty"),
             "result_path": str(consent_path),
+        }
+
+    gatk_rs_path = args.showcase_root.resolve() / "artifacts" / "gatk-rs" / "gatk-rs-smoke-result.json"
+    gatk_rs_result = _read_json(gatk_rs_path)
+    if isinstance(gatk_rs_result, dict):
+        report["gatk_rs"] = {
+            "status": gatk_rs_result.get("status"),
+            "method": gatk_rs_result.get("method"),
+            "wes_integration": gatk_rs_result.get("wes_integration"),
+            "vcf": gatk_rs_result.get("vcf"),
+            "honesty": gatk_rs_result.get("honesty"),
+            "result_path": str(gatk_rs_path),
+        }
+
+    s4mp_path = args.showcase_root.resolve() / "artifacts" / "s4mp" / "s4mp-evidence.json"
+    s4mp_result = _read_json(s4mp_path)
+    if isinstance(s4mp_result, dict):
+        report["s4mp"] = {
+            "status": s4mp_result.get("status"),
+            "kind": s4mp_result.get("kind"),
+            "maturity": s4mp_result.get("maturity"),
+            "wes_role": s4mp_result.get("wes_role"),
+            "sha256": s4mp_result.get("sha256"),
+            "honesty": s4mp_result.get("honesty"),
+            "result_path": str(s4mp_path),
         }
 
     if args.demo_seconds is not None:

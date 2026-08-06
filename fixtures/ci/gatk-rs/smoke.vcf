@@ -1,0 +1,7 @@
+##fileformat=VCFv4.2
+##source=gatk-rs HaplotypeCaller assembly-region-v1
+##reference=parity/fixtures/reference.fa
+##contig=<ID=chr1,length=32>
+##GATK_RS_HC_PIPELINE=assembly-region-v1
+##GATK_RS_HC_OUTPUT_MODE=VCF
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	sample

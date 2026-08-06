@@ -52,6 +52,30 @@ cp "$ROOT/fixtures/ci/consent-gate/consent-gate-result.json" "$ROOT/artifacts/co
   --markdown-output /tmp/showcase-ci-consent.md
 "$PY" -c "import json; r=json.load(open('/tmp/showcase-ci-consent.json')); assert r.get('consent_gate',{}).get('wes_may_proceed') is True, r.get('consent_gate')"
 
+echo "[ci-check] gatk-rs / S4MP fixtures"
+test -f "$ROOT/fixtures/ci/gatk-rs/gatk-rs-smoke-result.json"
+test -f "$ROOT/fixtures/ci/gatk-rs/smoke.vcf"
+test -f "$ROOT/fixtures/ci/s4mp/diff-report.md"
+test -f "$ROOT/fixtures/ci/s4mp/s4mp-evidence.json"
+bash -n scripts/run-gatk-rs-smoke.sh
+bash -n scripts/attach-s4mp-evidence.sh
+./scripts/run-gatk-rs-smoke.sh --fixtures
+./scripts/attach-s4mp-evidence.sh --fixtures
+test -f "$ROOT/artifacts/gatk-rs/gatk-rs-smoke-result.json"
+test -f "$ROOT/artifacts/s4mp/s4mp-evidence.json"
+"$PY" scripts/assemble_showcase_report.py \
+  --showcase-root "$ROOT" \
+  --demo-root "$ROOT/fixtures/ci/demo" \
+  --helios-report "$ROOT/fixtures/ci/helios/report.json" \
+  --output /tmp/showcase-ci-w4.json \
+  --markdown-output /tmp/showcase-ci-w4.md
+"$PY" -c "
+import json
+r=json.load(open('/tmp/showcase-ci-w4.json'))
+assert r.get('gatk_rs',{}).get('status')=='ok', r.get('gatk_rs')
+assert r.get('s4mp',{}).get('maturity')=='heuristic-map-not-certified', r.get('s4mp')
+"
+
 echo "[ci-check] evidence-pack.sh --fixtures"
 rm -rf "$ROOT/artifacts/evidence-pack-fixtures" "$ROOT/artifacts/evidence-pack-latest"
 ./scripts/evidence-pack.sh --fixtures
@@ -67,6 +91,10 @@ assert any(f.get('role')=='helios_report' for f in m['files'])
 assert m['summaries']['helixtest'].get('present') is True
 assert m['summaries']['solum'].get('present') is True
 assert m['summaries']['consent_gate'].get('present') is True
+assert m['summaries']['gatk_rs'].get('present') is True
+assert m['summaries']['s4mp'].get('present') is True
+assert any(f.get('role')=='gatk_rs_smoke' for f in m['files'])
+assert any(f.get('role')=='s4mp_port_diff' for f in m['files'])
 print('evidence-pack fixture ok', m['pack_id'], 'files', len(m['files']))
 "
 

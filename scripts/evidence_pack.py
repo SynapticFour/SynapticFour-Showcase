@@ -2,7 +2,8 @@
 """Assemble a SynapticFour Showcase Evidence Pack (MANIFEST + copied artefacts).
 
 Packs HELIOS report, DRS object metadata, optional HelixTest JSON, optional
-Solum digest, and optional showcase-report into one reviewable directory.
+Solum digest, optional consent gate, optional gatk-rs smoke / S4MP sidecar,
+and optional showcase-report into one reviewable directory.
 Does not claim certification or legal compliance — see README in the pack.
 """
 from __future__ import annotations
@@ -111,6 +112,31 @@ def _consent_summary(data: dict[str, Any] | list[Any] | None) -> dict[str, Any]:
     }
 
 
+def _gatk_rs_summary(data: dict[str, Any] | list[Any] | None) -> dict[str, Any]:
+    if not isinstance(data, dict):
+        return {"present": False}
+    return {
+        "present": True,
+        "status": data.get("status"),
+        "method": data.get("method"),
+        "wes_integration": data.get("wes_integration"),
+        "vcf": data.get("vcf"),
+    }
+
+
+def _s4mp_summary(data: dict[str, Any] | list[Any] | None) -> dict[str, Any]:
+    if not isinstance(data, dict):
+        return {"present": False}
+    return {
+        "present": True,
+        "status": data.get("status"),
+        "kind": data.get("kind"),
+        "maturity": data.get("maturity"),
+        "wes_role": data.get("wes_role"),
+        "sha256": data.get("sha256"),
+    }
+
+
 def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
     files = manifest.get("files") or []
     helios = manifest.get("summaries", {}).get("helios") or {}
@@ -118,6 +144,8 @@ def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
     helix = manifest.get("summaries", {}).get("helixtest") or {}
     solum = manifest.get("summaries", {}).get("solum") or {}
     consent = manifest.get("summaries", {}).get("consent_gate") or {}
+    gatk_rs = manifest.get("summaries", {}).get("gatk_rs") or {}
+    s4mp = manifest.get("summaries", {}).get("s4mp") or {}
     lines = [
         "# Evidence Pack",
         "",
@@ -137,6 +165,7 @@ def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
         "- DRS object metadata and declared checksums (when provided)",
         "- Optional HelixTest conformance JSON (when provided — not required for a valid pack)",
         "- Optional Solum Stage-1 digest (fail-closed authz + tamper-evident audit)",
+        "- Optional gatk-rs Alpha smoke / S4MP port-diff sidecar (when included)",
         "- SHA-256 of every file copied into this directory (see `MANIFEST.json`)",
         "",
         "## What it does **not** prove",
@@ -144,6 +173,8 @@ def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
         "- Formal certification, EHDS compliance, or DSGVO compliance",
         "- That a production deployment matches these demo/fixture conditions",
         "- Legal consent validity (Solum artefacts are technical purpose-binding demos only)",
+        "- gatk-rs clinical/GIAB equivalence or Ferrum WES execution of gatk-rs",
+        "- S4MP certification (`s4 certify` is a stub; sidecar ≠ executor)",
         "- Continuous monitoring after the pack was generated",
         "",
         "See also: Showcase `docs/for-customers/compliance-framing.md` and",
@@ -157,6 +188,8 @@ def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
         f"- HelixTest present: `{helix.get('present', False)}`",
         f"- Solum stage present: `{solum.get('present', False)}` · status `{solum.get('status', 'n/a')}`",
         f"- Consent gate present: `{consent.get('present', False)}` · decision `{consent.get('decision', 'n/a')}`",
+        f"- gatk-rs smoke present: `{gatk_rs.get('present', False)}` · status `{gatk_rs.get('status', 'n/a')}`",
+        f"- S4MP sidecar present: `{s4mp.get('present', False)}` · maturity `{s4mp.get('maturity', 'n/a')}`",
         "",
         "## Files",
         "",
@@ -183,6 +216,9 @@ def main() -> None:
     parser.add_argument("--helixtest-json", type=Path, default=None)
     parser.add_argument("--solum-result", type=Path, default=None)
     parser.add_argument("--consent-gate", type=Path, default=None)
+    parser.add_argument("--gatk-rs-smoke", type=Path, default=None)
+    parser.add_argument("--s4mp-evidence", type=Path, default=None)
+    parser.add_argument("--s4mp-report", type=Path, default=None)
     parser.add_argument("--showcase-report", type=Path, default=None)
     parser.add_argument("--showcase-report-md", type=Path, default=None)
     args = parser.parse_args()
@@ -211,6 +247,9 @@ def main() -> None:
     add("helixtest", args.helixtest_json, "helixtest.json")
     add("solum_stage", args.solum_result, "solum-stage-result.json")
     add("consent_gate", args.consent_gate, "consent-gate-result.json")
+    add("gatk_rs_smoke", args.gatk_rs_smoke, "gatk-rs-smoke-result.json")
+    add("s4mp_port_diff", args.s4mp_evidence, "s4mp-evidence.json")
+    add("s4mp_port_report", args.s4mp_report, "s4mp-diff-report.md")
     add("showcase_report", args.showcase_report, "showcase-report.json")
     add("showcase_report_md", args.showcase_report_md, "showcase-report.md")
 
@@ -245,6 +284,14 @@ def main() -> None:
         if (out / "consent-gate-result.json").is_file()
         else None
     )
+    gatk_rs_data = (
+        _load_json(out / "gatk-rs-smoke-result.json")
+        if (out / "gatk-rs-smoke-result.json").is_file()
+        else None
+    )
+    s4mp_data = (
+        _load_json(out / "s4mp-evidence.json") if (out / "s4mp-evidence.json").is_file() else None
+    )
 
     manifest: dict[str, Any] = {
         "schema_version": 1,
@@ -258,16 +305,20 @@ def main() -> None:
                 "Presence of signed/structured HELIOS audit artefacts from a run or fixture",
                 "Declared DRS checksums when a DRS object JSON is included",
                 "Optional HelixTest / Solum Stage-1 digests when included",
+                "Optional gatk-rs smoke / S4MP port-diff sidecars when included",
                 "Integrity of files inside this pack via SHA-256 in MANIFEST.json",
             ],
             "does_not_prove": [
                 "Formal certification or regulatory compliance (EHDS, DSGVO, …)",
                 "Production equivalence to the demo/fixture environment",
                 "Legal validity of consent (Solum demos are technical only)",
+                "gatk-rs GIAB/clinical equivalence or WES execution of gatk-rs",
+                "S4MP port certification (heuristic map / stub certify only)",
             ],
             "docs": [
                 "docs/for-customers/compliance-framing.md",
                 "docs/for-customers/evidence-pack.md",
+                "docs/for-customers/gatk-rs-s4mp.md",
             ],
         },
         "summaries": {
@@ -279,6 +330,8 @@ def main() -> None:
             "helixtest": _helixtest_summary(helix_data),
             "solum": _solum_summary(solum_data),
             "consent_gate": _consent_summary(consent_data),
+            "gatk_rs": _gatk_rs_summary(gatk_rs_data),
+            "s4mp": _s4mp_summary(s4mp_data),
         },
         "files": file_entries,
     }

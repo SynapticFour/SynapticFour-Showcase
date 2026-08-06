@@ -9,7 +9,6 @@
 ## Was gerade in Arbeit ist
 
 🔨 **In Arbeit:**
-- gatk-rs / S4MP als optionaler WES-/Port-Evidence-Pfad (W4) — siehe [`docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
 - One-command Demo-Setup (`showcase` CLI-Wrapper)
 - Strukturiertes Run-Log (`artifacts/run.jsonl`)
 
@@ -17,6 +16,7 @@
 - PDF/HTML-Export des Showcase-Reports (pandoc-basiert, optional)
 - Erweiterung der vorgenerierten Demo-Artefakte (mehr Szenarien, mehr Produkte)
 - Beacon v2 Demo-Szenario als eigenständiger Showcase-Pfad
+- Ferrum-GA4GH-Demo gatk-rs WES-Workflow (W4 Phase B), wenn Produkte stabil genug sind
 
 💡 **Wird evaluiert:**
 - Interaktiver Setup-Guide für erste Demo-Ausführung
@@ -25,6 +25,7 @@
 
 ## Was zuletzt fertig wurde
 
+- ✅ Evidence-Chain W4 Phase A — gatk-rs smoke + S4MP sidecar (soft-fail; Ferrum WES deferred) (Aug 2026)
 - ✅ Evidence-Chain W3 — Consent gate (PhenoFlow purpose → Solum before WES; allow/deny) (Aug 2026)
 - ✅ Evidence-Chain W2 — Evidence Pack CLI (`make evidence-pack` / `--fixtures`) (Aug 2026)
 - ✅ Evidence-Chain W0 + W1 — Solum pins, Path E, `make solum-stage` / `golden-path-with-solum` (Aug 2026)
@@ -78,7 +79,6 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 ## What's currently in progress
 
 🔨 **In progress:**
-- gatk-rs / S4MP as optional WES / port-evidence path (W4) — see [`docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
 - One-command demo setup (`showcase` CLI wrapper)
 - Structured run log (`artifacts/run.jsonl`)
 
@@ -86,11 +86,13 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 - PDF/HTML export of showcase report
 - Expanded pre-generated demo artefacts
 - Beacon v2 demo scenario as standalone showcase path
+- Ferrum-GA4GH-Demo gatk-rs WES workflow (W4 Phase B) when products are stable enough
 
 ---
 
 ## Recently completed
 
+- ✅ Evidence-chain W4 Phase A — gatk-rs smoke + S4MP sidecar (soft-fail; Ferrum WES deferred) (Aug 2026)
 - ✅ Evidence-chain W3 — Consent gate (PhenoFlow purpose → Solum before WES; allow/deny) (Aug 2026)
 - ✅ Evidence-chain W2 — Evidence Pack CLI (`make evidence-pack` / `--fixtures`) (Aug 2026)
 - ✅ Evidence-chain W0 + W1 — Solum pins, Path E, `make solum-stage` / `golden-path-with-solum` (Aug 2026)

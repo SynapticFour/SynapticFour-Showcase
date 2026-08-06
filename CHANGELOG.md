@@ -6,6 +6,7 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Added
 
+- **W4 gatk-rs / S4MP (Phase A)** — soft-fail `run-gatk-rs-smoke.sh` + `attach-s4mp-evidence.sh`, fixtures, Evidence Pack roles, honesty doc; opt-in via `SHOWCASE_ENABLE_GATK_RS` / `SHOWCASE_ENABLE_S4MP`. Ferrum WES gatk-rs workflow deferred (Phase B).
 - **W3 Consent gate** — `scripts/run-consent-gate.sh`, allow/deny before WES, fixtures, customer honesty doc; golden-path opt-in via `SHOWCASE_ENABLE_CONSENT_GATE`.
 - **W2 Evidence Pack** — `scripts/evidence-pack.sh` / `evidence_pack.py`, `make evidence-pack` / `evidence-pack-fixtures`, customer honesty doc, HelixTest gate doc, CI fixture pack.
 - **W0 complete / W1 landed** — Solum pins, evaluator Path E, preflight Solum-Demo check, `scripts/run-solum-stage.sh`, `make solum-stage` / `make golden-path-with-solum`, example Solum artefacts, report assembler Solum section.
@@ -14,6 +15,7 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Changed
 
+- **PINNED_VERSIONS.txt** — added optional `gatk-rs`, `S4MP` (W4); Ferrum/HELIOS/BRA/Solum pins retained.
 - **PINNED_VERSIONS.txt** — added `Solum-Demo`, `Solum-tag`, optional `HelixTest` (Ferrum/HELIOS/BRA pins retained for committed demo artefacts).
 - **PINNED_VERSIONS.txt** — Ferrum-GA4GH-Demo pin `41d7b89` (benchmark artefacts committed upstream after showcase run).
 
