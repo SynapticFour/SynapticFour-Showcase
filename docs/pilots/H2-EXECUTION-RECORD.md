@@ -18,7 +18,7 @@ This is **not** the full roadmap exit (“withdrawal has teeth across planes”)
 | Date | 2026-08-06 |
 | Ferrum | `49aab603` — WES fail-closed + pilot issuer fix |
 | Solum | `8808f91` — ZeroizeOnDrop on held Crypt4GH seeds |
-| Showcase |  — H2 checklist / ops / limitations pack |
+| Showcase | `465df45` — H2 checklist / ops / limitations pack |
 
 ---
 
