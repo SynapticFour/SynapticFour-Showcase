@@ -6,6 +6,7 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Added
 
+- **H2.4 AWS KMS CLI/sidecar signed off** — optional `aws-kms` feature; second-pass §A closed; not HSM.
 - **Kenya K1 Vorprüfung applied (non-counsel)** — Solum `kenya-dpa` → PROVISIONAL-PRODUCTION-CANDIDATE; H4 docs updated; real counsel still required.
 - **H2.2 Org CAP signed off** — sidecar OIDC groups → CAP_*; [ADR 0002](docs/adr/0002-solum-org-iam-cap.md); `make h22-org-cap`.
 - **H2.1 Teeth signed off** — Solum revoke → Ferrum DRS/WES 403 when configured; [ADR 0001](docs/adr/0001-solum-ferrum-consent-access.md); `make h21-teeth`.

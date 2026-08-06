@@ -82,7 +82,7 @@ Not the full roadmap exit. Remaining work is sequenced in the second-pass doc.
 
 Tracked in [H2-SECOND-PASS.md](H2-SECOND-PASS.md):
 
-- Solum KMS CLI/sidecar wiring
+- ~~Solum KMS CLI/sidecar wiring~~ **Done (H2.4)**
 - Prometheus / alert pack
 - HELIOS clinical evidence types
 - CLI org-IAM (product decision; currently intentional sidecar-only)

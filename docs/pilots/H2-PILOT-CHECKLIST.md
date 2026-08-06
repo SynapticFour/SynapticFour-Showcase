@@ -15,15 +15,15 @@ Operator can run without Synaptic Four on the laptop; **withdrawal has teeth acr
 | 2.1 | WES auth-surface fail-closed under `require_auth` | [x] | Ferrum WES list/submit/cancel/resume/status/log/tasks → **401** without Bearer |
 | 2.2 | Ingest visa operator path (`ferrum:collector`) | [x] | Documented + evidenced: mock-idp Passport alone → ingest 403; Edge/IdP must issue collector visa |
 | 2.3 | Solum zeroize where feasible | [x] | `ZeroizeOnDrop` on CustomerHeld + AwsKms held seeds |
-| 2.4 | KMS/HSM honesty + rotation runbook | [x] | Library KMS remains; CLI/sidecar unwired — see [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md) |
+| 2.4 | KMS/HSM honesty + rotation runbook | [x] | H2.4 optional `aws-kms` CLI/sidecar; honesty: envelope not HSM — [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md) |
 | 2.5 | Org IAM bridge (H2.2 Org CAP) | [x] | Sidecar `--org-iam-config` + JWKS → groups→CAP_*; ADR 0002; `make h22-org-cap` |
 | 2.6 | Consent propagation (H2.1 Teeth) | [x] | Ferrum polls Solum status on bound DRS/WES; ADR 0001; `make h21-teeth` |
 | 2.7 | Observability / HELIOS clinical evidence | [ ] second pass | Thin health curls in H2.3; Prometheus + HELIOS types → [H2-SECOND-PASS.md](H2-SECOND-PASS.md) |
 | 2.8 | HelixTest Auth Level live | [ ] optional | Fixture gate remains required via Showcase suite |
 | 2.9 | Ops pack (TLS + backup + H2.3 polish) | [x] | [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md) — collector visa path + thin metrics |
-| 2.10 | Sign-off | [x] | Spine v1 + H2.1 + H2.2 + H2.3 |
+| 2.10 | Sign-off | [x] | Spine v1 + H2.1 + H2.2 + H2.3 + H2.4 |
 
-**Honest scope:** H2 **spine v1** + **H2.1 Teeth** + **H2.2 Org CAP** + **H2.3 Ops polish**. Full roadmap exit → [H2-SECOND-PASS.md](H2-SECOND-PASS.md) (KMS, Prometheus, HELIOS clinical types, CLI org-IAM decision).
+**Honest scope:** H2 **spine v1** + **H2.1–H2.4**. Full roadmap exit still needs Prometheus + HELIOS clinical types (+ CLI org-IAM decision) — [H2-SECOND-PASS.md](H2-SECOND-PASS.md).
 
 ---
 

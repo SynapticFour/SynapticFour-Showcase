@@ -69,7 +69,7 @@ Issue a Passport visa / scope `ferrum:collector` (or admin) for the operator acc
 3. Re-encrypt fields that must move to the new `key_ref` (application-driven)
 4. Retire old key file offline; do **not** leave retired privkeys on the host
 
-**AWS KMS:** library API only (`AwsKmsKeyProvider::wrap_seed` / `from_wrapped_seed`). CLI/sidecar KMS wiring is **second pass** — see [H2-SECOND-PASS.md](H2-SECOND-PASS.md) §A. Prefer CustomerHeld files until then.
+**AWS KMS (H2.4):** optional feature `aws-kms` — `solum crypto wrap-seed` + encrypt/decrypt `--wrapped-keypair`; sidecar `--wrapped-keys-dir`. Requires rustc ≥ 1.94.1 for that feature build, env AWS credentials, and CustomerHeld custody with `provider=aws-kms`. Envelope unwrap into process memory — **not** an HSM. Prefer CustomerHeld files when KMS is not required.
 
 **Zeroize:** private seeds use `ZeroizeOnDrop` in process memory — best-effort, not HSM.
 

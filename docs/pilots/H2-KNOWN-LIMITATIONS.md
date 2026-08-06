@@ -13,7 +13,7 @@ H2 **spine v1** + **H2.1 Teeth** + **H2.2 Org CAP** + **H2.3 Ops polish** are si
 | Collector visa operator how-to | **Closed (H2.3)** — Edge account + IdP paths in [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md) §2.1 |
 | Ingest without `ferrum:collector` | Still **403** (correct); mock-idp Passports lack collector visa by design |
 | Thin health checks | **Closed (H2.3)** — gateway `/health` + optional Solum status curl; not Prometheus |
-| Solum KMS CLI/sidecar | **Second pass** — `AwsKmsKeyProvider` library + `aws-kms` feature only |
+| Solum KMS CLI/sidecar | **Closed (H2.4)** optional `--features aws-kms` — wrap-seed / `--wrapped-keypair` / `--wrapped-keys-dir`; not HSM |
 | Zeroize | **Best-effort** ZeroizeOnDrop on held seeds; not a TEE / not proof against memory dump |
 | CLI CAP_* | Still `--capability` (offline); org-IAM is sidecar-only — second pass decision |
 | SAML | ga4gh-infra: OIDC bridge only; SAML via Keycloak if demanded |

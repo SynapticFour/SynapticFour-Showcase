@@ -13,7 +13,7 @@ Nothing here is blocked by an external gate except where noted. Items are **defe
 
 | # | Workstream | Owner | Unblocks | Effort (rough) |
 |---|------------|-------|----------|----------------|
-| A | Solum KMS CLI + sidecar wiring | Solum | Honest “KMS path” for buyers who require AWS KMS | Days–1 week |
+| A | Solum KMS CLI + sidecar wiring | Solum | Honest “KMS path” for buyers who require AWS KMS | **Done (H2.4)** |
 | B | Observability baseline (metrics + alerts) | Ferrum + Solum sidecar | Unsupervised on-prem without Synaptic Four on laptop | Few days |
 | C | HELIOS clinical access evidence types | HELIOS + Solum export | Continuous clinical-plane evidence in packs | 1–2 weeks (design + ship) |
 | D | CLI org-IAM (optional) | Solum | Same CAP authority on offline CLI as sidecar | Days — **product decision first** |
@@ -22,16 +22,16 @@ Optional / pull-only: HelixTest Auth Level live; SAML (Keycloak if demanded).
 
 ---
 
-## A — Solum KMS CLI / sidecar
+## A — Solum KMS CLI / sidecar — **DONE (H2.4)**
 
 | Fact | Detail |
 |------|--------|
-| Today | `AwsKmsKeyProvider` + `aws-kms` feature; wrap/unwrap in library only |
-| Gap | No CLI subcommands / sidecar flags for KMS-backed seeds; ops still CustomerHeld files |
-| Done when | Operator can mint/use KMS-wrapped key material via CLI and/or sidecar without calling the library from app code; rotation steps in [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md); tests (mocked AWS); CHANGELOG honesty (“not HSM certification”) |
-| Do not claim | Production HSM / FIPS from wiring alone |
+| Shipped | Feature `aws-kms`: CLI `wrap-seed` / `--wrapped-keypair`; sidecar `--wrapped-keys-dir`; `WrappedSeedFile` + mocked `load_aws_kms_from_dir` tests |
+| Toolchain | Feature build needs **rustc ≥ 1.94.1**; default Solum MSRV stays 1.91.1 without the feature |
+| Credentials | Env keys (`AWS_REGION`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`); not full IRSA/`aws-config` |
+| Honesty | Envelope + in-process unwrap (`ZeroizeOnDrop`); **not** HSM/TEE/FIPS |
 
-**Entry points:** Solum `crates/crypto/src/aws_kms.rs`, CLI crypto commands, sidecar `--keys-dir` / custody path.
+Remaining second-pass items: B–D below.
 
 ---
 
