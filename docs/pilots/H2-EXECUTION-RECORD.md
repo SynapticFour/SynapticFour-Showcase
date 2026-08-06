@@ -23,11 +23,12 @@ Spine v1 + H2.1 Teeth + H2.2 Org CAP + H2.3 Ops polish + H2.4 KMS + second-pass 
 | Ferrum (H2.1) | `e638214b` — `SolumConsentClient` + DRS/WES hooks |
 | Solum (H2.1 docs) | `9b8ce7f` |
 | Solum (H2.2) | `545711c` |
-| Solum (H2.4) | `c9c7082` (+ multi-cloud / on-prem default honesty docs) |
+| Solum (H2.4) | `c9c7082` (+ multi-cloud honesty `c3becb4`) |
 | Showcase (H2.2) | `3f80d94` — ADR 0001/0002 + `h21-teeth` / `h22-org-cap` |
 | Showcase (H2.3) | `40c80f9` — ops polish + second-pass backlog |
 | Showcase (H2.4) | `050037c` |
-| HELIOS | `CLIN-ACCESS-001` clinical access check |
+| Showcase (H2 exit) | `03caccb` — observability + second-pass B–D + sign-off |
+| HELIOS | `bd729a6` — `CLIN-ACCESS-001` |
 
 ---
 

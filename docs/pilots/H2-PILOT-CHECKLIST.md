@@ -35,8 +35,8 @@ Operator can run without Synaptic Four on the laptop; **withdrawal has teeth acr
 | Operator | Synaptic Four eng |
 | Date | 2026-08-06 |
 | Ferrum pin | `e638214b` (H2.1) / spine `49aab603` |
-| Solum pin | H2.4 `c9c7082` (+ honesty docs follow-up) |
-| HELIOS | `CLIN-ACCESS-001` (clinical_access check) |
+| Solum pin | H2.4 `c9c7082` / honesty `c3becb4` |
+| HELIOS | `bd729a6` (`CLIN-ACCESS-001`) |
 | Evidence | [H2-EXECUTION-RECORD.md](H2-EXECUTION-RECORD.md) |
 | Notes | Do not claim EHDS/ODPC certification or HSM; Kenya counsel still outstanding |
 
