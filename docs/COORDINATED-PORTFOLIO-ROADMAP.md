@@ -213,13 +213,17 @@ Horizon language (not calendar promises): **H0 now**, **H1 pilot-ready**, **H2 p
 
 ---
 
-## 7. Sequencing recommendation (next 3 moves)
+## 7. Sequencing recommendation (next 3 moves) — artefacts
 
-1. **Close H1** on Ferrum + HELIOS + Solum sidecar (pilot checklist) — highest leverage for revenue and learning.
-2. **Start H3 design** (openEHR CDR ADR + migration stages) in parallel as *architecture*, not big-bang build — protects Solum’s moat.
-3. **H4 jurisdiction packs** as soon as one African pilot is named — EU-only Solum under-serves stated equal markets.
+| Move | Artefact | Status |
+|------|----------|--------|
+| **1. Close H1** | [pilots/H1-PILOT-CHECKLIST.md](pilots/H1-PILOT-CHECKLIST.md) — week-by-week Ferrum + HELIOS + Solum sidecar | Checklist ready; execute on a pilot host |
+| **2. H3 design** | Solum [ADR 0001](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0001-openehr-cdr-and-migration.md) + [MIGRATION-STRANGLER.md](https://github.com/SynapticFour/Solum/blob/main/docs/MIGRATION-STRANGLER.md) | Architecture accepted; implementation deferred |
+| **3. H4 geography** | [pilots/H4-GEOGRAPHY-DECISION.md](pilots/H4-GEOGRAPHY-DECISION.md) — **Kenya first** (provisional) | Pack hardening + counsel path next |
 
 SaaS (H5) stays documentation + tenancy hygiene until a customer pays for managed hosting.
+
+**Immediate execution order:** run H1 checklist on a fresh VM; in parallel, schedule counsel for Kenya K1 items; do **not** start CDR coding until ADR follow-ups (CDR engine spike) are timeboxed.
 
 ---
 
@@ -238,6 +242,9 @@ SaaS (H5) stays documentation + tenancy hygiene until a customer pays for manage
 | Artefact | Repo |
 |----------|------|
 | **This coordinated roadmap** | SynapticFour-Showcase (integrator) |
+| H1 pilot checklist | Showcase `docs/pilots/H1-PILOT-CHECKLIST.md` |
+| H4 geography decision | Showcase `docs/pilots/H4-GEOGRAPHY-DECISION.md` |
+| H3 CDR ADR + migration | Solum `docs/adr/0001-…` · `docs/MIGRATION-STRANGLER.md` |
 | Product roadmaps | Each product’s `docs/roadmap.md` |
 | Solum dual-track product boundary | Solum `PRODUCT-DEFINITION.md` |
 | Customer “what exists” | Showcase `docs/for-customers/overview.md` |
