@@ -121,7 +121,7 @@ Pins: keep `PINNED_VERSIONS.txt` aligned with the pilot host checkouts.
 | HELIOS version | `673f683` / 0.1.0 |
 | Evidence Pack path / id | `artifacts/evidence-pack-20260806T143613Z` / `20260806T143613Z` |
 | Restore drill OK? | yes (9s) |
-| Notes | See [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md). WES auth-surface + ingest visas are H2 follow-ups; H1 DoD met with require_auth + docker TES + CustomerHeld + pack + restore. |
+| Notes | See [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md). WES auth-surface closed in **H2**; ingest still needs `ferrum:collector` visas. |
 
 ---
 

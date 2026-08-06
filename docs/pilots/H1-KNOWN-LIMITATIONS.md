@@ -8,8 +8,8 @@ These are acceptable for **H1 pilot-ready** claims. They are **not** production 
 | Area | Limitation |
 |------|------------|
 | Host | Sign-off ran on a **dedicated H1 window** on Synaptic Four ops hardware (demos stopped; pilot-local stack exclusive). Not a separate cloud VM image — operators should still prefer a clean VM for customer sites. |
-| Auth surface | `require_auth=true` + external JWKS (mock-idp / aai-broker). **Ingest** rejects unauthenticated calls (HTTP 403). Passport Bearer works for DRS `service-info`. **WES list/submit** still returned HTTP 200 without a Bearer in this build — treat WES auth enforcement as a Ferrum follow-up (H2), not as fully closed. |
-| Passport visas | Mock-idp Passport authenticated DRS; **ingest with the same JWT still 403** (likely missing ingest/clearinghouse visas). Operators must issue pilot visas before customer data ingest. |
+| Auth surface | `require_auth=true` + external JWKS. **Ingest** rejects unauthenticated / non-collector calls. **WES** list/submit/cancel/resume/status/log/tasks return **401** without Bearer when `require_auth` (closed in H2). |
+| Passport visas | Mock-idp Passport authenticates WES/DRS; **ingest** still needs `ferrum:collector` (or admin). Operators must issue collector visas via IdP or Edge accounts. |
 | TES | `FERRUM_TES_BACKEND=docker` — real containers. Scale / multi-tenant TES not in scope. |
 | WES evidence | Auth-on stack: CWL `smoke-hello` → **COMPLETE**. HELIOS Grade A was taken on the Nextflow GIAB-subset work dir (HELIOS audits nextflow/snakemake only). |
 | Solum | Stage-1 CustomerHeld sidecar only — **no** openEHR CDR (H3), no Kenya PRODUCTION profile (H4). |
