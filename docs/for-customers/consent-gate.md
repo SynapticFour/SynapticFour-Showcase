@@ -10,7 +10,9 @@ Ein **technischer Purpose-Binding-Gate**: bevor der Showcase einen Ferrum-WES-La
 
 - Phenopacket-Zweckbindung als Showcase-Artefakt (PhenoFlow-Narrativ)
 - Solum `POST /v1/consent/grant` + `GET /v1/consent/status`
-- Bei **deny**: WES/HELIOS werden **nicht** gestartet
+- Bei **deny**: WES/HELIOS werden **nicht** gestartet (Orchestrator)
+
+**H2.1:** Wenn Ferrum mit `FERRUM_SOLUM__*` konfiguriert ist, erzwingt Ferrum selbst Deny auf gebundenen DRS/WES-Aufrufen (HTTP **403**) — siehe [ADR 0001](../adr/0001-solum-ferrum-consent-access.md) und `make h21-teeth`. Der Consent-Gate bleibt Defence-in-Depth.
 
 **Das ist kein rechtliches Consent und kein Ersatz für institutionelle Einwilligungsverfahren.**
 
@@ -50,9 +52,12 @@ Optional BRA: `SHOWCASE_CONSENT_TRY_BRA=1` versucht `POST /api/v1/phenopackets` 
 
 Technical purpose-binding only — **not legal consent**.
 
+Orchestrator gate: grant/status before starting WES. **H2.1:** when Ferrum has `FERRUM_SOLUM__*` set, Ferrum itself returns **403** on bound DRS/WES after revoke (`make h21-teeth`, [ADR 0001](../adr/0001-solum-ferrum-consent-access.md)).
+
 ```bash
 make consent-gate
 make consent-gate-deny
+make h21-teeth
 SHOWCASE_ENABLE_CONSENT_GATE=1 make golden-path
 SHOWCASE_ENABLE_CONSENT_GATE=1 SHOWCASE_CONSENT_GATE_MODE=deny make golden-path
 ```

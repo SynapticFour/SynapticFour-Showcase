@@ -17,13 +17,13 @@ Operator can run without Synaptic Four on the laptop; **withdrawal has teeth acr
 | 2.3 | Solum zeroize where feasible | [x] | `ZeroizeOnDrop` on CustomerHeld + AwsKms held seeds |
 | 2.4 | KMS/HSM honesty + rotation runbook | [x] | Library KMS remains; CLI/sidecar unwired — see [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md) |
 | 2.5 | Org IAM bridge honesty | [x] | ADS OIDC→dataset grants exist; Solum CAP_* still client-supplied — see limitations |
-| 2.6 | Consent propagation honesty | [x] | Showcase consent-gate + Solum status; **not** Ferrum DRS middleware — H2.1 deferred |
+| 2.6 | Consent propagation (H2.1 Teeth) | [x] | Ferrum polls Solum status on bound DRS/WES; ADR 0001; `make h21-teeth` |
 | 2.7 | Observability / HELIOS clinical evidence | [ ] deferred | Baseline logs only; clinical HELIOS types → later |
 | 2.8 | HelixTest Auth Level live | [ ] optional | Fixture gate remains required via Showcase suite |
 | 2.9 | Ops pack (TLS + backup rotation) | [x] | [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md) |
-| 2.10 | Sign-off | [x] | Below |
+| 2.10 | Sign-off | [x] | Spine v1 + H2.1 Teeth |
 
-**Honest scope of this sign-off:** H2 **spine v1** — closes H1 auth debts + key hygiene + ops pack. Full “withdrawal has teeth across planes” (Solum revoke → Ferrum DRS/WES deny; OIDC groups → Solum capabilities; sidecar KMS) remains **open** and is recorded in [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md).
+**Honest scope:** H2 **spine v1** + **H2.1 Teeth**. Full roadmap exit still needs OIDC→Solum CAP, sidecar KMS, observability — see [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md).
 
 ---
 
@@ -34,14 +34,14 @@ Operator can run without Synaptic Four on the laptop; **withdrawal has teeth acr
 | Host | Synaptic Four ops — MacBook-Air-von-Alexander (pilot-local stack) |
 | Operator | Synaptic Four eng |
 | Date | 2026-08-06 |
-| Ferrum pin | `49aab603` |
-| Solum pin | `8808f91` |
+| Ferrum pin | `e638214b` |
+| Solum pin | `9b8ce7f` |
 | Evidence | [H2-EXECUTION-RECORD.md](H2-EXECUTION-RECORD.md) |
-| Notes | See known limitations — do not claim full roadmap H2 exit |
+| Notes | Do not claim full roadmap H2 exit |
 
 ---
 
 ## Exit → H3 / remaining H2
 
 - **H3** architecture (EHRbase) may proceed in parallel.
-- Remaining H2 product work: consent↔Ferrum contract, Solum KMS CLI/sidecar, OIDC→Solum CAP mapping, observability baseline.
+- Remaining H2 product work: Solum KMS CLI/sidecar, OIDC→Solum CAP mapping, observability baseline.

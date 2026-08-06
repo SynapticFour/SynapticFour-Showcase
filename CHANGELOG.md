@@ -6,6 +6,7 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Added
 
+- **H2.1 Teeth signed off** — Solum revoke → Ferrum DRS/WES 403 when configured; [ADR 0001](docs/adr/0001-solum-ferrum-consent-access.md); `make h21-teeth`.
 - **H2 spine v1 signed off** — WES fail-closed under `require_auth`, visa/ops honesty, Solum zeroize cross-links; see `docs/pilots/H2-*.md`.
 - **H1 signed off** — checklist + [H1-EXECUTION-RECORD.md](docs/pilots/H1-EXECUTION-RECORD.md) + [H1-KNOWN-LIMITATIONS.md](docs/pilots/H1-KNOWN-LIMITATIONS.md) (auth-on Ferrum + docker TES + Solum CustomerHeld + Evidence Pack + MinIO/Solum restore, 2026-08-06).
 - **H1 / H4 pilot packs** — `docs/pilots/H1-PILOT-CHECKLIST.md`, `H4-GEOGRAPHY-DECISION.md` (Kenya first).
