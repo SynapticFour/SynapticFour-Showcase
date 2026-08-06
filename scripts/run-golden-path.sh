@@ -41,6 +41,7 @@ ENABLE_M2_START_BRA="${SHOWCASE_ENABLE_M2_START_BRA:-1}"
 # handoff = copy VCF + m2-handoff.json only; full = handoff + DRS import + phenopacket link (M2.2)
 M2_PIPELINE="${SHOWCASE_M2_PIPELINE:-handoff}"
 ENABLE_SOLUM="${SHOWCASE_ENABLE_SOLUM:-0}"
+ENABLE_EVIDENCE_PACK="${SHOWCASE_ENABLE_EVIDENCE_PACK:-0}"
 # Default: Nextflow only (aligns with HELIOS Nextflow parser). Extra flags: e.g. --macro
 DEMO_FLAGS=(--nextflow)
 if [[ -n "${SHOWCASE_DEMO_EXTRA:-}" ]]; then
@@ -64,6 +65,7 @@ Environment:
   SHOWCASE_ENABLE_M2_START_BRA  If 1, start bioresearch-assistant during M2 handoff
   SHOWCASE_M2_PIPELINE   handoff (default) or full (handoff + DRS import + phenopacket+VCF link)
   SHOWCASE_ENABLE_SOLUM  If 1, run Solum-Demo Stage-1 proofs after HELIOS/M2 (see run-solum-stage.sh)
+  SHOWCASE_ENABLE_EVIDENCE_PACK  If 1, build Evidence Pack after stages (see evidence-pack.sh)
 
 Requires: docker, bash, Python 3.11+ (demo scripts + HELIOS). HELIOS: helios on PATH, or HELIOS_ROOT for PYTHONPATH.
 EOF
@@ -243,6 +245,11 @@ if [[ "$ENABLE_SOLUM" == "1" ]]; then
   echo "[showcase] running Solum stage (Solum-Demo Stage-1 proofs)..."
   run_with_heartbeat "Solum stage" "$SHOWCASE_ROOT/scripts/run-solum-stage.sh"
   "${ASSEMBLE_CMD[@]}"
+fi
+
+if [[ "$ENABLE_EVIDENCE_PACK" == "1" ]]; then
+  echo "[showcase] building Evidence Pack..."
+  run_with_heartbeat "Evidence Pack" "$SHOWCASE_ROOT/scripts/evidence-pack.sh"
 fi
 
 echo "[showcase] wrote $REPORT_OUT"

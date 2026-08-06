@@ -59,19 +59,19 @@ Target:    + Solum stage  +  Evidence Pack CLI  +  (later) PhenoFlow→consent  
 
 ---
 
-### W2 — Evidence Pack CLI
+### W2 — Evidence Pack CLI — **done 2026-08-06**
 
 **Goal:** One command that packs HelixTest scores + HELIOS report + DRS object hashes (+ optional Solum audit digest) into a reviewable bundle.
 
-| Step | Where | Work |
-|------|-------|------|
-| 1 | Showcase | `scripts/evidence-pack.sh` (or `python -m` thin CLI) — inputs: HELIOS report path, DRS JSON, optional HelixTest JSON, optional Solum digest |
-| 2 | Showcase | Wire HelixTest as **optional** sibling (`SHOWCASE_HELIXTEST_ROOT` / pinned binary) — ROADMAP already lists HelixTest-Gate |
-| 3 | HelixTest / Ferrum-GA4GH-Demo | Document the minimal live endpoints the gate needs (gateway already on **18080** in evaluator docs) |
-| 4 | Showcase | Output: `artifacts/evidence-pack-<run-id>/` with `MANIFEST.json` + `README.md` + copied reports |
-| 5 | Docs | Customer one-pager: “what this pack proves / does not prove” (reuse compliance-framing honesty) |
+| Step | Where | Work | Status |
+|------|-------|------|--------|
+| 1 | Showcase | `scripts/evidence-pack.sh` + `evidence_pack.py` | Done |
+| 2 | Showcase | Optional HelixTest sibling (`SHOWCASE_HELIXTEST_ROOT` / `SHOWCASE_RUN_HELIXTEST=1`) | Done |
+| 3 | Showcase docs | `docs/for-evaluators/helixtest-gate.md` (gateway :18080) | Done |
+| 4 | Showcase | `artifacts/evidence-pack-<id>/` with `MANIFEST.json` + `README.md` | Done |
+| 5 | Docs | `docs/for-customers/evidence-pack.md` honesty one-pager | Done |
 
-**Exit:** Evaluator can run Evidence Pack against a live golden path **or** against committed fixtures (CI stays fixture-based).
+**Exit:** `./scripts/evidence-pack.sh --fixtures` (CI) and live `make evidence-pack` after a golden path. ✅
 
 **Estimate:** ~4–6 days for MVP pack + fixture CI; HelixTest live gate can follow as hard-fail later.
 

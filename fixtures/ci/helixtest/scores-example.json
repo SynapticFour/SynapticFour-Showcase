@@ -1,0 +1,11 @@
+{
+  "mode": "ferrum",
+  "profile": "showcase-fixture",
+  "overall_level": 2,
+  "overall_score": 0.72,
+  "services": {
+    "drs": { "level": 2, "score": 0.8 },
+    "wes": { "level": 2, "score": 0.7 }
+  },
+  "notes": "Fixture for Showcase Evidence Pack CI — not a live HelixTest run. Replace via SHOWCASE_RUN_HELIXTEST=1 against gateway :18080."
+}

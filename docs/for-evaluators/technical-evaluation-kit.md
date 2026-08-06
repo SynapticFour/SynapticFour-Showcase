@@ -118,10 +118,13 @@ Hinweis: Ephemeral Demo-Keys — kein Produktions-Deploy. Produkt: [Solum](https
 | [demo/results/](../../demo/results/) | Vorgeneriete Artefakte ohne Installation |
 | [PINNED_VERSIONS.txt](../../PINNED_VERSIONS.txt) | Reproduzierbare Git-HEADs (+ Solum-tag) |
 | [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md) | W0–W4 Evidence-Chain Plan |
+| [evidence-pack.md](../for-customers/evidence-pack.md) | Evidence Pack honesty + commands |
+| [helixtest-gate.md](helixtest-gate.md) | Optional HelixTest against gateway :18080 |
 | [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) | Lokale Stage-1 Solum-Demo |
 | `./scripts/preflight.sh` | Vorab-Check |
 | `./scripts/run-golden-path.sh` | Vollständiger Demo-Lauf |
 | `./scripts/run-solum-stage.sh` / `make solum-stage` | Solum Stage-1 only |
+| `./scripts/evidence-pack.sh` / `make evidence-pack` | Evidence Pack |
 
 ---
 
@@ -220,10 +223,13 @@ Success criterion: fail-closed authorization (200 vs 403) and `chain_broken` aft
 | [demo/results/](../../demo/results/) | Pre-generated artefacts, no installation needed |
 | [PINNED_VERSIONS.txt](../../PINNED_VERSIONS.txt) | Reproducible Git HEADs (+ Solum-tag) |
 | [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md) | W0–W4 evidence-chain plan |
+| [evidence-pack.md](../for-customers/evidence-pack.md) | Evidence Pack honesty + commands |
+| [helixtest-gate.md](helixtest-gate.md) | Optional HelixTest against gateway :18080 |
 | [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) | Local Stage-1 Solum demo |
 | `./scripts/preflight.sh` | Pre-check |
 | `./scripts/run-golden-path.sh` | Complete demo run |
 | `./scripts/run-solum-stage.sh` / `make solum-stage` | Solum Stage-1 only |
+| `./scripts/evidence-pack.sh` / `make evidence-pack` | Evidence Pack |
 
 ---
 

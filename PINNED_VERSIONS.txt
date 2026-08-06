@@ -1,12 +1,14 @@
 # Pinned sibling revisions for reproducible demos (auto-generated).
 # Regenerate: ./scripts/refresh-pinned-versions.sh
-# Generated: 2026-08-06T11:52:52Z (Solum lines added; Ferrum/HELIOS/BRA pins retained from 2026-06-23 demo artefacts)
+# Generated: 2026-08-06T11:52:52Z (Solum/HelixTest lines added; Ferrum/HELIOS/BRA pins retained from 2026-06-23 demo artefacts)
 #
 # Solum-tag is the Solum product git tag Solum-Demo builds against
 # (see Solum-Demo Dockerfile ARG SOLUM_TAG) — not a local checkout SHA.
+# HelixTest is optional (Evidence Pack / conformance gate).
 
 Ferrum-GA4GH-Demo=41d7b898c38f6b8ba3c6e617317ef62e5af8f1bc
 HELIOS=af1c5a5e58c7ff53bec1a40c5351e6dbb8c0de4f
 bioresearch-assistant=08cefef8afb9b4f2f1b81ea599f0b57dfa39b17b
 Solum-Demo=08462bda1ed6306662541fff003856137ea9663d
 Solum-tag=stage1-baseline-sidecar-custody-2026-08-01
+HelixTest=725ea7f2c03aba70384846723b75eedfefac0262

@@ -91,6 +91,17 @@ make golden-path-with-solum
 
 Siehe [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md) und [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) (`Solum-Demo`, `Solum-tag`).
 
+### Optional: Evidence Pack
+
+```bash
+make evidence-pack-fixtures   # CI / ohne Docker
+make evidence-pack            # nach golden path / mit lokalen Artefakten
+SHOWCASE_ENABLE_EVIDENCE_PACK=1 make golden-path
+```
+
+Ausgabe: `artifacts/evidence-pack-<id>/` mit `MANIFEST.json` + `README.md`.
+→ [Was das Pack beweist](docs/for-customers/evidence-pack.md)
+
 **Ergebnisse:**
 
 | Artefakt | Bedeutung |

@@ -74,6 +74,7 @@ check_dir "Ferrum-GA4GH-Demo" "${SHOWCASE_DEMO_ROOT:-$SHOWCASE_ROOT/../Ferrum-GA
 check_dir "HELIOS" "${SHOWCASE_HELIOS_ROOT:-$SHOWCASE_ROOT/../HELIOS}"
 check_dir "bioresearch-assistant (optional M2)" "${SHOWCASE_BRA_ROOT:-$SHOWCASE_ROOT/../bioresearch-assistant}"
 check_dir "Solum-Demo (optional Solum stage)" "${SHOWCASE_SOLUM_DEMO_ROOT:-$SHOWCASE_ROOT/../Solum-Demo}"
+check_dir "HelixTest (optional Evidence Pack)" "${SHOWCASE_HELIXTEST_ROOT:-$SHOWCASE_ROOT/../HelixTest}"
 
 # Soft warning only: Solum stage is opt-in (SHOWCASE_ENABLE_SOLUM=1 / make solum-stage).
 if [[ "${SHOWCASE_ENABLE_SOLUM:-0}" == "1" ]]; then
