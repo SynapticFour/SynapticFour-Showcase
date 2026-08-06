@@ -22,4 +22,5 @@ H3 / H4 counsel artefacts live in Solum:
 - [ADR 0002 — CDR engine = EHRbase](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0002-cdr-engine-ehrbase.md)
 - [MIGRATION-STRANGLER.md](https://github.com/SynapticFour/Solum/blob/main/docs/MIGRATION-STRANGLER.md)
 - [Kenya K1 counsel brief](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md)
+- [Kenya K1 Vorprüfung](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-VORPRUEFUNG.md) (**not** counsel)
 - [Kenya K1 send checklist](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md)

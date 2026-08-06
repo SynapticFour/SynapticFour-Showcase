@@ -29,7 +29,7 @@
 - [x] Draft TOML exists with schema_version aligned to `eu-ehds`
 - [x] Open legal items listed in `docs/profiles.md` and profile `regulatory.notes`
 - [ ] Synaptic Four commits eng time to close **technical** gaps (tests, startup validation, transfer checks)
-- [ ] Counsel path identified (external) for retention / transfer / purposes catalogue — brief ready; **send** via [KENYA-K1-SEND-CHECKLIST](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md)
+- [ ] Counsel path identified (external) — brief + send checklist ready; **non-counsel** Vorprüfung applied (provisional profile); **send to real counsel still open**
 
 ### No-go — do not claim production Kenya
 
@@ -43,13 +43,15 @@
 
 ### K1 — Legal closure (counsel-driven)
 
-| Item | Source of open question | Target |
-|------|-------------------------|--------|
-| Retention periods | Digital Health Act s.25 vs DPA s.39 private deployments | Single table in profile + notes |
-| Audit-log retention | No ODPC figure found | Document assumption + revisit trigger |
-| `required_purposes` catalogue | Guidance-directed, not statutory list | Versioned list + mapping to Solum purposes |
-| Cross-border destinations | ODPC case-by-case | Populate `permitted_destinations` or keep empty + fail-closed with runbook |
-| Health Data Bank obligations | Outside Solum scope | Explicit non-goal in profile notes |
+| Item | Source of open question | Target | Eng status |
+|------|-------------------------|--------|------------|
+| Retention periods | Digital Health Act s.25 vs DPA s.39 private deployments | Single table in profile + notes | **Vorprüfung applied** (conservative default honesty) — counsel confirm |
+| Audit-log retention | No ODPC figure found | Document assumption + revisit trigger | **Vorprüfung applied** — counsel confirm |
+| `required_purposes` catalogue | Guidance-directed, not statutory list | Versioned list + mapping to Solum purposes | **Vorprüfung applied** (research → optional) — counsel confirm |
+| Cross-border destinations | ODPC case-by-case | Populate `permitted_destinations` or keep empty + fail-closed with runbook | Empty + fail-closed kept — counsel confirm |
+| Health Data Bank obligations | Outside Solum scope | Explicit non-goal in profile notes | Non-goal strengthened — counsel confirm |
+
+**Profile status:** PROVISIONAL-PRODUCTION-CANDIDATE after **non-counsel** [Vorprüfung](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-VORPRUEFUNG.md). Real counsel via [brief](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md) still required before PRODUCTION / patient SoR.
 
 ### K2 — Technical closure (engineering)
 
