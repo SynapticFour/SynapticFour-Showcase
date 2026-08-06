@@ -21,7 +21,7 @@ Not the full roadmap exit (KMS CLI, observability). See limitations.
 | Ferrum (H2.1) | `e638214b` — `SolumConsentClient` + DRS/WES hooks |
 | Solum (H2.1 docs) | `9b8ce7f` |
 | Solum (H2.2) | `545711c` |
-| Showcase | ADR 0001/0002 + `h21-teeth` / `h22-org-cap` scripts |
+| Showcase | `3f80d94` — ADR 0001/0002 + `h21-teeth` / `h22-org-cap` |
 
 ---
 
