@@ -217,13 +217,13 @@ Horizon language (not calendar promises): **H0 now**, **H1 pilot-ready**, **H2 p
 
 | Move | Artefact | Status |
 |------|----------|--------|
-| **1. Close H1** | [pilots/H1-PILOT-CHECKLIST.md](pilots/H1-PILOT-CHECKLIST.md) — week-by-week Ferrum + HELIOS + Solum sidecar | Checklist ready; execute on a pilot host |
-| **2. H3 design** | Solum [ADR 0001](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0001-openehr-cdr-and-migration.md) + [MIGRATION-STRANGLER.md](https://github.com/SynapticFour/Solum/blob/main/docs/MIGRATION-STRANGLER.md) | Architecture accepted; implementation deferred |
-| **3. H4 geography** | [pilots/H4-GEOGRAPHY-DECISION.md](pilots/H4-GEOGRAPHY-DECISION.md) — **Kenya first** (provisional) | Pack hardening + counsel path next |
+| **1. Close H1** | [pilots/H1-PILOT-CHECKLIST.md](pilots/H1-PILOT-CHECKLIST.md) · [H1-EXECUTION-RECORD.md](pilots/H1-EXECUTION-RECORD.md) | Dev-host rehearsal done (Solum CustomerHeld + HELIOS A + Evidence Pack + restore); **auth-on / fresh VM still open** |
+| **2. H3 design** | Solum [ADR 0001](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0001-openehr-cdr-and-migration.md) + [ADR 0002 EHRbase](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0002-cdr-engine-ehrbase.md) + [MIGRATION-STRANGLER.md](https://github.com/SynapticFour/Solum/blob/main/docs/MIGRATION-STRANGLER.md) | Architecture + engine choice accepted; CDR coding still deferred |
+| **3. H4 geography** | [pilots/H4-GEOGRAPHY-DECISION.md](pilots/H4-GEOGRAPHY-DECISION.md) · Solum [KENYA-K1-BRIEF](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md) | Kenya first; counsel brief ready for external review |
 
 SaaS (H5) stays documentation + tenancy hygiene until a customer pays for managed hosting.
 
-**Immediate execution order:** run H1 checklist on a fresh VM; in parallel, schedule counsel for Kenya K1 items; do **not** start CDR coding until ADR follow-ups (CDR engine spike) are timeboxed.
+**Immediate execution order:** finish H1 on a fresh VM with `require_auth=true`; send Kenya K1 brief to counsel; EHRbase compose spike only after that (no CDR product coding yet).
 
 ---
 
@@ -242,9 +242,10 @@ SaaS (H5) stays documentation + tenancy hygiene until a customer pays for manage
 | Artefact | Repo |
 |----------|------|
 | **This coordinated roadmap** | SynapticFour-Showcase (integrator) |
-| H1 pilot checklist | Showcase `docs/pilots/H1-PILOT-CHECKLIST.md` |
+| H1 pilot checklist + execution record | Showcase `docs/pilots/H1-*.md` |
 | H4 geography decision | Showcase `docs/pilots/H4-GEOGRAPHY-DECISION.md` |
-| H3 CDR ADR + migration | Solum `docs/adr/0001-…` · `docs/MIGRATION-STRANGLER.md` |
+| H3 CDR ADRs + migration | Solum `docs/adr/0001-…` · `0002-…` · `docs/MIGRATION-STRANGLER.md` |
+| Kenya counsel brief | Solum `docs/counsel/KENYA-K1-BRIEF.md` |
 | Product roadmaps | Each product’s `docs/roadmap.md` |
 | Solum dual-track product boundary | Solum `PRODUCT-DEFINITION.md` |
 | Customer “what exists” | Showcase `docs/for-customers/overview.md` |

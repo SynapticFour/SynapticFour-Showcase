@@ -19,6 +19,8 @@ A named pilot operator (not the founder’s laptop alone) can:
 
 Sign-off: operator name + date at bottom.
 
+**Latest rehearsal:** [H1-EXECUTION-RECORD.md](H1-EXECUTION-RECORD.md) (2026-08-06) — Solum CustomerHeld + HELIOS + Evidence Pack + restore on a **dev host**; Ferrum `require_auth` / fresh VM **not** closed.
+
 ---
 
 ## Week 0 — Prep (1–2 days)

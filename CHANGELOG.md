@@ -6,6 +6,7 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Added
 
+- **H1 execution record** — `docs/pilots/H1-EXECUTION-RECORD.md` (dev-host CustomerHeld/HELIOS/Evidence Pack rehearsal; auth-on / fresh VM gaps explicit).
 - **H1 / H4 pilot packs** — `docs/pilots/H1-PILOT-CHECKLIST.md`, `H4-GEOGRAPHY-DECISION.md` (Kenya first).
 - **Coordinated portfolio roadmap** — `docs/COORDINATED-PORTFOLIO-ROADMAP.md` (H0–H5 on-prem first; Solum dual-track; SaaS-ready backseat).
 - **Customer integration suite** — `scripts/run-integration-suite.sh`, `make integration-suite`, published `demo/verification/`, overview + verification docs.
