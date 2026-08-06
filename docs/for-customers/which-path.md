@@ -1,6 +1,6 @@
 # Welcher Einstieg passt zu mir?
 
-*Vier Szenarien. Klare Empfehlung. Kein Verkaufsgespräch.*
+*Fünf Szenarien. Klare Empfehlung. Kein Verkaufsgespräch.*
 
 [🇬🇧 English below](#english)
 
@@ -75,6 +75,23 @@ Was Sie danach wissen: Ob RAG auf Ihren spezifischen Daten die Forschungsprodukt
 
 ---
 
+## Szenario E — „Wir brauchen klinische Autorisierung und Audit — getrennt von der Genomic Plane"
+
+**Typische Ausgangslage:** EHDS / nationale Vorgaben verlangen nachweisbare Zugriffsentscheidungen und unveränderliche Audit-Trails für klinische Daten. Sie wollen das **nicht** in denselben Deploy wie Ferrum mischen.
+
+**Empfohlener Einstieg: Solum** (lokal zuerst [Solum-Demo](https://github.com/SynapticFour/Solum-Demo))
+
+Was das konkret bedeutet:
+- Fail-closed Autorisierung und tamper-evident Audit als Stage-1-Nachweis erleben
+- Jurisdiction-/Consent-Story getrennt von GA4GH-Genomics halten
+- Später an die Showcase-Evidenzkette anbinden (siehe [Implementation Plan](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md))
+
+Was Sie danach wissen: Ob Solums Perimeter zu Ihrer klinischen Compliance-Lage passt — ohne Genomic-Stack-Rewrite.
+
+**Zeitrahmen:** Stunden (Demo) bis 10–20 Tage (Pilot-Framing).
+
+---
+
 ## Was ist Ihr nächster Schritt?
 
 | Situation | Empfehlung |
@@ -92,7 +109,7 @@ Was Sie danach wissen: Ob RAG auf Ihren spezifischen Daten die Forschungsprodukt
 
 # Which path fits me? (English)
 
-*Four scenarios. Clear recommendation. No sales conversation.*
+*Five scenarios. Clear recommendation. No sales conversation.*
 
 ---
 
@@ -150,6 +167,21 @@ What this means in practice:
 **Recommended entry: BioResearch Assistant**
 
 **Timeframe:** 14–21 days to first validated responses.
+
+---
+
+## Scenario E — "We need clinical authorization and audit — separate from the genomic plane"
+
+**Typical starting point:** EHDS / national rules demand provable access decisions and tamper-evident audit for clinical data. You do **not** want that mixed into the same deploy as Ferrum.
+
+**Recommended entry: Solum** (start local with [Solum-Demo](https://github.com/SynapticFour/Solum-Demo))
+
+What this means in practice:
+- Experience fail-closed authorization and tamper-evident audit as Stage-1 proof
+- Keep jurisdiction/consent story separate from GA4GH genomics
+- Later attach to the Showcase evidence chain ([Implementation Plan](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md))
+
+**Timeframe:** Hours (demo) to 10–20 days (pilot framing).
 
 ---
 

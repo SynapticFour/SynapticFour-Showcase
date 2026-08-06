@@ -23,7 +23,7 @@ Ihr Institut arbeitet mit genomischen Daten. Sie haben:
 - Pipelines die heute laufen — und die niemand neu schreiben will
 - Compliance-Druck, der konkrete technische Nachweise verlangt, nicht Policy-Folien
 
-Ferrum, HELIOS und der BioResearch Assistant sind drei Bausteine die diesen Knoten lösen — einzeln einsetzbar, zusammen stärker.
+Ferrum, HELIOS, BioResearch Assistant und Solum sind Bausteine die diesen Knoten lösen — einzeln einsetzbar, zusammen stärker. Die durchgängige Evidenz-Kette (Genomic + Audit + Research AI + Clinical) ist der Zielzustand dieses Showcase; Solum ist heute als **Stage-1-Companion** dokumentiert und über [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) lokal erlebbar — die orchestrierte Integration folgt dem [Evidence-Chain Implementation Plan](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
 
 ---
 
@@ -70,6 +70,17 @@ Der BioResearch Assistant ermöglicht Literature Mining, Pseudonymisierung, MII-
 
 → [BioResearch Assistant auf GitHub](https://github.com/SynapticFour/bioresearch-assistant) · [Produktseite](https://synapticfour.com/de/software)
 
+### 🏥 Solum — Klinische Compliance-Schicht (Companion)
+
+Solum adressiert fail-closed Autorisierung, Jurisdiction-Profile und tamper-evident Audit für klinische Daten (FHIR/openEHR, EHDS-orientiert) — als **eigenes Produkt und regulatorischer Perimeter**, nicht als Ferrum-Modul. Crypt4GH- und Evidenz-Ideen teilen die Philosophie mit Ferrum/HELIOS; der Code bleibt getrennt.
+
+**Was das für Sie bedeutet:** Genomic Plane (Ferrum) und Clinical Plane (Solum) können dieselbe Souveränitätsgeschichte erzählen, ohne Compliance-Grenzen zu vermischen.
+
+→ [Solum auf GitHub](https://github.com/SynapticFour/Solum) · [Solum-Demo (lokal)](https://github.com/SynapticFour/Solum-Demo) · [Produktseite](https://synapticfour.com/de/solum)
+
+**Heute im Showcase orchestriert:** Ferrum-GA4GH-Demo → HELIOS → optional BioResearch Assistant (M2).
+**Als Nächstes:** Solum-Stage, Evidence Pack CLI, PhenoFlow→Consent — siehe [Implementation Plan](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
+
 ---
 
 ## Was passiert wenn alles zusammenläuft
@@ -96,7 +107,7 @@ Sie müssen nichts installieren um diese Artefakte zu lesen — sie liegen berei
 Nein. HELIOS legt sich als Overlay darüber. Kein Rewrite nötig.
 
 **„Können wir nur einen Teil des Stacks einsetzen?"**
-Ja. Ferrum, HELIOS und BioResearch Assistant sind unabhängig deploybar. Die meisten Institutionen starten mit einem Baustein.
+Ja. Ferrum, HELIOS, BioResearch Assistant und Solum sind unabhängig deploybar. Die meisten Institutionen starten mit einem Baustein.
 
 **„Wie schnell kann ein erster Proof-of-Value stehen?"**
 Realistisch: 10–30 Tage, abhängig von Ihrer Infrastruktur und Daten-Readiness. Wir benennen das transparent.
@@ -175,7 +186,7 @@ Your institution works with genomic data. You have:
 - Pipelines that run today — that nobody wants to rewrite
 - Compliance pressure that demands concrete technical evidence, not policy slides
 
-Ferrum, HELIOS, and BioResearch Assistant are three building blocks that untangle this. Deployable individually. Stronger together.
+Ferrum, HELIOS, BioResearch Assistant, and Solum are building blocks that untangle this. Deployable individually. Stronger together. The end-to-end evidence chain (genomic + audit + research AI + clinical) is this Showcase’s target; Solum is documented today as a **Stage-1 companion** and runnable via [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) — orchestrated integration follows the [Evidence-Chain Implementation Plan](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
 
 ---
 
@@ -222,6 +233,17 @@ BioResearch Assistant enables literature mining, pseudonymisation, MII core data
 
 → [BioResearch Assistant on GitHub](https://github.com/SynapticFour/bioresearch-assistant) · [Product page](https://synapticfour.com/en/software)
 
+### 🏥 Solum — Clinical compliance layer (companion)
+
+Solum covers fail-closed authorization, jurisdiction profiles, and tamper-evident audit for clinical data (FHIR/openEHR, EHDS-oriented) — as a **separate product and regulatory perimeter**, not a Ferrum module. It shares sovereignty philosophy with Ferrum/HELIOS; codebases stay separate.
+
+**What this means for you:** Genomic plane (Ferrum) and clinical plane (Solum) can tell one sovereignty story without mixing compliance boundaries.
+
+→ [Solum on GitHub](https://github.com/SynapticFour/Solum) · [Solum-Demo (local)](https://github.com/SynapticFour/Solum-Demo) · [Product page](https://synapticfour.com/en/solum)
+
+**Orchestrated in Showcase today:** Ferrum-GA4GH-Demo → HELIOS → optional BioResearch Assistant (M2).
+**Next:** Solum stage, Evidence Pack CLI, PhenoFlow→consent — see [Implementation Plan](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
+
 ---
 
 ## What happens when everything runs together
@@ -248,7 +270,7 @@ You don't need to install anything to read these artefacts — they're already i
 No. HELIOS wraps what you have as an overlay. No rewrite needed.
 
 **"Can we deploy only part of the stack?"**
-Yes. Ferrum, HELIOS, and BioResearch Assistant are independently deployable. Most institutions start with one building block.
+Yes. Ferrum, HELIOS, BioResearch Assistant, and Solum are independently deployable. Most institutions start with one building block.
 
 **"How quickly can a first proof-of-value be set up?"**
 Realistically: 10–30 days, depending on your infrastructure and data readiness. We state this transparently.

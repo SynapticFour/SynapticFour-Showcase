@@ -9,11 +9,14 @@
 ## Was gerade in Arbeit ist
 
 🔨 **In Arbeit:**
+- Evidence-Chain Erweiterung (Solum-Stage, Evidence Pack CLI) — siehe [`docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
 - One-command Demo-Setup (`showcase` CLI-Wrapper der Environment-Variablen abstrahiert)
 - Strukturiertes Run-Log (`artifacts/run.jsonl`) für bessere Demo-Post-Mortems
 - HelixTest-Gate als dokumentierter separater Schritt (GA4GH-Konformitätsprüfung)
 
 📋 **Geplant:**
+- PhenoFlow → Solum Consent vor WES (BRA + Solum Produktarbeit; Showcase orchestriert)
+- gatk-rs / S4MP als optionaler WES-/Port-Evidence-Pfad (Integrator, kein Monorepo)
 - PDF/HTML-Export des Showcase-Reports (pandoc-basiert, optional)
 - Erweiterung der vorgenerierten Demo-Artefakte (mehr Szenarien, mehr Produkte)
 - Beacon v2 Demo-Szenario als eigenständiger Showcase-Pfad
@@ -75,11 +78,14 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 ## What's currently in progress
 
 🔨 **In progress:**
+- Evidence-chain expansion (Solum stage, Evidence Pack CLI) — see [`docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
 - One-command demo setup (`showcase` CLI wrapper)
 - Structured run log (`artifacts/run.jsonl`)
 - HelixTest gate as a documented separate step
 
 📋 **Planned:**
+- PhenoFlow → Solum consent before WES (BRA + Solum product work; Showcase orchestrates)
+- gatk-rs / S4MP as optional WES / port-evidence path (integrator, not monorepo)
 - PDF/HTML export of showcase report
 - Expanded pre-generated demo artefacts
 - Beacon v2 demo scenario as standalone showcase path
