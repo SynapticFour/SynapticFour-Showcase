@@ -23,7 +23,7 @@ Not the full roadmap exit. Remaining work is sequenced in the second-pass doc.
 | Solum (H2.1 docs) | `9b8ce7f` |
 | Solum (H2.2) | `545711c` |
 | Showcase (H2.2) | `3f80d94` — ADR 0001/0002 + `h21-teeth` / `h22-org-cap` |
-| Showcase (H2.3) |  — ops polish + second-pass backlog |
+| Showcase (H2.3) | `40c80f9` — ops polish + second-pass backlog |
 
 ---
 
