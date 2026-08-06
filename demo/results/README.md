@@ -125,6 +125,8 @@ Live erzeugen: `make solum-stage` (optional `--` → `./scripts/run-solum-stage.
 
 **solum-*-example.json:** Stage-1 clinical companion artefacts (allow 200 / deny 403 / `chain_broken` after harness tamper). Orchestrated via `make solum-stage`; ephemeral demo keys only.
 
+**consent-gate-*-example.json / phenopacket-purpose-binding-example.json:** W3 technical purpose-binding gate (Solum consent before WES). Deny path skips WES. Not legal consent.
+
 ---
 
 ## Run the demo yourself

@@ -116,6 +116,21 @@ def _write_markdown_report(path: Path, report: dict[str, Any]) -> None:
                 "",
             ]
         )
+    consent = report.get("consent_gate", {})
+    if consent:
+        lines.extend(
+            [
+                "## Consent gate (PhenoFlow purpose → Solum)",
+                "",
+                f"- Decision: `{consent.get('decision', 'n/a')}`",
+                f"- WES may proceed: `{consent.get('wes_may_proceed', 'n/a')}`",
+                f"- Consent status: `{consent.get('consent_status', 'n/a')}`",
+                f"- Subject: `{consent.get('subject', 'n/a')}`",
+                f"- Purpose: `{consent.get('purpose', 'n/a')}`",
+                f"- Honesty: `{consent.get('honesty', 'n/a')}`",
+                "",
+            ]
+        )
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
@@ -203,6 +218,21 @@ def main() -> None:
             "product_tag_consumed_by_demo": solum_result.get("product_tag_consumed_by_demo"),
             "honesty": solum_result.get("honesty"),
             "artefacts": solum_result.get("artefacts"),
+        }
+
+    consent_root = args.showcase_root.resolve() / "artifacts" / "consent-gate"
+    consent_path = consent_root / "consent-gate-result.json"
+    consent_result = _read_json(consent_path)
+    if isinstance(consent_result, dict):
+        report["consent_gate"] = {
+            "decision": consent_result.get("decision"),
+            "blocked": consent_result.get("blocked"),
+            "wes_may_proceed": consent_result.get("wes_may_proceed"),
+            "consent_status": consent_result.get("consent_status"),
+            "subject": consent_result.get("subject"),
+            "purpose": consent_result.get("purpose"),
+            "honesty": consent_result.get("honesty"),
+            "result_path": str(consent_path),
         }
 
     if args.demo_seconds is not None:

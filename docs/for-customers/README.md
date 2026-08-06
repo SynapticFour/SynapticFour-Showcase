@@ -6,4 +6,5 @@ Start here:
 - [Which path fits me?](which-path.md)
 - [Compliance framing](compliance-framing.md)
 - [Evidence Pack — what it proves](evidence-pack.md)
+- [Consent gate (W3)](consent-gate.md)
 - [Scenarios](scenarios.md)

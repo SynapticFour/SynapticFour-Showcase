@@ -38,6 +38,20 @@ test -s /tmp/showcase-ci-report.json
 test -s /tmp/showcase-ci-report.md
 "$PY" -c "import json; r=json.load(open('/tmp/showcase-ci-report.json')); assert r.get('solum',{}).get('status')=='ok', r.get('solum')"
 
+echo "[ci-check] consent-gate fixtures present"
+test -f "$ROOT/fixtures/ci/consent-gate/consent-gate-result.json"
+test -f "$ROOT/fixtures/ci/consent-gate/consent-gate-deny-result.json"
+bash -n scripts/run-consent-gate.sh
+mkdir -p "$ROOT/artifacts/consent-gate"
+cp "$ROOT/fixtures/ci/consent-gate/consent-gate-result.json" "$ROOT/artifacts/consent-gate/consent-gate-result.json"
+"$PY" scripts/assemble_showcase_report.py \
+  --showcase-root "$ROOT" \
+  --demo-root "$ROOT/fixtures/ci/demo" \
+  --helios-report "$ROOT/fixtures/ci/helios/report.json" \
+  --output /tmp/showcase-ci-consent.json \
+  --markdown-output /tmp/showcase-ci-consent.md
+"$PY" -c "import json; r=json.load(open('/tmp/showcase-ci-consent.json')); assert r.get('consent_gate',{}).get('wes_may_proceed') is True, r.get('consent_gate')"
+
 echo "[ci-check] evidence-pack.sh --fixtures"
 rm -rf "$ROOT/artifacts/evidence-pack-fixtures" "$ROOT/artifacts/evidence-pack-latest"
 ./scripts/evidence-pack.sh --fixtures
@@ -52,6 +66,7 @@ assert m['summaries']['helios'].get('checks_total',0) >= 1
 assert any(f.get('role')=='helios_report' for f in m['files'])
 assert m['summaries']['helixtest'].get('present') is True
 assert m['summaries']['solum'].get('present') is True
+assert m['summaries']['consent_gate'].get('present') is True
 print('evidence-pack fixture ok', m['pack_id'], 'files', len(m['files']))
 "
 

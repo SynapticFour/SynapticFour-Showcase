@@ -45,6 +45,7 @@ METRICS_JSON="${SHOWCASE_METRICS_JSON:-}"
 BENCHMARK_JSON="${SHOWCASE_BENCHMARK_JSON:-}"
 HELIXTEST_JSON="${SHOWCASE_HELIXTEST_JSON:-}"
 SOLUM_RESULT="${SHOWCASE_SOLUM_RESULT:-}"
+CONSENT_GATE="${SHOWCASE_CONSENT_GATE_JSON:-}"
 SHOWCASE_REPORT_JSON="${SHOWCASE_REPORT:-$SHOWCASE_ROOT/showcase-report.json}"
 SHOWCASE_REPORT_MD="${SHOWCASE_REPORT_MD:-$SHOWCASE_ROOT/showcase-report.md}"
 DEMO_ROOT="${SHOWCASE_DEMO_ROOT:-$SHOWCASE_ROOT/../Ferrum-GA4GH-Demo}"
@@ -144,6 +145,7 @@ if [[ "$MODE" == "fixtures" ]]; then
   BENCHMARK_JSON="${BENCHMARK_JSON:-$SHOWCASE_ROOT/fixtures/ci/demo/results/benchmark.json}"
   HELIXTEST_JSON="${HELIXTEST_JSON:-$SHOWCASE_ROOT/fixtures/ci/helixtest/scores-example.json}"
   SOLUM_RESULT="${SOLUM_RESULT:-$SHOWCASE_ROOT/fixtures/ci/solum/solum-stage-result.json}"
+  CONSENT_GATE="${CONSENT_GATE:-$SHOWCASE_ROOT/fixtures/ci/consent-gate/consent-gate-result.json}"
   if [[ -f "$SHOWCASE_ROOT/demo/results/showcase-report-example.md" ]]; then
     SHOWCASE_REPORT_MD="$SHOWCASE_ROOT/demo/results/showcase-report-example.md"
   fi
@@ -190,6 +192,11 @@ else
   elif [[ -z "$SOLUM_RESULT" && -f "$SHOWCASE_ROOT/demo/results/solum-stage-result-example.json" ]]; then
     SOLUM_RESULT="$SHOWCASE_ROOT/demo/results/solum-stage-result-example.json"
   fi
+  if [[ -z "$CONSENT_GATE" && -f "$SHOWCASE_ROOT/artifacts/consent-gate/consent-gate-result.json" ]]; then
+    CONSENT_GATE="$SHOWCASE_ROOT/artifacts/consent-gate/consent-gate-result.json"
+  elif [[ -z "$CONSENT_GATE" && -f "$SHOWCASE_ROOT/demo/results/consent-gate-allow-example.json" ]]; then
+    CONSENT_GATE="$SHOWCASE_ROOT/demo/results/consent-gate-allow-example.json"
+  fi
   [[ -f "$SHOWCASE_REPORT_JSON" ]] || SHOWCASE_REPORT_JSON=""
   [[ -f "$SHOWCASE_REPORT_MD" ]] || SHOWCASE_REPORT_MD=""
 fi
@@ -225,6 +232,7 @@ ARGS=(
 [[ -n "${BENCHMARK_JSON:-}" && -f "$BENCHMARK_JSON" ]] && ARGS+=(--benchmark-json "$BENCHMARK_JSON")
 [[ -n "${HELIXTEST_JSON:-}" && -f "$HELIXTEST_JSON" ]] && ARGS+=(--helixtest-json "$HELIXTEST_JSON")
 [[ -n "${SOLUM_RESULT:-}" && -f "$SOLUM_RESULT" ]] && ARGS+=(--solum-result "$SOLUM_RESULT")
+[[ -n "${CONSENT_GATE:-}" && -f "$CONSENT_GATE" ]] && ARGS+=(--consent-gate "$CONSENT_GATE")
 [[ -n "${SHOWCASE_REPORT_JSON:-}" && -f "$SHOWCASE_REPORT_JSON" ]] && ARGS+=(--showcase-report "$SHOWCASE_REPORT_JSON")
 [[ -n "${SHOWCASE_REPORT_MD:-}" && -f "$SHOWCASE_REPORT_MD" ]] && ARGS+=(--showcase-report-md "$SHOWCASE_REPORT_MD")
 

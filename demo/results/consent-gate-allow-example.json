@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "stage": "consent_gate",
+  "generated_at": "2026-08-06T12:09:35.514810Z",
+  "mode": "allow",
+  "subject": "patient/showcase-phenoflow-001",
+  "purpose": "secondary_use_hdab",
+  "decision": "allow",
+  "blocked": false,
+  "wes_may_proceed": true,
+  "consent_status": "granted",
+  "phenopacket_binding": "phenopacket-purpose-binding.json",
+  "bra_phenopacket": {
+    "attempted": false,
+    "status": "skipped"
+  },
+  "solum": {
+    "product_tag_consumed_by_demo": "stage1-baseline-sidecar-custody-2026-08-01",
+    "base_url": "http://127.0.0.1:8080",
+    "grant_http_status": 201,
+    "grant_body": {
+      "id": "134cda3f-0bb7-43c3-a6c5-ca9b0a33248d",
+      "subject_id": "patient/showcase-phenoflow-001",
+      "purpose": "secondary_use_hdab",
+      "scope": [
+        "patient_summary"
+      ],
+      "status": "granted",
+      "recorded_at": "2026-08-06T12:09:35.510687674Z",
+      "actor": "practitioner/showcase-gate"
+    },
+    "status_http_status": 200,
+    "status_body": {
+      "status": "granted"
+    }
+  },
+  "honesty": "Technical purpose-binding demo only \u2014 not legal consent. Solum fail-closed status gates Showcase WES when SHOWCASE_ENABLE_CONSENT_GATE=1."
+}

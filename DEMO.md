@@ -102,6 +102,17 @@ SHOWCASE_ENABLE_EVIDENCE_PACK=1 make golden-path
 Ausgabe: `artifacts/evidence-pack-<id>/` mit `MANIFEST.json` + `README.md`.
 → [Was das Pack beweist](docs/for-customers/evidence-pack.md)
 
+### Optional: Consent gate (before WES)
+
+```bash
+make consent-gate
+make consent-gate-deny
+SHOWCASE_ENABLE_CONSENT_GATE=1 make golden-path
+SHOWCASE_ENABLE_CONSENT_GATE=1 SHOWCASE_CONSENT_GATE_MODE=deny make golden-path
+```
+
+→ [Consent gate honesty](docs/for-customers/consent-gate.md)
+
 **Ergebnisse:**
 
 | Artefakt | Bedeutung |

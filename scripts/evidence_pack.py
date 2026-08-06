@@ -98,12 +98,26 @@ def _solum_summary(data: dict[str, Any] | list[Any] | None) -> dict[str, Any]:
     }
 
 
+def _consent_summary(data: dict[str, Any] | list[Any] | None) -> dict[str, Any]:
+    if not isinstance(data, dict):
+        return {"present": False}
+    return {
+        "present": True,
+        "decision": data.get("decision"),
+        "wes_may_proceed": data.get("wes_may_proceed"),
+        "consent_status": data.get("consent_status"),
+        "purpose": data.get("purpose"),
+        "subject": data.get("subject"),
+    }
+
+
 def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
     files = manifest.get("files") or []
     helios = manifest.get("summaries", {}).get("helios") or {}
     drs = manifest.get("summaries", {}).get("drs") or {}
     helix = manifest.get("summaries", {}).get("helixtest") or {}
     solum = manifest.get("summaries", {}).get("solum") or {}
+    consent = manifest.get("summaries", {}).get("consent_gate") or {}
     lines = [
         "# Evidence Pack",
         "",
@@ -142,6 +156,7 @@ def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
         f"- DRS checksums declared: `{len(drs.get('checksums') or [])}`",
         f"- HelixTest present: `{helix.get('present', False)}`",
         f"- Solum stage present: `{solum.get('present', False)}` · status `{solum.get('status', 'n/a')}`",
+        f"- Consent gate present: `{consent.get('present', False)}` · decision `{consent.get('decision', 'n/a')}`",
         "",
         "## Files",
         "",
@@ -167,6 +182,7 @@ def main() -> None:
     parser.add_argument("--benchmark-json", type=Path, default=None)
     parser.add_argument("--helixtest-json", type=Path, default=None)
     parser.add_argument("--solum-result", type=Path, default=None)
+    parser.add_argument("--consent-gate", type=Path, default=None)
     parser.add_argument("--showcase-report", type=Path, default=None)
     parser.add_argument("--showcase-report-md", type=Path, default=None)
     args = parser.parse_args()
@@ -194,6 +210,7 @@ def main() -> None:
     add("benchmark", args.benchmark_json, "benchmark.json")
     add("helixtest", args.helixtest_json, "helixtest.json")
     add("solum_stage", args.solum_result, "solum-stage-result.json")
+    add("consent_gate", args.consent_gate, "consent-gate-result.json")
     add("showcase_report", args.showcase_report, "showcase-report.json")
     add("showcase_report_md", args.showcase_report_md, "showcase-report.md")
 
@@ -221,6 +238,11 @@ def main() -> None:
     solum_data = (
         _load_json(out / "solum-stage-result.json")
         if (out / "solum-stage-result.json").is_file()
+        else None
+    )
+    consent_data = (
+        _load_json(out / "consent-gate-result.json")
+        if (out / "consent-gate-result.json").is_file()
         else None
     )
 
@@ -256,6 +278,7 @@ def main() -> None:
             },
             "helixtest": _helixtest_summary(helix_data),
             "solum": _solum_summary(solum_data),
+            "consent_gate": _consent_summary(consent_data),
         },
         "files": file_entries,
     }

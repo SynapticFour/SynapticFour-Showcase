@@ -77,23 +77,21 @@ Target:    + Solum stage  +  Evidence Pack CLI  +  (later) PhenoFlow→consent  
 
 ---
 
-### W3 — PhenoFlow → Solum consent (before WES)
+### W3 — PhenoFlow → Solum consent (before WES) — **done 2026-08-06**
 
 **Goal:** Purpose-bound consent check gate before WES fan-out — product work in BRA + Solum; Showcase only sequences.
 
-| Step | Where | Work |
-|------|-------|------|
-| 1 | BRA | Confirm PhenoFlow API surface for “submit / attach consent purpose” (`docs/PHENOFLOW.md`) |
-| 2 | Solum | Consent/authorize API on sidecar suitable for machine gate (fail-closed) |
-| 3 | Showcase | `scripts/run-phenofloat-consent-gate.sh` — create phenopacket (existing M2 pieces) → Solum authorize → only then trigger Demo WES |
-| 4 | Showcase | Negative demo: deny path leaves HELIOS/WES unrun; artefacts show blocked decision |
-| 5 | Docs | Explicit: not a legal consent substitute; technical purpose-binding demo |
+| Step | Where | Work | Status |
+|------|-------|------|--------|
+| 1 | BRA | PhenoFlow purpose binding artefact (+ optional BRA POST) | Done (binding JSON; BRA soft-optional) |
+| 2 | Solum | Sidecar consent grant/status (already shipped) | Done |
+| 3 | Showcase | `scripts/run-consent-gate.sh` + golden-path wiring | Done |
+| 4 | Showcase | Deny path skips WES/HELIOS; blocked report | Done |
+| 5 | Docs | `docs/for-customers/consent-gate.md` honesty | Done |
 
-**Risk:** Highest integration risk of the four themes — depends on BRA + Solum API readiness, not Showcase scripts.
+**Exit:** `SHOWCASE_ENABLE_CONSENT_GATE=1` allow/deny demos; fixtures for CI. ✅
 
-**Exit:** Documented happy-path + deny-path demos; not required for every golden path (flag `SHOWCASE_ENABLE_CONSENT_GATE=1`).
-
-**Estimate:** Product-dependent (1–3 weeks). Showcase orchestration alone ~2–3 days once APIs exist.
+Note: script name is `run-consent-gate.sh` (plan typo “phenofloat” corrected).
 
 ---
 

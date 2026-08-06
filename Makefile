@@ -1,22 +1,25 @@
 # SynapticFour Showcase — orchestrated multi-repo demo lifecycle
 
-.PHONY: help up down destroy golden-path golden-path-with-solum solum-stage evidence-pack evidence-pack-fixtures preflight
+.PHONY: help up down destroy golden-path golden-path-with-solum solum-stage \
+	evidence-pack evidence-pack-fixtures consent-gate consent-gate-deny consent-gate-fixtures preflight
 
 help:
 	@echo "SynapticFour Showcase — local lifecycle"
 	@echo ""
 	@echo "  make up                     Run golden path (Ferrum-GA4GH-Demo + HELIOS audit)"
 	@echo "  make golden-path            Same as make up"
-	@echo "  make golden-path-with-solum Golden path + Solum-Demo Stage-1 (SHOWCASE_ENABLE_SOLUM=1)"
-	@echo "  make solum-stage            Solum-Demo Stage-1 only (fail-closed authz + tamper audit)"
+	@echo "  make golden-path-with-solum Golden path + Solum-Demo Stage-1"
+	@echo "  make solum-stage            Solum-Demo Stage-1 only"
+	@echo "  make consent-gate           PhenoFlow purpose → Solum grant (allow)"
+	@echo "  make consent-gate-deny      Deny path (WES must not proceed)"
+	@echo "  make consent-gate-fixtures  CI fixtures for consent gate"
 	@echo "  make evidence-pack          Build Evidence Pack from latest/local artefacts"
-	@echo "  make evidence-pack-fixtures Evidence Pack from committed fixtures (CI / no Docker)"
-	@echo "  make preflight              Local environment checks (warn by default)"
-	@echo "  make down                   Stop demo + BRA + Solum-Demo stacks (keep volumes)"
-	@echo "  make destroy                Stop stacks + remove volumes (--hard)"
+	@echo "  make evidence-pack-fixtures Evidence Pack from committed fixtures"
+	@echo "  make preflight              Local environment checks"
+	@echo "  make down / make destroy    Stop stacks"
 	@echo ""
-	@echo "Requires sibling repos: Ferrum-GA4GH-Demo, HELIOS"
-	@echo "Optional: bioresearch-assistant (M2), Solum-Demo, HelixTest"
+	@echo "Consent before WES: SHOWCASE_ENABLE_CONSENT_GATE=1 make golden-path"
+	@echo "Deny demo: SHOWCASE_ENABLE_CONSENT_GATE=1 SHOWCASE_CONSENT_GATE_MODE=deny make golden-path"
 	@echo "See: docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md"
 
 up: golden-path
@@ -32,6 +35,18 @@ golden-path-with-solum:
 solum-stage:
 	@chmod +x scripts/run-solum-stage.sh 2>/dev/null || true
 	./scripts/run-solum-stage.sh
+
+consent-gate:
+	@chmod +x scripts/run-consent-gate.sh 2>/dev/null || true
+	./scripts/run-consent-gate.sh --allow
+
+consent-gate-deny:
+	@chmod +x scripts/run-consent-gate.sh 2>/dev/null || true
+	./scripts/run-consent-gate.sh --deny
+
+consent-gate-fixtures:
+	@chmod +x scripts/run-consent-gate.sh 2>/dev/null || true
+	./scripts/run-consent-gate.sh --fixtures --publish-examples
 
 evidence-pack:
 	@chmod +x scripts/evidence-pack.sh 2>/dev/null || true

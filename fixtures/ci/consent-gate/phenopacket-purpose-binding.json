@@ -1,0 +1,35 @@
+{
+  "schema_version": "showcase-phenoflow-binding/1",
+  "generated_at": "2026-08-06T12:09:31.432796Z",
+  "honesty": "Technical purpose-binding artefact for Showcase W3 \u2014 not a legal consent record and not a substitute for institutional consent workflows.",
+  "subject": "patient/showcase-phenoflow-001",
+  "purpose": "secondary_use_hdab",
+  "phenopacket": {
+    "id": "showcase-phenoflow-001",
+    "subject": {
+      "id": "patient/showcase-phenoflow-001"
+    },
+    "phenotypicFeatures": [
+      {
+        "type": {
+          "id": "HP:0001250",
+          "label": "Seizure"
+        }
+      }
+    ],
+    "metaData": {
+      "createdBy": "SynapticFour-Showcase",
+      "phenopacketSchemaVersion": "2.0",
+      "externalReferences": [
+        {
+          "id": "showcase:purpose",
+          "description": "secondary_use_hdab"
+        }
+      ]
+    }
+  },
+  "intended_wes": {
+    "engine": "nextflow",
+    "gate": "solum_consent_status_must_be_granted"
+  }
+}

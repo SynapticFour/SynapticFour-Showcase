@@ -6,9 +6,10 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Added
 
+- **W3 Consent gate** — `scripts/run-consent-gate.sh`, allow/deny before WES, fixtures, customer honesty doc; golden-path opt-in via `SHOWCASE_ENABLE_CONSENT_GATE`.
 - **W2 Evidence Pack** — `scripts/evidence-pack.sh` / `evidence_pack.py`, `make evidence-pack` / `evidence-pack-fixtures`, customer honesty doc, HelixTest gate doc, CI fixture pack.
 - **W0 complete / W1 landed** — Solum pins, evaluator Path E, preflight Solum-Demo check, `scripts/run-solum-stage.sh`, `make solum-stage` / `make golden-path-with-solum`, example Solum artefacts, report assembler Solum section.
-- **Evidence-chain plan** — `docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md` (Solum stage, Evidence Pack CLI, PhenoFlow→consent, optional gatk-rs/S4MP; integrator pattern, not monorepo).
+- **Evidence-chain plan** — `docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`.
 - **Solum companion narrative** — README DE/EN, `which-path` Scenario E, ROADMAP links.
 
 ### Changed

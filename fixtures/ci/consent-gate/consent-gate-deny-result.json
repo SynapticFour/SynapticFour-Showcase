@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "stage": "consent_gate",
+  "generated_at": "2026-08-06T12:09:31.458036Z",
+  "mode": "fixtures",
+  "subject": "patient/showcase-phenoflow-001",
+  "purpose": "secondary_use_hdab",
+  "decision": "deny",
+  "blocked": true,
+  "wes_may_proceed": false,
+  "consent_status": "unknown",
+  "phenopacket_binding": "phenopacket-purpose-binding.json",
+  "bra_phenopacket": {
+    "attempted": false,
+    "status": "skipped_fixtures"
+  },
+  "solum": {
+    "product_tag_consumed_by_demo": "stage1-baseline-sidecar-custody-2026-08-01",
+    "grant_http_status": null,
+    "status_http_status": 200,
+    "status_body": {
+      "status": "unknown"
+    }
+  },
+  "honesty": "Technical purpose-binding demo only \u2014 not legal consent. Fixture mode does not call Solum or BRA."
+}

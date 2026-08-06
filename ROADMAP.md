@@ -9,12 +9,11 @@
 ## Was gerade in Arbeit ist
 
 🔨 **In Arbeit:**
-- PhenoFlow → Solum Consent vor WES (W3) — siehe [`docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
-- One-command Demo-Setup (`showcase` CLI-Wrapper der Environment-Variablen abstrahiert)
-- Strukturiertes Run-Log (`artifacts/run.jsonl`) für bessere Demo-Post-Mortems
+- gatk-rs / S4MP als optionaler WES-/Port-Evidence-Pfad (W4) — siehe [`docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
+- One-command Demo-Setup (`showcase` CLI-Wrapper)
+- Strukturiertes Run-Log (`artifacts/run.jsonl`)
 
 📋 **Geplant:**
-- gatk-rs / S4MP als optionaler WES-/Port-Evidence-Pfad (W4)
 - PDF/HTML-Export des Showcase-Reports (pandoc-basiert, optional)
 - Erweiterung der vorgenerierten Demo-Artefakte (mehr Szenarien, mehr Produkte)
 - Beacon v2 Demo-Szenario als eigenständiger Showcase-Pfad
@@ -26,8 +25,9 @@
 
 ## Was zuletzt fertig wurde
 
+- ✅ Evidence-Chain W3 — Consent gate (PhenoFlow purpose → Solum before WES; allow/deny) (Aug 2026)
 - ✅ Evidence-Chain W2 — Evidence Pack CLI (`make evidence-pack` / `--fixtures`) (Aug 2026)
-- ✅ Evidence-Chain W0 + W1 — Solum pins, Path E, `make solum-stage` / `golden-path-with-solum`, live Stage-1 artefacts (Aug 2026)
+- ✅ Evidence-Chain W0 + W1 — Solum pins, Path E, `make solum-stage` / `golden-path-with-solum` (Aug 2026)
 - ✅ Sync mit Nachbar-Repos (Ferrum-GA4GH-Demo, HELIOS, bioresearch-assistant) — Juni 2026 (23.06.)
 - ✅ `demo/results/` Host-Pfade bereinigt; `scripts/publish-demo-results.sh` für künftige Golden-Path-Läufe
 - ✅ `demo/results/` Artefakte neu generiert (Nextflow-Golden-Path, HELIOS-Audit)
@@ -78,12 +78,11 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 ## What's currently in progress
 
 🔨 **In progress:**
-- PhenoFlow → Solum consent before WES (W3) — see [`docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
+- gatk-rs / S4MP as optional WES / port-evidence path (W4) — see [`docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md`](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
 - One-command demo setup (`showcase` CLI wrapper)
 - Structured run log (`artifacts/run.jsonl`)
 
 📋 **Planned:**
-- gatk-rs / S4MP as optional WES / port-evidence path (W4)
 - PDF/HTML export of showcase report
 - Expanded pre-generated demo artefacts
 - Beacon v2 demo scenario as standalone showcase path
@@ -92,8 +91,9 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 
 ## Recently completed
 
+- ✅ Evidence-chain W3 — Consent gate (PhenoFlow purpose → Solum before WES; allow/deny) (Aug 2026)
 - ✅ Evidence-chain W2 — Evidence Pack CLI (`make evidence-pack` / `--fixtures`) (Aug 2026)
-- ✅ Evidence-chain W0 + W1 — Solum pins, Path E, `make solum-stage` / `golden-path-with-solum`, live Stage-1 artefacts (Aug 2026)
+- ✅ Evidence-chain W0 + W1 — Solum pins, Path E, `make solum-stage` / `golden-path-with-solum` (Aug 2026)
 - ✅ Neighbor-repo sync (Ferrum-GA4GH-Demo, HELIOS, bioresearch-assistant) — June 2026 (23 Jun)
 - ✅ Sanitized `demo/results/` host paths; added `scripts/publish-demo-results.sh` for future golden-path runs
 - ✅ Regenerated `demo/results/` artefacts (Nextflow golden path + HELIOS audit)

@@ -42,6 +42,8 @@ ENABLE_M2_START_BRA="${SHOWCASE_ENABLE_M2_START_BRA:-1}"
 M2_PIPELINE="${SHOWCASE_M2_PIPELINE:-handoff}"
 ENABLE_SOLUM="${SHOWCASE_ENABLE_SOLUM:-0}"
 ENABLE_EVIDENCE_PACK="${SHOWCASE_ENABLE_EVIDENCE_PACK:-0}"
+ENABLE_CONSENT_GATE="${SHOWCASE_ENABLE_CONSENT_GATE:-0}"
+CONSENT_GATE_MODE="${SHOWCASE_CONSENT_GATE_MODE:-allow}"
 # Default: Nextflow only (aligns with HELIOS Nextflow parser). Extra flags: e.g. --macro
 DEMO_FLAGS=(--nextflow)
 if [[ -n "${SHOWCASE_DEMO_EXTRA:-}" ]]; then
@@ -66,6 +68,8 @@ Environment:
   SHOWCASE_M2_PIPELINE   handoff (default) or full (handoff + DRS import + phenopacket+VCF link)
   SHOWCASE_ENABLE_SOLUM  If 1, run Solum-Demo Stage-1 proofs after HELIOS/M2 (see run-solum-stage.sh)
   SHOWCASE_ENABLE_EVIDENCE_PACK  If 1, build Evidence Pack after stages (see evidence-pack.sh)
+  SHOWCASE_ENABLE_CONSENT_GATE  If 1, PhenoFlow-purpose → Solum consent before WES (see run-consent-gate.sh)
+  SHOWCASE_CONSENT_GATE_MODE    allow (default) or deny (blocks WES; writes blocked artefacts)
 
 Requires: docker, bash, Python 3.11+ (demo scripts + HELIOS). HELIOS: helios on PATH, or HELIOS_ROOT for PYTHONPATH.
 EOF
@@ -156,6 +160,75 @@ export HELIOS_KEY_DIR="$SHOWCASE_ROOT/.cache/helios/keys"
 if [[ ! -f "$SHOWCASE_ROOT/.cache/helios/keys/helios.key" ]]; then
   echo "[showcase] generating HELIOS signing key in $HELIOS_KEY_DIR ..."
   run_helios key generate
+fi
+
+# W3: optional consent gate before WES (PhenoFlow purpose → Solum status)
+if [[ "$ENABLE_CONSENT_GATE" == "1" ]]; then
+  echo "[showcase] consent gate mode=$CONSENT_GATE_MODE (technical purpose-binding — not legal consent)"
+  GATE_ARGS=(--allow)
+  if [[ "$CONSENT_GATE_MODE" == "deny" ]]; then
+    GATE_ARGS=(--deny)
+  fi
+  run_with_heartbeat "Consent gate" "$SHOWCASE_ROOT/scripts/run-consent-gate.sh" "${GATE_ARGS[@]}"
+  GATE_JSON="$SHOWCASE_ROOT/artifacts/consent-gate/consent-gate-result.json"
+  if [[ ! -f "$GATE_JSON" ]]; then
+    echo "run-golden-path: consent gate did not write $GATE_JSON" >&2
+    exit 1
+  fi
+  WES_OK="$("$PY" -c 'import json,sys; d=json.load(open(sys.argv[1])); print("1" if d.get("wes_may_proceed") else "0")' "$GATE_JSON")"
+  if [[ "$WES_OK" != "1" ]]; then
+    echo "[showcase] consent gate blocked WES (wes_may_proceed=false) — skipping Ferrum demo + HELIOS"
+    export SHOWCASE_ROOT REPORT_OUT
+    "$PY" - <<'PY'
+import json
+import os
+from datetime import datetime, timezone
+from pathlib import Path
+root = Path(os.environ["SHOWCASE_ROOT"])
+report_out = Path(os.environ["REPORT_OUT"])
+gate = json.loads((root / "artifacts/consent-gate/consent-gate-result.json").read_text())
+report = {
+  "schema_version": 1,
+  "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+  "demo": {"wes_run_id": None, "wes_engine": None, "skipped": True, "reason": "consent_gate_blocked"},
+  "helios": {},
+  "consent_gate": {
+    "decision": gate.get("decision"),
+    "blocked": gate.get("blocked"),
+    "wes_may_proceed": gate.get("wes_may_proceed"),
+    "consent_status": gate.get("consent_status"),
+    "purpose": gate.get("purpose"),
+    "subject": gate.get("subject"),
+    "honesty": gate.get("honesty"),
+    "result_path": str(root / "artifacts/consent-gate/consent-gate-result.json"),
+  },
+  "steps": [{"name": "consent_gate", "status": "blocked", "decision": gate.get("decision")}],
+}
+report_out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+md = report_out.with_suffix(".md")
+lines = [
+  "# Showcase Report (consent gate blocked)",
+  "",
+  f"- Decision: `{gate.get('decision')}`",
+  f"- Consent status: `{gate.get('consent_status')}`",
+  f"- Subject: `{gate.get('subject')}`",
+  f"- Purpose: `{gate.get('purpose')}`",
+  f"- WES skipped: `true`",
+  "",
+  "## Honesty",
+  "",
+  str(gate.get("honesty") or ""),
+  "",
+]
+md.write_text("\n".join(lines), encoding="utf-8")
+print(json.dumps({"ok": True, "blocked": True, "wrote": str(report_out), "wrote_markdown": str(md)}))
+PY
+    if [[ "$ENABLE_EVIDENCE_PACK" == "1" ]]; then
+      "$SHOWCASE_ROOT/scripts/evidence-pack.sh" || true
+    fi
+    echo "[showcase] blocked path complete — see $REPORT_OUT and artifacts/consent-gate/"
+    exit 0
+  fi
 fi
 
 DEMO_SEC=""
