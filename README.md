@@ -78,8 +78,12 @@ Solum adressiert fail-closed Autorisierung, Jurisdiction-Profile und tamper-evid
 
 → [Solum auf GitHub](https://github.com/SynapticFour/Solum) · [Solum-Demo (lokal)](https://github.com/SynapticFour/Solum-Demo) · [Produktseite](https://synapticfour.com/de/solum)
 
-**Heute im Showcase orchestriert:** Ferrum-GA4GH-Demo → HELIOS → optional BioResearch Assistant (M2).
-**Als Nächstes:** Solum-Stage, Evidence Pack CLI, PhenoFlow→Consent — siehe [Implementation Plan](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
+### 🪪 ga4gh-infra — Identity plane (Passports / Broker)
+
+Die Identity-Schicht (OIDC-Broker, Passports/Visas, ADS) liegt in [ga4gh-infra](https://github.com/SynapticFour/ga4gh-infra). Der **Standard-Showcase-Golden-Path** läuft bewusst open-auth (schnell evaluierbar). Co-Deploy mit Passports: Sibling [Ferrum-GA4GH-Demo](https://github.com/SynapticFour/Ferrum-GA4GH-Demo) `./run --with-infra` · [COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md).
+
+**Heute im Showcase orchestriert:** Ferrum-GA4GH-Demo → HELIOS · optional Solum-Stage · Consent-Gate · Evidence Pack · BRA (M2) · gatk-rs/S4MP (soft) · Path E+.
+**Als Nächstes (human / optional):** Kenya-Counsel (H4), named field site, Beacon-Tiefe, Showcase-CLI — siehe [HORIZON-OPEN-GATES](docs/pilots/HORIZON-OPEN-GATES.md).
 
 ---
 
@@ -243,8 +247,12 @@ Solum covers fail-closed authorization, jurisdiction profiles, and tamper-eviden
 
 → [Solum on GitHub](https://github.com/SynapticFour/Solum) · [Solum-Demo (local)](https://github.com/SynapticFour/Solum-Demo) · [Product page](https://synapticfour.com/en/solum)
 
-**Orchestrated in Showcase today:** Ferrum-GA4GH-Demo → HELIOS → optional BioResearch Assistant (M2).
-**Next:** Solum stage, Evidence Pack CLI, PhenoFlow→consent — see [Implementation Plan](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
+### 🪪 ga4gh-infra — Identity plane (Passports / broker)
+
+The identity layer (OIDC broker, Passports/visas, ADS) lives in [ga4gh-infra](https://github.com/SynapticFour/ga4gh-infra). The **default Showcase golden path** stays open-auth (fast to evaluate). Co-deploy with Passports: sibling [Ferrum-GA4GH-Demo](https://github.com/SynapticFour/Ferrum-GA4GH-Demo) `./run --with-infra` · [COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md).
+
+**Orchestrated in Showcase today:** Ferrum-GA4GH-Demo → HELIOS · optional Solum stage · consent gate · Evidence Pack · BRA (M2) · gatk-rs/S4MP (soft) · Path E+.
+**Next (human / optional):** Kenya counsel (H4), named field site, Beacon depth, Showcase CLI — see [HORIZON-OPEN-GATES](docs/pilots/HORIZON-OPEN-GATES.md).
 
 ---
 

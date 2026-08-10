@@ -72,6 +72,7 @@ check_dir() {
 
 check_dir "Ferrum-GA4GH-Demo" "${SHOWCASE_DEMO_ROOT:-$SHOWCASE_ROOT/../Ferrum-GA4GH-Demo}"
 check_dir "HELIOS" "${SHOWCASE_HELIOS_ROOT:-$SHOWCASE_ROOT/../HELIOS}"
+check_dir "ga4gh-infra (optional Passports co-deploy)" "${SHOWCASE_GA4GH_INFRA_ROOT:-$SHOWCASE_ROOT/../ga4gh-infra}"
 check_dir "bioresearch-assistant (optional M2)" "${SHOWCASE_BRA_ROOT:-$SHOWCASE_ROOT/../bioresearch-assistant}"
 check_dir "Solum-Demo (optional Solum stage)" "${SHOWCASE_SOLUM_DEMO_ROOT:-$SHOWCASE_ROOT/../Solum-Demo}"
 check_dir "HelixTest (optional Evidence Pack)" "${SHOWCASE_HELIXTEST_ROOT:-$SHOWCASE_ROOT/../HelixTest}"

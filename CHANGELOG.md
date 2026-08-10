@@ -28,6 +28,7 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Changed
 
+- **Showcase entry honesty** — README “orchestrated today / next” matches W1–W4 Done; ga4gh-infra / Passports via Demo `--with-infra`; clone recipe in DEMO; overview C8 + Lab-Kit/Field row; pin `ga4gh-infra`; preflight soft-check.
 - **Ferrum-GA4GH-Demo pointers** — Demo `docs/COVERAGE.md` / `make smoke-evidence`; gatk-rs Phase B via Demo `--gatk-rs` (soft-skip); `FERUM_SRC`/`FERRUM_SRC` alias honesty in Ferrum ECOSYSTEM cross-links.
 - **Horizon open gates** — pointer to Solum-Demo `make smoke-all` / H3 `make smoke-h3` as the local verification surface beside Showcase `make solum-stage`.
 - **PINNED_VERSIONS.txt** — added optional `gatk-rs`, `S4MP` (W4); Ferrum/HELIOS/BRA/Solum pins retained.

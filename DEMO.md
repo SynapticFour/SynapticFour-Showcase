@@ -52,8 +52,33 @@ The SynapticFour Showcase demonstrates how building blocks work together in a re
 |-------------|---------|
 | Docker Desktop | 8–12 GB RAM empfohlen |
 | Python 3.11+ | Für HELIOS und Report-Assembler (`pip install helios-audit` oder Projekt-`.venv`) |
-| Git-Checkouts | `Ferrum-GA4GH-Demo`, `HELIOS`, optional `bioresearch-assistant`, optional `Solum-Demo` nebeneinander zum Showcase |
+| Git-Checkouts | Siehe Clone-Rezept unten |
 | Netzwerk | Erster Lauf: Image-Pulls und ggf. öffentliche Testdaten |
+| Gateway-Port | Ferrum-Demo nutzt **:18080** (nicht 8080) |
+
+### Clone-Rezept (Sibling-Layout)
+
+```bash
+# Parent folder (example)
+mkdir -p ~/devel/SynapticFour && cd ~/devel/SynapticFour
+
+# Required for make up
+git clone https://github.com/SynapticFour/SynapticFour-Showcase.git
+git clone https://github.com/SynapticFour/Ferrum-GA4GH-Demo.git
+git clone https://github.com/SynapticFour/HELIOS.git
+
+# Optional (match PINNED_VERSIONS.txt when reproducing a published run)
+git clone https://github.com/SynapticFour/Solum-Demo.git
+git clone https://github.com/SynapticFour/ga4gh-infra.git   # Passports co-deploy
+git clone https://github.com/SynapticFour/bioresearch-assistant.git
+# HelixTest / gatk-rs / S4MP / Ferrum / Solum — as needed
+
+cd SynapticFour-Showcase
+# Optional: pin siblings to PINNED_VERSIONS.txt SHAs, then:
+./scripts/preflight.sh
+```
+
+Reproduzierbare Stände: [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) · Refresh: `./scripts/refresh-pinned-versions.sh`
 
 **Schnellcheck vor dem Termin:**
 ```bash
@@ -61,8 +86,6 @@ The SynapticFour Showcase demonstrates how building blocks work together in a re
 # Streng (Exit-Code bei Problem):
 ./scripts/preflight.sh --strict
 ```
-
-Reproduzierbare Stände: [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) enthält die Git-HEADs der Nachbar-Repos.
 
 ---
 
@@ -125,6 +148,21 @@ SHOWCASE_ENABLE_GATK_RS=1 SHOWCASE_ENABLE_S4MP=1 make golden-path
 
 Default Nextflow GIAB path unchanged. Optional Demo `./run --gatk-rs` (soft-skip if image missing) is available; Showcase `make gatk-rs-wes` soft-stages the same Alpha path.
 → [gatk-rs / S4MP honesty](docs/for-customers/gatk-rs-s4mp.md)
+
+### Optional: ga4gh-infra / Passports co-deploy
+
+Default Showcase golden path is **open-auth** (fast). Identity plane (broker + Passports on DRS) is proven in the sibling Demo:
+
+```bash
+cd ../Ferrum-GA4GH-Demo
+# needs ../ga4gh-infra (or GA4GH_INFRA_SRC)
+./run --with-infra
+# or: make up-with-infra
+make smoke-evidence
+```
+
+Evidence: `results/co_deploy_results.json`. Coverage: [Ferrum-GA4GH-Demo COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md).
+Advanced: `SHOWCASE_DEMO_EXTRA=--with-infra make golden-path` (undocumented edge; prefer Demo recipe above).
 
 ### Customer verification suite (claims / integrations)
 
