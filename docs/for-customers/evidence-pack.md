@@ -53,7 +53,7 @@ Einstiegskarte: [start-here.md](start-here.md)
 ## Für Evaluatoren
 
 - HelixTest-Live-Gate: [../for-evaluators/helixtest-gate.md](../for-evaluators/helixtest-gate.md)
-- Evidence-Chain Plan: [../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
+- Try map: [start-here.md](start-here.md)
 
 ---
 

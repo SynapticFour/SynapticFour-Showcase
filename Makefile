@@ -41,7 +41,7 @@ help:
 	@echo "Consent before WES: SHOWCASE_ENABLE_CONSENT_GATE=1 make golden-path"
 	@echo "W4 opt-in: SHOWCASE_ENABLE_GATK_RS=1 SHOWCASE_ENABLE_S4MP=1 make golden-path"
 	@echo "Passports harvest: SHOWCASE_ENABLE_CO_DEPLOY_HARVEST=1 make golden-path"
-	@echo "See: docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md"
+	@echo "See: docs/for-customers/start-here.md"
 
 up: golden-path
 

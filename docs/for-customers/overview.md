@@ -54,8 +54,6 @@ open demo/verification/README.md      # eingefrorene Evidenz im Repo
 
 Details und Ehrlichkeit: [integration-verification.md](integration-verification.md).
 
-**Wohin die Produkte gemeinsam steuern:** [Coordinated portfolio roadmap](../COORDINATED-PORTFOLIO-ROADMAP.md) (On-Prem zuerst; Solum Sidecar + optionale openEHR-Datenebene; SaaS nur vorbereitet).
-
 ---
 
 ## Welcher Pfad passt?
@@ -97,8 +95,6 @@ Same table as above (Ferrum, Ferrum-GA4GH-Demo, **ga4gh-infra**, HELIOS, BRA, So
 
 C0 fixtures → C1 golden path → C2 Solum → C3 consent → C4 Evidence Pack → C5/C6 Alpha sidecars → C7 optional gatk-rs WES → **C8** Demo `./run --with-infra` + Showcase `make co-deploy-harvest` (Passports).
 Re-run: [integration-verification.md](integration-verification.md). Published pack: `demo/verification/`.
-
-**Where the portfolio is heading together:** [Coordinated portfolio roadmap](../COORDINATED-PORTFOLIO-ROADMAP.md).
 
 ### Honesty
 

@@ -84,7 +84,7 @@ Was Sie danach wissen: Ob RAG auf Ihren spezifischen Daten die Forschungsprodukt
 Was das konkret bedeutet:
 - Fail-closed Autorisierung, Consent grant/revoke und tamper-evident Audit als Stage-1-Nachweis erleben (`make smoke-all` / UI Szenarien 1–3)
 - Jurisdiction-/Consent-Story getrennt von GA4GH-Genomics halten; optional Track B CDR live (`make up-h3`)
-- Später an die Showcase-Evidenzkette anbinden (siehe [Implementation Plan](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md))
+- Später an die Showcase-Evidenzkette anbinden (siehe [start-here.md](start-here.md))
 
 Was Sie danach wissen: Ob Solums Perimeter zu Ihrer klinischen Compliance-Lage passt — ohne Genomic-Stack-Rewrite.
 
@@ -179,7 +179,7 @@ What this means in practice:
 What this means in practice:
 - Experience fail-closed authorization, consent grant/revoke, and tamper-evident audit as Stage-1 proof (`make smoke-all` / UI Scenarios 1–3)
 - Keep jurisdiction/consent story separate from GA4GH genomics; optional Track B CDR live (`make up-h3`)
-- Later attach to the Showcase evidence chain ([Implementation Plan](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md))
+- Later attach to the Showcase evidence chain ([start-here.md](start-here.md))
 
 **Timeframe:** Hours (demo) to 10–20 days (pilot framing).
 

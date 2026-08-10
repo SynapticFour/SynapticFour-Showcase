@@ -3,7 +3,7 @@
 **Date:** 2026-08-10
 **Audience:** founders, eng, ops, website/content
 **Source of truth for execution packs:** this folder’s H1–H5 checklists
-**Roadmap:** [COORDINATED-PORTFOLIO-ROADMAP.md](../COORDINATED-PORTFOLIO-ROADMAP.md)
+**Roadmap:** [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
 
 Engineering exits for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, and optional **H5 preparedness** are done. Remaining work is mostly **human / commercial**, plus deliberate product follow-ons that are **not** required to claim those engineering exits.
 
@@ -19,7 +19,7 @@ Engineering exits for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, an
 | **H4** | K2 eng exit | Counsel send + PRODUCTION flip; named site; field reconcile wiring |
 | **H5** | Optional preparedness exit | Paying managed-host customer; multi-tenant (**deferred**); TEE (**sketch only**) |
 
-**Next concrete human action:** send Kenya K1 brief ([Solum KENYA-K1-SEND-CHECKLIST](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md)).
+**Next concrete human action:** send Kenya K1 brief (counsel package (contact Synaptic Four — not published in the public Solum tree)).
 
 ---
 
@@ -46,7 +46,7 @@ See [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md).
 | Item | Status | Owner |
 |------|--------|-------|
 | H3.0–H3.6 + depth harden (dual-write, Path E+ smoke, backup/MDCG send pack) | Done | — |
-| External RA / MDCG clearance before marketing clinical claims | Open | Counsel ([H3-MDCG-SEND-CHECKLIST](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/H3-MDCG-SEND-CHECKLIST.md)) |
+| External RA / MDCG clearance before marketing clinical claims | Open | Counsel (counsel package (contact Synaptic Four — not published in the public Solum tree)) |
 | Patient-summary OPT pin (still `minimal_observation`) | Follow-on | Eng ([H3-CLINICAL-MODELLING](https://github.com/SynapticFour/Solum/blob/main/docs/H3-CLINICAL-MODELLING.md)) |
 | Synaptic Four hospital EHR UI | Out of scope | — |
 
@@ -73,7 +73,7 @@ See [H4-PILOT-CHECKLIST.md](H4-PILOT-CHECKLIST.md).
 | TEE / confidential computing | Sketch only | Future programme |
 | Actual managed hosting for a customer | Open | Commercial |
 
-See [H5-SAAS-READY-CHECKLIST.md](H5-SAAS-READY-CHECKLIST.md).
+See [H5-SAAS-READY-CHECKLIST.md](../internal/pilots/H5-SAAS-READY-CHECKLIST.md).
 
 ---
 
@@ -101,4 +101,4 @@ When updating [synapticfour-website](https://github.com/SynapticFour/synapticfou
 |------|------|
 | H3 | [H3-PILOT-CHECKLIST.md](H3-PILOT-CHECKLIST.md) |
 | H4 | [H4-PILOT-CHECKLIST.md](H4-PILOT-CHECKLIST.md) |
-| H5 | [H5-SAAS-READY-CHECKLIST.md](H5-SAAS-READY-CHECKLIST.md) |
+| H5 | [H5-SAAS-READY-CHECKLIST.md](../internal/pilots/H5-SAAS-READY-CHECKLIST.md) |

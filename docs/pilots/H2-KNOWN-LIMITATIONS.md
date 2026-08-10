@@ -1,7 +1,7 @@
 # H2 — Known limitations
 
 **Date:** 2026-08-06
-**Companion:** [H2-PILOT-CHECKLIST.md](H2-PILOT-CHECKLIST.md) · [H2-EXECUTION-RECORD.md](H2-EXECUTION-RECORD.md)
+**Companion:** [H2-PILOT-CHECKLIST.md](H2-PILOT-CHECKLIST.md) · [H2-EXECUTION-RECORD.md](../internal/pilots/H2-EXECUTION-RECORD.md)
 
 **Full H2 exit signed** (spine v1 + H2.1–H2.4 + second-pass B–D). Outstanding items below are **documented**, not silent gaps.
 

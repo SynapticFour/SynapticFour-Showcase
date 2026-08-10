@@ -1,7 +1,7 @@
 # H2 — Production on-prem spine checklist
 
-**Horizon:** H2 from [COORDINATED-PORTFOLIO-ROADMAP.md](../COORDINATED-PORTFOLIO-ROADMAP.md)
-**Depends on:** [H1 signed off](H1-EXECUTION-RECORD.md)
+**Horizon:** H2 from [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
+**Depends on:** [H1 signed off](../internal/pilots/H1-EXECUTION-RECORD.md)
 **Not H2:** openEHR CDR (H3), Kenya PRODUCTION profile (H4), SaaS (H5)
 
 ---
@@ -37,7 +37,7 @@ Operator can run without Synaptic Four on the laptop; **withdrawal has teeth acr
 | Ferrum pin | `e638214b` (H2.1) / spine `49aab603` |
 | Solum pin | H2.4 `c9c7082` / honesty `c3becb4` |
 | HELIOS | `bd729a6` (`CLIN-ACCESS-001`) |
-| Evidence | [H2-EXECUTION-RECORD.md](H2-EXECUTION-RECORD.md) |
+| Evidence | [H2-EXECUTION-RECORD.md](../internal/pilots/H2-EXECUTION-RECORD.md) |
 | Notes | Do not claim EHDS/ODPC certification or HSM; Kenya counsel still outstanding |
 
 ---
@@ -46,4 +46,4 @@ Operator can run without Synaptic Four on the laptop; **withdrawal has teeth acr
 
 - **H3** architecture (EHRbase) may proceed.
 - Outstanding (not H2 blockers): [H2-SECOND-PASS.md](H2-SECOND-PASS.md) “Outstanding after H2 exit”.
-- Kenya K1: send counsel brief — Solum [KENYA-K1-SEND-CHECKLIST.md](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md).
+- Kenya K1: send counsel brief — Solum counsel package (contact Synaptic Four — not published in the public Solum tree).

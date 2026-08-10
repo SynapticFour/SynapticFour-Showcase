@@ -25,7 +25,7 @@ Ihr Institut arbeitet mit genomischen Daten. Sie haben:
 - Pipelines die heute laufen — und die niemand neu schreiben will
 - Compliance-Druck, der konkrete technische Nachweise verlangt, nicht Policy-Folien
 
-Ferrum, HELIOS, BioResearch Assistant und Solum sind Bausteine die diesen Knoten lösen — einzeln einsetzbar, zusammen stärker. Die durchgängige Evidenz-Kette (Genomic + Audit + Research AI + Clinical) ist der Zielzustand dieses Showcase; Solum ist über [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) lokal erlebbar (Stage-1 Authz/Audit/Consent + optionales Track-B-Overlay, `make smoke-all`) — die orchestrierte Integration folgt dem [Evidence-Chain Implementation Plan](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
+Ferrum, HELIOS, BioResearch Assistant und Solum sind Bausteine die diesen Knoten lösen — einzeln einsetzbar, zusammen stärker. Die durchgängige Evidenz-Kette (Genomic + Audit + Research AI + Clinical) ist der Zielzustand dieses Showcase; Solum ist über [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) lokal erlebbar (Stage-1 Authz/Audit/Consent + optionales Track-B-Overlay, `make smoke-all`) — orchestrierte Integration: [DEMO.md](DEMO.md) und [Start here](docs/for-customers/start-here.md).
 
 ---
 
@@ -85,7 +85,7 @@ Solum adressiert fail-closed Autorisierung, Jurisdiction-Profile und tamper-evid
 Die Identity-Schicht (OIDC-Broker, Passports/Visas, ADS) liegt in [ga4gh-infra](https://github.com/SynapticFour/ga4gh-infra). Der **Standard-Showcase-Golden-Path** läuft bewusst open-auth (schnell evaluierbar). Co-Deploy mit Passports: Sibling [Ferrum-GA4GH-Demo](https://github.com/SynapticFour/Ferrum-GA4GH-Demo) `./run --with-infra` · danach `make co-deploy-harvest` · [COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md) · [Start here](docs/for-customers/start-here.md).
 
 **Heute im Showcase orchestriert:** Ferrum-GA4GH-Demo → HELIOS · optional Solum-Stage · Consent-Gate · Evidence Pack · Passports-Harvest (soft) · BRA (M2) · gatk-rs/S4MP (soft) · Path E+.
-**Als Nächstes (human / optional):** Kenya-Counsel (H4), named field site, Beacon-Tiefe, Showcase-CLI — siehe [HORIZON-OPEN-GATES](docs/pilots/HORIZON-OPEN-GATES.md).
+**Als Nächstes (human / optional):** Kenya-Counsel (H4), named field site, Beacon-Tiefe, Showcase-CLI — siehe [Start here](docs/for-customers/start-here.md) und [DEMO.md](DEMO.md).
 
 ---
 
@@ -196,7 +196,7 @@ Your institution works with genomic data. You have:
 - Pipelines that run today — that nobody wants to rewrite
 - Compliance pressure that demands concrete technical evidence, not policy slides
 
-Ferrum, HELIOS, BioResearch Assistant, and Solum are building blocks that untangle this. Deployable individually. Stronger together. The end-to-end evidence chain (genomic + audit + research AI + clinical) is this Showcase’s target; Solum is runnable via [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) (Stage-1 authz/audit/consent + optional Track B overlay, `make smoke-all`) — orchestrated integration follows the [Evidence-Chain Implementation Plan](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
+Ferrum, HELIOS, BioResearch Assistant, and Solum are building blocks that untangle this. Deployable individually. Stronger together. The end-to-end evidence chain (genomic + audit + research AI + clinical) is this Showcase’s target; Solum is runnable via [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) (Stage-1 authz/audit/consent + optional Track B overlay, `make smoke-all`) — orchestrated integration: [DEMO.md](DEMO.md) and [Start here](docs/for-customers/start-here.md).
 
 ---
 
@@ -256,7 +256,7 @@ Solum covers fail-closed authorization, jurisdiction profiles, and tamper-eviden
 The identity layer (OIDC broker, Passports/visas, ADS) lives in [ga4gh-infra](https://github.com/SynapticFour/ga4gh-infra). The **default Showcase golden path** stays open-auth (fast to evaluate). Co-deploy with Passports: sibling [Ferrum-GA4GH-Demo](https://github.com/SynapticFour/Ferrum-GA4GH-Demo) `./run --with-infra` · then `make co-deploy-harvest` · [COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md) · [Start here](docs/for-customers/start-here.md).
 
 **Orchestrated in Showcase today:** Ferrum-GA4GH-Demo → HELIOS · optional Solum stage · consent gate · Evidence Pack · Passports harvest (soft) · BRA (M2) · gatk-rs/S4MP (soft) · Path E+.
-**Next (human / optional):** Kenya counsel (H4), named field site, Beacon depth, Showcase CLI — see [HORIZON-OPEN-GATES](docs/pilots/HORIZON-OPEN-GATES.md).
+**Next (human / optional):** Kenya counsel (H4), named field site, Beacon depth, Showcase CLI — see [Start here](docs/for-customers/start-here.md) and [DEMO.md](DEMO.md).
 
 ---
 

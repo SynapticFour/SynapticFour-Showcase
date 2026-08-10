@@ -106,7 +106,7 @@ What this proves:
 Technical anchors:
 
 - [Solum](https://github.com/SynapticFour/Solum) · [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) · [COVERAGE](https://github.com/SynapticFour/Solum-Demo/blob/main/docs/COVERAGE.md) · [PINNED_VERSIONS](https://github.com/SynapticFour/Solum-Demo/blob/main/PINNED_VERSIONS.txt)
-- Showcase: `scripts/run-solum-stage.sh`, [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
+- Showcase: `scripts/run-solum-stage.sh`, [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../internal/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
 
 Honesty: ephemeral demo keys only; not a production topology.
 

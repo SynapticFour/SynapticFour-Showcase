@@ -1,6 +1,6 @@
 # H4 — Geography decision (first jurisdiction pack beyond EU)
 
-**Horizon:** H4 from [COORDINATED-PORTFOLIO-ROADMAP.md](../COORDINATED-PORTFOLIO-ROADMAP.md)
+**Horizon:** H4 from [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
 **Decision date:** 2026-08-06 (provisional — finalize when a field pilot is contracted)
 **Owner:** Solum profiles + Ferrum Edge / Lab Kit field path
 
@@ -50,7 +50,7 @@
 | Cross-border destinations | ODPC case-by-case | Populate `permitted_destinations` or keep empty + fail-closed with runbook | Empty + fail-closed kept — counsel confirm |
 | Health Data Bank obligations | Outside Solum scope | Explicit non-goal in profile notes | Non-goal strengthened — counsel confirm |
 
-**Profile status:** PROVISIONAL-PRODUCTION-CANDIDATE after **non-counsel** [Vorprüfung](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-VORPRUEFUNG.md). Real counsel via [brief](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md) still required before PRODUCTION / patient SoR.
+**Profile status:** PROVISIONAL-PRODUCTION-CANDIDATE after **non-counsel** counsel package (contact Synaptic Four — not published in the public Solum tree). Real counsel via counsel package (contact Synaptic Four — not published in the public Solum tree) still required before PRODUCTION / patient SoR.
 
 ### K2 — Technical closure (engineering)
 

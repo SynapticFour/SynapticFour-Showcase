@@ -112,7 +112,7 @@ make solum-stage
 make golden-path-with-solum
 ```
 
-Siehe [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md) und [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) (`Solum-Demo`, `Solum-tag`).
+Siehe [docs/for-customers/start-here.md](docs/for-customers/start-here.md) und [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) (`Solum-Demo`, `Solum-tag`).
 
 ### Optional: Evidence Pack
 

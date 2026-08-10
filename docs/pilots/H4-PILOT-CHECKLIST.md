@@ -1,11 +1,11 @@
 # H4 — Edge / Pi + Kenya jurisdiction checklist
 
-**Horizon:** H4 from [COORDINATED-PORTFOLIO-ROADMAP.md](../COORDINATED-PORTFOLIO-ROADMAP.md)
-**Depends on:** [H3 signed off](H3-EXECUTION-RECORD.md)
+**Horizon:** H4 from [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
+**Depends on:** [H3 signed off](../internal/pilots/H3-EXECUTION-RECORD.md)
 **Geography decision:** [H4-GEOGRAPHY-DECISION.md](H4-GEOGRAPHY-DECISION.md)
 **Not H4:** Nigeria/SA profiles (queued), PRODUCTION flip without counsel, SaaS (H5), EHRbase on Pi
 
-Solum: [`kenya-dpa.toml`](https://github.com/SynapticFour/Solum/blob/main/config/profiles/kenya-dpa.toml) · [H4-OFFLINE-SYNC-POLICY.md](https://github.com/SynapticFour/Solum/blob/main/docs/H4-OFFLINE-SYNC-POLICY.md) · [KENYA-K1-SEND-CHECKLIST.md](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md)
+Solum: [`kenya-dpa.toml`](https://github.com/SynapticFour/Solum/blob/main/config/profiles/kenya-dpa.toml) · [H4-OFFLINE-SYNC-POLICY.md](https://github.com/SynapticFour/Solum/blob/main/docs/H4-OFFLINE-SYNC-POLICY.md) · counsel package (contact Synaptic Four — not published in the public Solum tree)
 Architecture: [H4-HUB-PI-ARCHITECTURE.md](H4-HUB-PI-ARCHITECTURE.md)
 
 ---
@@ -57,6 +57,6 @@ Full H4 production-ready exit additionally requires **K1.3–K1.4** (counsel) an
 |-------|-------|
 | Host | Synaptic Four eng |
 | Date | 2026-08-10 |
-| Evidence | [H4-EXECUTION-RECORD.md](H4-EXECUTION-RECORD.md) |
+| Evidence | [H4-EXECUTION-RECORD.md](../internal/pilots/H4-EXECUTION-RECORD.md) |
 | Profile | `kenya-dpa` PROVISIONAL-PRODUCTION-CANDIDATE |
 | Notes | Counsel send + named site remain open |
