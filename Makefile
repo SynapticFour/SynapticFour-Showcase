@@ -4,6 +4,7 @@
 	evidence-pack evidence-pack-fixtures consent-gate consent-gate-deny consent-gate-fixtures \
 	h21-teeth h22-org-cap h23-ops-polish \
 	gatk-rs-smoke gatk-rs-smoke-fixtures gatk-rs-wes s4mp-evidence s4mp-evidence-fixtures \
+	co-deploy-harvest co-deploy-harvest-fixtures \
 	integration-suite integration-suite-fixtures verification-publish preflight \
 	path-eplus-smoke
 
@@ -25,6 +26,8 @@ help:
 	@echo "  make gatk-rs-wes            Optional Ferrum --gatk-rs WES path (soft-fail)"
 	@echo "  make s4mp-evidence          Optional S4MP port-diff sidecar (soft-fail)"
 	@echo "  make s4mp-evidence-fixtures CI fixtures for S4MP sidecar"
+	@echo "  make co-deploy-harvest      Soft-harvest Demo Passports co_deploy into artefacts"
+	@echo "  make co-deploy-harvest-fixtures  CI fixtures for Passports co-deploy harvest"
 	@echo "  make integration-suite      Customer verification suite (fixtures + optional live)"
 	@echo "  make integration-suite-fixtures  Fixtures only + publish demo/verification/"
 	@echo "  make verification-publish   Re-publish demo/verification/ from fixtures"
@@ -34,9 +37,10 @@ help:
 	@echo "  make preflight              Local environment checks"
 	@echo "  make down / make destroy    Stop stacks"
 	@echo ""
-	@echo "Customer start: docs/for-customers/overview.md"
+	@echo "Customer start: docs/for-customers/start-here.md"
 	@echo "Consent before WES: SHOWCASE_ENABLE_CONSENT_GATE=1 make golden-path"
 	@echo "W4 opt-in: SHOWCASE_ENABLE_GATK_RS=1 SHOWCASE_ENABLE_S4MP=1 make golden-path"
+	@echo "Passports harvest: SHOWCASE_ENABLE_CO_DEPLOY_HARVEST=1 make golden-path"
 	@echo "See: docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md"
 
 up: golden-path
@@ -96,6 +100,14 @@ s4mp-evidence:
 s4mp-evidence-fixtures:
 	@chmod +x scripts/attach-s4mp-evidence.sh 2>/dev/null || true
 	./scripts/attach-s4mp-evidence.sh --fixtures --publish-examples
+
+co-deploy-harvest:
+	@chmod +x scripts/harvest-co-deploy.sh 2>/dev/null || true
+	./scripts/harvest-co-deploy.sh
+
+co-deploy-harvest-fixtures:
+	@chmod +x scripts/harvest-co-deploy.sh 2>/dev/null || true
+	./scripts/harvest-co-deploy.sh --fixtures --publish-examples
 
 integration-suite:
 	@chmod +x scripts/run-integration-suite.sh 2>/dev/null || true

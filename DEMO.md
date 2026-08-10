@@ -161,7 +161,19 @@ cd ../Ferrum-GA4GH-Demo
 make smoke-evidence
 ```
 
-Evidence: `results/co_deploy_results.json`. Coverage: [Ferrum-GA4GH-Demo COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md).
+Then harvest into Showcase Evidence Pack inputs (soft; does not start infra):
+
+```bash
+cd ../SynapticFour-Showcase
+make co-deploy-harvest          # live Demo results if ran>0; else fixture
+make co-deploy-harvest-fixtures # CI shape
+make evidence-pack
+# or: SHOWCASE_ENABLE_CO_DEPLOY_HARVEST=1 SHOWCASE_ENABLE_EVIDENCE_PACK=1 make golden-path
+```
+
+Evidence: Demo `results/co_deploy_results.json` → Showcase `artifacts/ga4gh-infra/` · pack role `ga4gh_infra_co_deploy`.
+Coverage: [Ferrum-GA4GH-Demo COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md).
+Try map: [docs/for-customers/start-here.md](docs/for-customers/start-here.md).
 Advanced: `SHOWCASE_DEMO_EXTRA=--with-infra make golden-path` (undocumented edge; prefer Demo recipe above).
 
 ### Customer verification suite (claims / integrations)

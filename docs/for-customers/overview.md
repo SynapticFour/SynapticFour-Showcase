@@ -50,7 +50,7 @@ open demo/verification/README.md      # eingefrorene Evidenz im Repo
 | **C5** | gatk-rs Smoke (lokal/Docker) | `make gatk-rs-smoke` | `demo/results/gatk-rs-smoke-result-example.json` |
 | **C6** | S4MP Port-Diff Sidecar | `make s4mp-evidence` | `demo/results/s4mp-evidence-example.json` |
 | **C7** | Optional Ferrum `--gatk-rs` WES (Alpha) | `./scripts/run-gatk-rs-wes.sh` | Soft-skip wenn Image fehlt |
-| **C8** | ga4gh-infra co-deploy (Passports) | Sibling Demo `./run --with-infra` | `Ferrum-GA4GH-Demo/results/co_deploy_results.json` |
+| **C8** | ga4gh-infra co-deploy (Passports) | Demo `./run --with-infra` · Showcase `make co-deploy-harvest` | Pack-Rolle `ga4gh_infra_co_deploy` · Demo `results/co_deploy_results.json` |
 
 Details und Ehrlichkeit: [integration-verification.md](integration-verification.md).
 
@@ -95,7 +95,7 @@ Same table as above (Ferrum, Ferrum-GA4GH-Demo, **ga4gh-infra**, HELIOS, BRA, So
 
 ### Tested constellations
 
-C0 fixtures → C1 golden path → C2 Solum → C3 consent → C4 Evidence Pack → C5/C6 Alpha sidecars → C7 optional gatk-rs WES → **C8** Demo `./run --with-infra` (Passports).
+C0 fixtures → C1 golden path → C2 Solum → C3 consent → C4 Evidence Pack → C5/C6 Alpha sidecars → C7 optional gatk-rs WES → **C8** Demo `./run --with-infra` + Showcase `make co-deploy-harvest` (Passports).
 Re-run: [integration-verification.md](integration-verification.md). Published pack: `demo/verification/`.
 
 **Where the portfolio is heading together:** [Coordinated portfolio roadmap](../COORDINATED-PORTFOLIO-ROADMAP.md).

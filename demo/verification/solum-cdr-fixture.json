@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "kind": "solum-cdr-h3-fixture",
+  "horizon": "H3.5",
+  "template_id": "minimal_observation.en.v1",
+  "ehr_id": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+  "composition_uid": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+  "fhir_patient": {
+    "resourceType": "Patient",
+    "id": "patient-h3-fixture",
+    "name": [{ "family": "Fixture", "given": ["PathEPlus"] }]
+  },
+  "audit_event_types": [
+    "cdr.template.uploaded",
+    "cdr.ehr.created",
+    "cdr.composition.committed",
+    "cdr.fhir.created"
+  ],
+  "honesty": "Fixture digests only — not live EHRbase proof, not MDR certification."
+}

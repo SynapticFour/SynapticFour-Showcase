@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "stage": "ga4gh_infra_co_deploy_harvest",
+  "kind": "passports-co-deploy",
+  "generated_at": "2026-08-10T08:50:37.534159Z",
+  "status": "ok",
+  "source": "/Users/SynapticFour/devel/SynapticFour/SynapticFour-Showcase/fixtures/ci/ga4gh-infra/co_deploy_results.json",
+  "sha256": "eed4b3a67d5e4b43210dc39170015a7b864a7549b5d0a0121c3616b4068ba264",
+  "summary": {
+    "ran": 4,
+    "skipped": 0,
+    "errors": 0,
+    "all_passed": true
+  },
+  "maturity": "demo-co-deploy-not-production-idp",
+  "honesty": "Harvest of Ferrum-GA4GH-Demo results/co_deploy_results.json only. Does not start ga4gh-infra. Live Passports proof: Demo ./run --with-infra. Not a production IdP / AAI certificate.",
+  "note": "Committed CI fixture (Passports co-deploy shape)"
+}

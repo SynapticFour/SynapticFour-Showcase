@@ -1,0 +1,48 @@
+{
+  "detected_features": {
+    "broker": true,
+    "passports": true,
+    "ads": true,
+    "mock_idp": true
+  },
+  "available_count": 4,
+  "infra_urls": {
+    "broker": "http://127.0.0.1:9000",
+    "passports": "http://127.0.0.1:9001",
+    "ads": "http://127.0.0.1:9002",
+    "mock_idp": "http://127.0.0.1:9100"
+  },
+  "scenarios": {
+    "infra_health": {
+      "ok": true,
+      "available_count": 4,
+      "note": "ga4gh-infra co-deploy plane healthy",
+      "elapsed_seconds": 0.12
+    },
+    "broker_login": {
+      "ok": true,
+      "subject": "fixture-user@example.org",
+      "passport_jwt_parts": 3,
+      "passport_prefix": "eyJhbGciOiJSUzI1NiI...",
+      "elapsed_seconds": 0.45
+    },
+    "service_registry": {
+      "ok": true,
+      "registered": ["drs", "wes"],
+      "elapsed_seconds": 0.08
+    },
+    "passport_on_drs": {
+      "ok": true,
+      "http_status": 200,
+      "note": "DRS accepted Passport bearer (fixture)",
+      "elapsed_seconds": 0.2
+    }
+  },
+  "summary": {
+    "ran": 4,
+    "skipped": 0,
+    "errors": 0,
+    "all_passed": true,
+    "note": "Committed Showcase fixture for Evidence Pack / CI — not a live IdP run"
+  }
+}

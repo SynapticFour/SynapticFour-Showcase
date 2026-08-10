@@ -52,11 +52,14 @@ GATK_RS_SMOKE="${SHOWCASE_GATK_RS_SMOKE_JSON:-}"
 GATK_RS_WES="${SHOWCASE_GATK_RS_WES_JSON:-}"
 S4MP_EVIDENCE="${SHOWCASE_S4MP_EVIDENCE_JSON:-}"
 S4MP_REPORT="${SHOWCASE_S4MP_REPORT:-}"
+CO_DEPLOY_RESULTS="${SHOWCASE_CO_DEPLOY_RESULTS_JSON:-}"
+CO_DEPLOY_HARVEST="${SHOWCASE_CO_DEPLOY_HARVEST_JSON:-}"
 SHOWCASE_REPORT_JSON="${SHOWCASE_REPORT:-$SHOWCASE_ROOT/showcase-report.json}"
 SHOWCASE_REPORT_MD="${SHOWCASE_REPORT_MD:-$SHOWCASE_ROOT/showcase-report.md}"
 DEMO_ROOT="${SHOWCASE_DEMO_ROOT:-$SHOWCASE_ROOT/../Ferrum-GA4GH-Demo}"
 HELIXTEST_ROOT="${SHOWCASE_HELIXTEST_ROOT:-$SHOWCASE_ROOT/../HelixTest}"
 GATEWAY_BASE="${SHOWCASE_FERRUM_GATEWAY:-http://127.0.0.1:18080}"
+HARVEST_CO_DEPLOY="${SHOWCASE_HARVEST_CO_DEPLOY:-0}"
 
 usage() {
   cat <<'EOF'
@@ -157,6 +160,14 @@ if [[ "$MODE" == "fixtures" ]]; then
   GATK_RS_SMOKE="${GATK_RS_SMOKE:-$SHOWCASE_ROOT/fixtures/ci/gatk-rs/gatk-rs-smoke-result.json}"
   S4MP_EVIDENCE="${S4MP_EVIDENCE:-$SHOWCASE_ROOT/fixtures/ci/s4mp/s4mp-evidence.json}"
   S4MP_REPORT="${S4MP_REPORT:-$SHOWCASE_ROOT/fixtures/ci/s4mp/diff-report.md}"
+  CO_DEPLOY_RESULTS="${CO_DEPLOY_RESULTS:-$SHOWCASE_ROOT/fixtures/ci/ga4gh-infra/co_deploy_results.json}"
+  if [[ -z "$CO_DEPLOY_HARVEST" ]]; then
+    # Ensure harvest pointer exists next to fixture results for pack summary.
+    ./scripts/harvest-co-deploy.sh --fixtures >/dev/null 2>&1 || true
+    if [[ -f "$SHOWCASE_ROOT/artifacts/ga4gh-infra/co-deploy-harvest.json" ]]; then
+      CO_DEPLOY_HARVEST="$SHOWCASE_ROOT/artifacts/ga4gh-infra/co-deploy-harvest.json"
+    fi
+  fi
   if [[ -f "$SHOWCASE_ROOT/demo/results/showcase-report-example.md" ]]; then
     SHOWCASE_REPORT_MD="$SHOWCASE_ROOT/demo/results/showcase-report-example.md"
   fi
@@ -165,6 +176,11 @@ if [[ "$MODE" == "fixtures" ]]; then
   PACK_ID="${PACK_ID:-fixtures}"
 else
   maybe_run_helixtest
+
+  if [[ "${HARVEST_CO_DEPLOY}" == "1" || "${SHOWCASE_ENABLE_CO_DEPLOY_HARVEST:-0}" == "1" ]]; then
+    echo "[evidence-pack] harvesting ga4gh-infra co-deploy (soft)…"
+    ./scripts/harvest-co-deploy.sh || true
+  fi
 
   if [[ -z "$HELIOS_REPORT" ]]; then
     HELIOS_REPORT="$(ls -t "$SHOWCASE_ROOT/helios-reports"/*.json 2>/dev/null | head -1 || true)"
@@ -226,6 +242,25 @@ else
   if [[ -z "$S4MP_REPORT" && -f "$SHOWCASE_ROOT/artifacts/s4mp/diff-report.md" ]]; then
     S4MP_REPORT="$SHOWCASE_ROOT/artifacts/s4mp/diff-report.md"
   fi
+  if [[ -z "$CO_DEPLOY_RESULTS" && -f "$SHOWCASE_ROOT/artifacts/ga4gh-infra/co_deploy_results.json" ]]; then
+    CO_DEPLOY_RESULTS="$SHOWCASE_ROOT/artifacts/ga4gh-infra/co_deploy_results.json"
+  elif [[ -z "$CO_DEPLOY_RESULTS" && -f "$DEMO_ROOT/results/co_deploy_results.json" ]]; then
+    # Only auto-include Demo artefact when scenarios actually ran (not the default skip stub).
+    if "$PY" -c "
+import json,sys
+s=json.load(open(sys.argv[1])).get('summary') or {}
+sys.exit(0 if int(s.get('ran') or 0)>0 else 1)
+" "$DEMO_ROOT/results/co_deploy_results.json"; then
+      CO_DEPLOY_RESULTS="$DEMO_ROOT/results/co_deploy_results.json"
+    fi
+  elif [[ -z "$CO_DEPLOY_RESULTS" && -f "$SHOWCASE_ROOT/demo/results/co_deploy_results-example.json" ]]; then
+    CO_DEPLOY_RESULTS="$SHOWCASE_ROOT/demo/results/co_deploy_results-example.json"
+  fi
+  if [[ -z "$CO_DEPLOY_HARVEST" && -f "$SHOWCASE_ROOT/artifacts/ga4gh-infra/co-deploy-harvest.json" ]]; then
+    CO_DEPLOY_HARVEST="$SHOWCASE_ROOT/artifacts/ga4gh-infra/co-deploy-harvest.json"
+  elif [[ -z "$CO_DEPLOY_HARVEST" && -f "$SHOWCASE_ROOT/demo/results/co-deploy-harvest-example.json" ]]; then
+    CO_DEPLOY_HARVEST="$SHOWCASE_ROOT/demo/results/co-deploy-harvest-example.json"
+  fi
   [[ -f "$SHOWCASE_REPORT_JSON" ]] || SHOWCASE_REPORT_JSON=""
   [[ -f "$SHOWCASE_REPORT_MD" ]] || SHOWCASE_REPORT_MD=""
 fi
@@ -268,6 +303,8 @@ ARGS=(
 [[ -n "${GATK_RS_WES:-}" && -f "$GATK_RS_WES" ]] && ARGS+=(--gatk-rs-wes "$GATK_RS_WES")
 [[ -n "${S4MP_EVIDENCE:-}" && -f "$S4MP_EVIDENCE" ]] && ARGS+=(--s4mp-evidence "$S4MP_EVIDENCE")
 [[ -n "${S4MP_REPORT:-}" && -f "$S4MP_REPORT" ]] && ARGS+=(--s4mp-report "$S4MP_REPORT")
+[[ -n "${CO_DEPLOY_RESULTS:-}" && -f "$CO_DEPLOY_RESULTS" ]] && ARGS+=(--co-deploy-results "$CO_DEPLOY_RESULTS")
+[[ -n "${CO_DEPLOY_HARVEST:-}" && -f "$CO_DEPLOY_HARVEST" ]] && ARGS+=(--co-deploy-harvest "$CO_DEPLOY_HARVEST")
 [[ -n "${SHOWCASE_REPORT_JSON:-}" && -f "$SHOWCASE_REPORT_JSON" ]] && ARGS+=(--showcase-report "$SHOWCASE_REPORT_JSON")
 [[ -n "${SHOWCASE_REPORT_MD:-}" && -f "$SHOWCASE_REPORT_MD" ]] && ARGS+=(--showcase-report-md "$SHOWCASE_REPORT_MD")
 

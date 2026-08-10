@@ -10,5 +10,6 @@ Technical deep-dive materials:
 - Evidence-chain roadmap: [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
 - Customer context: [Which path fits me?](../for-customers/which-path.md) · [Scenarios](../for-customers/scenarios.md)
 - Solum companion (local interactive + smokes): [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) · `make smoke-all` · [COVERAGE](https://github.com/SynapticFour/Solum-Demo/blob/main/docs/COVERAGE.md) · Showcase orchestration: `make solum-stage`
-- Identity / Passports co-deploy: sibling [Ferrum-GA4GH-Demo](https://github.com/SynapticFour/Ferrum-GA4GH-Demo) `./run --with-infra` · [COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md) (not default golden path)
+- Identity / Passports co-deploy: sibling [Ferrum-GA4GH-Demo](https://github.com/SynapticFour/Ferrum-GA4GH-Demo) `./run --with-infra` · Showcase `make co-deploy-harvest` · [COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md) (not default golden path)
+- Try map: [../for-customers/start-here.md](../for-customers/start-here.md)
 - Genomic Demo evidence: [Ferrum-GA4GH-Demo COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md) · `make smoke-evidence`

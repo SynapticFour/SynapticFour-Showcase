@@ -2,7 +2,7 @@
   "schema_version": 1,
   "pack_kind": "synapticfour-showcase-evidence-pack",
   "pack_id": "fixtures",
-  "generated_at": "2026-08-06T12:48:09.032861Z",
+  "generated_at": "2026-08-10T08:50:37.606600Z",
   "mode": "fixtures-published",
   "showcase_root": "(portable; see repo SynapticFour-Showcase)",
   "honesty": {
@@ -10,7 +10,9 @@
       "Presence of signed/structured HELIOS audit artefacts from a run or fixture",
       "Declared DRS checksums when a DRS object JSON is included",
       "Optional HelixTest / Solum Stage-1 digests when included",
+      "Optional Solum H3 CDR + subject-link fixtures (Path E+) when included",
       "Optional gatk-rs smoke / S4MP port-diff sidecars when included",
+      "Optional ga4gh-infra / Passports co-deploy harvest when included",
       "Integrity of files inside this pack via SHA-256 in MANIFEST.json"
     ],
     "does_not_prove": [
@@ -18,12 +20,14 @@
       "Production equivalence to the demo/fixture environment",
       "Legal validity of consent (Solum demos are technical only)",
       "gatk-rs GIAB/clinical equivalence or WES execution of gatk-rs",
-      "S4MP port certification (heuristic map / stub certify only)"
+      "S4MP port certification (heuristic map / stub certify only)",
+      "Production IdP / AAI equivalence (demo broker + Passports only)"
     ],
     "docs": [
       "docs/for-customers/compliance-framing.md",
       "docs/for-customers/evidence-pack.md",
-      "docs/for-customers/gatk-rs-s4mp.md"
+      "docs/for-customers/gatk-rs-s4mp.md",
+      "docs/for-customers/start-here.md"
     ]
   },
   "summaries": {
@@ -93,6 +97,29 @@
       "maturity": "heuristic-map-not-certified",
       "wes_role": "none",
       "sha256": null
+    },
+    "ga4gh_infra_co_deploy": {
+      "present": true,
+      "ran": 4,
+      "skipped": 0,
+      "errors": 0,
+      "all_passed": true,
+      "available_count": 4,
+      "scenarios": [
+        "infra_health",
+        "broker_login",
+        "service_registry",
+        "passport_on_drs"
+      ]
+    },
+    "ga4gh_infra_co_deploy_harvest": {
+      "present": true,
+      "status": "ok",
+      "kind": "passports-co-deploy",
+      "maturity": "demo-co-deploy-not-production-idp",
+      "ran": 4,
+      "all_passed": true,
+      "sha256": "eed4b3a67d5e4b43210dc39170015a7b864a7549b5d0a0121c3616b4068ba264"
     }
   },
   "files": [
@@ -139,6 +166,20 @@
       "size_bytes": 736
     },
     {
+      "role": "solum_cdr",
+      "name": "solum-cdr-fixture.json",
+      "source": "fixtures/ci/solum-cdr/cdr-composition-fixture.json",
+      "sha256": "53553f125f45db3b1d3fc9d36cb93457fdcd540a9cbdfe6f0bac16fbeac3ab3f",
+      "size_bytes": 616
+    },
+    {
+      "role": "solum_subject_link",
+      "name": "solum-subject-link-fixture.json",
+      "source": "fixtures/ci/solum-cdr/subject-link-fixture.json",
+      "sha256": "42c9bc43920569d13cfcf249cf72a8b0e4c770d5124e84de8138f088b67470fd",
+      "size_bytes": 381
+    },
+    {
       "role": "consent_gate",
       "name": "consent-gate-result.json",
       "source": "fixtures/ci/consent-gate/consent-gate-result.json",
@@ -165,6 +206,20 @@
       "source": "fixtures/ci/s4mp/diff-report.md",
       "sha256": "d8b4883023925030d8c5425f3826e8d5058194d6e918518194018c2ae8026136",
       "size_bytes": 1061
+    },
+    {
+      "role": "ga4gh_infra_co_deploy",
+      "name": "co_deploy_results.json",
+      "source": "fixtures/ci/ga4gh-infra/co_deploy_results.json",
+      "sha256": "eed4b3a67d5e4b43210dc39170015a7b864a7549b5d0a0121c3616b4068ba264",
+      "size_bytes": 1159
+    },
+    {
+      "role": "ga4gh_infra_co_deploy_harvest",
+      "name": "co-deploy-harvest.json",
+      "source": "co-deploy-harvest.json",
+      "sha256": "556fed01ee765f2da9aad23be7e6d049a96c2d0b1c338d9253d43325d2a7a6bf",
+      "size_bytes": 775
     },
     {
       "role": "showcase_report",

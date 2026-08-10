@@ -2,16 +2,17 @@
   "schema_version": 1,
   "suite_kind": "synapticfour-showcase-integration-suite",
   "mode": "fixtures",
-  "generated_at": "2026-08-06T12:48:09.112259Z",
+  "generated_at": "2026-08-10T08:50:37.686943Z",
   "pins": {
-    "Ferrum-GA4GH-Demo": "f1a0436465be8bcf0b946750231c3ea88664fb49",
-    "HELIOS": "af1c5a5e58c7ff53bec1a40c5351e6dbb8c0de4f",
-    "bioresearch-assistant": "08cefef8afb9b4f2f1b81ea599f0b57dfa39b17b",
-    "Solum-Demo": "08462bda1ed6306662541fff003856137ea9663d",
+    "Ferrum-GA4GH-Demo": "74c6456c90eecac98f601baf4dcf6d7d3dd2bcaa",
+    "HELIOS": "0171294c608c38b713a22ad7a75cba903a8d6374",
+    "ga4gh-infra": "a91713fd806be3f58a6c9d8d4d5ece9ba2902d0e",
+    "bioresearch-assistant": "37313437900d3ddcb2bb0e4c9e66064393087d90",
+    "Solum-Demo": "ae02bb149a5452116824ad044fac53089467a283",
     "Solum-tag": "stage1-baseline-sidecar-custody-2026-08-01",
     "HelixTest": "725ea7f2c03aba70384846723b75eedfefac0262",
-    "gatk-rs": "4dce5e14b1273f502d811c2c84274295575201b2",
-    "S4MP": "fc39fb433d521c91890d038c7b1c513cccf18fb3"
+    "gatk-rs": "88a203f85c6b7542ddd44ed81f8732f74d89682c",
+    "S4MP": "9f4c3533726b61747e91a76958ff9bab0dcf94c3"
   },
   "stages": [
     {
@@ -19,7 +20,7 @@
       "status": "ok",
       "hard": true,
       "detail": null,
-      "at": "2026-08-06T12:48:09.078934Z"
+      "at": "2026-08-10T08:50:37.651952Z"
     }
   ],
   "summary": {

@@ -93,8 +93,11 @@ assert m['summaries']['solum'].get('present') is True
 assert m['summaries']['consent_gate'].get('present') is True
 assert m['summaries']['gatk_rs'].get('present') is True
 assert m['summaries']['s4mp'].get('present') is True
+assert m['summaries']['ga4gh_infra_co_deploy'].get('present') is True
+assert m['summaries']['ga4gh_infra_co_deploy'].get('ran', 0) >= 1
 assert any(f.get('role')=='gatk_rs_smoke' for f in m['files'])
 assert any(f.get('role')=='s4mp_port_diff' for f in m['files'])
+assert any(f.get('role')=='ga4gh_infra_co_deploy' for f in m['files'])
 print('evidence-pack fixture ok', m['pack_id'], 'files', len(m['files']))
 "
 

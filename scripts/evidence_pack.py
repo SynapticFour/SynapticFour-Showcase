@@ -3,7 +3,8 @@
 
 Packs HELIOS report, DRS object metadata, optional HelixTest JSON, optional
 Solum digest, optional consent gate, optional gatk-rs smoke / S4MP sidecar,
-and optional showcase-report into one reviewable directory.
+optional ga4gh-infra co-deploy harvest, and optional showcase-report into one
+reviewable directory.
 Does not claim certification or legal compliance — see README in the pack.
 """
 from __future__ import annotations
@@ -137,6 +138,38 @@ def _s4mp_summary(data: dict[str, Any] | list[Any] | None) -> dict[str, Any]:
     }
 
 
+def _co_deploy_summary(data: dict[str, Any] | list[Any] | None) -> dict[str, Any]:
+    if not isinstance(data, dict):
+        return {"present": False}
+    summary = data.get("summary") if isinstance(data.get("summary"), dict) else {}
+    return {
+        "present": True,
+        "ran": summary.get("ran"),
+        "skipped": summary.get("skipped"),
+        "errors": summary.get("errors"),
+        "all_passed": summary.get("all_passed"),
+        "available_count": data.get("available_count"),
+        "scenarios": list((data.get("scenarios") or {}).keys())
+        if isinstance(data.get("scenarios"), dict)
+        else [],
+    }
+
+
+def _co_deploy_harvest_summary(data: dict[str, Any] | list[Any] | None) -> dict[str, Any]:
+    if not isinstance(data, dict):
+        return {"present": False}
+    summary = data.get("summary") if isinstance(data.get("summary"), dict) else {}
+    return {
+        "present": True,
+        "status": data.get("status"),
+        "kind": data.get("kind"),
+        "maturity": data.get("maturity"),
+        "ran": summary.get("ran"),
+        "all_passed": summary.get("all_passed"),
+        "sha256": data.get("sha256"),
+    }
+
+
 def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
     files = manifest.get("files") or []
     helios = manifest.get("summaries", {}).get("helios") or {}
@@ -146,6 +179,7 @@ def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
     consent = manifest.get("summaries", {}).get("consent_gate") or {}
     gatk_rs = manifest.get("summaries", {}).get("gatk_rs") or {}
     s4mp = manifest.get("summaries", {}).get("s4mp") or {}
+    co_deploy = manifest.get("summaries", {}).get("ga4gh_infra_co_deploy") or {}
     lines = [
         "# Evidence Pack",
         "",
@@ -166,6 +200,7 @@ def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
         "- Optional HelixTest conformance JSON (when provided — not required for a valid pack)",
         "- Optional Solum Stage-1 digest (fail-closed authz + tamper-evident audit)",
         "- Optional gatk-rs Alpha smoke / S4MP port-diff sidecar (when included)",
+        "- Optional ga4gh-infra / Passports co-deploy harvest (when included)",
         "- SHA-256 of every file copied into this directory (see `MANIFEST.json`)",
         "",
         "## What it does **not** prove",
@@ -175,6 +210,7 @@ def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
         "- Legal consent validity (Solum artefacts are technical purpose-binding demos only)",
         "- gatk-rs clinical/GIAB equivalence or Ferrum WES execution of gatk-rs",
         "- S4MP certification (`s4 certify` is a stub; sidecar ≠ executor)",
+        "- Production IdP / AAI equivalence (co-deploy is demo broker + Passports)",
         "- Continuous monitoring after the pack was generated",
         "",
         "See also: Showcase `docs/for-customers/compliance-framing.md` and",
@@ -190,6 +226,7 @@ def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
         f"- Consent gate present: `{consent.get('present', False)}` · decision `{consent.get('decision', 'n/a')}`",
         f"- gatk-rs smoke present: `{gatk_rs.get('present', False)}` · status `{gatk_rs.get('status', 'n/a')}`",
         f"- S4MP sidecar present: `{s4mp.get('present', False)}` · maturity `{s4mp.get('maturity', 'n/a')}`",
+        f"- ga4gh-infra co-deploy present: `{co_deploy.get('present', False)}` · ran `{co_deploy.get('ran', 'n/a')}`",
         "",
         "## Files",
         "",
@@ -222,6 +259,8 @@ def main() -> None:
     parser.add_argument("--gatk-rs-wes", type=Path, default=None)
     parser.add_argument("--s4mp-evidence", type=Path, default=None)
     parser.add_argument("--s4mp-report", type=Path, default=None)
+    parser.add_argument("--co-deploy-results", type=Path, default=None)
+    parser.add_argument("--co-deploy-harvest", type=Path, default=None)
     parser.add_argument("--showcase-report", type=Path, default=None)
     parser.add_argument("--showcase-report-md", type=Path, default=None)
     args = parser.parse_args()
@@ -256,6 +295,8 @@ def main() -> None:
     add("gatk_rs_wes", args.gatk_rs_wes, "gatk-rs-wes-result.json")
     add("s4mp_port_diff", args.s4mp_evidence, "s4mp-evidence.json")
     add("s4mp_port_report", args.s4mp_report, "s4mp-diff-report.md")
+    add("ga4gh_infra_co_deploy", args.co_deploy_results, "co_deploy_results.json")
+    add("ga4gh_infra_co_deploy_harvest", args.co_deploy_harvest, "co-deploy-harvest.json")
     add("showcase_report", args.showcase_report, "showcase-report.json")
     add("showcase_report_md", args.showcase_report_md, "showcase-report.md")
 
@@ -298,6 +339,16 @@ def main() -> None:
     s4mp_data = (
         _load_json(out / "s4mp-evidence.json") if (out / "s4mp-evidence.json").is_file() else None
     )
+    co_deploy_data = (
+        _load_json(out / "co_deploy_results.json")
+        if (out / "co_deploy_results.json").is_file()
+        else None
+    )
+    co_deploy_harvest_data = (
+        _load_json(out / "co-deploy-harvest.json")
+        if (out / "co-deploy-harvest.json").is_file()
+        else None
+    )
 
     manifest: dict[str, Any] = {
         "schema_version": 1,
@@ -313,6 +364,7 @@ def main() -> None:
                 "Optional HelixTest / Solum Stage-1 digests when included",
                 "Optional Solum H3 CDR + subject-link fixtures (Path E+) when included",
                 "Optional gatk-rs smoke / S4MP port-diff sidecars when included",
+                "Optional ga4gh-infra / Passports co-deploy harvest when included",
                 "Integrity of files inside this pack via SHA-256 in MANIFEST.json",
             ],
             "does_not_prove": [
@@ -321,11 +373,13 @@ def main() -> None:
                 "Legal validity of consent (Solum demos are technical only)",
                 "gatk-rs GIAB/clinical equivalence or WES execution of gatk-rs",
                 "S4MP port certification (heuristic map / stub certify only)",
+                "Production IdP / AAI equivalence (demo broker + Passports only)",
             ],
             "docs": [
                 "docs/for-customers/compliance-framing.md",
                 "docs/for-customers/evidence-pack.md",
                 "docs/for-customers/gatk-rs-s4mp.md",
+                "docs/for-customers/start-here.md",
             ],
         },
         "summaries": {
@@ -339,6 +393,8 @@ def main() -> None:
             "consent_gate": _consent_summary(consent_data),
             "gatk_rs": _gatk_rs_summary(gatk_rs_data),
             "s4mp": _s4mp_summary(s4mp_data),
+            "ga4gh_infra_co_deploy": _co_deploy_summary(co_deploy_data),
+            "ga4gh_infra_co_deploy_harvest": _co_deploy_harvest_summary(co_deploy_harvest_data),
         },
         "files": file_entries,
     }

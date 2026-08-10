@@ -19,5 +19,3 @@ See `docs/for-customers/integration-verification.md` and `docs/for-customers/ove
 
 This is **not** a certificate. Soft stages (gatk-rs / S4MP) may skip or soft-fail when Alpha
 binaries/images are missing. Default genomic evidence remains Ferrum Nextflow + Broad GATK + HELIOS.
-
-Also see [LIVE-RUN.md](LIVE-RUN.md) for a dated live exercise of C1–C7.

@@ -12,6 +12,8 @@ Dieses Repository zeigt, wie die Kernbausteine von Synaptic Four **in einer echt
 
 Wenn Sie evaluieren möchten ob diese Infrastruktur zu Ihrer Institution passt, sind Sie hier richtig.
 
+**Einstieg in vier Schritten:** [docs/for-customers/start-here.md](docs/for-customers/start-here.md) (Fixtures → Golden Path → Passports → Solum).
+
 ---
 
 ## Das Problem, das wir lösen
@@ -80,9 +82,9 @@ Solum adressiert fail-closed Autorisierung, Jurisdiction-Profile und tamper-evid
 
 ### 🪪 ga4gh-infra — Identity plane (Passports / Broker)
 
-Die Identity-Schicht (OIDC-Broker, Passports/Visas, ADS) liegt in [ga4gh-infra](https://github.com/SynapticFour/ga4gh-infra). Der **Standard-Showcase-Golden-Path** läuft bewusst open-auth (schnell evaluierbar). Co-Deploy mit Passports: Sibling [Ferrum-GA4GH-Demo](https://github.com/SynapticFour/Ferrum-GA4GH-Demo) `./run --with-infra` · [COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md).
+Die Identity-Schicht (OIDC-Broker, Passports/Visas, ADS) liegt in [ga4gh-infra](https://github.com/SynapticFour/ga4gh-infra). Der **Standard-Showcase-Golden-Path** läuft bewusst open-auth (schnell evaluierbar). Co-Deploy mit Passports: Sibling [Ferrum-GA4GH-Demo](https://github.com/SynapticFour/Ferrum-GA4GH-Demo) `./run --with-infra` · danach `make co-deploy-harvest` · [COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md) · [Start here](docs/for-customers/start-here.md).
 
-**Heute im Showcase orchestriert:** Ferrum-GA4GH-Demo → HELIOS · optional Solum-Stage · Consent-Gate · Evidence Pack · BRA (M2) · gatk-rs/S4MP (soft) · Path E+.
+**Heute im Showcase orchestriert:** Ferrum-GA4GH-Demo → HELIOS · optional Solum-Stage · Consent-Gate · Evidence Pack · Passports-Harvest (soft) · BRA (M2) · gatk-rs/S4MP (soft) · Path E+.
 **Als Nächstes (human / optional):** Kenya-Counsel (H4), named field site, Beacon-Tiefe, Showcase-CLI — siehe [HORIZON-OPEN-GATES](docs/pilots/HORIZON-OPEN-GATES.md).
 
 ---
@@ -181,6 +183,8 @@ This repository shows how the core building blocks of Synaptic Four **work toget
 
 If you're evaluating whether this infrastructure fits your institution, you're in the right place.
 
+**Try it in four steps:** [docs/for-customers/start-here.md](docs/for-customers/start-here.md) (fixtures → golden path → Passports → Solum).
+
 ---
 
 ## The problem we solve
@@ -249,9 +253,9 @@ Solum covers fail-closed authorization, jurisdiction profiles, and tamper-eviden
 
 ### 🪪 ga4gh-infra — Identity plane (Passports / broker)
 
-The identity layer (OIDC broker, Passports/visas, ADS) lives in [ga4gh-infra](https://github.com/SynapticFour/ga4gh-infra). The **default Showcase golden path** stays open-auth (fast to evaluate). Co-deploy with Passports: sibling [Ferrum-GA4GH-Demo](https://github.com/SynapticFour/Ferrum-GA4GH-Demo) `./run --with-infra` · [COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md).
+The identity layer (OIDC broker, Passports/visas, ADS) lives in [ga4gh-infra](https://github.com/SynapticFour/ga4gh-infra). The **default Showcase golden path** stays open-auth (fast to evaluate). Co-deploy with Passports: sibling [Ferrum-GA4GH-Demo](https://github.com/SynapticFour/Ferrum-GA4GH-Demo) `./run --with-infra` · then `make co-deploy-harvest` · [COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md) · [Start here](docs/for-customers/start-here.md).
 
-**Orchestrated in Showcase today:** Ferrum-GA4GH-Demo → HELIOS · optional Solum stage · consent gate · Evidence Pack · BRA (M2) · gatk-rs/S4MP (soft) · Path E+.
+**Orchestrated in Showcase today:** Ferrum-GA4GH-Demo → HELIOS · optional Solum stage · consent gate · Evidence Pack · Passports harvest (soft) · BRA (M2) · gatk-rs/S4MP (soft) · Path E+.
 **Next (human / optional):** Kenya counsel (H4), named field site, Beacon depth, Showcase CLI — see [HORIZON-OPEN-GATES](docs/pilots/HORIZON-OPEN-GATES.md).
 
 ---

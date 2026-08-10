@@ -6,6 +6,8 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Added
 
+- **Start-here map** — [docs/for-customers/start-here.md](docs/for-customers/start-here.md): fixtures → golden path → Passports → Solum.
+- **Passports co-deploy harvest (soft)** — `scripts/harvest-co-deploy.sh`, `make co-deploy-harvest` / `-fixtures`, Evidence Pack roles `ga4gh_infra_co_deploy` / `ga4gh_infra_co_deploy_harvest`, golden-path opt-in `SHOWCASE_ENABLE_CO_DEPLOY_HARVEST`.
 - **H5 SaaS-ready preparedness (optional)** — [H5-SAAS-READY-CHECKLIST](docs/pilots/H5-SAAS-READY-CHECKLIST.md) · [H5-MANAGED-SINGLE-TENANT](docs/pilots/H5-MANAGED-SINGLE-TENANT.md) · [ADR 0003 tenant boundaries](docs/adr/0003-tenant-boundaries.md); not a SaaS launch.
 - **Horizon open gates** — [HORIZON-OPEN-GATES.md](docs/pilots/HORIZON-OPEN-GATES.md) lists remaining counsel/site/deferred items after H1–H5 eng exits.
 - **H3 full engineering exit** — Path E+ CDR + subject-link fixtures; [H3-PILOT-CHECKLIST](docs/pilots/H3-PILOT-CHECKLIST.md) / [H3-EXECUTION-RECORD](docs/pilots/H3-EXECUTION-RECORD.md); evidence-pack roles `solum_cdr` / `solum_subject_link`.
