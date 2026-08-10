@@ -215,6 +215,8 @@ def main() -> None:
     parser.add_argument("--benchmark-json", type=Path, default=None)
     parser.add_argument("--helixtest-json", type=Path, default=None)
     parser.add_argument("--solum-result", type=Path, default=None)
+    parser.add_argument("--solum-cdr", type=Path, default=None)
+    parser.add_argument("--solum-subject-link", type=Path, default=None)
     parser.add_argument("--consent-gate", type=Path, default=None)
     parser.add_argument("--gatk-rs-smoke", type=Path, default=None)
     parser.add_argument("--gatk-rs-wes", type=Path, default=None)
@@ -247,6 +249,8 @@ def main() -> None:
     add("benchmark", args.benchmark_json, "benchmark.json")
     add("helixtest", args.helixtest_json, "helixtest.json")
     add("solum_stage", args.solum_result, "solum-stage-result.json")
+    add("solum_cdr", args.solum_cdr, "solum-cdr-fixture.json")
+    add("solum_subject_link", args.solum_subject_link, "solum-subject-link-fixture.json")
     add("consent_gate", args.consent_gate, "consent-gate-result.json")
     add("gatk_rs_smoke", args.gatk_rs_smoke, "gatk-rs-smoke-result.json")
     add("gatk_rs_wes", args.gatk_rs_wes, "gatk-rs-wes-result.json")
@@ -307,6 +311,7 @@ def main() -> None:
                 "Presence of signed/structured HELIOS audit artefacts from a run or fixture",
                 "Declared DRS checksums when a DRS object JSON is included",
                 "Optional HelixTest / Solum Stage-1 digests when included",
+                "Optional Solum H3 CDR + subject-link fixtures (Path E+) when included",
                 "Optional gatk-rs smoke / S4MP port-diff sidecars when included",
                 "Integrity of files inside this pack via SHA-256 in MANIFEST.json",
             ],

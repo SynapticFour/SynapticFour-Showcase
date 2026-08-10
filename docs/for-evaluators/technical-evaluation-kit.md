@@ -84,12 +84,14 @@ Erfolgskriterium: Erlaubte Quell-Grenzen werden bei der Ingestion durchgesetzt; 
 # Sibling Solum-Demo + Showcase orchestration
 ./scripts/preflight.sh
 make solum-stage
+# Full Demo surface (authz + audit + consent; soft H3/profile if stacks up):
+#   cd ../Solum-Demo && make smoke-all
 # oder zusammen mit dem genomic golden path:
 make golden-path-with-solum
 ```
 
-Erfolgskriterium: Fail-closed Autorisierung (200 vs 403) und `chain_broken` nach Harness-Tamper sind in `artifacts/solum/` und im Showcase-Report sichtbar.
-Hinweis: Ephemeral Demo-Keys — kein Produktions-Deploy. Produkt: [Solum](https://github.com/SynapticFour/Solum) · Demo: [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) · Plan: [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
+Erfolgskriterium: Fail-closed Autorisierung (200 vs 403), Consent grant/revoke, und `chain_broken` nach Harness-Tamper sind in `artifacts/solum/` und im Showcase-Report sichtbar.
+Hinweis: Ephemeral Demo-Keys — kein Produktions-Deploy. Produkt: [Solum](https://github.com/SynapticFour/Solum) · Demo: [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) ([COVERAGE](https://github.com/SynapticFour/Solum-Demo/blob/main/docs/COVERAGE.md)) · Plan: [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
 
 ---
 
@@ -120,10 +122,11 @@ Hinweis: Ephemeral Demo-Keys — kein Produktions-Deploy. Produkt: [Solum](https
 | [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md) | W0–W4 Evidence-Chain Plan |
 | [evidence-pack.md](../for-customers/evidence-pack.md) | Evidence Pack honesty + commands |
 | [helixtest-gate.md](helixtest-gate.md) | Optional HelixTest against gateway :18080 |
-| [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) | Lokale Stage-1 Solum-Demo |
+| [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) | Lokale Solum-Demo (UI + `make smoke-all`) |
 | `./scripts/preflight.sh` | Vorab-Check |
 | `./scripts/run-golden-path.sh` | Vollständiger Demo-Lauf |
-| `./scripts/run-solum-stage.sh` / `make solum-stage` | Solum Stage-1 only |
+| `./scripts/run-solum-stage.sh` / `make solum-stage` | Showcase Stage-1 orchestration |
+| Demo `make up-h3` / `smoke-h3` | Live Track B (baut `../Solum`, nicht Stage-1-Tag) |
 | `./scripts/evidence-pack.sh` / `make evidence-pack` | Evidence Pack |
 
 ---
@@ -225,10 +228,11 @@ Success criterion: fail-closed authorization (200 vs 403) and `chain_broken` aft
 | [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md) | W0–W4 evidence-chain plan |
 | [evidence-pack.md](../for-customers/evidence-pack.md) | Evidence Pack honesty + commands |
 | [helixtest-gate.md](helixtest-gate.md) | Optional HelixTest against gateway :18080 |
-| [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) | Local Stage-1 Solum demo |
+| [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) | Local Solum-Demo (UI + `make smoke-all`) |
 | `./scripts/preflight.sh` | Pre-check |
 | `./scripts/run-golden-path.sh` | Complete demo run |
-| `./scripts/run-solum-stage.sh` / `make solum-stage` | Solum Stage-1 only |
+| `./scripts/run-solum-stage.sh` / `make solum-stage` | Showcase Stage-1 orchestration |
+| Demo `make up-h3` / `smoke-h3` | Live Track B (builds `../Solum`, not Stage-1 tag) |
 | `./scripts/evidence-pack.sh` / `make evidence-pack` | Evidence Pack |
 
 ---

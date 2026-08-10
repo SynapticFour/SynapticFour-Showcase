@@ -23,7 +23,7 @@ Ihr Institut arbeitet mit genomischen Daten. Sie haben:
 - Pipelines die heute laufen — und die niemand neu schreiben will
 - Compliance-Druck, der konkrete technische Nachweise verlangt, nicht Policy-Folien
 
-Ferrum, HELIOS, BioResearch Assistant und Solum sind Bausteine die diesen Knoten lösen — einzeln einsetzbar, zusammen stärker. Die durchgängige Evidenz-Kette (Genomic + Audit + Research AI + Clinical) ist der Zielzustand dieses Showcase; Solum ist heute als **Stage-1-Companion** dokumentiert und über [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) lokal erlebbar — die orchestrierte Integration folgt dem [Evidence-Chain Implementation Plan](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
+Ferrum, HELIOS, BioResearch Assistant und Solum sind Bausteine die diesen Knoten lösen — einzeln einsetzbar, zusammen stärker. Die durchgängige Evidenz-Kette (Genomic + Audit + Research AI + Clinical) ist der Zielzustand dieses Showcase; Solum ist über [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) lokal erlebbar (Stage-1 Authz/Audit/Consent + optionales Track-B-Overlay, `make smoke-all`) — die orchestrierte Integration folgt dem [Evidence-Chain Implementation Plan](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
 
 ---
 
@@ -188,7 +188,7 @@ Your institution works with genomic data. You have:
 - Pipelines that run today — that nobody wants to rewrite
 - Compliance pressure that demands concrete technical evidence, not policy slides
 
-Ferrum, HELIOS, BioResearch Assistant, and Solum are building blocks that untangle this. Deployable individually. Stronger together. The end-to-end evidence chain (genomic + audit + research AI + clinical) is this Showcase’s target; Solum is documented today as a **Stage-1 companion** and runnable via [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) — orchestrated integration follows the [Evidence-Chain Implementation Plan](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
+Ferrum, HELIOS, BioResearch Assistant, and Solum are building blocks that untangle this. Deployable individually. Stronger together. The end-to-end evidence chain (genomic + audit + research AI + clinical) is this Showcase’s target; Solum is runnable via [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) (Stage-1 authz/audit/consent + optional Track B overlay, `make smoke-all`) — orchestrated integration follows the [Evidence-Chain Implementation Plan](docs/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md).
 
 ---
 

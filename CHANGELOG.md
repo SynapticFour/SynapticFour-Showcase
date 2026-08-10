@@ -6,6 +6,9 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Added
 
+- **H5 SaaS-ready preparedness (optional)** — [H5-SAAS-READY-CHECKLIST](docs/pilots/H5-SAAS-READY-CHECKLIST.md) · [H5-MANAGED-SINGLE-TENANT](docs/pilots/H5-MANAGED-SINGLE-TENANT.md) · [ADR 0003 tenant boundaries](docs/adr/0003-tenant-boundaries.md); not a SaaS launch.
+- **Horizon open gates** — [HORIZON-OPEN-GATES.md](docs/pilots/HORIZON-OPEN-GATES.md) lists remaining counsel/site/deferred items after H1–H5 eng exits.
+- **H3 full engineering exit** — Path E+ CDR + subject-link fixtures; [H3-PILOT-CHECKLIST](docs/pilots/H3-PILOT-CHECKLIST.md) / [H3-EXECUTION-RECORD](docs/pilots/H3-EXECUTION-RECORD.md); evidence-pack roles `solum_cdr` / `solum_subject_link`.
 - **H2.4 AWS KMS CLI/sidecar signed off** — optional `aws-kms` feature; second-pass §A closed; not HSM.
 - **Kenya K1 Vorprüfung applied (non-counsel)** — Solum `kenya-dpa` → PROVISIONAL-PRODUCTION-CANDIDATE; H4 docs updated; real counsel still required.
 - **H2.2 Org CAP signed off** — sidecar OIDC groups → CAP_*; [ADR 0002](docs/adr/0002-solum-org-iam-cap.md); `make h22-org-cap`.
@@ -25,6 +28,7 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Changed
 
+- **Horizon open gates** — pointer to Solum-Demo `make smoke-all` / H3 `make smoke-h3` as the local verification surface beside Showcase `make solum-stage`.
 - **PINNED_VERSIONS.txt** — added optional `gatk-rs`, `S4MP` (W4); Ferrum/HELIOS/BRA/Solum pins retained.
 - **PINNED_VERSIONS.txt** — added `Solum-Demo`, `Solum-tag`, optional `HelixTest` (Ferrum/HELIOS/BRA pins retained for committed demo artefacts).
 - **PINNED_VERSIONS.txt** — Ferrum-GA4GH-Demo pin `41d7b89` (benchmark artefacts committed upstream after showcase run).

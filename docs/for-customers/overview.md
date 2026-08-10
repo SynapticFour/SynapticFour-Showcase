@@ -28,7 +28,7 @@ open demo/verification/README.md      # eingefrorene Evidenz im Repo
 | **Ferrum-GA4GH-Demo** | Ein-Kommando GIAB-/Benchmark-Demo über Ferrum | Referenzpfad für WES+hap.py |
 | **HELIOS** | Post-run Audit (Container-Pinning, Report) | Kernprodukt |
 | **bioresearch-assistant (BRA)** | PhenoFlow / Research-Assistenz, Phenopackets | Optional M2 im Showcase |
-| **Solum / Solum-Demo** | Klinischer Companion: fail-closed Authz + Audit | Stage-1 Demo |
+| **Solum / Solum-Demo** | Klinischer Companion: Authz + Audit + Consent; optional Track B CDR | Stage-1 Demo + `make smoke-all` ([COVERAGE](https://github.com/SynapticFour/Solum-Demo/blob/main/docs/COVERAGE.md)) |
 | **HelixTest** | Conformance-/Service-Info Scores (optional) | Evidence Pack optional |
 | **gatk-rs** | Alpha Rust-HaplotypeCaller | Soft-fail / optional |
 | **S4MP** | Method-/Port-Diff-Wissen (nicht Executor) | Sidecar-Evidenz |
@@ -42,7 +42,7 @@ open demo/verification/README.md      # eingefrorene Evidenz im Repo
 |----|-----|------------------|-----------------|
 | **C0** | Fixture-Spine (Scripts + Pack-Rollen) | `./scripts/run-integration-suite.sh --fixtures` | `demo/verification/` |
 | **C1** | Ferrum Nextflow + Broad GATK + HELIOS | `make golden-path` | `demo/results/` (Beispiele) |
-| **C2** | Solum Stage-1 (Authz allow/deny + Tamper) | `make solum-stage` | `demo/results/solum-*-example.json` |
+| **C2** | Solum Stage-1 (Authz + Audit + Consent) | `make solum-stage` · Demo `make smoke-all` | `demo/results/solum-*-example.json` |
 | **C3** | Consent-Gate vor WES (allow/deny) | `make consent-gate` / `consent-gate-deny` | `demo/results/consent-gate-*-example.json` |
 | **C4** | Evidence Pack (MANIFEST + SHA-256) | `make evidence-pack-fixtures` | Pack in `demo/verification/` |
 | **C5** | gatk-rs Smoke (lokal/Docker) | `make gatk-rs-smoke` | `demo/results/gatk-rs-smoke-result-example.json` |

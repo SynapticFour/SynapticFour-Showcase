@@ -4,7 +4,8 @@
 	evidence-pack evidence-pack-fixtures consent-gate consent-gate-deny consent-gate-fixtures \
 	h21-teeth h22-org-cap h23-ops-polish \
 	gatk-rs-smoke gatk-rs-smoke-fixtures gatk-rs-wes s4mp-evidence s4mp-evidence-fixtures \
-	integration-suite integration-suite-fixtures verification-publish preflight
+	integration-suite integration-suite-fixtures verification-publish preflight \
+	path-eplus-smoke
 
 help:
 	@echo "SynapticFour Showcase — local lifecycle"
@@ -29,6 +30,7 @@ help:
 	@echo "  make verification-publish   Re-publish demo/verification/ from fixtures"
 	@echo "  make evidence-pack          Build Evidence Pack from latest/local artefacts"
 	@echo "  make evidence-pack-fixtures Evidence Pack from committed fixtures"
+	@echo "  make path-eplus-smoke       Live Path E+ (Solum CDR+subject-link; soft-fail)"
 	@echo "  make preflight              Local environment checks"
 	@echo "  make down / make destroy    Stop stacks"
 	@echo ""
@@ -112,6 +114,10 @@ evidence-pack:
 evidence-pack-fixtures:
 	@chmod +x scripts/evidence-pack.sh 2>/dev/null || true
 	./scripts/evidence-pack.sh --fixtures
+
+path-eplus-smoke:
+	@chmod +x scripts/path-eplus-smoke.sh 2>/dev/null || true
+	./scripts/path-eplus-smoke.sh
 
 preflight:
 	@chmod +x scripts/preflight.sh 2>/dev/null || true

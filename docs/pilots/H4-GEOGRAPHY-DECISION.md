@@ -28,15 +28,14 @@
 
 - [x] Draft TOML exists with schema_version aligned to `eu-ehds`
 - [x] Open legal items listed in `docs/profiles.md` and profile `regulatory.notes`
-- [ ] Synaptic Four commits eng time to close **technical** gaps (tests, startup validation, transfer checks)
+- [x] Synaptic Four commits eng time to close **technical** gaps (tests, startup validation, transfer checks) — see [H4-PILOT-CHECKLIST.md](H4-PILOT-CHECKLIST.md) K2
 - [ ] Counsel path identified (external) — brief + send checklist ready; **non-counsel** Vorprüfung applied (provisional profile); **send to real counsel still open**
 
 ### No-go — do not claim production Kenya
 
-- Using `kenya-dpa` on a live patient system while STATUS is DRAFT
+- Using `kenya-dpa` on a live patient system while STATUS is not PRODUCTION (still PROVISIONAL)
 - Empty `permitted_destinations` treated as “allow all” (must stay fail-closed)
-- Pi/Edge offline cut-over without sync/residency policy written
-
+- Pi/Edge offline cut-over without sync/residency policy written — **policy written:** Solum [H4-OFFLINE-SYNC-POLICY.md](https://github.com/SynapticFour/Solum/blob/main/docs/H4-OFFLINE-SYNC-POLICY.md); field reconcile still K3
 ---
 
 ## Kenya pack — work breakdown
@@ -57,21 +56,21 @@
 
 | Item | Done when |
 |------|-----------|
-| Profile tests | `validate_startup` + `validate_transfer` fixtures for KE |
-| CLI check | `solum check --profile kenya-dpa.toml` documented |
-| Sidecar refuse | Wrong region / ephemeral custody refused under KE profile |
-| Showcase | Optional KE fixture **evaluation-only** (never marketed as certified) |
-| Edge | Ferrum Edge residency notes link to KE profile when used together |
+| Profile tests | `validate_startup` + `validate_transfer` fixtures for KE — **done** (fail-closed destinations) |
+| CLI check | `solum check --profile kenya-dpa.toml` documented — **done** (`docs/profiles.md`) |
+| Sidecar refuse | Wrong region / ephemeral custody refused under KE profile — **done** |
+| Showcase | Optional KE fixture **evaluation-only** — **done** (`fixtures/ci/kenya-eval/`) |
+| Edge | Ferrum Edge residency notes link to KE profile — **done** |
+| Offline policy | Sync/residency policy written — **done** (Solum `H4-OFFLINE-SYNC-POLICY.md`) |
 
 ### K3 — Field pilot (site-driven)
 
 | Item | Done when |
 |------|-----------|
-| Named site | MoU / pilot agreement |
-| Hub vs Pi | Written architecture (capture on Pi, heavy WES on hub) |
-| H1 checklist | Completed on hub (or agreed subset) before KE SoR claims |
-| Offline consent | Track A works offline; sync policy reviewed |
-
+| Named site | MoU / pilot agreement — **open** |
+| Hub vs Pi | Written architecture — **done** ([H4-HUB-PI-ARCHITECTURE.md](H4-HUB-PI-ARCHITECTURE.md)) |
+| H1 checklist | Completed on hub (or agreed subset) before KE SoR claims — **open** |
+| Offline consent | Track A works offline; sync policy reviewed — policy **written**; field wiring **open** |
 ---
 
 ## Second and third geographies (queued)

@@ -89,13 +89,14 @@ Technical anchors:
 
 ## Path E: Solum Stage-1 (clinical companion)
 
-Use when a customer says: "We need fail-closed authorization and tamper-evident audit for clinical data — separate from the genomic plane."
+Use when a customer says: "We need fail-closed authorization, consent, and tamper-evident audit for clinical data — separate from the genomic plane."
 
 Suggested scope:
 
-1. Run Solum-Demo locally (or `make solum-stage` from Showcase).
-2. Capture allow/deny encrypt outcomes and `chain_broken` after harness tamper.
+1. Run Solum-Demo locally (`make up` · `make smoke-stage1` · `make smoke-consent` · UI Scenarios 1–3) or `make solum-stage` from Showcase.
+2. Capture allow/deny encrypt, consent grant/revoke, and `chain_broken` after harness tamper.
 3. Optionally attach artefacts to the genomic golden path (`make golden-path-with-solum`).
+4. Optional Track B live: Demo `make up-h3` · `make smoke-h3` (builds sibling `../Solum`, not the Stage-1 tag) — [H3-EHRBASE-SPIKE](https://github.com/SynapticFour/Solum/blob/main/docs/H3-EHRBASE-SPIKE.md).
 
 What this proves:
 
@@ -104,10 +105,20 @@ What this proves:
 
 Technical anchors:
 
-- [Solum](https://github.com/SynapticFour/Solum) · [Solum-Demo](https://github.com/SynapticFour/Solum-Demo)
+- [Solum](https://github.com/SynapticFour/Solum) · [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) · [COVERAGE](https://github.com/SynapticFour/Solum-Demo/blob/main/docs/COVERAGE.md) · [PINNED_VERSIONS](https://github.com/SynapticFour/Solum-Demo/blob/main/PINNED_VERSIONS.txt)
 - Showcase: `scripts/run-solum-stage.sh`, [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md)
 
 Honesty: ephemeral demo keys only; not a production topology.
+
+## Path E+: Solum Track B CDR + genomic link (H3.5)
+
+Use when evaluating clinical+genomic co-custody: CDR composition fixture plus subject link to a Ferrum DRS id.
+
+- Fixtures: `fixtures/ci/solum-cdr/` (included in `make evidence-pack-fixtures`)
+- Subject bridge: Solum [ADR 0003](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0003-subject-bridge.md)
+- Partner APIs: Solum [PARTNER-EHR-API.md](https://github.com/SynapticFour/Solum/blob/main/docs/customer/PARTNER-EHR-API.md)
+
+Honesty: fixture digests only — not live EHRbase proof, not MDR certification.
 
 ## Path selection guide
 
@@ -116,7 +127,8 @@ Honesty: ephemeral demo keys only; not a production topology.
 - Need EHDS-oriented evidence story: **Path C**
 - Need user-facing research assistant on private data: **Path D**
 - Need clinical authz/audit companion (separate perimeter): **Path E**
+- Need clinical CDR + genomic subject-link evidence: **Path E+**
 
-Most customers eventually combine **A + B + C**, with **D** and/or **E** added where research UX or clinical compliance is in scope.
+Most customers eventually combine **A + B + C**, with **D** and/or **E**/**E+** added where research UX or clinical compliance is in scope.
 
 For workshop-ready decision support, use [Which path fits me?](../for-customers/which-path.md).

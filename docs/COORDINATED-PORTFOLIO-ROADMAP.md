@@ -224,12 +224,13 @@ Horizon language (not calendar promises): **H0 now**, **H1 pilot-ready**, **H2 p
 | **1e. H2.3 Ops polish** | [pilots/H2-OPS-RUNBOOK.md](pilots/H2-OPS-RUNBOOK.md) · `make h23-ops-polish` | **SIGNED OFF** — collector visa path + thin health checks |
 | **1f. H2.4 KMS** | Solum `--features aws-kms` · [H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) §A | **SIGNED OFF** — optional AWS CMK envelope; **on-prem CustomerHeld default** |
 | **1g. H2 exit (second pass B–D)** | [pilots/H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) · [observability/](pilots/observability/) · HELIOS `CLIN-ACCESS-001` | **SIGNED OFF** — Prometheus blackbox/alerts; clinical HELIOS check; CLI org-IAM wontfix |
-| **2. H3 design** | Solum [ADR 0001](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0001-openehr-cdr-and-migration.md) + [ADR 0002 EHRbase](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0002-cdr-engine-ehrbase.md) + [MIGRATION-STRANGLER.md](https://github.com/SynapticFour/Solum/blob/main/docs/MIGRATION-STRANGLER.md) | Architecture + engine choice accepted; CDR coding still deferred |
-| **3. H4 geography** | [pilots/H4-GEOGRAPHY-DECISION.md](pilots/H4-GEOGRAPHY-DECISION.md) · Solum [KENYA-K1-BRIEF](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md) · [VORPRUEFUNG](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-VORPRUEFUNG.md) · [SEND](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md) | Kenya first; **provisional** profile after non-counsel Vorprüfung; real counsel still required |
+| **2. H3 design → full H3 engineering** | Solum ADRs 0001–0003 + [H3-EHRBASE-SPIKE](https://github.com/SynapticFour/Solum/blob/main/docs/H3-EHRBASE-SPIKE.md) + Showcase [H3-PILOT-CHECKLIST](pilots/H3-PILOT-CHECKLIST.md) · [H3-EXECUTION-RECORD](pilots/H3-EXECUTION-RECORD.md) | **FULL H3 ENGINEERING EXIT** 2026-08-10; external RA still open |
+| **3. H4 geography** | [pilots/H4-GEOGRAPHY-DECISION.md](pilots/H4-GEOGRAPHY-DECISION.md) · [H4-PILOT-CHECKLIST.md](pilots/H4-PILOT-CHECKLIST.md) · Solum [KENYA-K1-BRIEF](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md) · [OFFLINE](https://github.com/SynapticFour/Solum/blob/main/docs/H4-OFFLINE-SYNC-POLICY.md) | Kenya first; **K2 eng done**; provisional profile; real counsel still required |
+| **4. H5 SaaS-ready (optional)** | [pilots/H5-SAAS-READY-CHECKLIST.md](pilots/H5-SAAS-READY-CHECKLIST.md) · [adr/0003-tenant-boundaries.md](adr/0003-tenant-boundaries.md) · [H5-MANAGED-SINGLE-TENANT.md](pilots/H5-MANAGED-SINGLE-TENANT.md) | **Preparedness exit** — managed single-tenant docs; not SaaS launch |
 
 SaaS (H5) stays documentation + tenancy hygiene until a customer pays for managed hosting.
 
-**Immediate execution order:** send Kenya K1 brief to counsel ([send checklist](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md)); timebox EHRbase compose spike. **H2 exit is signed** — remaining items are H4 counsel and optional hardening (see [H2-KNOWN-LIMITATIONS.md](pilots/H2-KNOWN-LIMITATIONS.md)).
+**Immediate execution order:** Eng exits H1–H3, H4 K2, and optional H5 preparedness are landed. **Open gates** (mostly human): [HORIZON-OPEN-GATES.md](pilots/HORIZON-OPEN-GATES.md). Next operator action: **send Kenya K1 brief to counsel** ([send checklist](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-SEND-CHECKLIST.md)); then named field site (H4 K3).
 
 ---
 
@@ -249,7 +250,11 @@ SaaS (H5) stays documentation + tenancy hygiene until a customer pays for manage
 |----------|------|
 | **This coordinated roadmap** | SynapticFour-Showcase (integrator) |
 | H1 pilot checklist + execution record | Showcase `docs/pilots/H1-*.md` |
+| Horizon open gates (what’s still missing) | Showcase `docs/pilots/HORIZON-OPEN-GATES.md` |
 | H4 geography decision | Showcase `docs/pilots/H4-GEOGRAPHY-DECISION.md` |
+| H4 pilot checklist / hub-Pi | Showcase `docs/pilots/H4-PILOT-CHECKLIST.md` · `H4-HUB-PI-ARCHITECTURE.md` |
+| Kenya offline sync policy | Solum `docs/H4-OFFLINE-SYNC-POLICY.md` |
+| H5 SaaS-ready (optional) | Showcase `docs/pilots/H5-*.md` · `docs/adr/0003-tenant-boundaries.md` · Solum `docs/H5-KEY-CUSTODY-MANAGED.md` |
 | H3 CDR ADRs + migration | Solum `docs/adr/0001-…` · `0002-…` · `docs/MIGRATION-STRANGLER.md` |
 | Kenya counsel brief + send checklist | Solum `docs/counsel/KENYA-K1-BRIEF.md` · `KENYA-K1-SEND-CHECKLIST.md` |
 | H2 second-pass backlog | Showcase `docs/pilots/H2-SECOND-PASS.md` |

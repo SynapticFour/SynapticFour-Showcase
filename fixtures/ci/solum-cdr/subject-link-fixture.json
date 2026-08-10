@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "kind": "solum-subject-link-h3-fixture",
+  "horizon": "H3.5",
+  "solum_subject_id": "subj-h3-fixture",
+  "ferrum_drs_id": "drs.synapticfour.example/h3-fixture-object",
+  "phenopacket_id": "ppkt-h3-fixture",
+  "ehr_id": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+  "honesty": "Synthetic join keys for Evidence Pack Path E+ — not a real patient linkage."
+}

@@ -1,0 +1,15 @@
+{
+  "fixture": "kenya-eval",
+  "evaluation_only": true,
+  "certified": false,
+  "odpc_claim": false,
+  "patient_sor": false,
+  "solum_profile": "kenya-dpa",
+  "jurisdiction": "KE",
+  "storage_region": "KE",
+  "allowed_key_custody": ["customer_held"],
+  "permitted_destinations": [],
+  "transfer_fail_closed": true,
+  "status": "PROVISIONAL-PRODUCTION-CANDIDATE",
+  "disclaimer": "Never market as Kenya-compliant or ODPC-certified. Counsel + named site required before PRODUCTION."
+}
