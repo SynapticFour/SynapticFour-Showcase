@@ -9,7 +9,7 @@ Optional **stress / port-evidence** stages for SynapticFour-Showcase. They do **
 | Ferrum-GA4GH-Demo `./run --nextflow` + Broad GATK | **Yes** | Primary WES evidence chain |
 | gatk-rs smoke (`SHOWCASE_ENABLE_GATK_RS=1`) | Opt-in | Tiny local HC smoke; Alpha / soft-fail |
 | S4MP attach (`SHOWCASE_ENABLE_S4MP=1`) | Opt-in | Sidecar Markdown port-diff (link/hash) |
-| Ferrum WES workflow with gatk-rs container | **Deferred** | Needs Demo `tiny_hc_gatk_rs` (Phase B) |
+| Ferrum WES workflow with gatk-rs container | Opt-in Alpha | Demo `./run --gatk-rs` (`tiny_hc_gatk_rs.nf`); soft-skips if image missing |
 
 ## What this proves
 
@@ -19,7 +19,7 @@ Optional **stress / port-evidence** stages for SynapticFour-Showcase. They do **
 ## What it does **not** prove
 
 - That gatk-rs is production-ready or equivalent to GATK4
-- That Showcase runs gatk-rs under Ferrum WES today (Phase B deferred)
+- That the default Showcase golden path runs gatk-rs under Ferrum WES (opt-in only; soft-skip without image)
 - That S4MP executed the pipeline or certified the port
 - Regulatory / clinical validity
 

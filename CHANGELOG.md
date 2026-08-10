@@ -28,6 +28,7 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Changed
 
+- **Ferrum-GA4GH-Demo pointers** — Demo `docs/COVERAGE.md` / `make smoke-evidence`; gatk-rs Phase B via Demo `--gatk-rs` (soft-skip); `FERUM_SRC`/`FERRUM_SRC` alias honesty in Ferrum ECOSYSTEM cross-links.
 - **Horizon open gates** — pointer to Solum-Demo `make smoke-all` / H3 `make smoke-h3` as the local verification surface beside Showcase `make solum-stage`.
 - **PINNED_VERSIONS.txt** — added optional `gatk-rs`, `S4MP` (W4); Ferrum/HELIOS/BRA/Solum pins retained.
 - **PINNED_VERSIONS.txt** — added `Solum-Demo`, `Solum-tag`, optional `HelixTest` (Ferrum/HELIOS/BRA pins retained for committed demo artefacts).

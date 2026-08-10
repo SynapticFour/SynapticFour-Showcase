@@ -123,7 +123,7 @@ make s4mp-evidence          # attach .s4 report or fixture
 SHOWCASE_ENABLE_GATK_RS=1 SHOWCASE_ENABLE_S4MP=1 make golden-path
 ```
 
-Default Nextflow GIAB path unchanged. Ferrum WES + gatk-rs deferred (Phase B).
+Default Nextflow GIAB path unchanged. Optional Demo `./run --gatk-rs` (soft-skip if image missing) is available; Showcase `make gatk-rs-wes` soft-stages the same Alpha path.
 → [gatk-rs / S4MP honesty](docs/for-customers/gatk-rs-s4mp.md)
 
 ### Customer verification suite (claims / integrations)
@@ -147,6 +147,7 @@ make integration-suite
 |----------|-----------|
 | `../Ferrum-GA4GH-Demo/results/metrics.json` | Demo-Kennzahlen, WES Run ID |
 | `../Ferrum-GA4GH-Demo/results/benchmark.json` | Precision / Recall / F1 |
+| Demo `make smoke-evidence` | Artefakt-Gate nach `./run` ([COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md)) |
 | `helios-reports/<uuid>.json` | HELIOS-Audit-Export |
 | `showcase-report.json` | Zusammenführung Demo + HELIOS |
 | `showcase-report.md` | Kurztext für Slides / E-Mail |
