@@ -41,4 +41,9 @@ See also: [evidence-pack.md](../evidence-pack.md) · [co-custody.md](../co-custo
 
 ## Pricing
 
-Indicative institutional pricing lives in `synapticfour-business` (`sales/pricing-framework.md`, offering folders). Ferrum/Solum public list prices are being published under org plan E3/E4 — until then, request a quote.
+Indicative institutional pricing: [../pricing.md](../pricing.md) (Ferrum · Solum · BRA).
+Private detail: `synapticfour-business` (`offerings/ferrum/pricing.md`, `offerings/solum/pricing.md`, `offerings/synaptic-research-ai/pricing.md`).
+
+Also attach: [support-tiers.md](../support-tiers.md) · [evidence-pack-sales-blurb.md](evidence-pack-sales-blurb.md) (E7 locked wording).
+
+Counsel review of DPA/pilot/DUA: open — `synapticfour-business/business/legal/COUNSEL-REVIEW-E1.md` (E1).
