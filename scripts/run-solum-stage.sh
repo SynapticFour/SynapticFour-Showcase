@@ -204,6 +204,16 @@ deny = {
 (out / "solum-authz-deny.json").write_text(json.dumps(deny, indent=2) + "\n", encoding="utf-8")
 print(json.dumps({"wrote": "solum-authz-deny.json", "http_status": deny_code, "ok": deny["ok"]}))
 
+# Capture clean HELIOS chain export BEFORE tamper simulation (F5/F6).
+export_code, export_body = request("GET", "/v1/audit/export", None)
+if export_code == 200 and isinstance(export_body, dict):
+    (out / "solum-audit-helios-chain.json").write_text(
+        json.dumps(export_body, indent=2) + "\n", encoding="utf-8"
+    )
+    print(json.dumps({"wrote": "solum-audit-helios-chain.json", "http_status": export_code, "format": export_body.get("format")}))
+else:
+    print(json.dumps({"wrote": "solum-audit-helios-chain.json", "http_status": export_code, "ok": False}))
+
 # Demo harness has no token; nginx proxies /demo → harness.
 tamper_code, tamper_body = request("POST", "/demo/simulate-tampering", None)
 # override: harness does not need token — urllib still sent it, fine
@@ -253,10 +263,12 @@ summary = {
         "allow": "solum-authz-allow.json",
         "deny": "solum-authz-deny.json",
         "verify": "solum-audit-verify.json",
+        "helios_chain_export": "solum-audit-helios-chain.json",
     },
     "honesty": (
         "Local Solum-Demo with ephemeral keys — not production. "
-        "Separate regulatory perimeter from Ferrum; Showcase only orchestrates."
+        "Separate regulatory perimeter from Ferrum; Showcase only orchestrates. "
+        "solum-audit-helios-chain.json is captured before tamper simulation for HELIOS CLIN-ACCESS."
     ),
 }
 (out / "solum-stage-result.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")

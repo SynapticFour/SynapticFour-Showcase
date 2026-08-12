@@ -18,7 +18,7 @@ Literature-heavy, pseudonymization-sensitive clinical research. You want on-prem
 ## What we show you
 
 1. BRA product demo / SALES guide in bioresearch-assistant
-2. [co-custody.md](../co-custody.md) for future subject-bridge (Phenopacket id → `solum_subject_id`)
+2. [co-custody.md](../co-custody.md) for subject-bridge (Phenopacket id → `solum_subject_id` — see BRA `docs/SOLUM-SUBJECT-BRIDGE.md`)
 3. [legal/](../legal/) for institutional pilot
 
 ## Honest limits

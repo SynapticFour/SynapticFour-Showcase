@@ -47,6 +47,7 @@ HELIXTEST_JSON="${SHOWCASE_HELIXTEST_JSON:-}"
 SOLUM_RESULT="${SHOWCASE_SOLUM_RESULT:-}"
 SOLUM_CDR="${SHOWCASE_SOLUM_CDR_JSON:-}"
 SOLUM_SUBJECT_LINK="${SHOWCASE_SOLUM_SUBJECT_LINK_JSON:-}"
+SOLUM_AUDIT_EXPORT="${SHOWCASE_SOLUM_AUDIT_EXPORT:-}"
 CONSENT_GATE="${SHOWCASE_CONSENT_GATE_JSON:-}"
 GATK_RS_SMOKE="${SHOWCASE_GATK_RS_SMOKE_JSON:-}"
 GATK_RS_WES="${SHOWCASE_GATK_RS_WES_JSON:-}"
@@ -156,6 +157,7 @@ if [[ "$MODE" == "fixtures" ]]; then
   SOLUM_RESULT="${SOLUM_RESULT:-$SHOWCASE_ROOT/fixtures/ci/solum/solum-stage-result.json}"
   SOLUM_CDR="${SOLUM_CDR:-$SHOWCASE_ROOT/fixtures/ci/solum-cdr/cdr-composition-fixture.json}"
   SOLUM_SUBJECT_LINK="${SOLUM_SUBJECT_LINK:-$SHOWCASE_ROOT/fixtures/ci/solum-cdr/subject-link-fixture.json}"
+  SOLUM_AUDIT_EXPORT="${SOLUM_AUDIT_EXPORT:-$SHOWCASE_ROOT/fixtures/ci/solum/solum-audit-helios-chain.json}"
   CONSENT_GATE="${CONSENT_GATE:-$SHOWCASE_ROOT/fixtures/ci/consent-gate/consent-gate-result.json}"
   GATK_RS_SMOKE="${GATK_RS_SMOKE:-$SHOWCASE_ROOT/fixtures/ci/gatk-rs/gatk-rs-smoke-result.json}"
   S4MP_EVIDENCE="${S4MP_EVIDENCE:-$SHOWCASE_ROOT/fixtures/ci/s4mp/s4mp-evidence.json}"
@@ -218,6 +220,12 @@ else
     SOLUM_RESULT="$SHOWCASE_ROOT/artifacts/solum/solum-stage-result.json"
   elif [[ -z "$SOLUM_RESULT" && -f "$SHOWCASE_ROOT/demo/results/solum-stage-result-example.json" ]]; then
     SOLUM_RESULT="$SHOWCASE_ROOT/demo/results/solum-stage-result-example.json"
+  fi
+  if [[ -z "$SOLUM_AUDIT_EXPORT" && -f "$SHOWCASE_ROOT/artifacts/solum/solum-audit-helios-chain.json" ]]; then
+    SOLUM_AUDIT_EXPORT="$SHOWCASE_ROOT/artifacts/solum/solum-audit-helios-chain.json"
+  fi
+  if [[ -z "$SOLUM_SUBJECT_LINK" && -f "$SHOWCASE_ROOT/artifacts/solum/subject-link.json" ]]; then
+    SOLUM_SUBJECT_LINK="$SHOWCASE_ROOT/artifacts/solum/subject-link.json"
   fi
   if [[ -z "$CONSENT_GATE" && -f "$SHOWCASE_ROOT/artifacts/consent-gate/consent-gate-result.json" ]]; then
     CONSENT_GATE="$SHOWCASE_ROOT/artifacts/consent-gate/consent-gate-result.json"
@@ -298,6 +306,7 @@ ARGS=(
 [[ -n "${SOLUM_RESULT:-}" && -f "$SOLUM_RESULT" ]] && ARGS+=(--solum-result "$SOLUM_RESULT")
 [[ -n "${SOLUM_CDR:-}" && -f "$SOLUM_CDR" ]] && ARGS+=(--solum-cdr "$SOLUM_CDR")
 [[ -n "${SOLUM_SUBJECT_LINK:-}" && -f "$SOLUM_SUBJECT_LINK" ]] && ARGS+=(--solum-subject-link "$SOLUM_SUBJECT_LINK")
+[[ -n "${SOLUM_AUDIT_EXPORT:-}" && -f "$SOLUM_AUDIT_EXPORT" ]] && ARGS+=(--solum-audit-export "$SOLUM_AUDIT_EXPORT")
 [[ -n "${CONSENT_GATE:-}" && -f "$CONSENT_GATE" ]] && ARGS+=(--consent-gate "$CONSENT_GATE")
 [[ -n "${GATK_RS_SMOKE:-}" && -f "$GATK_RS_SMOKE" ]] && ARGS+=(--gatk-rs-smoke "$GATK_RS_SMOKE")
 [[ -n "${GATK_RS_WES:-}" && -f "$GATK_RS_WES" ]] && ARGS+=(--gatk-rs-wes "$GATK_RS_WES")

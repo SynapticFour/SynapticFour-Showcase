@@ -8,6 +8,17 @@
       "status": "pass",
       "message": "ok",
       "evidence": {}
+    },
+    {
+      "check_id": "CLIN-ACCESS-001",
+      "status": "pass",
+      "message": "Solum chain export OK (3 records, 3 clinical-plane events).",
+      "evidence": {
+        "format": "solum-audit-helios-chain-v1",
+        "record_count": 3,
+        "clinical_event_total": 3,
+        "fixture": true
+      }
     }
   ]
 }

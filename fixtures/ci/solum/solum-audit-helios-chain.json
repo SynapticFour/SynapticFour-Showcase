@@ -1,0 +1,32 @@
+{
+  "format": "solum-audit-helios-chain-v1",
+  "generator": "solum-audit",
+  "record_count": 3,
+  "records": [
+    {
+      "seq": 1,
+      "event": {
+        "event_type": "consent.granted",
+        "actor": "practitioner/fixture",
+        "outcome": "success"
+      }
+    },
+    {
+      "seq": 2,
+      "event": {
+        "event_type": "authorization.denied",
+        "actor": "practitioner/intern",
+        "outcome": "denied"
+      }
+    },
+    {
+      "seq": 3,
+      "event": {
+        "event_type": "data.encrypt",
+        "actor": "practitioner/fixture",
+        "outcome": "success"
+      }
+    }
+  ],
+  "honesty": "CI fixture for Showcase Evidence Pack / CLIN-ACCESS-001 — not production audit."
+}

@@ -95,6 +95,11 @@ assert m['summaries']['gatk_rs'].get('present') is True
 assert m['summaries']['s4mp'].get('present') is True
 assert m['summaries']['ga4gh_infra_co_deploy'].get('present') is True
 assert m['summaries']['ga4gh_infra_co_deploy'].get('ran', 0) >= 1
+assert any(f.get('role')=='solum_subject_link' for f in m['files']), m['files']
+assert any(f.get('role')=='solum_cdr' for f in m['files']), m['files']
+assert any(f.get('role')=='solum_audit_export' for f in m['files']), m['files']
+helios=json.load(open('artifacts/evidence-pack-fixtures/helios-report.json'))
+assert any(c.get('check_id')=='CLIN-ACCESS-001' for c in helios.get('checks') or []), helios
 assert any(f.get('role')=='gatk_rs_smoke' for f in m['files'])
 assert any(f.get('role')=='s4mp_port_diff' for f in m['files'])
 assert any(f.get('role')=='ga4gh_infra_co_deploy' for f in m['files'])

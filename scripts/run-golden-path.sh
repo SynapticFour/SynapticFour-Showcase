@@ -325,6 +325,20 @@ fi
 if [[ "$ENABLE_SOLUM" == "1" ]]; then
   echo "[showcase] running Solum stage (Solum-Demo Stage-1 proofs)..."
   run_with_heartbeat "Solum stage" "$SHOWCASE_ROOT/scripts/run-solum-stage.sh"
+  SOLUM_CHAIN="$SHOWCASE_ROOT/artifacts/solum/solum-audit-helios-chain.json"
+  if [[ -f "$SOLUM_CHAIN" ]]; then
+    echo "[showcase] HELIOS Solum clinical ingest (CLIN-ACCESS-001)..."
+    (
+      cd "$SHOWCASE_ROOT"
+      # Soft-fail: missing HELIOS deps or unsigned report still leave the Solum stage artefacts.
+      run_with_heartbeat "HELIOS solum-audit" run_helios solum-audit \
+        --export "$SOLUM_CHAIN" \
+        --config "$SHOWCASE_ROOT/helios.toml" \
+        --export-format json || echo "[showcase] HELIOS solum-audit soft-fail (see HELIOS docs/solum-ingest.md)"
+    )
+  else
+    echo "[showcase] no solum-audit-helios-chain.json — skip CLIN-ACCESS ingest"
+  fi
   "${ASSEMBLE_CMD[@]}"
 fi
 

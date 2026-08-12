@@ -1,0 +1,15 @@
+# HELIOS config overlay for Solum clinical evidence (Showcase pilots).
+# Use with: helios solum-audit --export … --config helios-solum.toml
+# Default golden-path still uses helios.toml (SEC-CONTAINER) for genomic Nextflow runs.
+
+signing_key = ".cache/helios/keys/helios.key"
+audit_db = ".cache/helios/audit.db"
+cache_dir = ".cache/helios/cache"
+log_level = "INFO"
+
+[export]
+output_dir = "helios-reports"
+default_format = "json"
+
+[checks]
+enabled = ["CLIN-ACCESS-001"]

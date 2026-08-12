@@ -9,6 +9,7 @@ Start here:
 - [Disaster recovery](disaster-recovery.md) · [Support tiers](support-tiers.md) · [Observability](observability.md)
 - [Indicative pricing](pricing.md) · [Legal & pilot exclusions](legal/README.md)
 - [Evidence Pack — what it proves](evidence-pack.md) · [Sales blurb (locked)](legal/evidence-pack-sales-blurb.md)
+- [Evidence surface diagram](evidence-surface.md) (Ferrum · Solum · BRA → HELIOS → pack)
 - [H1 pilot checklist](../pilots/H1-PILOT-CHECKLIST.md) · [H4 geography (Kenya)](../pilots/H4-GEOGRAPHY-DECISION.md)
 - [Integration verification — re-run our claims](integration-verification.md)
 - [FAQ](faq.md)
