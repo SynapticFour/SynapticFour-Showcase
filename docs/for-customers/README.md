@@ -6,6 +6,7 @@ Start here:
 - [**Personas — pick your one-pager**](personas/README.md)
 - [**Overview — offerings, components, tested constellations**](overview.md)
 - [Co-custody (Ferrum + Solum)](co-custody.md) · [Key custody](key-custody.md)
+- [Disaster recovery](disaster-recovery.md) · [Support tiers](support-tiers.md) · [Observability](observability.md)
 - [Legal & pilot exclusions](legal/README.md)
 - [H1 pilot checklist](../pilots/H1-PILOT-CHECKLIST.md) · [H4 geography (Kenya)](../pilots/H4-GEOGRAPHY-DECISION.md)
 - [Integration verification — re-run our claims](integration-verification.md)

@@ -15,7 +15,7 @@ These are acceptable for **H1 pilot-ready** claims. They are **not** production 
 | Solum | Stage-1 CustomerHeld sidecar only — **no** openEHR CDR (H3), no Kenya PRODUCTION profile (H4). |
 | Keys | CustomerHeld files on disk (0600) — not HSM/KMS. |
 | HelixTest | Optional Auth Level without `HELIXTEST_SKIP_AUTH` **not** run (checklist 1.7). |
-| Postgres | Object-store (MinIO) restore drilled; Postgres volume backup procedure is the same `docker volume` tar pattern — not separately timed in this drill. |
+| Postgres | Object-store (MinIO) restore drilled (H1); **hub Postgres** logical dump/restore procedure published in [H1-RESTORE-DRILL-EXTENDED.md](H1-RESTORE-DRILL-EXTENDED.md) — live timing still open for next disposable-stack ops window. |
 | Claims | Do **not** claim EHDS/DSGVO/MDR compliance from Evidence Packs. |
 
 ## Operator backup procedure (short)
