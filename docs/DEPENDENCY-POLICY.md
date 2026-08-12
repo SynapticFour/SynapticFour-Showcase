@@ -22,7 +22,7 @@
 
 1. Do **not** commit secrets, customer keys, or live audit exports with personal data.
 2. When adding Node/Python lockfiles for tooling, add `npm audit` / `pip-audit` (or Dependency Review) in the same PR.
-3. Keep `PINNED_VERSIONS.txt` reviewed monthly (org plan G7) alongside sibling cargo-deny / SBOM releases.
+3. Keep `PINNED_VERSIONS.txt` reviewed monthly (org plan G7) — procedure: [PINNED-VERSIONS-CADENCE.md](./PINNED-VERSIONS-CADENCE.md) — alongside sibling cargo-deny / SBOM releases.
 4. Follow org cadence: [synapticfour-infra DEPENDENCY-UPDATE-POLICY](https://github.com/SynapticFour/synapticfour-infra/blob/main/docs/DEPENDENCY-UPDATE-POLICY.md) and [MONTHLY-DEPENDENCY-HYGIENE](https://github.com/SynapticFour/synapticfour-infra/blob/main/docs/MONTHLY-DEPENDENCY-HYGIENE.md).
 
 ## Explicit non-goals
