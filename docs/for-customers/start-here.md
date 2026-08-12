@@ -17,6 +17,8 @@
 
 Vollständige Clone-Liste und Ports: [DEMO.md](../../DEMO.md) · Portfolio-Karte: [overview.md](overview.md)
 
+**Persona wählen:** [personas/](personas/) · **Co-Custody:** [co-custody.md](co-custody.md) · **Legal:** [legal/](legal/)
+
 ---
 
 ## Schritt 0 — Ohne Installation (Empfehlung zum ersten Lesen)
@@ -111,6 +113,8 @@ Smokes auch direkt in [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) (
 | **3** | Solum (clinical plane) | ~10–20 min | Optional |
 
 Clone list & ports: [DEMO.md](../../DEMO.md) · Portfolio map: [overview.md](overview.md)
+
+**Pick a persona:** [personas/](personas/) · **Co-custody:** [co-custody.md](co-custody.md) · **Legal:** [legal/](legal/)
 
 ### Step 0 — zero install
 

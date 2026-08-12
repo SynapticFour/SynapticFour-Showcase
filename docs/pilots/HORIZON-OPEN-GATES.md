@@ -21,6 +21,28 @@ Engineering exits for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, an
 
 **Next concrete human action:** send Kenya K1 brief (counsel package (contact Synaptic Four — not published in the public Solum tree)).
 
+**Spine freeze (2026-08-12):** Net-new spine features are frozen. See [SPINE-FREEZE.md](../internal/SPINE-FREEZE.md) and workspace `ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md`. Tag legend below: **freeze-ok** = allowed during freeze; **backlog-only** = do not start unless a paying customer / signed pilot requires it; **human** = counsel/commercial, not eng feature work.
+
+---
+
+## Freeze tags (open items)
+
+| Item | Tag | Notes |
+|------|-----|-------|
+| Optional HelixTest without `HELIXTEST_SKIP_AUTH` | backlog-only | Not required for H1 exit |
+| HelixTest Auth Level live | backlog-only | Optional ops gate |
+| Non-AWS / EncryptionContext / IRSA depth | backlog-only | AWS optional path exists |
+| Kenya K1 brief **sent** + PRODUCTION TOML | human | Counsel + operator |
+| Named site MoU / hub H1 at site | human | Commercial |
+| Field consent reconcile wiring | freeze-ok | After named site only |
+| External RA / MDCG before marketing clinical claims | human | Counsel |
+| Patient-summary OPT pin | backlog-only | Modelling follow-on |
+| Synaptic Four EHR UI | backlog-only | **Never** in horizon |
+| Multi-tenant shared CDR/DRS | backlog-only | H5 deferred |
+| TEE / confidential computing | backlog-only | Sketch only |
+| Paying managed-host customer | human | Commercial |
+| Trust/CI/legal/persona/HELIOS-ingest level-up work | freeze-ok | Org implementation plan |
+
 ---
 
 ## H1 — Pilot-ready
@@ -28,16 +50,16 @@ Engineering exits for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, an
 | Item | Status | Owner |
 |------|--------|-------|
 | Pilot checklist / execution record | Done | — |
-| Optional HelixTest without `HELIXTEST_SKIP_AUTH` | Open (optional) | Ops |
+| Optional HelixTest without `HELIXTEST_SKIP_AUTH` | Open (optional) · **backlog-only** | Ops |
 
 ## H2 — Production on-prem
 
 | Item | Status | Owner |
 |------|--------|-------|
 | Full H2 exit (teeth, org-IAM, ops, KMS optional) | Done | — |
-| HelixTest Auth Level live | Open (optional) | Ops |
-| Non-AWS / EncryptionContext / IRSA depth | Documented outstanding | Eng backlog |
-| Kenya PRODUCTION | Moved to H4 | Counsel |
+| HelixTest Auth Level live | Open (optional) · **backlog-only** | Ops |
+| Non-AWS / EncryptionContext / IRSA depth | Documented outstanding · **backlog-only** | Eng backlog |
+| Kenya PRODUCTION | Moved to H4 · **human** | Counsel |
 
 See [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md).
 
@@ -46,21 +68,21 @@ See [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md).
 | Item | Status | Owner |
 |------|--------|-------|
 | H3.0–H3.6 + depth harden (dual-write, Path E+ smoke, backup/MDCG send pack) | Done | — |
-| External RA / MDCG clearance before marketing clinical claims | Open | Counsel (counsel package (contact Synaptic Four — not published in the public Solum tree)) |
-| Patient-summary OPT pin (still `minimal_observation`) | Follow-on | Eng ([H3-CLINICAL-MODELLING](https://github.com/SynapticFour/Solum/blob/main/docs/H3-CLINICAL-MODELLING.md)) |
-| Synaptic Four hospital EHR UI | Out of scope | — |
+| External RA / MDCG clearance before marketing clinical claims | Open · **human** | Counsel (counsel package (contact Synaptic Four — not published in the public Solum tree)) |
+| Patient-summary OPT pin (still `minimal_observation`) | Follow-on · **backlog-only** | Eng ([H3-CLINICAL-MODELLING](https://github.com/SynapticFour/Solum/blob/main/docs/H3-CLINICAL-MODELLING.md)) |
+| Synaptic Four hospital EHR UI | Out of scope · **backlog-only (never)** | — |
 
 ## H4 — Edge / Kenya
 
 | Item | Status | Owner |
 |------|--------|-------|
 | K2 technical (tests, offline policy, Edge links, KE fixture) | Done | — |
-| K1.3 Brief **sent** to Kenya counsel | Open | Operator |
-| K1.4 Counsel answers → TOML / PRODUCTION | Open | Counsel + eng |
-| K3.1 Named site MoU | Open | Commercial |
-| K3.3 Hub H1 checklist at site | Open | Site ops |
-| K3.4 Field consent reconcile wiring | Open (policy written) | Eng after site |
-| Nigeria / South Africa profiles | Queued | Eng after Kenya K1 or paid reorder |
+| K1.3 Brief **sent** to Kenya counsel | Open · **human** | Operator |
+| K1.4 Counsel answers → TOML / PRODUCTION | Open · **human** | Counsel + eng |
+| K3.1 Named site MoU | Open · **human** | Commercial |
+| K3.3 Hub H1 checklist at site | Open · **human** | Site ops |
+| K3.4 Field consent reconcile wiring | Open (policy written) · **freeze-ok** after site | Eng after site |
+| Nigeria / South Africa profiles | Queued · **backlog-only** | Eng after Kenya K1 or paid reorder |
 
 See [H4-PILOT-CHECKLIST.md](H4-PILOT-CHECKLIST.md).
 
@@ -69,9 +91,9 @@ See [H4-PILOT-CHECKLIST.md](H4-PILOT-CHECKLIST.md).
 | Item | Status | Owner |
 |------|--------|-------|
 | Checklist, tenant ADR, managed recipe, `SOLUM_TENANT_ID` stamp | Done | — |
-| Multi-tenant shared CDR/DRS | Deferred | — |
-| TEE / confidential computing | Sketch only | Future programme |
-| Actual managed hosting for a customer | Open | Commercial |
+| Multi-tenant shared CDR/DRS | Deferred · **backlog-only** | — |
+| TEE / confidential computing | Sketch only · **backlog-only** | Future programme |
+| Actual managed hosting for a customer | Open · **human** | Commercial |
 
 See [H5-SAAS-READY-CHECKLIST.md](../internal/pilots/H5-SAAS-READY-CHECKLIST.md).
 
