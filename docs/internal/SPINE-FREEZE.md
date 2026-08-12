@@ -3,7 +3,7 @@
 **Status:** Accepted
 **Date:** 2026-08-12
 **Audience:** founders, eng, ops, agents
-**Related:** [COORDINATED-PORTFOLIO-ROADMAP](./COORDINATED-PORTFOLIO-ROADMAP.md) · [HORIZON-OPEN-GATES](../pilots/HORIZON-OPEN-GATES.md) · workspace [`ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md`](../../../ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md)
+**Related:** [COORDINATED-PORTFOLIO-ROADMAP](./COORDINATED-PORTFOLIO-ROADMAP.md) · [HORIZON-OPEN-GATES](../pilots/HORIZON-OPEN-GATES.md) · [`ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md`](../../../synapticfour-business/strategy/org-level-up/ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md)
 
 ## Decision
 

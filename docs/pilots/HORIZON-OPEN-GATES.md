@@ -21,7 +21,7 @@ Engineering exits for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, an
 
 **Next concrete human action:** send Kenya K1 brief (counsel package (contact Synaptic Four — not published in the public Solum tree)).
 
-**Spine freeze (2026-08-12):** Net-new spine features are frozen. See [SPINE-FREEZE.md](../internal/SPINE-FREEZE.md) and workspace `ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md`. Tag legend below: **freeze-ok** = allowed during freeze; **backlog-only** = do not start unless a paying customer / signed pilot requires it; **human** = counsel/commercial, not eng feature work.
+**Spine freeze (2026-08-12):** Net-new spine features are frozen. See [SPINE-FREEZE.md](../internal/SPINE-FREEZE.md) and [`synapticfour-business/strategy/org-level-up/ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md`](../../../synapticfour-business/strategy/org-level-up/ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md). Tag legend below: **freeze-ok** = allowed during freeze; **backlog-only** = do not start unless a paying customer / signed pilot requires it; **human** = counsel/commercial, not eng feature work.
 
 ---
 
