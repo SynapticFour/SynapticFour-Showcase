@@ -3,6 +3,7 @@
 Start here:
 
 - [**Start here — try it in four steps**](start-here.md) (fixtures → golden path → Passports → Solum)
+- [**Procurement officer — short path**](procurement-short-path.md) (non-technical; ~20 min)
 - [**Personas — pick your one-pager**](personas/README.md)
 - [**Overview — offerings, components, tested constellations**](overview.md)
 - [Co-custody (Ferrum + Solum)](co-custody.md) · [Key custody](key-custody.md)
@@ -18,3 +19,5 @@ Start here:
 - [Consent gate (W3)](consent-gate.md)
 - [gatk-rs / S4MP (optional W4)](gatk-rs-s4mp.md)
 - [Scenarios](scenarios.md)
+
+**Technical deep-dive (engineers):** [../for-evaluators/](../for-evaluators/) — stays separate from the procurement short path.

@@ -1,6 +1,13 @@
 # For Evaluators
 
-Technical deep-dive materials:
+Technical deep-dive materials for **engineering / security reviewers**.
+
+Procurement / purchasing should use the customer short path instead — do not mix the two:
+
+- **Procurement:** [../for-customers/procurement-short-path.md](../for-customers/procurement-short-path.md)
+- **This kit:** reproducible checks, deployment paths, HelixTest
+
+---
 
 - [Technical Evaluation Kit](technical-evaluation-kit.md) — steps, checks, resources
 - [Deployment and integration paths](deployment-paths.md) — Path A–E detail
