@@ -22,7 +22,8 @@ WAIT_SECONDS="${SHOWCASE_SOLUM_WAIT_SECONDS:-300}"
 SKIP_UP="${SHOWCASE_SOLUM_SKIP_UP:-0}"
 SKIP_DOWN="${SHOWCASE_SOLUM_SKIP_DOWN:-0}"
 PUBLISH_EXAMPLES="${SHOWCASE_SOLUM_PUBLISH_EXAMPLES:-0}"
-PRODUCT_TAG="stage1-baseline-sidecar-custody-2026-08-01"
+# Same Solum git ref Solum-Demo builds (docker-compose SOLUM_REF), not the retired stage1 tag.
+PRODUCT_TAG="${SHOWCASE_SOLUM_TAG:-6b4519c98f5c1e905ab5cf3f517787021d1e2604}"
 
 usage() {
   cat <<'EOF'
@@ -81,6 +82,8 @@ wait_ready() {
   while (( SECONDS < deadline )); do
     code="$(curl -sS -o /dev/null -w "%{http_code}" \
       -H "$TOKEN_HEADER: $TOKEN" \
+      -H "X-Solum-Actor: practitioner/amina" \
+      -H "X-Solum-Capability: solum:audit:export" \
       "$BASE_URL/v1/audit/export" 2>/dev/null || echo "000")"
     if [[ "$code" == "200" ]]; then
       echo "[solum-stage] ready (HTTP $code)"
@@ -126,12 +129,29 @@ demo_root = os.environ["SHOWCASE_SOLUM_DEMO_ROOT_RESOLVED"]
 product_tag = os.environ["SHOWCASE_SOLUM_PRODUCT_TAG"]
 
 
-def request(method: str, path: str, payload: dict | None = None) -> tuple[int, dict]:
+def request(
+    method: str,
+    path: str,
+    payload: dict | None = None,
+    *,
+    actor: str | None = None,
+    capability: str | None = None,
+) -> tuple[int, dict]:
     data = None
     headers = {header: token}
     if payload is not None:
         data = json.dumps(payload).encode("utf-8")
         headers["Content-Type"] = "application/json"
+        if actor is None and isinstance(payload.get("actor"), str):
+            actor = payload["actor"]
+        if capability is None:
+            caps = payload.get("capability")
+            if isinstance(caps, list) and caps:
+                capability = str(caps[0])
+    if actor:
+        headers["X-Solum-Actor"] = actor
+    if capability:
+        headers["X-Solum-Capability"] = capability
     req = urllib.request.Request(f"{base}{path}", data=data, headers=headers, method=method)
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
@@ -161,12 +181,29 @@ def redact_field(body: dict) -> dict:
 
 
 plain_b64 = base64.b64encode(b"showcase-solum-stage-patient-summary").decode("ascii")
+subject = "patient/showcase-solum-stage-001"
+purpose = "care_provision"
+
+grant_code, grant_body = request(
+    "POST",
+    "/v1/consent/grant",
+    {
+        "subject": subject,
+        "purpose": purpose,
+        "actor": "practitioner/amina",
+        "capability": ["solum:consent:grant"],
+        "scope": ["patient_summary"],
+    },
+)
+print(json.dumps({"consent_grant_http_status": grant_code, "ok": grant_code in (200, 201)}))
 
 allow_code, allow_body = request(
     "POST",
     "/v1/crypto/encrypt",
     {
         "category": "patient_summary",
+        "subject": subject,
+        "purpose": purpose,
         "key_ref": "ephemeral/demo-patient-summary",
         "actor": "practitioner/amina",
         "capability": ["solum:crypto:encrypt"],
@@ -191,6 +228,8 @@ deny_code, deny_body = request(
     "/v1/crypto/encrypt",
     {
         "category": "patient_summary",
+        "subject": subject,
+        "purpose": purpose,
         "key_ref": "ephemeral/demo-patient-summary",
         "actor": "practitioner/intern",
         "capability": [],
@@ -211,7 +250,12 @@ deny = {
 print(json.dumps({"wrote": "solum-authz-deny.json", "http_status": deny_code, "ok": deny["ok"]}))
 
 # Capture clean HELIOS chain export BEFORE tamper simulation (F5/F6).
-export_code, export_body = request("GET", "/v1/audit/export", None)
+export_code, export_body = request(
+    "GET",
+    "/v1/audit/export",
+    actor="practitioner/amina",
+    capability="solum:audit:export",
+)
 if export_code == 200 and isinstance(export_body, dict):
     (out / "solum-audit-helios-chain.json").write_text(
         json.dumps(export_body, indent=2) + "\n", encoding="utf-8"
@@ -223,7 +267,12 @@ else:
 # Demo harness has no token; nginx proxies /demo → harness.
 tamper_code, tamper_body = request("POST", "/demo/simulate-tampering", None)
 # override: harness does not need token — urllib still sent it, fine
-verify_code, verify_body = request("GET", "/v1/audit/verify", None)
+verify_code, verify_body = request(
+    "GET",
+    "/v1/audit/verify",
+    actor="practitioner/amina",
+    capability="solum:audit:verify",
+)
 
 broken = False
 if isinstance(verify_body, dict):
@@ -255,7 +304,7 @@ summary = {
     "schema_version": 1,
     "stage": "solum",
     "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-    "solum_demo_root": demo_root,
+    "solum_demo_root": "../Solum-Demo",
     "base_url": base,
     "product_tag_consumed_by_demo": product_tag,
     "status": "ok" if (allow["ok"] and deny["ok"] and verify["ok"]) else "degraded",

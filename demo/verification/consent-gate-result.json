@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "stage": "consent_gate",
-  "generated_at": "2026-08-06T12:09:31.458036Z",
+  "generated_at": "2026-08-15T16:38:40.469083Z",
   "mode": "fixtures",
   "subject": "patient/showcase-phenoflow-001",
   "purpose": "secondary_use_hdab",
@@ -15,7 +15,7 @@
     "status": "skipped_fixtures"
   },
   "solum": {
-    "product_tag_consumed_by_demo": "stage1-baseline-sidecar-custody-2026-08-01",
+    "product_tag_consumed_by_demo": "6b4519c98f5c1e905ab5cf3f517787021d1e2604",
     "grant_http_status": 200,
     "status_http_status": 200,
     "status_body": {

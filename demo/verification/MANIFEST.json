@@ -2,7 +2,7 @@
   "schema_version": 1,
   "pack_kind": "synapticfour-showcase-evidence-pack",
   "pack_id": "fixtures",
-  "generated_at": "2026-08-15T07:46:32.176724Z",
+  "generated_at": "2026-08-15T17:14:13.664125Z",
   "mode": "fixtures-published",
   "showcase_root": "(portable; see repo SynapticFour-Showcase)",
   "honesty": {
@@ -89,7 +89,7 @@
       "authz_allow_ok": true,
       "authz_deny_ok": true,
       "audit_tamper_detect_ok": true,
-      "product_tag_consumed_by_demo": "stage1-baseline-sidecar-custody-2026-08-01"
+      "product_tag_consumed_by_demo": "6b4519c98f5c1e905ab5cf3f517787021d1e2604"
     },
     "consent_gate": {
       "present": true,
@@ -178,8 +178,8 @@
       "role": "solum_stage",
       "name": "solum-stage-result.json",
       "source": "fixtures/ci/solum/solum-stage-result.json",
-      "sha256": "b684b60ec1e739328feafb07dde9906c58255ab1c4fcf34b7befd448017f2df7",
-      "size_bytes": 736
+      "sha256": "4dc4696653516308bcd010b906815521504cc8dce6889aa041bbd3fb80a570a1",
+      "size_bytes": 885
     },
     {
       "role": "solum_cdr",
@@ -199,15 +199,15 @@
       "role": "solum_audit_export",
       "name": "solum-audit-helios-chain.json",
       "source": "fixtures/ci/solum/solum-audit-helios-chain.json",
-      "sha256": "3fe1d9fe920600175f44f33f96578a1c55d264b510164e796a004e560bbe1db1",
-      "size_bytes": 709
+      "sha256": "839791b90158474409555cdb8d11d4028a060700a001adf504314b2c0f270739",
+      "size_bytes": 4685
     },
     {
       "role": "consent_gate",
       "name": "consent-gate-result.json",
       "source": "fixtures/ci/consent-gate/consent-gate-result.json",
-      "sha256": "d2688b7acbaa560e6f694f399e09d4b148d34cf4913b3559c76839736e06045f",
-      "size_bytes": 786
+      "sha256": "2d084996287c4d05e02aaa41adc74bffe287c321e6cd9becc64bf467e3234ece",
+      "size_bytes": 784
     },
     {
       "role": "gatk_rs_smoke",
@@ -241,7 +241,7 @@
       "role": "ga4gh_infra_co_deploy_harvest",
       "name": "co-deploy-harvest.json",
       "source": "co-deploy-harvest.json",
-      "sha256": "ea3164779142ac49973a351d8b4ce903a9b828c36cdf46d4a7a0e8b2ac966bc0",
+      "sha256": "ae222b7bfa0cde6a3526299b35ffbbf6a46f1d73a60cf53e4779c095a8a18c70",
       "size_bytes": 775
     },
     {

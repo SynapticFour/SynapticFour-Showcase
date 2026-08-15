@@ -6,6 +6,7 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ### Changed
 
+- **Solum Stage-1 artefacts** regenerated against Solum-Demo `SOLUM_REF` `6b4519c98f5c1e905ab5cf3f517787021d1e2604` (live allow 200 / deny 403 / tamper). Showcase scripts send `X-Solum-Actor` / `X-Solum-Capability`. `PINNED_VERSIONS.txt` `Solum-tag` matches that SHA; Ferrum/HELIOS pins unchanged (golden path not re-run). Optional `ga4gh-infra` pin is stack tag `ga4gh-infra-v0.2.3` (`613bd14`).
 - **Honesty pass (customer confidence):** Fixture CI no longer asserts `CLIN-ACCESS-001` on the genomic HELIOS report (clinical plane is `solum-audit-helios-chain.json`). HELIOS example is a signed historical export plus `helios-report-example.honesty.json` sidecar (empty `input_files`, vacuous `containers_scanned=0`; the signed JSON is not mutated). H2.2/H2.3 gates report `contract_artefact_present` / `docs_present` (H2.3 path fixed). `make up` is pin-strict (Ferrum + HELIOS) unless `SHOWCASE_ALLOW_PIN_DRIFT=1`. Live Solum scripts refuse a silent demo token (`SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1` or `SOLUM_SIDECAR_TOKEN`). README: founder (bus factor 1), production pricing, fixture vs live. NOTICE for sibling BUSL. Gitleaks scans git history with tarball SHA-256. Unit tests under `tests/`. Horizon records labeled founder rehearsal; evaluate HEAD of `main` (history is not rewritten).
 
 

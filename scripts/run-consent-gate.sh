@@ -33,7 +33,8 @@ SUBJECT="${SHOWCASE_CONSENT_SUBJECT:-patient/showcase-phenoflow-001}"
 PURPOSE="${SHOWCASE_CONSENT_PURPOSE:-secondary_use_hdab}"
 ACTOR_GRANT="${SHOWCASE_CONSENT_ACTOR:-practitioner/showcase-gate}"
 SCOPE_JSON='["patient_summary"]'
-PRODUCT_TAG="stage1-baseline-sidecar-custody-2026-08-01"
+# Same Solum git ref Solum-Demo builds (docker-compose SOLUM_REF), not the retired stage1 tag.
+PRODUCT_TAG="${SHOWCASE_SOLUM_TAG:-6b4519c98f5c1e905ab5cf3f517787021d1e2604}"
 
 MODE="allow"
 
@@ -122,10 +123,10 @@ fi
 
 if [[ "$MODE" == "fixtures" ]]; then
   write_phenopacket_binding "$OUT_DIR/phenopacket-purpose-binding.json"
-  python3 - "$OUT_DIR" "$SUBJECT" "$PURPOSE" "$MODE" <<'PY'
+  python3 - "$OUT_DIR" "$SUBJECT" "$PURPOSE" "$MODE" "$PRODUCT_TAG" <<'PY'
 import json, sys
 from datetime import datetime, timezone
-out, subject, purpose, mode = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+out, subject, purpose, mode, product_tag = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5]
 # Fixture: simulate allow/deny without sidecar (CI).
 # Default fixture documents both outcomes as examples via mode=allow narrative.
 result = {
@@ -142,7 +143,7 @@ result = {
     "phenopacket_binding": "phenopacket-purpose-binding.json",
     "bra_phenopacket": {"attempted": False, "status": "skipped_fixtures"},
     "solum": {
-        "product_tag_consumed_by_demo": "stage1-baseline-sidecar-custody-2026-08-01",
+        "product_tag_consumed_by_demo": product_tag,
         "grant_http_status": 200,
         "status_http_status": 200,
         "status_body": {"status": "granted"},
@@ -160,7 +161,7 @@ deny.update({
     "wes_may_proceed": False,
     "consent_status": "unknown",
     "solum": {
-        "product_tag_consumed_by_demo": "stage1-baseline-sidecar-custody-2026-08-01",
+        "product_tag_consumed_by_demo": product_tag,
         "grant_http_status": None,
         "status_http_status": 200,
         "status_body": {"status": "unknown"},
@@ -196,6 +197,8 @@ wait_ready() {
   while (( SECONDS < deadline )); do
     code="$(curl -sS -o /dev/null -w "%{http_code}" \
       -H "$TOKEN_HEADER: $TOKEN" \
+      -H "X-Solum-Actor: practitioner/amina" \
+      -H "X-Solum-Capability: solum:audit:export" \
       "$BASE_URL/v1/audit/export" 2>/dev/null || echo "000")"
     if [[ "$code" == "200" ]]; then
       echo "[consent-gate] ready"
@@ -282,12 +285,29 @@ bra_meta = json.loads(os.environ["SHOWCASE_CONSENT_BRA_META"])
 product_tag = os.environ["SHOWCASE_CONSENT_PRODUCT_TAG"]
 
 
-def request(method: str, path: str, payload: dict | None = None) -> tuple[int, dict]:
+def request(
+    method: str,
+    path: str,
+    payload: dict | None = None,
+    *,
+    actor: str | None = None,
+    capability: str | None = None,
+) -> tuple[int, dict]:
     data = None
     headers = {header: token}
     if payload is not None:
         data = json.dumps(payload).encode("utf-8")
         headers["Content-Type"] = "application/json"
+        if actor is None and isinstance(payload.get("actor"), str):
+            actor = payload["actor"]
+        if capability is None:
+            caps = payload.get("capability")
+            if isinstance(caps, list) and caps:
+                capability = str(caps[0])
+    if actor:
+        headers["X-Solum-Actor"] = actor
+    if capability:
+        headers["X-Solum-Capability"] = capability
     req = urllib.request.Request(f"{base}{path}", data=data, headers=headers, method=method)
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
@@ -331,7 +351,12 @@ elif mode == "deny":
     )
 
 q = urllib.parse.urlencode({"subject": subject, "purpose": purpose})
-status_code, status_body = request("GET", f"/v1/consent/status?{q}", None)
+status_code, status_body = request(
+    "GET",
+    f"/v1/consent/status?{q}",
+    actor=actor,
+    capability="solum:consent:read",
+)
 consent_status = status_body.get("status") if isinstance(status_body, dict) else None
 
 if mode == "allow":

@@ -3,20 +3,23 @@
 # unless SHOWCASE_ALLOW_PIN_DRIFT=1. Checkout: ./scripts/checkout-pins.sh
 # Report drift:        ./scripts/check-pins.sh
 # Refresh this file:   ./scripts/refresh-pinned-versions.sh
-# Generated: 2026-08-10T08:44:01Z
+# Generated: 2026-08-15T17:13:18Z
 #
-# Solum-tag is the Solum product git tag Solum-Demo builds against
-# (see Solum-Demo Dockerfile ARG SOLUM_TAG) — not a local checkout SHA.
+# Solum-tag is the Solum git ref Solum-Demo builds (Dockerfile ARG SOLUM_REF),
+# not a local checkout SHA. Live Stage-1 artefacts were regenerated against
+# this baseline (6b4519c), not the retired stage1 git tag.
 # HelixTest is optional (Evidence Pack / conformance gate).
 # ga4gh-infra is optional (Passports co-deploy via Ferrum-GA4GH-Demo --with-infra).
 # gatk-rs / S4MP are optional W4 (Alpha smoke + port-diff sidecar; soft-fail).
+# Ferrum-GA4GH-Demo + HELIOS pins stay on the last golden-path artefact SHAs
+# (those examples were not re-run). ga4gh-infra follows published v0.2.3.
 
 Ferrum-GA4GH-Demo=74c6456c90eecac98f601baf4dcf6d7d3dd2bcaa
 HELIOS=0171294c608c38b713a22ad7a75cba903a8d6374
-ga4gh-infra=a91713fd806be3f58a6c9d8d4d5ece9ba2902d0e
+ga4gh-infra=613bd14932b57e30cfdca7b413841fe5b07a80fd
 bioresearch-assistant=37313437900d3ddcb2bb0e4c9e66064393087d90
 Solum-Demo=ae02bb149a5452116824ad044fac53089467a283
-Solum-tag=stage1-baseline-sidecar-custody-2026-08-01
+Solum-tag=6b4519c98f5c1e905ab5cf3f517787021d1e2604
 HelixTest=725ea7f2c03aba70384846723b75eedfefac0262
 gatk-rs=88a203f85c6b7542ddd44ed81f8732f74d89682c
 S4MP=9f4c3533726b61747e91a76958ff9bab0dcf94c3

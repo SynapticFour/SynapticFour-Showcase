@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "stage": "solum",
-  "generated_at": "2026-08-06T11:56:01.492004Z",
-  "solum_demo_root": "/Users/SynapticFour/devel/SynapticFour/Solum-Demo",
+  "generated_at": "2026-08-15T17:10:16.919898Z",
+  "solum_demo_root": "../Solum-Demo",
   "base_url": "http://127.0.0.1:8080",
-  "product_tag_consumed_by_demo": "stage1-baseline-sidecar-custody-2026-08-01",
+  "product_tag_consumed_by_demo": "6b4519c98f5c1e905ab5cf3f517787021d1e2604",
   "status": "ok",
   "authz_allow_ok": true,
   "authz_deny_ok": true,
@@ -15,7 +15,8 @@
   "artefacts": {
     "allow": "solum-authz-allow.json",
     "deny": "solum-authz-deny.json",
-    "verify": "solum-audit-verify.json"
+    "verify": "solum-audit-verify.json",
+    "helios_chain_export": "solum-audit-helios-chain.json"
   },
-  "honesty": "Local Solum-Demo with ephemeral keys \u2014 not production. Separate regulatory perimeter from Ferrum; Showcase only orchestrates."
+  "honesty": "Local Solum-Demo with ephemeral keys \u2014 not production. Separate regulatory perimeter from Ferrum; Showcase only orchestrates. solum-audit-helios-chain.json is captured before tamper simulation for HELIOS CLIN-ACCESS."
 }

@@ -1,32 +1,136 @@
 {
   "format": "solum-audit-helios-chain-v1",
   "generator": "solum-audit",
-  "record_count": 3,
+  "record_count": 8,
   "records": [
     {
       "seq": 1,
       "event": {
-        "event_type": "consent.granted",
-        "actor": "practitioner/fixture",
-        "outcome": "success"
-      }
+        "event_type": "access.granted",
+        "timestamp": "2026-08-15T17:10:16.732355883Z",
+        "actor": "standalone:practitioner/amina",
+        "data_category": null,
+        "outcome": "success",
+        "details": {
+          "attempted_operation": "audit_export",
+          "capability": "solum:audit:export"
+        }
+      },
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "29bb82f4233e29b2b11f77c17fc8bfb31ae5f770c45861d0a2f1d5085361da2e"
     },
     {
       "seq": 2,
       "event": {
-        "event_type": "authorization.denied",
-        "actor": "practitioner/intern",
-        "outcome": "denied"
-      }
+        "event_type": "data.export",
+        "timestamp": "2026-08-15T17:10:16.734352174Z",
+        "actor": "standalone:practitioner/amina",
+        "data_category": null,
+        "outcome": "success",
+        "details": {}
+      },
+      "prev_hash": "29bb82f4233e29b2b11f77c17fc8bfb31ae5f770c45861d0a2f1d5085361da2e",
+      "hash": "735c2fa0e2fe83992dd09d3d857783a3fe5a91354121e87736c874d6e04f1b37"
     },
     {
       "seq": 3,
       "event": {
+        "event_type": "access.granted",
+        "timestamp": "2026-08-15T17:10:16.902302674Z",
+        "actor": "standalone:practitioner/amina",
+        "data_category": null,
+        "outcome": "success",
+        "details": {
+          "attempted_operation": "grant_consent",
+          "capability": "solum:consent:grant"
+        }
+      },
+      "prev_hash": "735c2fa0e2fe83992dd09d3d857783a3fe5a91354121e87736c874d6e04f1b37",
+      "hash": "8cee331d177383ff0e77238d545bf9dcf8f7256f0556826e9b15d47cced263c2"
+    },
+    {
+      "seq": 4,
+      "event": {
+        "event_type": "consent.granted",
+        "timestamp": "2026-08-15T17:10:16.903070424Z",
+        "actor": "standalone:practitioner/amina",
+        "data_category": "patient_summary",
+        "outcome": "success",
+        "details": {
+          "purpose": "care_provision",
+          "subject_id": "patient/showcase-solum-stage-001"
+        }
+      },
+      "prev_hash": "8cee331d177383ff0e77238d545bf9dcf8f7256f0556826e9b15d47cced263c2",
+      "hash": "432867daa3a9aea9dd50871c8057edb742dc7f7a6e8b635c0d47e69f1be6b317"
+    },
+    {
+      "seq": 5,
+      "event": {
+        "event_type": "access.granted",
+        "timestamp": "2026-08-15T17:10:16.907475799Z",
+        "actor": "standalone:practitioner/amina",
+        "data_category": null,
+        "outcome": "success",
+        "details": {
+          "attempted_operation": "encrypt_field",
+          "capability": "solum:crypto:encrypt"
+        }
+      },
+      "prev_hash": "432867daa3a9aea9dd50871c8057edb742dc7f7a6e8b635c0d47e69f1be6b317",
+      "hash": "55ae86f7189e86e0856a1738d325f4e7c8320d6db22e084d4d26e9c745c23433"
+    },
+    {
+      "seq": 6,
+      "event": {
         "event_type": "data.encrypt",
-        "actor": "practitioner/fixture",
-        "outcome": "success"
-      }
+        "timestamp": "2026-08-15T17:10:16.908275633Z",
+        "actor": "standalone:practitioner/amina",
+        "data_category": "patient_summary",
+        "outcome": "success",
+        "details": {
+          "category": "patient_summary",
+          "key_ref": "ephemeral/demo-patient-summary",
+          "purpose": "care_provision",
+          "subject_id": "patient/showcase-solum-stage-001"
+        }
+      },
+      "prev_hash": "55ae86f7189e86e0856a1738d325f4e7c8320d6db22e084d4d26e9c745c23433",
+      "hash": "584b825e95c75d00aa47aa84740b0d6ad10994a05b556ebe2ba4814b896e9f0f"
+    },
+    {
+      "seq": 7,
+      "event": {
+        "event_type": "key.use",
+        "timestamp": "2026-08-15T17:10:16.908603633Z",
+        "actor": "standalone:practitioner/amina",
+        "data_category": "patient_summary",
+        "outcome": "success",
+        "details": {
+          "category": "patient_summary",
+          "key_ref": "ephemeral/demo-patient-summary",
+          "purpose": "care_provision",
+          "subject_id": "patient/showcase-solum-stage-001"
+        }
+      },
+      "prev_hash": "584b825e95c75d00aa47aa84740b0d6ad10994a05b556ebe2ba4814b896e9f0f",
+      "hash": "b41ef31994aa5d49b39d0eae4e5621165e20556e3beeb49750c3d137cc758294"
+    },
+    {
+      "seq": 8,
+      "event": {
+        "event_type": "access.denied",
+        "timestamp": "2026-08-15T17:10:16.910878466Z",
+        "actor": "standalone:practitioner/intern",
+        "data_category": null,
+        "outcome": "failure",
+        "details": {
+          "attempted_operation": "encrypt_field",
+          "capability": "solum:crypto:encrypt"
+        }
+      },
+      "prev_hash": "b41ef31994aa5d49b39d0eae4e5621165e20556e3beeb49750c3d137cc758294",
+      "hash": "0260d4506a40b6a9022c5bdd5c9bbd50307865da89aaff35c01b4cf14b109cee"
     }
-  ],
-  "honesty": "CI fixture for Showcase Evidence Pack / CLIN-ACCESS-001 — not production audit."
+  ]
 }

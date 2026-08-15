@@ -4,14 +4,16 @@
   "verify_http_status": 400,
   "harness": {
     "ok": true,
-    "already_tampered": true,
-    "message": "File already carries the demo tamper marker.",
-    "actor": "practitioner/amina#DEMO-TAMPERED",
+    "already_tampered": false,
     "path": "/data/audit.jsonl",
-    "warning": "DEMO HARNESS \u2014 this mutation was applied outside solum-sidecar. The product API has no tamper route."
+    "original_actor": "standalone:practitioner/amina",
+    "tampered_actor": "standalone:practitioner/amina#DEMO-TAMPERED",
+    "seq": 1,
+    "message": "Rewrote event.actor on the first audit.jsonl record on disk. Hash fields were intentionally left unchanged so /v1/audit/verify should report chain_broken.",
+    "warning": "DEMO HARNESS \u2014 filesystem rewrite only. Not available via the Solum sidecar API by design."
   },
   "verify": {
-    "error": "chain_broken",
+    "error": "bad_request",
     "message": "audit chain broken at seq 1: stored hash does not match recomputed hash \u2014 record was altered"
   },
   "ok": true,

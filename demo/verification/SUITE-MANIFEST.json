@@ -2,14 +2,14 @@
   "schema_version": 1,
   "suite_kind": "synapticfour-showcase-integration-suite",
   "mode": "fixtures",
-  "generated_at": "2026-08-15T07:46:32.706645Z",
+  "generated_at": "2026-08-15T17:14:14.201107Z",
   "pins": {
     "Ferrum-GA4GH-Demo": "74c6456c90eecac98f601baf4dcf6d7d3dd2bcaa",
     "HELIOS": "0171294c608c38b713a22ad7a75cba903a8d6374",
-    "ga4gh-infra": "a91713fd806be3f58a6c9d8d4d5ece9ba2902d0e",
+    "ga4gh-infra": "613bd14932b57e30cfdca7b413841fe5b07a80fd",
     "bioresearch-assistant": "37313437900d3ddcb2bb0e4c9e66064393087d90",
     "Solum-Demo": "ae02bb149a5452116824ad044fac53089467a283",
-    "Solum-tag": "stage1-baseline-sidecar-custody-2026-08-01",
+    "Solum-tag": "6b4519c98f5c1e905ab5cf3f517787021d1e2604",
     "HelixTest": "725ea7f2c03aba70384846723b75eedfefac0262",
     "gatk-rs": "88a203f85c6b7542ddd44ed81f8732f74d89682c",
     "S4MP": "9f4c3533726b61747e91a76958ff9bab0dcf94c3"
@@ -20,7 +20,7 @@
       "status": "ok",
       "hard": true,
       "detail": null,
-      "at": "2026-08-15T07:46:32.671662Z"
+      "at": "2026-08-15T17:14:14.168424Z"
     }
   ],
   "summary": {
