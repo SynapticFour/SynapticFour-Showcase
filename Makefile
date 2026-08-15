@@ -6,7 +6,7 @@
 	gatk-rs-smoke gatk-rs-smoke-fixtures gatk-rs-wes s4mp-evidence s4mp-evidence-fixtures \
 	co-deploy-harvest co-deploy-harvest-fixtures \
 	integration-suite integration-suite-fixtures verification-publish preflight \
-	path-eplus-smoke check-pins checkout-pins honesty
+	path-eplus-smoke check-pins checkout-pins honesty prove
 
 help:
 	@echo "SynapticFour Showcase — local lifecycle"
@@ -125,6 +125,10 @@ checkout-pins:
 
 honesty:
 	./scripts/check-honesty.sh
+
+# Zero-risk: claim/fixture gates. Live combo: make checkout-pins && make up
+prove: honesty
+	@echo "Showcase offline prove OK. Live combo uses PINNED_VERSIONS.txt (make checkout-pins && make up)."
 
 down:
 	./scripts/stop-showcase.sh
