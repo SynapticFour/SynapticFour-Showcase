@@ -14,8 +14,9 @@ SOLUM_DEMO="${SHOWCASE_SOLUM_DEMO_ROOT:-$SHOWCASE_ROOT/../Solum-Demo}"
 HELIXTEST="${SHOWCASE_HELIXTEST_ROOT:-$SHOWCASE_ROOT/../HelixTest}"
 GATK_RS="${SHOWCASE_GATK_RS_ROOT:-$SHOWCASE_ROOT/../gatk-rs}"
 S4MP="${SHOWCASE_S4MP_ROOT:-$SHOWCASE_ROOT/../S4MP}"
-# Product tag consumed by Solum-Demo Dockerfile/compose (not a git HEAD).
-SOLUM_TAG="${SHOWCASE_SOLUM_TAG:-stage1-baseline-sidecar-custody-2026-08-01}"
+# Solum product ref Solum-Demo builds (Dockerfile ARG SOLUM_REF), not a local checkout SHA.
+# Default is the Solum-Demo verified baseline, not the retired stage1 git tag.
+SOLUM_TAG="${SHOWCASE_SOLUM_TAG:-6b4519c98f5c1e905ab5cf3f517787021d1e2604}"
 
 rev_or_unknown() {
   local dir="$1"
@@ -33,8 +34,8 @@ rev_or_unknown() {
   echo "# Regenerate: ./scripts/refresh-pinned-versions.sh"
   echo "# Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
   echo "#"
-  echo "# Solum-tag is the Solum product git tag Solum-Demo builds against"
-  echo "# (see Solum-Demo Dockerfile ARG SOLUM_TAG) — not a local checkout SHA."
+  echo "# Solum-tag is the Solum git ref Solum-Demo builds (Dockerfile ARG SOLUM_REF),"
+  echo "# not a local checkout SHA. Default: Solum-Demo verified baseline."
   echo "# HelixTest is optional (Evidence Pack / conformance gate)."
   echo "# ga4gh-infra is optional (Passports co-deploy via Ferrum-GA4GH-Demo --with-infra)."
   echo "# gatk-rs / S4MP are optional W4 (Alpha smoke + port-diff sidecar; soft-fail)."
