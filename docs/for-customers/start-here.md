@@ -17,7 +17,7 @@
 
 Vollständige Clone-Liste und Ports: [DEMO.md](../../DEMO.md) · Portfolio-Karte: [overview.md](overview.md)
 
-**Persona wählen:** [personas/](personas/) · **Beschaffung:** [procurement-short-path.md](procurement-short-path.md) · **Co-Custody:** [co-custody.md](co-custody.md) · **Legal:** [legal/](legal/)
+**Persona wählen:** [personas/](personas/) · **Was wirklich lief:** [persona-evidence.md](persona-evidence.md) · **Beschaffung:** [procurement-short-path.md](procurement-short-path.md) · **Co-Custody:** [co-custody.md](co-custody.md) · **Legal:** [legal/](legal/)
 
 ---
 
@@ -118,7 +118,7 @@ Smokes auch direkt in [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) (
 
 Clone list & ports: [DEMO.md](../../DEMO.md) · Portfolio map: [overview.md](overview.md)
 
-**Pick a persona:** [personas/](personas/) · **Procurement short path:** [procurement-short-path.md](procurement-short-path.md) · **Co-custody:** [co-custody.md](co-custody.md) · **Legal:** [legal/](legal/)
+**Pick a persona:** [personas/](personas/) · **What actually ran:** [persona-evidence.md](persona-evidence.md) · **Procurement short path:** [procurement-short-path.md](procurement-short-path.md) · **Co-custody:** [co-custody.md](co-custody.md) · **Legal:** [legal/](legal/)
 
 ### Step 0 — zero install
 

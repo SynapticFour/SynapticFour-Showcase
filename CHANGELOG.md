@@ -4,6 +4,10 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- **Persona evidence sheet** — [docs/for-customers/persona-evidence.md](docs/for-customers/persona-evidence.md): Solum Stage-1 live regen 15 Aug vs golden-path WES not re-run.
+
 ### Changed
 
 - **Solum Stage-1 artefacts** regenerated against Solum-Demo `SOLUM_REF` `6b4519c98f5c1e905ab5cf3f517787021d1e2604` (live allow 200 / deny 403 / tamper). Showcase scripts send `X-Solum-Actor` / `X-Solum-Capability`. `PINNED_VERSIONS.txt` `Solum-tag` matches that SHA; Ferrum/HELIOS pins unchanged (golden path not re-run). Optional `ga4gh-infra` pin is stack tag `ga4gh-infra-v0.2.3` (`613bd14`).

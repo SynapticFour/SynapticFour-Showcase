@@ -9,4 +9,6 @@
 
 **Print / symposium:** [genomde-symposium-one-pager.md](genomde-symposium-one-pager.md) (I3)
 
+**What artefacts exist today:** [../persona-evidence.md](../persona-evidence.md) (Solum Stage-1 live on 15 Aug 2026; golden-path WES not re-run).
+
 Shared entry: [../start-here.md](../start-here.md) · Procurement: [../procurement-short-path.md](../procurement-short-path.md) · Legal: [../legal/](../legal/) · Co-custody: [../co-custody.md](../co-custody.md)

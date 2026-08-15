@@ -17,3 +17,5 @@ Record of an end-to-end exercise on a **developer workstation**. **Not a certifi
 | C7 Ferrum `--gatk-rs` WES | **skipped** | Image missing |
 
 See `docs/for-customers/integration-verification.md` to reproduce.
+
+**15 Aug 2026 addendum:** Solum Stage-1 artefacts were regenerated (allow 200 / deny 403 / tamper) against SHA `6b4519c`. Golden-path Nextflow WES was **not** re-run. Sheet: [docs/for-customers/persona-evidence.md](../../docs/for-customers/persona-evidence.md).

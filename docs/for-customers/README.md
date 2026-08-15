@@ -5,6 +5,7 @@ Start here:
 - [**Start here — try it in four steps**](start-here.md) (fixtures → golden path → Passports → Solum)
 - [**Procurement officer — short path**](procurement-short-path.md) (non-technical; ~20 min)
 - [**Personas — pick your one-pager**](personas/README.md)
+- [**Persona evidence — what actually ran**](persona-evidence.md) (15 Aug 2026: Solum live regen; golden-path WES not re-run)
 - [**Overview — offerings, components, tested constellations**](overview.md)
 - [Co-custody (Ferrum + Solum)](co-custody.md) · [Key custody](key-custody.md)
 - [Disaster recovery](disaster-recovery.md) · [Support tiers](support-tiers.md) · [Observability](observability.md)
