@@ -9,7 +9,7 @@
 Der SynapticFour-Showcase demonstriert wie Bausteine in einer realen Pipeline zusammenspielen:
 
 1. **Ferrum** nimmt einen Variant-Calling-Job über seine WES-Schnittstelle entgegen und führt ihn aus
-2. **HELIOS** erzeugt dabei automatisch einen **signierten** Audit-Export (Output-Hashes). Das committed Beispiel `demo/results/helios-report-example.json` hat **leere** `input_files` und einen vacuous Container-Check — siehe Sidecar [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json). Live-Läufe schreiben nach `helios-reports/`.
+2. **HELIOS** erzeugt dabei automatisch einen **signierten** Audit-Export. Das committed Beispiel `demo/results/helios-report-example.json` hasht Nextflow-Config/Log in `input_files` und **warnt** bei GATK `4.4.0.0` ohne Digest — siehe Sidecar [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json). Live-Läufe schreiben nach `helios-reports/`.
 3. **BioResearch Assistant** (optional, M2) bekommt das Ergebnis-VCF und die Run-Metadaten übergeben — bereit für Downstream-Analyse
 4. **Solum** (optional, `make solum-stage` / `make golden-path-with-solum`) zeigt fail-closed Autorisierung und tamper-evident Audit als klinischen Companion
 
@@ -28,7 +28,7 @@ Am Ende haben Sie: einen Benchmark-Report, eine HELIOS-Audit-Datei, einen DRS-Ob
 The SynapticFour Showcase demonstrates how building blocks work together in a real pipeline:
 
 1. **Ferrum** accepts a variant calling job via its WES interface and executes it
-2. **HELIOS** automatically generates a **signed** audit export (output hashes). The committed example `demo/results/helios-report-example.json` has **empty** `input_files` and a vacuous container check — see [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json). Live runs write to `helios-reports/`.
+2. **HELIOS** automatically generates a **signed** audit export. The committed example `demo/results/helios-report-example.json` hashes Nextflow config/log in `input_files` and **warns** on GATK `4.4.0.0` without a digest — see [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json). Live runs write to `helios-reports/`.
 3. **BioResearch Assistant** (optional, M2) receives the result VCF and run metadata — ready for downstream analysis
 4. **Solum** (optional, `make solum-stage` / `make golden-path-with-solum`) demonstrates fail-closed authorization and tamper-evident audit as a clinical companion
 

@@ -12,13 +12,13 @@
 
 ```json
 {
-  "precision": 1.0,
-  "recall": 1.0,
-  "f1_score": 1.0
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1_score": 0.0
 }
 ```
 
-**Was das bedeutet:** Der Variant-Calling-Lauf im Demo-Datensatz (synthetischer GRCh37-Mini-Callset) erreicht volle Übereinstimmung mit dem Referenz-Callset. **F1=1.0 ist für diesen Datensatz erwartet** — das zeigt, dass die Demo-Pipeline durchläuft, nicht dass ein klinischer Caller validiert wurde.
+**Was das bedeutet:** hap.py auf diesem synthetischen Mini-Slice (15 Aug 2026). `claim_scope` ist `pipeline_smoke`. QUERY hatte keine Calls (`QUERY.TOTAL=0`), daher F1=0. Das zeigt, dass WES→TES→GATK→hap.py durchlief — **nicht**, dass der Caller klinisch stimmt, und **nicht** F1=1.0.
 
 ---
 
@@ -26,9 +26,9 @@
 
 ```json
 {
-  "wes_run_id": "01KVTCN5H7BRXN1RS4C39PDQJ1",
+  "wes_run_id": "01M03CB216RJ2R4T2G5N1JX3X3",
   "wes_engine": "nextflow",
-  "pipeline_elapsed_seconds": 115
+  "pipeline_elapsed_seconds": 51
 }
 ```
 
@@ -38,18 +38,18 @@
 
 ### helios-report-example.json — HELIOS-Export (Golden-Path-Minimum)
 
-**Was darin steht (dieses committed Beispiel, 23. Jun. 2026):**
+**Was darin steht (Live-Regen 15. Aug. 2026):**
 - `run_id` — UUID des Exports
 - `pipeline_name`: `unknown-pipeline` (HELIOS hat den Nextflow-Namen nicht aufgelöst)
-- `input_files`: **empty** — dieses Beispiel enthält **keine** Input-Hashes
-- `output_files` — SHA256 von Dateien unter `results/` und Nextflow-Workdir (inkl. Cache-LOCK)
-- `checks`: genau `SEC-CONTAINER-001` mit `"containers_scanned": "0"` — **vacuous pass**, kein Beweis dass Images gepinnt waren
+- `input_files` — Nextflow-Config und `.nextflow.log` (nicht BAM/FASTA)
+- `output_files` — SHA256 von Dateien unter `results/` und Nextflow-Workdir
+- `checks`: genau `SEC-CONTAINER-001` mit `"containers_scanned": "1"` — **warn**, weil `broadinstitute/gatk:4.4.0.0` ein Versions-Tag ohne `@sha256:` ist (`container_digest_required = false` in [helios.toml](../../helios.toml))
 - `signature` — Ed25519 über diesen Export; Schlüssel liegen lokal unter `.cache/` (gitignored)
 - Sidecar **[helios-report-example.honesty.json](helios-report-example.honesty.json)** — maschinenlesbare Honesty (das signierte JSON wird nicht verändert)
 
 Default-Golden-Path nutzt [helios.toml](../../helios.toml): nur `SEC-CONTAINER-001`, weil das Demo-Referenzgenom GRCh37 ist. Klinische Checks (`CLIN-ACCESS-001`) gehören zu `helios-solum.toml` / Solum-Audit-Export, nicht in diesen genomischen Report.
 
-**Was das für Sie bedeutet:** Sie sehen, dass ein HELIOS-Export nach dem WES-Lauf geschrieben wurde. Sie sehen **nicht** eine vollständige Input-Provenance und **nicht** einen bestandenen Container-Pin-Scan. Für Stakeholder-Reviews: Honesty-Feld im Showcase-Report lesen.
+**Was das für Sie bedeutet:** Sie sehen, dass ein HELIOS-Export nach dem WES-Lauf geschrieben wurde. GATK ist per **Versions-Tag** gepinnt, nicht per Digest. Das ist kein vollständiges Provenance-Zertifikat. Für Stakeholder-Reviews: Honesty-Sidecar lesen.
 
 ---
 
@@ -114,11 +114,11 @@ Live erzeugen: `make solum-stage` (optional `--` → `./scripts/run-solum-stage.
 
 ## The artefacts explained
 
-**benchmark.json:** The variant calling run on the demo dataset (synthetic GRCh37) achieves full agreement with the reference callset. Expected for the demo — shows the pipeline runs correctly.
+**benchmark.json:** hap.py on the 15 Aug synthetic mini-slice. `claim_scope` is `pipeline_smoke`. Query VCF had no calls (`QUERY.TOTAL=0`), so F1=0. That shows WES→TES→GATK→hap.py ran — not a clinical caller score, and not F1=1.0.
 
 **metrics.json:** Ferrum's WES endpoint accepted the Nextflow run, executed it, and returned the run ID. This ID links the HELIOS audit trail to the WES run.
 
-**helios-report-example.json:** HELIOS export after the Nextflow demo. In this committed file `input_files` is **empty** and `SEC-CONTAINER-001` has `containers_scanned=0` (vacuous pass). Not a full provenance certificate. Machine-readable honesty: [helios-report-example.honesty.json](helios-report-example.honesty.json) (signed JSON is not mutated). Clinical `CLIN-ACCESS-001` is a separate Solum artefact (`helios-solum.toml`).
+**helios-report-example.json:** HELIOS export after the Nextflow demo. This committed file records Nextflow config/log in `input_files` (not BAM/FASTA). `SEC-CONTAINER-001` **warns** on `broadinstitute/gatk:4.4.0.0` (version tag, no `@sha256:`). Not a provenance certificate. Machine-readable honesty: [helios-report-example.honesty.json](helios-report-example.honesty.json) (signed JSON is not mutated). Clinical `CLIN-ACCESS-001` is a separate Solum artefact (`helios-solum.toml`).
 
 **drs-link-example.json:** Illustrative DRS URI. `ferrum-gateway:8080` is the Compose hostname; host port is **18080**. Automatic DRS registration of WES outputs is not part of the default golden path.
 

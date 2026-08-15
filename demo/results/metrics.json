@@ -1,27 +1,27 @@
 {
-  "pipeline_elapsed_seconds": 115,
-  "wes_run_id": "01KVTCN5H7BRXN1RS4C39PDQJ1",
-  "wes_workflow_url": "http://host.docker.internal:51062/workflows/tiny_hc.nf",
+  "pipeline_elapsed_seconds": 51,
+  "wes_run_id": "01M03CB216RJ2R4T2G5N1JX3X3",
+  "wes_workflow_url": "http://host.docker.internal:49376/tiny_hc.nf",
   "wes_engine": "nextflow",
   "encrypt_at_ingest": false,
   "query_vcf": "results/query.vcf.gz",
-  "docker_stats_gateway_sample": "34.45MiB / 7.653GiB",
+  "docker_stats_gateway_sample": "32.74MiB / 7.653GiB",
   "drs_micro": {
-    "drs_stream_url": "http://127.0.0.1:18080/ga4gh/drs/v1/objects/01KVTCN5DZZ7E2XRA192QGQR18/stream",
-    "object_id": "01KVTCN5DZZ7E2XRA192QGQR18",
+    "drs_stream_url": "http://127.0.0.1:18080/ga4gh/drs/v1/objects/01M03CB1W6D4HXEZNDJD5QQ5XM/stream",
+    "object_id": "01M03CB1W6D4HXEZNDJD5QQ5XM",
     "repeat_n": 3,
     "max_bytes": 8000000,
     "plain": {
       "wall_seconds": {
-        "median": 0.007154832999999999,
-        "p95": 0.022416417
+        "median": 0.006153832946438342,
+        "p95": 0.04504774999804795
       },
       "bytes_transferred": 4071,
-      "throughput_mib_s": 0.5426273600082412,
+      "throughput_mib_s": 0.6308926771138413,
       "samples": [
-        0.022416417,
-        0.007154832999999999,
-        0.005171792000000008
+        0.04504774999804795,
+        0.006153832946438342,
+        0.005178708001039922
       ]
     },
     "crypt4gh_at_rest": null,
@@ -29,14 +29,16 @@
   },
   "africa": {
     "available_features": 6,
-    "scenarios_ran": 3,
-    "scenarios_skipped": 3,
-    "all_passed": true
+    "scenarios_ran": 0,
+    "scenarios_skipped": 6,
+    "all_passed": false,
+    "verdict": "not_evaluated"
   },
   "co_deploy": {
     "available_services": 0,
     "scenarios_ran": 0,
     "scenarios_skipped": 4,
-    "all_passed": true
+    "all_passed": false,
+    "verdict": "not_evaluated"
   }
 }

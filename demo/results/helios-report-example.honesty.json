@@ -7,15 +7,13 @@
   "not_a_provenance_certificate": true,
   "honesty": {
     "present": true,
-    "input_files_recorded": false,
-    "input_file_count": 0,
-    "output_file_count": 60,
-    "vacuous_checks": [
-      "SEC-CONTAINER-001"
-    ],
+    "input_files_recorded": true,
+    "input_file_count": 2,
+    "output_file_count": 392,
+    "vacuous_checks": [],
     "clinical_checks": [],
     "fixture_flagged_checks": [],
     "pipeline_name": "unknown-pipeline",
-    "note": "No input_files hashes in this report. Output hashes (if any) are post-run filesystem hashes, not a complete provenance of pipeline inputs. SEC-CONTAINER-001 passed without scanning container images (containers_scanned=0 or empty evidence). That is not proof that images were pinned."
+    "note": "HELIOS report present. Default Showcase golden path still uses the minimal check set in helios.toml (GRCh37 demo compatibility)."
   }
 }

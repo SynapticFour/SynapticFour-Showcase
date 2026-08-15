@@ -1,22 +1,22 @@
 {
-  "object_id": "drs://ferrum-gateway:8080/01KVTCN5H7BRXN1RS4C39PDQJ1/query.vcf.gz",
+  "object_id": "drs://ferrum-gateway:8080/01M03CB216RJ2R4T2G5N1JX3X3/query.vcf.gz",
   "name": "query.vcf.gz",
-  "self_uri": "drs://ferrum-gateway:8080/01KVTCN5H7BRXN1RS4C39PDQJ1/query.vcf.gz",
-  "size": 4037,
-  "created_time": "2026-06-23T14:07:30Z",
+  "self_uri": "drs://ferrum-gateway:8080/01M03CB216RJ2R4T2G5N1JX3X3/query.vcf.gz",
+  "size": 3791,
+  "created_time": "2026-08-15T19:04:13Z",
   "checksums": [
     {
       "type": "sha-256",
-      "checksum": "ff81762a18c8846a36fec407fc3b4de51a71bee4ce29a3d58ea78089e3e8fee6"
+      "checksum": "63c5c623040cf8af075322f369a99e98682f242842d61894418bba52a7cf64cd"
     }
   ],
   "access_methods": [
     {
       "type": "https",
       "access_url": {
-        "url": "https://ferrum-gateway:8080/ga4gh/drs/v1/objects/01KVTCN5H7BRXN1RS4C39PDQJ1/access/access-01KVTCN5H7BRXN1RS4C39PDQJ1"
+        "url": "https://ferrum-gateway:8080/ga4gh/drs/v1/objects/01M03CB216RJ2R4T2G5N1JX3X3/access/access-01M03CB216RJ2R4T2G5N1JX3X3"
       },
-      "access_id": "access-01KVTCN5H7BRXN1RS4C39PDQJ1"
+      "access_id": "access-01M03CB216RJ2R4T2G5N1JX3X3"
     }
   ]
 }

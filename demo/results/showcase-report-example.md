@@ -1,16 +1,16 @@
 # Synaptic Four Showcase — Run Report
 
-**Erstellt / Generated:** 2026-06-23T14:07:30Z  
-**Run ID:** b300cc9f-2839-454d-92bb-0c5fb42f0048  
+**Erstellt / Generated:** 2026-08-15T19:04:13Z
+**Run ID:** e74750ec-4f9e-406c-9806-a69560bd3c26
 **Stack:** Ferrum GA4GH Demo + HELIOS Audit + BioResearch Assistant Handoff
 
 ---
 
 ## Zusammenfassung / Summary
 
-Alle drei Showcase-Stufen erfolgreich abgeschlossen. Artefakte stehen für Stakeholder-Review bereit.
+WES Nextflow completed (run `01M03CB216RJ2R4T2G5N1JX3X3`). hap.py F1=0 on this synthetic slice (no query calls). HELIOS **warns** that GATK `4.4.0.0` is a version tag, not a digest pin. BRA handoff below is a DRS-shaped example, not a live BRA session.
 
-All three showcase stages completed successfully. Artefacts are available for stakeholder review.
+WES Nextflow completed. hap.py F1=0 on this synthetic slice. HELIOS warns on GATK `4.4.0.0` without `@sha256:`. The DRS link is illustrative.
 
 ---
 
@@ -18,18 +18,18 @@ All three showcase stages completed successfully. Artefacts are available for st
 
 | Metric | Value |
 |--------|-------|
-| WES Run ID | `01KVTCN5H7BRXN1RS4C39PDQJ1` |
+| WES Run ID | `01M03CB216RJ2R4T2G5N1JX3X3` |
 | Pipeline Engine | nextflow |
-| Elapsed Time | 115 Sekunden / seconds |
+| Elapsed Time | 51 Sekunden / seconds |
 | Status | ✅ Abgeschlossen / Completed |
 
 **Benchmark-Ergebnisse / Benchmark results (hap.py vs. reference callset):**
 
 | Metric | Value |
 |--------|-------|
-| Precision | 1.0 |
-| Recall | 1.0 |
-| F1 Score | 1.0 |
+| Precision | 0.0 |
+| Recall | 0.0 |
+| F1 Score | 0.0 |
 
 *Hinweis / Note: Synthetischer Demo-Datensatz / Synthetic demo dataset.*
 
@@ -39,11 +39,11 @@ All three showcase stages completed successfully. Artefacts are available for st
 
 | Metric | Value |
 |--------|-------|
-| HELIOS Report ID | `b300cc9f-2839-454d-92bb-0c5fb42f0048` |
+| HELIOS Report ID | `e74750ec-4f9e-406c-9806-a69560bd3c26` |
 | Executor | nextflow |
-| Output Files Hashed | 60 |
+| Output Files Hashed | 392 |
 | Checks Run | 1 (SEC-CONTAINER-001) |
-| Check Results | ✅ Alle bestanden / All passed |
+| Check Results | ⚠️ Siehe Report / See report |
 
 **Was der HELIOS-Report erfasst / What the HELIOS report captures:**
 - SHA256-Hash jeder Output-Datei / SHA256 hash of every output file
@@ -61,7 +61,7 @@ All three showcase stages completed successfully. Artefacts are available for st
 |--------|-------|
 | Handoff Status | ✅ Vorbereitet / Prepared |
 | VCF übertragen / transferred | query.vcf.gz |
-| DRS Object ID | `drs://ferrum-gateway:8080/01KVTCN5H7BRXN1RS4C39PDQJ1/query.vcf.gz` |
+| DRS Object ID | `drs://ferrum-gateway:8080/01M03CB216RJ2R4T2G5N1JX3X3/query.vcf.gz` |
 
 ---
 

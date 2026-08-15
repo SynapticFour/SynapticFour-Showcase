@@ -17,7 +17,7 @@ Zwei getrennte Nachweis-Ebenen — bitte nicht vermischen:
 | **Fixture-Spine** (`make integration-suite`) | Syntax, Unit-Tests, Honesty-Gates, committed JSON-Formen. Läuft in GitHub Actions **ohne Docker**. | Kein laufender Ferrum-/HELIOS-/Solum-Stack |
 | **Live Golden Path** (`make up`) | Docker, Sibling-Checkouts **auf PINNED_VERSIONS.txt** (sonst `SHOWCASE_ALLOW_PIN_DRIFT=1`), echter Nextflow-WES + HELIOS | Nicht das, was CI bei jedem Push fährt |
 
-Eingecheckte Dateien unter `demo/results/` und `demo/verification/` stammen aus Läufen **oder** sind als Fixtures gekennzeichnet. HELIOS-Beispielreports dokumentieren, wenn `input_files` leer sind und Container-Checks vacuous (`containers_scanned=0`) — maschinenlesbar in [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json) (signiertes JSON unverändert).
+Eingecheckte Dateien unter `demo/results/` und `demo/verification/` stammen aus Läufen **oder** sind als Fixtures gekennzeichnet. Der HELIOS-Beispielreport hasht Nextflow-Config/Log (nicht BAM) und **warnt** bei GATK `4.4.0.0` ohne Digest — maschinenlesbar in [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json) (signiertes JSON unverändert).
 
 **Einstieg:** [docs/for-customers/start-here.md](docs/for-customers/start-here.md).
 
@@ -104,9 +104,9 @@ Ein typischer Durchlauf erzeugt:
 
 | Artefakt | Was es zeigt |
 |----------|-------------|
-| `benchmark.json` | Precision / Recall / F1 auf dem **synthetischen Demo-Callset** (F1=1.0 ist für diesen Mini-Datensatz erwartet, keine klinische Güte) |
+| `benchmark.json` | Precision / Recall / F1 auf dem **synthetischen Demo-Callset** (15 Aug: F1=0, hap.py ohne Query-Calls — Pipeline-Smoke, keine klinische Güte) |
 | `metrics.json` | WES-Run-ID, Engine, Laufzeit |
-| `helios-report-example.json` | HELIOS-Export: Output-Hashes; **`input_files` ist in diesem Beispiel leer**; `SEC-CONTAINER-001` mit `containers_scanned=0` ist kein Image-Pin-Beweis. Default-Config: [helios.toml](helios.toml) (minimale Checks wegen GRCh37) |
+| `helios-report-example.json` | HELIOS-Export: Nextflow-Config/Log in `input_files`; `SEC-CONTAINER-001` **warn** bei GATK `4.4.0.0` ohne Digest. Default-Config: [helios.toml](helios.toml) (minimale Checks wegen GRCh37) |
 | `showcase-report.md` | Menschenlesbare Zusammenfassung inkl. Honesty-Feld |
 | `drs-link-example.json` | Illustrative DRS-URI (`ferrum-gateway:8080` = Compose-Hostname; Host-Gateway ist **:18080**) |
 
@@ -195,7 +195,7 @@ Two evidence layers — do not mix them:
 | **Fixture spine** (`make integration-suite`) | Syntax, unit tests, honesty gates, committed JSON shapes. GitHub Actions runs this **without Docker**. | A running Ferrum / HELIOS / Solum stack |
 | **Live golden path** (`make up`) | Docker, sibling checkouts **at PINNED_VERSIONS.txt** (or `SHOWCASE_ALLOW_PIN_DRIFT=1`), real Nextflow WES + HELIOS | What CI runs on every push |
 
-Checked-in files under `demo/results/` and `demo/verification/` are from runs **or** labeled fixtures. HELIOS example reports document empty `input_files` and vacuous container checks (`containers_scanned=0`) — machine-readable in [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json) (signed JSON unmodified).
+Checked-in files under `demo/results/` and `demo/verification/` are from runs **or** labeled fixtures. The HELIOS example hashes Nextflow config/log (not BAM) and **warns** on GATK `4.4.0.0` without a digest — machine-readable in [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json) (signed JSON unmodified).
 
 **Try it:** [docs/for-customers/start-here.md](docs/for-customers/start-here.md).
 
@@ -282,9 +282,9 @@ A typical run produces:
 
 | Artefact | What it shows |
 |----------|--------------|
-| `benchmark.json` | Precision / Recall / F1 on the **synthetic demo callset** (F1=1.0 is expected here — not clinical quality) |
+| `benchmark.json` | Precision / Recall / F1 on the **synthetic demo callset** (15 Aug: F1=0, hap.py with no query calls — pipeline smoke, not clinical quality) |
 | `metrics.json` | WES run ID, engine, elapsed time |
-| `helios-report-example.json` | HELIOS export: output hashes; **`input_files` is empty in this example**; `SEC-CONTAINER-001` with `containers_scanned=0` is not an image-pin proof. Default config: [helios.toml](helios.toml) |
+| `helios-report-example.json` | HELIOS export: Nextflow config/log in `input_files`; `SEC-CONTAINER-001` **warns** on GATK `4.4.0.0` without a digest. Default config: [helios.toml](helios.toml) |
 | `showcase-report.md` | Human-readable summary including an honesty field |
 | `drs-link-example.json` | Illustrative DRS URI (`ferrum-gateway:8080` is the Compose hostname; host gateway is **:18080**) |
 

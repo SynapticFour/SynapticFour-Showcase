@@ -193,15 +193,19 @@ SOLUM_DEMO_ROOT="$(cd "$SOLUM_DEMO_ROOT" && pwd)"
 
 wait_ready() {
   local deadline=$((SECONDS + WAIT_SECONDS))
-  echo "[consent-gate] waiting for Solum-Demo at $BASE_URL …"
+  # Probe consent status — not audit/export. Stage-1 tamper leaves the audit
+  # chain at HTTP 400 while grant/status still work.
+  local probe
+  probe="$(python3 -c 'import sys, urllib.parse; print(sys.argv[1].rstrip("/") + "/v1/consent/status?" + urllib.parse.urlencode({"subject": sys.argv[2], "purpose": sys.argv[3]}))' "$BASE_URL" "$SUBJECT" "$PURPOSE")"
+  echo "[consent-gate] waiting for Solum-Demo consent at $BASE_URL …"
   while (( SECONDS < deadline )); do
     code="$(curl -sS -o /dev/null -w "%{http_code}" \
       -H "$TOKEN_HEADER: $TOKEN" \
-      -H "X-Solum-Actor: practitioner/amina" \
-      -H "X-Solum-Capability: solum:audit:export" \
-      "$BASE_URL/v1/audit/export" 2>/dev/null || echo "000")"
+      -H "X-Solum-Actor: $ACTOR_GRANT" \
+      -H "X-Solum-Capability: solum:consent:read" \
+      "$probe" 2>/dev/null || echo "000")"
     if [[ "$code" == "200" ]]; then
-      echo "[consent-gate] ready"
+      echo "[consent-gate] ready (HTTP $code)"
       return 0
     fi
     sleep 3

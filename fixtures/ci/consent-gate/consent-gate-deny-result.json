@@ -1,26 +1,28 @@
 {
   "schema_version": 1,
   "stage": "consent_gate",
-  "generated_at": "2026-08-15T16:38:40.469083Z",
-  "mode": "fixtures",
+  "generated_at": "2026-08-15T18:02:04.806616Z",
+  "mode": "deny",
   "subject": "patient/showcase-phenoflow-001",
   "purpose": "secondary_use_hdab",
   "decision": "deny",
   "blocked": true,
   "wes_may_proceed": false,
-  "consent_status": "unknown",
+  "consent_status": "revoked",
   "phenopacket_binding": "phenopacket-purpose-binding.json",
   "bra_phenopacket": {
     "attempted": false,
-    "status": "skipped_fixtures"
+    "status": "skipped"
   },
   "solum": {
     "product_tag_consumed_by_demo": "6b4519c98f5c1e905ab5cf3f517787021d1e2604",
+    "base_url": "http://127.0.0.1:8080",
     "grant_http_status": null,
+    "grant_body": null,
     "status_http_status": 200,
     "status_body": {
-      "status": "unknown"
+      "status": "revoked"
     }
   },
-  "honesty": "Technical purpose-binding demo only \u2014 not legal consent. Fixture mode does not call Solum or BRA."
+  "honesty": "Technical purpose-binding demo only \u2014 not legal consent. Solum fail-closed status gates Showcase WES when SHOWCASE_ENABLE_CONSENT_GATE=1."
 }

@@ -26,11 +26,13 @@ print("  fixture genomic report ok")
 example_path = root / "demo/results/helios-report-example.json"
 example = json.loads(example_path.read_text())
 h = helios_honesty(example)
+if not h["input_files_recorded"]:
+    raise SystemExit("example report should record Nextflow config/log in input_files")
+if h.get("vacuous_checks"):
+    raise SystemExit(f"example report should not be a vacuous container pass: {h}")
 readme = (root / "demo/results/README.md").read_text()
-if h["input_files_recorded"]:
-    raise SystemExit("example report unexpectedly has input_files; update honesty docs")
-if "input_files" not in readme or "containers_scanned" not in readme:
-    raise SystemExit("demo/results/README.md must describe empty input_files and containers_scanned=0")
+if "4.4.0.0" not in readme or "digest" not in readme.lower():
+    raise SystemExit("demo/results/README.md must describe the GATK version-tag / digest warning")
 sidecar_path = root / "demo/results/helios-report-example.honesty.json"
 if not sidecar_path.is_file():
     raise SystemExit("missing demo/results/helios-report-example.honesty.json")

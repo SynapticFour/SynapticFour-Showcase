@@ -1,51 +1,77 @@
 {
-  "run_id": "b300cc9f-2839-454d-92bb-0c5fb42f0048",
+  "run_id": "e74750ec-4f9e-406c-9806-a69560bd3c26",
   "pipeline_name": "unknown-pipeline",
-  "pipeline_version": null,
+  "pipeline_version": "unknown",
   "executor": "nextflow",
-  "start_time": "2026-06-23T14:05:05.722416Z",
-  "end_time": "2026-06-23T14:05:08.878067Z",
-  "input_files": [],
+  "start_time": "2026-08-15T19:03:12.894600Z",
+  "end_time": "2026-08-15T19:03:13.110692Z",
+  "input_files": [
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/nextflow.config",
+      "sha256": "cbec4477cef1d664b5a771b30922069dc5bbc562359c0e92aa2f12fb38217d2c",
+      "size_bytes": 30
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/.nextflow.log",
+      "sha256": "a5e811b4c6b6392a0ac3a485e43171817f8b2c33a2f9fa9d3ed6977390393093",
+      "size_bytes": 9418
+    }
+  ],
   "output_files": [
     {
       "path": "../Ferrum-GA4GH-Demo/results/metrics.json",
-      "sha256": "d235bfcf480c63b8b9f998f5b5dca1ea2a46d7cd9cb2851701f459a264304469",
-      "size_bytes": 1141
+      "sha256": "147d1a5f08be2c9f0524afd083e18d71d5125d5e62edd97159d3e142cadb3ba1",
+      "size_bytes": 1212
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/happy.roc.Locations.SNP.PASS.csv.gz",
-      "sha256": "09f37e2da2998ce357923c5ae796b27261fbc052d36f4ea3c79756d06acc72e6",
-      "size_bytes": 392
+      "sha256": "66dce0a074b6494595d6c468dd9c9cf06100556dda05fb39a9d3a00d1a7a91ff",
+      "size_bytes": 376
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/happy.vcf.gz.tbi",
-      "sha256": "9a80f656d9d583cf0b464372b6378dcf07a5cda2b07d1bcbdb32e7e5e568c6aa",
+      "sha256": "4f4b0e0c716df4ba96fc0b3be431a04d20e8babeba5793c0827121bf6af064aa",
       "size_bytes": 105
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/engine_compare.json",
-      "sha256": "451d3e3123f1255841be7dbbf8f50c90273b6c39c4dfca6ebf2a9ffa36c75207",
-      "size_bytes": 180
+      "sha256": "fb8ad2f386496d0d49a6a755a6d6fbe1873644850f045a70c9a8979e147a1a23",
+      "size_bytes": 509
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/phase2_pass_plain.json",
+      "sha256": "3434076d0f8aaff3c8bdfdd7b4996e323546931c8fd061e4b270a79e3b24a63c",
+      "size_bytes": 938
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/phase2_pass_primary.json",
-      "sha256": "4a57409f165965dbabe5e9d11f28018e5dcb8b44cfc060a936e58e1a105f6f2c",
-      "size_bytes": 955
+      "sha256": "d5fcddd3765701f1e6ca6b268e7658fe19f0776c7b0080e3dc71057ad38cd60e",
+      "size_bytes": 960
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/infra_features.json",
+      "sha256": "63b578bca0db8c1fc54b0d52dee55e454c7300abb93b37e432431324eb707937",
+      "size_bytes": 328
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/co_deploy_results.json",
-      "sha256": "de6ba01e9c11276f58e63c7b706c211c3e3f99158c097d9da95e0bdcbd804d12",
-      "size_bytes": 232
+      "sha256": "316d64ce537031fbe85ff22e7ba659c8b7e35f123e06522bc4e99b592807155d",
+      "size_bytes": 265
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/wes_request.json",
-      "sha256": "704bd6259b7f39c13e322ff3980dcfcd8782ed26af9dddd84935a8089d64f539",
-      "size_bytes": 963
+      "sha256": "491cff4fb9dfbe7a97faf0d2b47862c01ea6d33b2c73a7d42f2a4897d0fad47e",
+      "size_bytes": 953
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/benchmark.json",
-      "sha256": "cea1483d8f62f83b5143036f8d8be1e9f82577cd62c13e9c0f2058eeb954593f",
-      "size_bytes": 168
+      "sha256": "976d9c3e80a55a670356007ca7546266075623cf569d418029c5a0e5db85d182",
+      "size_bytes": 226
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/phase2_pass_crypt4gh.json",
+      "sha256": "5550583a22ff201f6d908311c03053a2f2b7addb4a426e69499a2864441a6095",
+      "size_bytes": 956
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/interval.txt",
@@ -54,63 +80,153 @@
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/africa_features.json",
-      "sha256": "57465a3d4199f30c9c2bd7a2c72fb707b48e503c5c0777f8f507c9ce6f6d85cb",
+      "sha256": "8e2cbe015aecc40f03c2a59be0d649ced44b23e696d6db82b1cfa0864b6988f7",
       "size_bytes": 354
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/happy.summary.csv",
-      "sha256": "a8566e40e57cbeb08886cb583a13e0ae4a919593fad8b730ff98ee60db8c1f95",
-      "size_bytes": 358
+      "sha256": "f6ef434b65fbf4222edb0195b4c91cc5369ff90c397a95788b108fd29f4ad402",
+      "size_bytes": 340
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/happy.extended.csv",
-      "sha256": "99a5961bd0809dbcc5af668a373a93c58d3fd3ff9a40185dcfcb0d6123bb24dc",
-      "size_bytes": 2467
+      "sha256": "891dcd4eb5adb08d6b17c0ee72263a1ba0c3fdbbc0983aa9ecb9553e3e1a83c5",
+      "size_bytes": 2407
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/drs_mapping_phase_plain.json",
+      "sha256": "4aa403014891d2a7de570fae6f35325b342a714d094d9c8cc191611cd57dd02f",
+      "size_bytes": 1680
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/benchmark.phase2_plain.json",
+      "sha256": "976d9c3e80a55a670356007ca7546266075623cf569d418029c5a0e5db85d182",
+      "size_bytes": 226
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/happy.runinfo.json",
-      "sha256": "5177b39365a467bbcd4295437694a08fc009f595edfc3cbad12b6fc1701bd1eb",
+      "sha256": "e2055d2c123e37a7e301c2998e607d22fa7b43e19e60fa1ffb6c1c62e4dd0244",
       "size_bytes": 3142
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/happy.vcf.gz",
-      "sha256": "a6d6cf02eb09c48c1800d165a9da508f12a67f3a42943c54697f835a40b1f91d",
-      "size_bytes": 904
+      "sha256": "2d89cbc870eeb5a1f91526e679c36bbc8a244daa32fa3da1313149bf6c52be20",
+      "size_bytes": 909
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/happy.roc.all.csv.gz",
-      "sha256": "ac9ca0754f8e1cfa3ef498c432745b68e503ab2360ea90754fc11de5e9d2918b",
-      "size_bytes": 472
+      "sha256": "8661688210ce14d0fa271d2863e5198eb5d70e26e189affd623d420d16e89f6f",
+      "size_bytes": 451
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/trs_fetch.json",
+      "sha256": "d9b097da7f8f68c9b06ce3deb8911b77df69e1555e888806a83ee45fbd7be739",
+      "size_bytes": 430
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/dataset_profile.json",
-      "sha256": "3e4037a0701aba968790a10f525153226a9920a154c05513f591e75be6dd9e66",
-      "size_bytes": 915
+      "sha256": "545a52515b4675241db3d6b7bbb7a467a3c5d683f9c6f457dc8759016418a7b9",
+      "size_bytes": 943
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/happy.metrics.json.gz",
-      "sha256": "e704b115366d6451b78a016e122cffe76b37ec1d3ce00e38fe438337a27e346c",
-      "size_bytes": 1977
+      "sha256": "4eb4eed843dcf16ae7fb538c8ca5c3aab4d79f122be7b339e95214d189d24809",
+      "size_bytes": 1949
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/africa_results.json",
-      "sha256": "9a6ff63c204993a48a4de83cccf45f1617d7c749eb583f97bd7018a054a39da9",
-      "size_bytes": 2377
+      "sha256": "1369caf53304b496ea5de3bc8bc5fec4858b5b393904fcf43273b77aa254ec03",
+      "size_bytes": 554
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/gatk_rs_wes_result.json",
+      "sha256": "e6785983823ed37813c35f52b0f9f8cb665e815638c5bb09bd919b388cb86047",
+      "size_bytes": 420
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/drs_micro.json",
-      "sha256": "849297f0324d717fe689ce29aefeb9de4d27c144e81c43d71adf9ba4b1245da6",
-      "size_bytes": 519
+      "sha256": "54cc4196b9d308de3b3e7c0611c167cfe3ee0cdef5156ffd3e6600f31024589d",
+      "size_bytes": 535
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/query.vcf.gz",
-      "sha256": "ff81762a18c8846a36fec407fc3b4de51a71bee4ce29a3d58ea78089e3e8fee6",
-      "size_bytes": 4037
+      "sha256": "63c5c623040cf8af075322f369a99e98682f242842d61894418bba52a7cf64cd",
+      "size_bytes": 3791
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/RUN_MANIFEST.json",
+      "sha256": "263a747143085fd946541d03e1f1086edec2e402c5a515867087ae75ec25b37b",
+      "size_bytes": 2940
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/benchmark.phase2_crypt4gh.json",
+      "sha256": "976d9c3e80a55a670356007ca7546266075623cf569d418029c5a0e5db85d182",
+      "size_bytes": 226
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/happy.roc.Locations.SNP.csv.gz",
-      "sha256": "df6ee99609550177227c5e59fcbfb7d1b5a375b4d9bbe251c7ae36b23ab99795",
-      "size_bytes": 387
+      "sha256": "ac89108be855146ba0837e3613e6a302bf6764034aa1c03b739eef984c20238d",
+      "size_bytes": 370
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/state.json",
+      "sha256": "d0a0929640ef6bebc9de1ef88e80a4c0f0b4a576df1e7270693a31303456242e",
+      "size_bytes": 192
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/inputs.json",
+      "sha256": "633f1685f59dcc3570bfabd98d99647f166b951b87838485495ed2241f4f0fb9",
+      "size_bytes": 755
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/state.json",
+      "sha256": "6daf88a41052224fd11993c25ce82f6f5463996c15533de8ba13f72c78035114",
+      "size_bytes": 197
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/params.json",
+      "sha256": "c861d0dd832489d64b676cae952573bf5bb6274d7975af097903d5a520f58484",
+      "size_bytes": 650
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/.nextflow.log",
+      "sha256": "4d536b86b9b70ac300a3a5950628825023d10201539330f2583b0371a8275725",
+      "size_bytes": 9418
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/nextflow.config",
+      "sha256": "cbec4477cef1d664b5a771b30922069dc5bbc562359c0e92aa2f12fb38217d2c",
+      "size_bytes": 30
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/workflow.nf",
+      "sha256": "345f3247c38a8ff8020994016f70091ef4ec083f34a877ea3b2e1e7ec9462f6e",
+      "size_bytes": 1947
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/stdout.txt",
+      "sha256": "def9670906f4f5735666d026257a94d5b965001cdf8eb7aa91c81408a9c10abb",
+      "size_bytes": 13624
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/workflow.wdl",
+      "sha256": "5f2427e6c709ec9a879af05946e201cb01688a8bef1e4aa5599f32f5e4b3977d",
+      "size_bytes": 1969
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/state.json",
+      "sha256": "1d0cf3fdb372681a7fe91ae8c927e4993977b003fe3e197b6a1009621532862b",
+      "size_bytes": 192
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/cromwell-tes.conf",
+      "sha256": "97acb86b6ccdf15143a371df03860d0d6185022a89ec30026a3339eec483f64e",
+      "size_bytes": 446
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/inputs.json",
+      "sha256": "9d74c179f55717fe0288f84b8b92b91e7f4fa224b0130af2ad75bcde5364607d",
+      "size_bytes": 755
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KVTCN5H7BRXN1RS4C39PDQJ1/state.json",
@@ -136,6 +252,556 @@
       "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KVTCN5H7BRXN1RS4C39PDQJ1/workflow.nf",
       "sha256": "345f3247c38a8ff8020994016f70091ef4ec083f34a877ea3b2e1e7ec9462f6e",
       "size_bytes": 1947
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/state.json",
+      "sha256": "967196f793447fe241bba16f59a0672b16f893f97566c8f009dba17efdddaf80",
+      "size_bytes": 197
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/params.json",
+      "sha256": "d25bb9a9fc8b7d3344dc4e3284dfbcf0ad29e27e69b7c198e4a449288e0264a5",
+      "size_bytes": 650
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/.nextflow.log",
+      "sha256": "9499c01f6c7658c522dedd7727973a76a7099a8c5e423d2126f7afdfbd87e6d8",
+      "size_bytes": 9423
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/nextflow.config",
+      "sha256": "cbec4477cef1d664b5a771b30922069dc5bbc562359c0e92aa2f12fb38217d2c",
+      "size_bytes": 30
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/workflow.nf",
+      "sha256": "6db5ff63c62e7f85aa321f2de66bb006439d971202fd40b7fde3a163faa0a1d3",
+      "size_bytes": 1951
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/stdout.txt",
+      "sha256": "643d3dc6e8f6ad589d6ace1b9d143ce22bd3e2bee223440d38bb9f421fe0b23c",
+      "size_bytes": 13624
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/workflow.wdl",
+      "sha256": "5f2427e6c709ec9a879af05946e201cb01688a8bef1e4aa5599f32f5e4b3977d",
+      "size_bytes": 1969
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/state.json",
+      "sha256": "f66e1634ed391766c99dae5774f0c8ed10e5d6665dd1e008a6b7090bdf4e01de",
+      "size_bytes": 192
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/cromwell-tes.conf",
+      "sha256": "f4a6e933404435ba7253384627bfefcd1d694dff366f4045b5e284ae50356f6b",
+      "size_bytes": 446
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/inputs.json",
+      "sha256": "a2bd890be7fabd561aeec8d3ff0894462769a1777d73bdefd32fdac626086d24",
+      "size_bytes": 755
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/stdout.txt",
+      "sha256": "492e23d64341ebf6363e64ce1bfbff7bc15242dd0ab7e0b162c16de3add18638",
+      "size_bytes": 13627
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/workflow.wdl",
+      "sha256": "5f2427e6c709ec9a879af05946e201cb01688a8bef1e4aa5599f32f5e4b3977d",
+      "size_bytes": 1969
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/state.json",
+      "sha256": "5dce38694977a9aad5419147f2973e916b8498ade1fc7a46abebd4c397c71763",
+      "size_bytes": 192
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/cromwell-tes.conf",
+      "sha256": "92fc86ba888853803d911a49d3acfcfe2a5abbfbbb45d67ad85ba2defa45d047",
+      "size_bytes": 446
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/inputs.json",
+      "sha256": "fea052770acfa493636471b4658c79b80f699f156b8217df898f4c37d2462514",
+      "size_bytes": 755
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/stdout.txt",
+      "sha256": "cd41025cc559c5b6e83b2d727b0fdb6f4a4e7c42f5e28f151c6451be5e882914",
+      "size_bytes": 13621
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/workflow.wdl",
+      "sha256": "5f2427e6c709ec9a879af05946e201cb01688a8bef1e4aa5599f32f5e4b3977d",
+      "size_bytes": 1969
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/state.json",
+      "sha256": "f80a07b2fee5a6539f5028f77adf11ba8bdf1a92342734c33e4697df09fe6dc9",
+      "size_bytes": 192
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/cromwell-tes.conf",
+      "sha256": "ecf44215df381292b54338f6b4e9f74efe490417c005e97ab63335604f3a9000",
+      "size_bytes": 446
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/inputs.json",
+      "sha256": "9415f40e5c507141f8d64ea4fe247a6752cc1a987a3174f3f6466fd56faab325",
+      "size_bytes": 755
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/state.json",
+      "sha256": "d92e53e3d4023987eec4d06f2bcd178117b0040a74070ad230304b35f121e51e",
+      "size_bytes": 192
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/inputs.json",
+      "sha256": "189c0ce2281cc9c1127fe840557b704fa1fb90b159de07aca9cd14444b727bfd",
+      "size_bytes": 755
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/state.json",
+      "sha256": "0852c526e15af337e66b6fff72d195ec97287b2cf043db5f167c0e73a4c4035b",
+      "size_bytes": 192
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/inputs.json",
+      "sha256": "2b8cd4dca97d3f7304d912601803d8509de7a85d175afdede4d9a38701cf32aa",
+      "size_bytes": 755
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/state.json",
+      "sha256": "c683a22b446110aedd8416ff16f7f9b6f22bbae10379178f4259848e1c956335",
+      "size_bytes": 192
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/inputs.json",
+      "sha256": "85765122740bad9c7d348254d4b3edd8f4eecc680b89b327c9b0d844a9dda6c3",
+      "size_bytes": 755
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/stdout.txt",
+      "sha256": "a5a7c09ee6fd572b6ac89dfcca5f29022b8a6c98aaf1ddc4217da43d77e171c0",
+      "size_bytes": 13624
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/workflow.wdl",
+      "sha256": "5f2427e6c709ec9a879af05946e201cb01688a8bef1e4aa5599f32f5e4b3977d",
+      "size_bytes": 1969
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/state.json",
+      "sha256": "133cc4751364bc558141f70a942f78f308319754a64f639d45000ccb305bff95",
+      "size_bytes": 192
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/cromwell-tes.conf",
+      "sha256": "3399679a897e86ec5484fd9323d70c521dead3d15ae069ae8cbe19308c811a64",
+      "size_bytes": 446
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/inputs.json",
+      "sha256": "db33971d46f693ea901b3f6a9d6c3de62b3c68b254d805af4e0257dbaf60f0f7",
+      "size_bytes": 755
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/stdout.txt",
+      "sha256": "9374883486cc15c33a2de96c3ba98a1184e5b526de75777b9b7929a487d7d630",
+      "size_bytes": 153
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/state.json",
+      "sha256": "63cb6d3a31e949f8acb39fab86d086933e8a5cca4564e45867188ae3698cdf01",
+      "size_bytes": 197
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/params.json",
+      "sha256": "89677af5883f95ef0c63873ae613cf98b9b85f2e3668ae5865081f2993713eb9",
+      "size_bytes": 650
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/.nextflow.log",
+      "sha256": "a5e811b4c6b6392a0ac3a485e43171817f8b2c33a2f9fa9d3ed6977390393093",
+      "size_bytes": 9418
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/nextflow.config",
+      "sha256": "cbec4477cef1d664b5a771b30922069dc5bbc562359c0e92aa2f12fb38217d2c",
+      "size_bytes": 30
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/stderr.txt",
+      "sha256": "33de6ecf27a74516e387c73aee571ca7be88833296a10b233766e6a1bbbb560d",
+      "size_bytes": 76
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/workflow.nf",
+      "sha256": "6db5ff63c62e7f85aa321f2de66bb006439d971202fd40b7fde3a163faa0a1d3",
+      "size_bytes": 1951
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/stdout",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/script.background",
+      "sha256": "77ed5891f9e2a3307c7b7dc5e3e1507af9952673780657447ec4732850bb9ed8",
+      "size_bytes": 545
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/stderr",
+      "sha256": "d9d328af94f334a17841a26336c0da780fcb939ebf8f7074000dce0764742cef",
+      "size_bytes": 6145
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/script.submit",
+      "sha256": "4404a988a1b6e8f1806d800d192e8d39e87b4d06bee96fcef0b0dc863c835cb7",
+      "size_bytes": 1758
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/script",
+      "sha256": "bbe6e7ec03ae78847dea877ad6fd6e36908e6e9d64647d269090520ba29e5ace",
+      "size_bytes": 3258
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/output.vcf.gz.tbi",
+      "sha256": "0466cd89f75272ead2e1247ae2e488bdef4961286f65388271badc34dc32333b",
+      "size_bytes": 77
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/output.vcf.gz",
+      "sha256": "1a0e80e45163ce8784fbeb6919879ac5c9d754b2dcb3151458fb0e8ea1b8902b",
+      "size_bytes": 3791
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/stdout.background",
+      "sha256": "0d2bb7393be8b10cbcaecc913d248a9c5e501d586986ccf9c76ce914a9ec431a",
+      "size_bytes": 86
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/docker_cid",
+      "sha256": "24251e8bec58ca367a9f4dc3ec1728ae2c41e572738bc0a84fa47ca6ea251766",
+      "size_bytes": 64
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/rc",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size_bytes": 2
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/stderr.background",
+      "sha256": "0334c6a734078b7bc6e504cada3674805502a154476fb3a677be93da1db69f32",
+      "size_bytes": 6297
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/ref_local.dict",
+      "sha256": "53f0fa7cbe60e32c7cc3123def93bb654477b587d6d21f1f820eef8353aac50b",
+      "size_bytes": 190
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/execution/tmp.tU1q1j/root/.file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/inputs/1515144/18441121041340457564",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/inputs/1515144/13555795177871100670",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/inputs/1515144/15951236208150576333",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/inputs/1515144/18351569998989052042",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/inputs/1515144/3984253791050259437",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024AZJMP0H3N0ZQFTEY6P6Q/cromwell-executions/TinyGermlineHC/d4b393da-c878-4a73-93d2-f918f7c771fe/call-HaplotypeCaller/inputs/1515144/8407055539368932269",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/.nextflow/history",
+      "sha256": "c42d95dfb8a5dcf6929d51010c46cbd61d715820936c684c81c0fd9182d8477b",
+      "size_bytes": 178
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/truth.vcf.gz.tbi",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/.command.begin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/truth.vcf.gz",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/drs_ref.fa",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/ref_local.fa",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/.command.run",
+      "sha256": "4f8ef963e4b8a543e5ea12b110ad7a12ee3c68d435538c75cde12a767cac41aa",
+      "size_bytes": 4930
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/drs_input.bam.bai",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/.command.log",
+      "sha256": "9f317aab7a48a615aa46b5f74d7d4210cb204323c6eb7b66c2706edc25c413c0",
+      "size_bytes": 6522
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/ref_local.fa.fai",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/.command.sh",
+      "sha256": "04bd889a43a570b5621562c3b7f6d8bad94e6738e99609acc7d9edb1ad1067ae",
+      "size_bytes": 669
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/drs_truth.vcf.gz",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/output.vcf.gz.tbi",
+      "sha256": "281c3d5b26e1c3b3105737060d2bae858756cf953067564ba9bb8cb3e123f326",
+      "size_bytes": 104
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/drs_input.bam",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/input_local.bam.bai",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/input_local.bam",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/drs_ref.fa.fai",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/output.vcf.gz",
+      "sha256": "f883519bcca5f498822bb5136a82ab77b4f480e3af275bdf56ad82f1ef0bd044",
+      "size_bytes": 4036
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/.command.err",
+      "sha256": "972d279b65f1df2270692c21e54c58e885bd98bf6de7c7786ccefa9686a4e053",
+      "size_bytes": 6505
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/drs_truth.vcf.gz.tbi",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/.command.out",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/1f/63e9cea08883bb5ee0edf39f313ae0/ref_local.dict",
+      "sha256": "1668ca3f1cf57c1dca395f7fd35ed67eba0aac8a5e6ea6499c5a632c5bd2177c",
+      "size_bytes": 226
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/stage-1fe83e7c-9a38-41db-b6e4-d1a249e8154f/a4/0c64d40300984188ea1623d0331633/stream",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/stage-1fe83e7c-9a38-41db-b6e4-d1a249e8154f/ca/646065db94a967e75d29fb947bb3ce/stream",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/stage-1fe83e7c-9a38-41db-b6e4-d1a249e8154f/7e/fa1f7b10495f8bb0f26a5964aaa9c8/stream",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/stage-1fe83e7c-9a38-41db-b6e4-d1a249e8154f/21/d35237487221518b8d7909cf405c27/stream",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/stage-1fe83e7c-9a38-41db-b6e4-d1a249e8154f/00/29ba733c70113b2962fc0579fdae95/stream",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/work/stage-1fe83e7c-9a38-41db-b6e4-d1a249e8154f/12/f1221d469dbb86a5a3ce66049c095d/stream",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/.nextflow/cache/1fe83e7c-9a38-41db-b6e4-d1a249e8154f/index.crazy_picasso",
+      "sha256": "a34990fa63ba726972a09d51527126f1934ad2faa704fc3e4f7ad0f59d824ef5",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/.nextflow/cache/1fe83e7c-9a38-41db-b6e4-d1a249e8154f/db/000003.log",
+      "sha256": "f9a29164895106d8f6bb8b8d13f1d07460103f39cdf51d341aa2c0177667a0c1",
+      "size_bytes": 1453
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/.nextflow/cache/1fe83e7c-9a38-41db-b6e4-d1a249e8154f/db/LOCK",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/.nextflow/cache/1fe83e7c-9a38-41db-b6e4-d1a249e8154f/db/CURRENT",
+      "sha256": "1005a525006f148c86efcbfb36c6eac091b311532448010f70f7de9a68007167",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZBHJJ6NP0R7EANEKCT7RRTB/.nextflow/cache/1fe83e7c-9a38-41db-b6e4-d1a249e8154f/db/MANIFEST-000002",
+      "sha256": "e292f241daafc3df90f3e2d339c61c6e2787a0d0739aac764e1ea9bb8544ee97",
+      "size_bytes": 50
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/stdout",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/script.background",
+      "sha256": "01c26d1eb8607d8d316abe58822428d53613e44be051a70b2063877a709ba814",
+      "size_bytes": 505
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/stderr",
+      "sha256": "1975d1fcdcc681c9ee8ee44f09531002eb3754bcdf7ac661c0c7512cb21f4051",
+      "size_bytes": 6147
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/script.submit",
+      "sha256": "b3913af844b5ddefca7c9a9d7dfd6a1de5efb41430c6aa1428435666977e0dc7",
+      "size_bytes": 1658
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/script",
+      "sha256": "77f73c712cb8a26d3067c1e513bfa60c155fb9889d0f615d1ac4db8c2e8b88ee",
+      "size_bytes": 3254
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/output.vcf.gz.tbi",
+      "sha256": "0466cd89f75272ead2e1247ae2e488bdef4961286f65388271badc34dc32333b",
+      "size_bytes": 77
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/output.vcf.gz",
+      "sha256": "4f58bed2fdab5eb275a0702e3ba365c2dba33f089af384c8a2b00c2af2329ea6",
+      "size_bytes": 3792
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/stdout.background",
+      "sha256": "b93301c88ba2658c1d1e67f297ff99991b58ece8cbdd2c5d21d0b592bf1bf17c",
+      "size_bytes": 86
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/docker_cid",
+      "sha256": "36436a0bf50f4b8db92bcff06dd30be23cc0dbf62a3988fcd91f46d90fd93f82",
+      "size_bytes": 64
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/rc",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size_bytes": 2
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/stderr.background",
+      "sha256": "d78b518ed6ff7beb2df5f8a1603c0c722220c638d03f7dae9484e1cdf3d13dea",
+      "size_bytes": 6299
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/ref_local.dict",
+      "sha256": "e8940940ea2609635367a47e8495ac32b5335025058037215e6a1eaec895a714",
+      "size_bytes": 190
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/execution/tmp.hciXtw/root/.file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/inputs/1515144/14892228098273534870",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/inputs/1515144/6000423501074528889",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/inputs/1515144/600522034572701921",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/inputs/1515144/8396395804949232015",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/inputs/1515144/3747921171227950327",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02J0E52PJP2PFH4ZR6CKE2A/TinyGermlineHC/cf8de07b-b947-4d20-bacd-6f948979ab48/call-HaplotypeCaller/inputs/1515144/3845379778150404820",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
     },
     {
       "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KVTCN5H7BRXN1RS4C39PDQJ1/.nextflow/history",
@@ -306,17 +972,1030 @@
       "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KVTCN5H7BRXN1RS4C39PDQJ1/.nextflow/cache/51153803-c914-4db1-b9f6-9173a816cdff/db/MANIFEST-000002",
       "sha256": "e292f241daafc3df90f3e2d339c61c6e2787a0d0739aac764e1ea9bb8544ee97",
       "size_bytes": 50
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/.nextflow/history",
+      "sha256": "7416fc9f50b1db0466b5066331764c00f2dc60eea53f51264eb79fc9b38b05aa",
+      "size_bytes": 183
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/truth.vcf.gz.tbi",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/.command.begin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/truth.vcf.gz",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/drs_ref.fa",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/ref_local.fa",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/.command.run",
+      "sha256": "a203647d12a3b1bb044edaced58834fb9e70781d527dd496c41849e8156be23d",
+      "size_bytes": 4930
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/drs_input.bam.bai",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/.command.log",
+      "sha256": "75885d94cac83730f6a403e3e0b94111a27d84dcb77cd0fd84a8da9a8cc4369a",
+      "size_bytes": 6000
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/ref_local.fa.fai",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/.command.sh",
+      "sha256": "4eb142645df51fa1d7f39fb700b8623bceafe7fd03241557c87ac629ae486d85",
+      "size_bytes": 683
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/drs_truth.vcf.gz",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/output.vcf.gz.tbi",
+      "sha256": "0466cd89f75272ead2e1247ae2e488bdef4961286f65388271badc34dc32333b",
+      "size_bytes": 77
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/drs_input.bam",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/input_local.bam.bai",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/input_local.bam",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/drs_ref.fa.fai",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/output.vcf.gz",
+      "sha256": "19d9c6ddcc0a2322d01fbff6dd92d70aaf8e61c5ca02e397f34188b6259ca07c",
+      "size_bytes": 3792
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/.command.err",
+      "sha256": "bd9825956a902fa43df0857bfd1ece7077b959225f1ce8b5623bbe516cb4e985",
+      "size_bytes": 5983
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/drs_truth.vcf.gz.tbi",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/.command.out",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/7d/2a4b7f39410048cac3b82689bfd774/ref_local.dict",
+      "sha256": "06a843356a5f0742c86ced7873232f9eab058cd2aecb16f3cf408251e382e82b",
+      "size_bytes": 226
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/stage-02407f66-3718-4686-af2b-b6238b8aa705/59/728cfdcd80d67ca5faaa1d5b24ee29/stream",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/stage-02407f66-3718-4686-af2b-b6238b8aa705/66/2ea4c23cfe8444895a6873c72fe6f2/stream",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/stage-02407f66-3718-4686-af2b-b6238b8aa705/b2/ac3731bb6bc21c468022146263a4c6/stream",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/stage-02407f66-3718-4686-af2b-b6238b8aa705/f4/deb3fbad7b63b90ab26bffbfe12447/stream",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/stage-02407f66-3718-4686-af2b-b6238b8aa705/e3/93604ade479db7a90bd545382f95a2/stream",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/work/stage-02407f66-3718-4686-af2b-b6238b8aa705/18/467c5ce29cb733eeb03a8b6c15f8af/stream",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/.nextflow/cache/02407f66-3718-4686-af2b-b6238b8aa705/index.astonishing_wiles",
+      "sha256": "c7433ff09caed81cebe33cdebe29d8596a051c60150e76225cbd8036e8859ceb",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/.nextflow/cache/02407f66-3718-4686-af2b-b6238b8aa705/db/000003.log",
+      "sha256": "5800ec76239f1812cf1f26f355e99cafbe5e205bf4a88575fd5d51b4c086fa18",
+      "size_bytes": 1461
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/.nextflow/cache/02407f66-3718-4686-af2b-b6238b8aa705/db/LOCK",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/.nextflow/cache/02407f66-3718-4686-af2b-b6238b8aa705/db/CURRENT",
+      "sha256": "1005a525006f148c86efcbfb36c6eac091b311532448010f70f7de9a68007167",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M024H2ZBHV557FJ34CRH8CE4/.nextflow/cache/02407f66-3718-4686-af2b-b6238b8aa705/db/MANIFEST-000002",
+      "sha256": "e292f241daafc3df90f3e2d339c61c6e2787a0d0739aac764e1ea9bb8544ee97",
+      "size_bytes": 50
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/stdout",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/script.background",
+      "sha256": "ffd388cb3e35b427c21c285e303e0a83efbbe5fff889e3c93e84dd29f530a794",
+      "size_bytes": 505
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/stderr",
+      "sha256": "fc416dce6cdd033922265354afb55843a06e1b31bce6ebb795e333839e6eecbf",
+      "size_bytes": 6147
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/script.submit",
+      "sha256": "6b5caa93538577459bf51329c80f698a5a2f13f07107cd27d3af1b1bf0029875",
+      "size_bytes": 1658
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/script",
+      "sha256": "042545a56db0a80a229cffc943c3f2d389f7ba2c9396310fe1eb8472402bd725",
+      "size_bytes": 3254
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/output.vcf.gz.tbi",
+      "sha256": "0466cd89f75272ead2e1247ae2e488bdef4961286f65388271badc34dc32333b",
+      "size_bytes": 77
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/output.vcf.gz",
+      "sha256": "14d8c5bee39a485e75f2d90e8687bb96f6e7be080dfe0b262a6b5bc1d95c4413",
+      "size_bytes": 3793
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/stdout.background",
+      "sha256": "81750bdf19412b53cb6372c1ef871fcbef3fd7c738dc4f2b69d94e443ba34ad7",
+      "size_bytes": 86
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/docker_cid",
+      "sha256": "03f660ef12528e9b7fc42949d4ca3a2d7eea6635fe00e66ebcd9d8132ca74dbb",
+      "size_bytes": 64
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/rc",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size_bytes": 2
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/stderr.background",
+      "sha256": "63234102df49e8deb269add79a0c03da3967cc3f5ac2d990f4a81d5adc3cec18",
+      "size_bytes": 6299
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/ref_local.dict",
+      "sha256": "450aa55629a705c23db0f8e57b6533a866e6c1211439e08c32e583a1d7f2990b",
+      "size_bytes": 190
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/execution/tmp.XM4Bso/root/.file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/inputs/1515144/853463774670723408",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/inputs/1515144/398367978889877262",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/inputs/1515144/9365823928283839326",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/inputs/1515144/14059783756348754968",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/inputs/1515144/2417336702151490848",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02HRSQ03RV8HG2FC8HEW4KQ/TinyGermlineHC/79a8118e-d657-45f5-a5fc-1c9de2169b1c/call-HaplotypeCaller/inputs/1515144/13026893428381248322",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/stdout",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/script.background",
+      "sha256": "acaa4360ff5ab24391554c1410067d4063d9955f931184ce9214f00a5f8eaf9f",
+      "size_bytes": 505
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/stderr",
+      "sha256": "10ed01f78d8191272e2ae3319d3074c89c58e8874b763878ee3187fe5e689592",
+      "size_bytes": 6147
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/script.submit",
+      "sha256": "46188934181b01d8444973d4ae1f2ea3a466f0e3e3de7150b6650c104e631a67",
+      "size_bytes": 1658
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/script",
+      "sha256": "c97e1862c41903dd801e9e30508c3dbd5db3b02f11dc1320ae3ebc90587a008d",
+      "size_bytes": 3255
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/output.vcf.gz.tbi",
+      "sha256": "0466cd89f75272ead2e1247ae2e488bdef4961286f65388271badc34dc32333b",
+      "size_bytes": 77
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/output.vcf.gz",
+      "sha256": "71135b0247c2aaafb8a3ff98acdc9968fe0e985db29275482ef5196387e3d18f",
+      "size_bytes": 3792
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/stdout.background",
+      "sha256": "3753d97e377700aae77ef9aefcefa08e4ca05dba06e67d8bda8b30f890949477",
+      "size_bytes": 86
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/docker_cid",
+      "sha256": "ee5e07f03d091cf3133b5ce0ac064bf5c569826c8a76fc412a0be427badfaaf7",
+      "size_bytes": 64
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/rc",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size_bytes": 2
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/stderr.background",
+      "sha256": "93ebdcfd40055cc8897a40f6f722b76d25e998bf508165c8dbd9e515a3832426",
+      "size_bytes": 6299
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/ref_local.dict",
+      "sha256": "d364d047b7c4d9a968cfd4af5da9b9dda7301dc5ef4c64086fe78da6d73c1694",
+      "size_bytes": 190
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/execution/tmp.DjOPSw/root/.file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/inputs/1515144/994095519930821472",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/inputs/1515144/2427048602074018320",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/inputs/1515144/8622513115986012513",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/inputs/1515144/3049528374882639706",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/inputs/1515144/10738249732275978264",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QQ74Z1CYMND5226R4GZ1A/TinyGermlineHC/8f6d076c-4a24-43d0-ace9-0de0825ec667/call-HaplotypeCaller/inputs/1515144/10521121091151829516",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/stdout",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/script.background",
+      "sha256": "913d947d286aa4bde5e74c9ef3259b1e462def7ab8d3ffa0f6e7517266d4d3a6",
+      "size_bytes": 505
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/stderr",
+      "sha256": "b1039a0b0172bfe7bc7a8c43d34e5f42713dd2488f06c4a7fe817d93ba508156",
+      "size_bytes": 6147
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/script.submit",
+      "sha256": "98add061721392482ff663ee6a1c62d0a89ae11aa687d503baded523d9c74222",
+      "size_bytes": 1658
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/script",
+      "sha256": "86b232fdafbf870558a0ec80b9bc66838a990ad471a8ec54e8eaf172fdda89de",
+      "size_bytes": 3253
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/output.vcf.gz.tbi",
+      "sha256": "0466cd89f75272ead2e1247ae2e488bdef4961286f65388271badc34dc32333b",
+      "size_bytes": 77
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/output.vcf.gz",
+      "sha256": "0f77d4c18bd4e9b82805f56d74832b264542b9420f06996fdab3262a50d1a71f",
+      "size_bytes": 3791
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/stdout.background",
+      "sha256": "773527cfb309de9fbca35889479c076dac9541d037515c26b6bc51c9d9dacd45",
+      "size_bytes": 86
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/docker_cid",
+      "sha256": "fe319b82d7b31cf4c6a1c6bc4583758851e7b2082931baac96bd2a975b7a7656",
+      "size_bytes": 64
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/rc",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size_bytes": 2
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/stderr.background",
+      "sha256": "af9d36e879c291ec4dca5a0071a034beed711f410e8033e368319a3ad1f6bba6",
+      "size_bytes": 6299
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/ref_local.dict",
+      "sha256": "e0c3002557d08e318824b5e5014d1dbfb57d64004a6383e504fd57e2e8ee87ee",
+      "size_bytes": 190
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/execution/tmp.fTTDb6/root/.file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/inputs/1515144/11404722453722207824",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/inputs/1515144/7893072783875792929",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/inputs/1515144/76981179739368229",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/inputs/1515144/4866884202940569906",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/inputs/1515144/2647044331498684290",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02NN06H9BF3GCCRPEESVBGW/TinyGermlineHC/adc1ac09-a496-4bfa-82d5-338625e2dbce/call-HaplotypeCaller/inputs/1515144/4724031277522259454",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/stdout",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/script.background",
+      "sha256": "6207077d6933b7e8283eba23afc19b3a123f2be330d8237eeca78ae9aaf0aee4",
+      "size_bytes": 545
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/stderr",
+      "sha256": "5e9f872031da1782c33bc6e037e40182fedaf65371d1da328b865f1f6632e5e3",
+      "size_bytes": 6145
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/script.submit",
+      "sha256": "b8d7d8a59b03d1af199b15287cf3b1e66bc87dc9bfe1aa1746996f855a7ac79c",
+      "size_bytes": 1758
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/script",
+      "sha256": "b829e253517c0ee1f1e09dabd48a265877654051bd787461b7da5a24f1c6fbbf",
+      "size_bytes": 3259
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/output.vcf.gz.tbi",
+      "sha256": "0466cd89f75272ead2e1247ae2e488bdef4961286f65388271badc34dc32333b",
+      "size_bytes": 77
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/output.vcf.gz",
+      "sha256": "53321269475a23abc9d762e02f7a5469406abe6091cbe5e472b94d72a9f15c0e",
+      "size_bytes": 3791
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/stdout.background",
+      "sha256": "4bb862fa44dd99d107178e05aac8521a908eef22d05400dc06db517569fd6e93",
+      "size_bytes": 86
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/docker_cid",
+      "sha256": "8399109f84987a488f18c3ac174eb43388dd2c9fef5feba83119f2a968e9d5cf",
+      "size_bytes": 64
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/rc",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size_bytes": 2
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/stderr.background",
+      "sha256": "addbc299a554702dde4851d914f7372fc06e3b6054a7d1a8d0de685d07fba9c2",
+      "size_bytes": 6297
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/ref_local.dict",
+      "sha256": "781f324cc474efac838c45531eff2e07ea5c01a281d709dcc8128297a9d59379",
+      "size_bytes": 190
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/execution/tmp.pGf3Qq/root/.file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/inputs/1515144/17451906498353249216",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/inputs/1515144/10582567001399866075",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/inputs/1515144/17480990471667335386",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/inputs/1515144/10478365798531275116",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/inputs/1515144/14395509261470113191",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M023NXWBBKXC15WH89DDE1B2/cromwell-executions/TinyGermlineHC/135c9be1-25a8-4801-8314-7ade16728e67/call-HaplotypeCaller/inputs/1515144/7010698857036884931",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/stdout",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/script.background",
+      "sha256": "1a2ec4556d25e5bffd7b5a96b6f585df8c4640b309b74c2af1a59494459082b9",
+      "size_bytes": 545
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/stderr",
+      "sha256": "5328c58dabf80eb4139e56783cd04442d277b940775809b730ea28a2937dca3c",
+      "size_bytes": 6632
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/script.submit",
+      "sha256": "1d13973f9352553252a50dff31a0eea0e0ab57da0df97020c652fbc91330bfda",
+      "size_bytes": 1758
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/script",
+      "sha256": "d3c73534f732d38d9a6e5b38c93a3ac2569c17c34d968e753e73cec9d89a03e1",
+      "size_bytes": 3155
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/output.vcf.gz.tbi",
+      "sha256": "75c90e85bc0ee79aaf90bef692089d8fd7436007d61c98e88f5e717457487c49",
+      "size_bytes": 104
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/output.vcf.gz",
+      "sha256": "d9600eaadfa7b7f1eebf3d070d5bc471ef15fb530155be8dfb0971dfadba6f84",
+      "size_bytes": 3994
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/stdout.background",
+      "sha256": "b2dd2282b4bc206119a9d9b5e6d0bc3a83ab42ea4b6475954c6996c37777b694",
+      "size_bytes": 86
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/docker_cid",
+      "sha256": "b8dc9de928ae2220fae830e9f95c016649a103ba7c2dd8c3d5dad65908d0f104",
+      "size_bytes": 64
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/rc",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size_bytes": 2
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/stderr.background",
+      "sha256": "9d8edbec14d461fabf6964eb4b61a4a1389969cbe59f9bb10d94a64ff2dd28df",
+      "size_bytes": 6784
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/ref_local.dict",
+      "sha256": "b5b8b3725e9e64b205a4f02993b0eed3df9e7fef493f476ee6d4854e31d847c1",
+      "size_bytes": 190
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/execution/tmp.FCxmuX/root/.file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/inputs/1515144/4879812509102725618",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/inputs/1515144/11268952629765956997",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/inputs/1515144/14113148672121300760",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/inputs/1515144/2870240725406944953",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/inputs/1515144/1744078617436514827",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNC8A6DFYPDWA3C7BNZBRGX/cromwell-executions/TinyGermlineHC/11b64337-a972-4dc4-a2fe-311e54b12c01/call-HaplotypeCaller/inputs/1515144/226713896518745486",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/stdout",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/script.background",
+      "sha256": "c33cb42c44bfd861852b0d6a00c89b9d8ab18309d4950ea36401cb0a0f367d8c",
+      "size_bytes": 545
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/stderr",
+      "sha256": "fa80953dde651cc31185b2c27152538c480b10f21fec08e72e1a80108d7d0020",
+      "size_bytes": 6632
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/script.submit",
+      "sha256": "0008d8c7e22e8844616cd2af0441ed132e2d7e8bd12decd9e2dc79e9d4d88961",
+      "size_bytes": 1758
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/script",
+      "sha256": "fb497c72f242cbebbe9ff52ee4b1606a5ed2e234e3f90676dbd36c502a93c819",
+      "size_bytes": 3156
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/output.vcf.gz.tbi",
+      "sha256": "5e1885b2d4f5494addfb05cb3f85cdfbbc039c80c4cb0aa6c67e08ccaa2ea915",
+      "size_bytes": 104
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/output.vcf.gz",
+      "sha256": "d4683addbbebe4ffb7b813f61407cf6bf8d8c065b9c58ea21ef7f07fdafa1ed4",
+      "size_bytes": 3995
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/stdout.background",
+      "sha256": "8c6e25bc94c11b3fc874c9bae0c5cf5c3b90c0cdc230ae6894ed1e808f0f7eec",
+      "size_bytes": 86
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/docker_cid",
+      "sha256": "57c9c52fffaf19cf8ad4aaed0d9abf2b6ade264f765a92b7cf60feed75806365",
+      "size_bytes": 64
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/rc",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size_bytes": 2
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/stderr.background",
+      "sha256": "dcfc6a18906d61532d5dafae26c83ba0e71f6c3285637e38e520f2ddffddfbe8",
+      "size_bytes": 6784
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/ref_local.dict",
+      "sha256": "ad2989c3ea0e1a08673453b7f2e7cc39b386613af99dd8f87f94f42bc62818ae",
+      "size_bytes": 190
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/execution/tmp.2KI52T/root/.file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/inputs/1515144/15909842251128396533",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/inputs/1515144/7588715475785943642",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/inputs/1515144/1245355052418987746",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/inputs/1515144/14127279774981145865",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/inputs/1515144/7814511443360108090",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01KZNCCAAG8616KAVS3KGA1H21/cromwell-executions/TinyGermlineHC/f9520b3b-d1f2-4ae8-8249-9d11ee715958/call-HaplotypeCaller/inputs/1515144/1984958518843128762",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/stdout",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/script.background",
+      "sha256": "7a3d331050ee5a00f1702b1023f665b066d83c31e4b5e68972424941e752a9d6",
+      "size_bytes": 505
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/stderr",
+      "sha256": "e0828178648d4e225cba829167587661719b03cb65d8fdbf6c357721f567dfcb",
+      "size_bytes": 6147
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/script.submit",
+      "sha256": "4ca64091228bcbaca0fbee736ac7f1cadf560a1244a76f037554bac893c17ba2",
+      "size_bytes": 1658
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/script",
+      "sha256": "b9aed9dfd922f27715b547d43b60e82902c956ac4244a3f3be9a8f5b11f8c25e",
+      "size_bytes": 3254
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/output.vcf.gz.tbi",
+      "sha256": "0466cd89f75272ead2e1247ae2e488bdef4961286f65388271badc34dc32333b",
+      "size_bytes": 77
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/output.vcf.gz",
+      "sha256": "fb169f07481991c01e2875334377ae7e25f31069eab82ab2a19d83577f26cc48",
+      "size_bytes": 3792
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/stdout.background",
+      "sha256": "1af6dfaca31e84fd82329e204a319d119333137308e51f3cb37f3a9651b31bd0",
+      "size_bytes": 86
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/docker_cid",
+      "sha256": "9c2fcbd32fce8a0a698f58188bfbbbbea71486c820ac8b1355c4759c9d6bb068",
+      "size_bytes": 64
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/rc",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size_bytes": 2
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/stderr.background",
+      "sha256": "d27bb9d879f60b85c60348fd2344c98a6d44f9927906c6f56a7e7e1f44c67d7f",
+      "size_bytes": 6299
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/ref_local.dict",
+      "sha256": "bcd46669a037625a033aeec5fdf0cf65e90ae16a72cd923f81e0b5f1dce2a0b6",
+      "size_bytes": 190
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/execution/tmp.Hogrim/root/.file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/inputs/1515144/4323816436347112175",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/inputs/1515144/10653924026199968595",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/inputs/1515144/6311198805173252879",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/inputs/1515144/802079540855457041",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/inputs/1515144/6150135433025763008",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M02QS1S433J92KEXBJ213D9N/TinyGermlineHC/904ae744-9e2d-474c-927e-52d318ee811d/call-HaplotypeCaller/inputs/1515144/5058734993599444359",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/.nextflow/history",
+      "sha256": "b1678d7c6ad83ee049257153177114df1e1bc88923248afb62a40e22e3c7ce68",
+      "size_bytes": 178
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/truth.vcf.gz.tbi",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/.command.begin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/truth.vcf.gz",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/drs_ref.fa",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/ref_local.fa",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/.command.run",
+      "sha256": "bba72bab588b918205ec2ff825b751707135ffecff0f41ee925e331ad1e3936d",
+      "size_bytes": 4930
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/drs_input.bam.bai",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/.command.log",
+      "sha256": "9b043e8c370a2ece563cc4cd0c5100e25dace61c43ea4cc0c91e8c559d9684b2",
+      "size_bytes": 6000
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/ref_local.fa.fai",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/.command.sh",
+      "sha256": "4eb142645df51fa1d7f39fb700b8623bceafe7fd03241557c87ac629ae486d85",
+      "size_bytes": 683
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/drs_truth.vcf.gz",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/output.vcf.gz.tbi",
+      "sha256": "0466cd89f75272ead2e1247ae2e488bdef4961286f65388271badc34dc32333b",
+      "size_bytes": 77
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/drs_input.bam",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/input_local.bam.bai",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/input_local.bam",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/drs_ref.fa.fai",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/output.vcf.gz",
+      "sha256": "63c5c623040cf8af075322f369a99e98682f242842d61894418bba52a7cf64cd",
+      "size_bytes": 3791
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/.command.err",
+      "sha256": "88ef1239ae489f8cc7154f2f12245cb27ab347801e73f041f0e0573409439d94",
+      "size_bytes": 5983
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/drs_truth.vcf.gz.tbi",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/.command.out",
+      "sha256": "95c4c6d1294d3d5d9311d8148e5f156cfca92bbdc9eb1d0ae3820f74a7184631",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/3d/b2a6dd9e440284eac7d8ae66b15a72/ref_local.dict",
+      "sha256": "ad06b8ab87fd6f43af7af2c3a29e9f2b578717c2b66ff16362a71201128afc1a",
+      "size_bytes": 226
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/stage-f82b6abf-9289-4700-be12-e4e53d0a1029/51/1f70a2c6a00f8789bf28c4569a390d/stream",
+      "sha256": "c5311768971a692f7b289f7e5bc763c512cf022f7c17897cd18daaf85d094a84",
+      "size_bytes": 96
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/stage-f82b6abf-9289-4700-be12-e4e53d0a1029/c8/96fbc8d7667242cdfd8d8b750e9939/stream",
+      "sha256": "02bfa2e0660c806f460828dade4831c5f47130c41e075687347ae116fd96711b",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/stage-f82b6abf-9289-4700-be12-e4e53d0a1029/f8/ca9dcc91cfb2967c06540cb2cded32/stream",
+      "sha256": "811be6bfa4dcd1e773daaf1294a30367fb836f18ee873f6b8473a3d0335cef05",
+      "size_bytes": 385
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/stage-f82b6abf-9289-4700-be12-e4e53d0a1029/4f/15bc7491ac658e1109dece41432f96/stream",
+      "sha256": "e3e794a01a3bb5e4efcdecb459ab4d4e410b82e215e562fdef2c9bfc7fc4eede",
+      "size_bytes": 4071
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/stage-f82b6abf-9289-4700-be12-e4e53d0a1029/13/41bd1d219f61616ed9318f150e4b33/stream",
+      "sha256": "9adcc31fd8ec64d22827ab3550a8b6505827398130dce844e64e166936de88fa",
+      "size_bytes": 114
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/work/stage-f82b6abf-9289-4700-be12-e4e53d0a1029/25/35a0c394ae2ba32ca51f17db65c669/stream",
+      "sha256": "51c4f9c6b0eff8f666a387d10deebd6a8605714659a921327178ea41ec0951e6",
+      "size_bytes": 847
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/.nextflow/cache/f82b6abf-9289-4700-be12-e4e53d0a1029/index.pensive_cantor",
+      "sha256": "d07a32fca6bc5c7db042eca008e2dd82e06f4d6c41879651742607a59a26c2ac",
+      "size_bytes": 17
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/.nextflow/cache/f82b6abf-9289-4700-be12-e4e53d0a1029/db/000003.log",
+      "sha256": "2ff07f9668fd62aacbb2f708cce6470b98a4f9c97ec6df7454dfe479487c5cb2",
+      "size_bytes": 1461
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/.nextflow/cache/f82b6abf-9289-4700-be12-e4e53d0a1029/db/LOCK",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/.nextflow/cache/f82b6abf-9289-4700-be12-e4e53d0a1029/db/CURRENT",
+      "sha256": "1005a525006f148c86efcbfb36c6eac091b311532448010f70f7de9a68007167",
+      "size_bytes": 16
+    },
+    {
+      "path": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3/.nextflow/cache/f82b6abf-9289-4700-be12-e4e53d0a1029/db/MANIFEST-000002",
+      "sha256": "e292f241daafc3df90f3e2d339c61c6e2787a0d0739aac764e1ea9bb8544ee97",
+      "size_bytes": 50
     }
   ],
   "containers": [],
-  "parameters": {},
+  "parameters": {
+    "input_bam": "http://ferrum-gateway:8080/ga4gh/drs/v1/objects/01M03CB1SKWZQJH9ERJ3WH95H0/stream",
+    "input_bam_index": "http://ferrum-gateway:8080/ga4gh/drs/v1/objects/01M03CB1VG30CNC1G4KBYX0ZXD/stream",
+    "interval": "22:1700-2300",
+    "ref_fasta": "http://ferrum-gateway:8080/ga4gh/drs/v1/objects/01M03CB1W6D4HXEZNDJD5QQ5XM/stream",
+    "ref_fasta_index": "http://ferrum-gateway:8080/ga4gh/drs/v1/objects/01M03CB1WS02WVH63271G7RSMR/stream",
+    "truth_vcf": "http://ferrum-gateway:8080/ga4gh/drs/v1/objects/01M03CB1XCW3GRBZFNQERCHD5S/stream",
+    "truth_vcf_index": "http://ferrum-gateway:8080/ga4gh/drs/v1/objects/01M03CB1Y2XJPKZ7W3ZNDMK0YG/stream"
+  },
   "checks": [
     {
       "check_id": "SEC-CONTAINER-001",
-      "status": "pass",
-      "message": "All container definitions are pinned.",
+      "status": "warn",
+      "message": "Containers have tags but no digest pinning: broadinstitute/gatk:4.4.0.0",
       "evidence": {
-        "containers_scanned": "0"
+        "containers_scanned": "1"
       }
     }
   ],
@@ -324,8 +2003,11 @@
   "signature": {
     "algorithm": "Ed25519",
     "public_key_fingerprint": "9d638753fa93888524ee13d8a7cfad3e043d6d5f49a93aad1987799fe7e2c94a",
-    "signature_b64": "htxsowbVhonne2iIBu/wZol+UXcWes5VoB/SX1wi4a1vvHWrQtnlnJY8pKAtJhgrUeCsyE0UMq4bfUIXSc+7Ag==",
-    "signed_at": "2026-06-23T14:05:08.884933Z"
+    "signature_b64": "C0moa5Gxm28Fug6rGaFg/RAFPpcuIMqpRkNFUEDc+3kAdbudku2Y3SAxazpD7zZG1fXaMPKc2nj5melnAWlDCg==",
+    "signed_at": "2026-08-15T19:03:13.120186Z",
+    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA3asx0bchCLAWn4OJdYRjWK/Qu56v4dwLTUDDDq6d1cw=\n-----END PUBLIC KEY-----\n"
   },
-  "schema_version": "1.0"
+  "schema_version": "1.1",
+  "work_dir": "../Ferrum-GA4GH-Demo/results/wes-work/01M03CB216RJ2R4T2G5N1JX3X3",
+  "output_dir": "../Ferrum-GA4GH-Demo/results"
 }

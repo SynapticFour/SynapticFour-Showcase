@@ -25,16 +25,15 @@ class HeliosHonestyTests(unittest.TestCase):
         self.assertTrue(ok, msg)
         self.assertNotIn("CLIN-ACCESS-001", [c.get("check_id") for c in data["checks"]])
 
-    def test_example_report_empty_inputs_are_visible(self) -> None:
+    def test_example_report_live_honesty_is_visible(self) -> None:
         path = ROOT / "demo/results/helios-report-example.json"
         data = json.loads(path.read_text(encoding="utf-8"))
         honesty = helios_honesty(data)
-        self.assertFalse(honesty["input_files_recorded"])
-        self.assertIn("SEC-CONTAINER-001", honesty["vacuous_checks"])
+        self.assertTrue(honesty["input_files_recorded"])
+        self.assertEqual(honesty["vacuous_checks"], [])
         readme = (ROOT / "demo/results/README.md").read_text(encoding="utf-8")
-        self.assertIn("input_files", readme)
-        self.assertIn("empty", readme.lower())
-        self.assertIn("containers_scanned", readme)
+        self.assertIn("4.4.0.0", readme)
+        self.assertIn("digest", readme.lower())
         sidecar = ROOT / "demo/results/helios-report-example.honesty.json"
         self.assertTrue(sidecar.is_file(), "signed HELIOS example must have an honesty sidecar")
         side = json.loads(sidecar.read_text(encoding="utf-8"))

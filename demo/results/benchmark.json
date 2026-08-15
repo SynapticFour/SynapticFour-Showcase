@@ -1,6 +1,9 @@
 {
-  "precision": 1.0,
-  "recall": 1.0,
-  "f1_score": 1.0,
-  "summary_source": "../Ferrum-GA4GH-Demo/results/happy.metrics.json.gz"
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1_score": 0.0,
+  "summary_source": "results/happy.metrics.json.gz",
+  "caller_uses_truth_alleles": false,
+  "dataset_kind": "synthetic_giab_style",
+  "claim_scope": "pipeline_smoke"
 }
