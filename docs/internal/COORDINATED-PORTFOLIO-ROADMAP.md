@@ -217,13 +217,13 @@ Horizon language (not calendar promises): **H0 now**, **H1 pilot-ready**, **H2 p
 
 | Move | Artefact | Status |
 |------|----------|--------|
-| **1. Close H1** | [pilots/H1-PILOT-CHECKLIST.md](pilots/H1-PILOT-CHECKLIST.md) · [H1-EXECUTION-RECORD.md](pilots/H1-EXECUTION-RECORD.md) · [H1-KNOWN-LIMITATIONS.md](pilots/H1-KNOWN-LIMITATIONS.md) | **SIGNED OFF** 2026-08-06 |
-| **1b. H2 spine v1** | [pilots/H2-PILOT-CHECKLIST.md](pilots/H2-PILOT-CHECKLIST.md) · [H2-EXECUTION-RECORD.md](pilots/H2-EXECUTION-RECORD.md) · [H2-OPS-RUNBOOK.md](pilots/H2-OPS-RUNBOOK.md) | **SIGNED OFF** spine v1 |
-| **1c. H2.1 Teeth** | [adr/0001-solum-ferrum-consent-access.md](adr/0001-solum-ferrum-consent-access.md) · `make h21-teeth` | **SIGNED OFF** — Solum revoke → Ferrum DRS/WES 403 when configured |
-| **1d. H2.2 Org CAP** | [adr/0002-solum-org-iam-cap.md](adr/0002-solum-org-iam-cap.md) · `make h22-org-cap` | **SIGNED OFF** — sidecar OIDC groups → CAP_* when org-IAM enabled |
-| **1e. H2.3 Ops polish** | [pilots/H2-OPS-RUNBOOK.md](pilots/H2-OPS-RUNBOOK.md) · `make h23-ops-polish` | **SIGNED OFF** — collector visa path + thin health checks |
-| **1f. H2.4 KMS** | Solum `--features aws-kms` · [H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) §A | **SIGNED OFF** — optional AWS CMK envelope; **on-prem CustomerHeld default** |
-| **1g. H2 exit (second pass B–D)** | [pilots/H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) · [observability/](pilots/observability/) · HELIOS `CLIN-ACCESS-001` | **SIGNED OFF** — Prometheus blackbox/alerts; clinical HELIOS check; CLI org-IAM wontfix |
+| **1. Close H1** | [pilots/H1-PILOT-CHECKLIST.md](pilots/H1-PILOT-CHECKLIST.md) · [H1-EXECUTION-RECORD.md](pilots/H1-EXECUTION-RECORD.md) · [H1-KNOWN-LIMITATIONS.md](pilots/H1-KNOWN-LIMITATIONS.md) | **FOUNDER REHEARSAL** 2026-08-06 (not a customer site) |
+| **1b. H2 spine v1** | [pilots/H2-PILOT-CHECKLIST.md](../pilots/H2-PILOT-CHECKLIST.md) · [H2-EXECUTION-RECORD.md](pilots/H2-EXECUTION-RECORD.md) · [H2-OPS-RUNBOOK.md](../pilots/H2-OPS-RUNBOOK.md) | **FOUNDER REHEARSAL** spine v1 |
+| **1c. H2.1 Teeth** | [adr/0001-solum-ferrum-consent-access.md](adr/0001-solum-ferrum-consent-access.md) · `make h21-teeth` | Script exists; live 403 requires configured Ferrum+Solum |
+| **1d. H2.2 Org CAP** | [adr/0002-solum-org-iam-cap.md](adr/0002-solum-org-iam-cap.md) · `make h22-org-cap` | **Docs/contract artefact** — not an HTTP/JWT proof |
+| **1e. H2.3 Ops polish** | [pilots/H2-OPS-RUNBOOK.md](../pilots/H2-OPS-RUNBOOK.md) · `make h23-ops-polish` | **Docs gate** (`docs_present`) |
+| **1f. H2.4 KMS** | Solum `--features aws-kms` · [H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) §A | Optional AWS CMK; **on-prem CustomerHeld default** |
+| **1g. H2 exit (second pass B–D)** | [H2-SECOND-PASS.md](pilots/H2-SECOND-PASS.md) · [observability/](pilots/observability/) · HELIOS `CLIN-ACCESS-001` | Founder rehearsal — clinical HELIOS is Solum ingest, not default golden path |
 | **2. H3 design → full H3 engineering** | Solum ADRs 0001–0003 + [H3-EHRBASE-SPIKE](https://github.com/SynapticFour/Solum/blob/main/docs/H3-EHRBASE-SPIKE.md) + Showcase [H3-PILOT-CHECKLIST](pilots/H3-PILOT-CHECKLIST.md) · [H3-EXECUTION-RECORD](pilots/H3-EXECUTION-RECORD.md) | **FULL H3 ENGINEERING EXIT** 2026-08-10; external RA still open |
 | **3. H4 geography** | [pilots/H4-GEOGRAPHY-DECISION.md](pilots/H4-GEOGRAPHY-DECISION.md) · [H4-PILOT-CHECKLIST.md](pilots/H4-PILOT-CHECKLIST.md) · Solum [KENYA-K1-BRIEF](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md) · [OFFLINE](https://github.com/SynapticFour/Solum/blob/main/docs/H4-OFFLINE-SYNC-POLICY.md) | Kenya first; **K2 eng done**; provisional profile; real counsel still required |
 | **4. H5 SaaS-ready (optional)** | [pilots/H5-SAAS-READY-CHECKLIST.md](pilots/H5-SAAS-READY-CHECKLIST.md) · [adr/0003-tenant-boundaries.md](adr/0003-tenant-boundaries.md) · [H5-MANAGED-SINGLE-TENANT.md](pilots/H5-MANAGED-SINGLE-TENANT.md) | **Preparedness exit** — managed single-tenant docs; not SaaS launch |

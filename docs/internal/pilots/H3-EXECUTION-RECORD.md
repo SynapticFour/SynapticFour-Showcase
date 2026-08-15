@@ -1,6 +1,6 @@
 # H3 — Execution record
 
-**Status:** **FULL H3 ENGINEERING EXIT SIGNED** 2026-08-10
+**Status:** **H3 engineering exit (founder rehearsal)** 2026-08-10 — not a customer EHR site
 **Checklist:** [H3-PILOT-CHECKLIST.md](H3-PILOT-CHECKLIST.md)
 
 ---
@@ -9,7 +9,7 @@
 
 | Field | Value |
 |-------|-------|
-| Host | Synaptic Four ops — local Docker Desktop |
+| Host | Founder workstation — local Docker Desktop |
 | Operator | Synaptic Four eng |
 | Date | 2026-08-10 |
 | EHRbase pin | `ehrbase/ehrbase:2.34.0` |

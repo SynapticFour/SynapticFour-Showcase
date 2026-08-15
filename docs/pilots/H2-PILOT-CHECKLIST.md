@@ -1,7 +1,7 @@
 # H2 — Production on-prem spine checklist
 
 **Horizon:** H2 from [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
-**Depends on:** [H1 signed off](../internal/pilots/H1-EXECUTION-RECORD.md)
+**Depends on:** [H1 founder rehearsal](../internal/pilots/H1-EXECUTION-RECORD.md)
 **Not H2:** openEHR CDR (H3), Kenya PRODUCTION profile (H4), SaaS (H5)
 
 ---
@@ -21,17 +21,17 @@ Operator can run without Synaptic Four on the laptop; **withdrawal has teeth acr
 | 2.7 | Observability / HELIOS clinical evidence | [x] | Prometheus blackbox + alerts; HELIOS `CLIN-ACCESS-001` |
 | 2.8 | HelixTest Auth Level live | [ ] optional | Fixture gate remains required via Showcase suite |
 | 2.9 | Ops pack (TLS + backup + H2.3 polish) | [x] | [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md) — collector visa path + thin metrics |
-| 2.10 | Sign-off | [x] | **Full H2 exit** — spine + H2.1–H2.4 + second-pass B–D |
+| 2.10 | Founder rehearsal recorded | [x] | H2 engineering pack on a developer host — spine + H2.1–H2.4 + second-pass B–D; **not** a named customer site |
 
-**Honest scope:** **Full H2 exit** with documented outstanding items (Kenya counsel, optional HelixTest Auth Level, non-AWS KMS adapters, EncryptionContext/IRSA). See [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md).
+**Honest scope:** **Founder rehearsal** of the H2 engineering pack. Documented follow-ons (optional HelixTest Auth Level, non-AWS KMS adapters, EncryptionContext/IRSA) are not silent gaps. See [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md).
 
 ---
 
-## Sign-off
+## Rehearsal record
 
 | Field | Value |
 |-------|-------|
-| Host | Synaptic Four ops — MacBook-Air-von-Alexander (pilot-local stack) |
+| Host | Founder workstation (hostname redacted; pilot-local stack) |
 | Operator | Synaptic Four eng |
 | Date | 2026-08-06 |
 | Ferrum pin | `e638214b` (H2.1) / spine `49aab603` |
@@ -45,5 +45,5 @@ Operator can run without Synaptic Four on the laptop; **withdrawal has teeth acr
 ## Exit → H3 / outstanding
 
 - **H3** architecture (EHRbase) may proceed.
-- Outstanding (not H2 blockers): [H2-SECOND-PASS.md](H2-SECOND-PASS.md) “Outstanding after H2 exit”.
+- Outstanding (not H2 blockers): [H2-SECOND-PASS.md](../internal/pilots/H2-SECOND-PASS.md) “Outstanding after H2 exit”.
 - Kenya K1: send counsel brief — Solum counsel package (contact Synaptic Four — not published in the public Solum tree).

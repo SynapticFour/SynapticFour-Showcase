@@ -83,7 +83,9 @@ test -f "$ROOT/artifacts/evidence-pack-fixtures/MANIFEST.json"
 test -f "$ROOT/artifacts/evidence-pack-fixtures/README.md"
 test -f "$ROOT/artifacts/evidence-pack-fixtures/helios-report.json"
 "$PY" -c "
-import json
+import json, sys
+sys.path.insert(0, 'scripts')
+from lib.helios_honesty import genomic_report_is_honest, helios_honesty
 m=json.load(open('artifacts/evidence-pack-fixtures/MANIFEST.json'))
 assert m.get('pack_kind')=='synapticfour-showcase-evidence-pack'
 assert m['summaries']['helios'].get('checks_total',0) >= 1
@@ -99,11 +101,25 @@ assert any(f.get('role')=='solum_subject_link' for f in m['files']), m['files']
 assert any(f.get('role')=='solum_cdr' for f in m['files']), m['files']
 assert any(f.get('role')=='solum_audit_export' for f in m['files']), m['files']
 helios=json.load(open('artifacts/evidence-pack-fixtures/helios-report.json'))
-assert any(c.get('check_id')=='CLIN-ACCESS-001' for c in helios.get('checks') or []), helios
+ok, msg = genomic_report_is_honest(helios)
+assert ok, msg
+h = helios_honesty(helios)
+assert 'CLIN-ACCESS-001' not in (h.get('clinical_checks') or [])
+# Clinical plane is a separate artefact, not smuggled into the genomic report.
+solum_audit=json.load(open('artifacts/evidence-pack-fixtures/solum-audit-helios-chain.json'))
+assert solum_audit.get('format')=='solum-audit-helios-chain-v1'
 assert any(f.get('role')=='gatk_rs_smoke' for f in m['files'])
 assert any(f.get('role')=='s4mp_port_diff' for f in m['files'])
 assert any(f.get('role')=='ga4gh_infra_co_deploy' for f in m['files'])
 print('evidence-pack fixture ok', m['pack_id'], 'files', len(m['files']))
 "
+
+echo "[ci-check] unittest + honesty + pin parse + H2.2/H2.3 doc gates"
+"$PY" -m unittest discover -s tests -v
+bash tests/test_solum_token.sh
+./scripts/check-honesty.sh
+./scripts/check-pins.sh
+./scripts/run-h22-org-cap.sh
+./scripts/run-h23-ops-polish.sh
 
 echo "[ci-check] ok"

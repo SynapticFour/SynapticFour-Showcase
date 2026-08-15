@@ -1,6 +1,6 @@
-# H2 — Execution record (full exit)
+# H2 — Execution record (founder rehearsal)
 
-**Status:** **SIGNED OFF — full H2 exit** (2026-08-06)
+**Status:** **FOUNDER REHEARSAL — H2 engineering exit on a developer host** (2026-08-06)
 **Checklist:** [H2-PILOT-CHECKLIST.md](H2-PILOT-CHECKLIST.md)
 **Limitations:** [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md)
 **Ops:** [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md)
@@ -16,7 +16,7 @@ Spine v1 + H2.1 Teeth + H2.2 Org CAP + H2.3 Ops polish + H2.4 KMS + second-pass 
 
 | Field | Value |
 |-------|-------|
-| Host | Synaptic Four ops — MacBook-Air-von-Alexander (pilot-local + docker TES) |
+| Host | Founder workstation (hostname redacted; pilot-local + docker TES) |
 | Operator | Synaptic Four eng |
 | Date | 2026-08-06 |
 | Ferrum (spine) | `49aab603` — WES fail-closed + pilot issuer fix |

@@ -51,8 +51,10 @@ CONSENT_GATE_MODE="${SHOWCASE_CONSENT_GATE_MODE:-allow}"
 # Default: Nextflow only (aligns with HELIOS Nextflow parser). Extra flags: e.g. --macro
 DEMO_FLAGS=(--nextflow)
 if [[ -n "${SHOWCASE_DEMO_EXTRA:-}" ]]; then
-  # shellcheck disable=SC2206
-  DEMO_FLAGS+=($SHOWCASE_DEMO_EXTRA)
+  # Word-split on IFS only (no glob). Extra flags for ./run, e.g. "--macro".
+  # shellcheck disable=SC2162
+  read -r -a extra_flags <<< "$SHOWCASE_DEMO_EXTRA"
+  DEMO_FLAGS+=("${extra_flags[@]}")
 fi
 
 usage() {
@@ -155,6 +157,23 @@ run_demo_command() {
 }
 
 DEMO_ROOT="$(cd "$DEMO_ROOT" && pwd)"
+
+if [[ "${SHOWCASE_CHECKOUT_PINS:-0}" == "1" ]]; then
+  echo "[showcase] SHOWCASE_CHECKOUT_PINS=1 — detaching siblings to PINNED_VERSIONS.txt"
+  "$SHOWCASE_ROOT/scripts/checkout-pins.sh"
+fi
+
+if [[ "${SHOWCASE_ALLOW_PIN_DRIFT:-0}" == "1" ]]; then
+  echo "[showcase] SHOWCASE_ALLOW_PIN_DRIFT=1 — golden path may run on sibling HEAD (not the published artefact SHAs)"
+  if [[ -x "$SHOWCASE_ROOT/scripts/check-pins.sh" ]]; then
+    "$SHOWCASE_ROOT/scripts/check-pins.sh" || true
+  fi
+else
+  echo "[showcase] requiring Ferrum-GA4GH-Demo + HELIOS HEAD == PINNED_VERSIONS.txt"
+  echo "[showcase] reproduce published artefacts: make checkout-pins"
+  echo "[showcase] develop on sibling HEAD: SHOWCASE_ALLOW_PIN_DRIFT=1 make up"
+  "$SHOWCASE_ROOT/scripts/check-pins.sh" --strict
+fi
 
 if [[ ! -x "$DEMO_ROOT/run" ]]; then
   echo "run-golden-path: demo not found or not executable: $DEMO_ROOT/run" >&2

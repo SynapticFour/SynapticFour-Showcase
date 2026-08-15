@@ -11,5 +11,9 @@ log_level = "INFO"
 output_dir = "helios-reports"
 default_format = "json"
 
+# Minimal check set: the Ferrum-GA4GH-Demo uses GRCh37; default HELIOS
+# reference checks expect GRCh38. SEC-CONTAINER-001 with zero containers
+# scanned is a vacuous pass — do not market it as image-pin proof.
+# Clinical CLIN-ACCESS-001 lives in helios-solum.toml (Solum ingest), not here.
 [checks]
 enabled = ["SEC-CONTAINER-001"]

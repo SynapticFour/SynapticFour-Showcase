@@ -19,7 +19,7 @@ A named pilot operator (not the founder’s laptop alone) can:
 
 Sign-off: operator name + date at bottom.
 
-**Status:** **SIGNED OFF** 2026-08-06 — see [H1-EXECUTION-RECORD.md](../internal/pilots/H1-EXECUTION-RECORD.md) · [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md).
+**Status:** **FOUNDER REHEARSAL** 2026-08-06 — see [H1-EXECUTION-RECORD.md](../internal/pilots/H1-EXECUTION-RECORD.md) · [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md). Not a named customer operator.
 
 ---
 
@@ -113,7 +113,7 @@ Pins: keep `PINNED_VERSIONS.txt` aligned with the pilot host checkouts.
 
 | Field | Value |
 |-------|-------|
-| Pilot site / host | Synaptic Four ops — MacBook-Air-von-Alexander (dedicated H1 window) |
+| Pilot site / host | Founder workstation (hostname redacted) |
 | Operator | Synaptic Four eng |
 | Date | 2026-08-06 |
 | Ferrum pin / tag | `d7eb8c86` / VERSIONS.lock `v0.2.0` |

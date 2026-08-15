@@ -13,9 +13,16 @@ import argparse
 import hashlib
 import json
 import shutil
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+_SCRIPTS = Path(__file__).resolve().parent
+if str(_SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(_SCRIPTS))
+
+from lib.helios_honesty import helios_honesty  # noqa: E402
 
 
 def _sha256_file(path: Path) -> str:
@@ -26,12 +33,18 @@ def _sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
-def _load_json(path: Path | None) -> dict[str, Any] | list[Any] | None:
+def _load_json(
+    path: Path | None, *, required: bool = False
+) -> dict[str, Any] | list[Any] | None:
     if path is None or not path.is_file():
+        if required:
+            raise SystemExit(f"evidence_pack: required JSON missing: {path}")
         return None
     try:
         return json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
+    except (OSError, json.JSONDecodeError) as exc:
+        if required:
+            raise SystemExit(f"evidence_pack: required JSON unreadable: {path}: {exc}") from exc
         return None
 
 
@@ -56,7 +69,7 @@ def _helios_summary(helios: dict[str, Any] | list[Any] | None) -> dict[str, Any]
     checks = helios.get("checks") or []
     if not isinstance(checks, list):
         checks = []
-    return {
+    summary = {
         "run_id": helios.get("run_id"),
         "pipeline_name": helios.get("pipeline_name"),
         "executor": helios.get("executor"),
@@ -69,7 +82,9 @@ def _helios_summary(helios: dict[str, Any] | list[Any] | None) -> dict[str, Any]
             for f in (helios.get("output_files") or [])
             if isinstance(f, dict) and f.get("sha256")
         ],
+        "honesty": helios_honesty(helios),
     }
+    return summary
 
 
 def _helixtest_summary(data: dict[str, Any] | list[Any] | None) -> dict[str, Any]:
@@ -220,6 +235,7 @@ def _write_pack_readme(path: Path, manifest: dict[str, Any]) -> None:
         "",
         f"- HELIOS run_id: `{helios.get('run_id', 'n/a')}` · checks P/W/F: "
         f"`{helios.get('checks_passed', 'n/a')}/{helios.get('checks_warned', 'n/a')}/{helios.get('checks_failed', 'n/a')}`",
+        f"- HELIOS honesty: `{((helios.get('honesty') or {}).get('note')) or 'n/a'}`",
         f"- DRS checksums declared: `{len(drs.get('checksums') or [])}`",
         f"- HelixTest present: `{helix.get('present', False)}`",
         f"- Solum stage present: `{solum.get('present', False)}` · status `{solum.get('status', 'n/a')}`",
@@ -320,7 +336,7 @@ def main() -> None:
             }
         )
 
-    helios_data = _load_json(out / "helios-report.json")
+    helios_data = _load_json(out / "helios-report.json", required=True)
     drs_data = _load_json(out / "drs-object.json") if (out / "drs-object.json").is_file() else None
     helix_data = _load_json(out / "helixtest.json") if (out / "helixtest.json").is_file() else None
     solum_data = (
@@ -361,7 +377,8 @@ def main() -> None:
         "showcase_root": str(root),
         "honesty": {
             "proves": [
-                "Presence of signed/structured HELIOS audit artefacts from a run or fixture",
+                "Presence of a HELIOS report (live or fixture) plus SHA-256 of files in this pack",
+                "HELIOS honesty fields: empty input_files and vacuous container checks are called out",
                 "Declared DRS checksums when a DRS object JSON is included",
                 "Optional HelixTest / Solum Stage-1 digests when included",
                 "Optional Solum H3 CDR + subject-link fixtures (Path E+) when included",

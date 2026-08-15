@@ -19,7 +19,7 @@ OUT_DIR="${SHOWCASE_H21_OUT:-$SHOWCASE_ROOT/artifacts/h21-teeth}"
 SOLUM_BASE="${SHOWCASE_SOLUM_BASE_URL:-http://127.0.0.1:8787}"
 # Solum-Demo often publishes on 8080; allow override. Prefer 8787 then 8080 probe.
 FERRUM_BASE="${SHOWCASE_FERRUM_BASE_URL:-http://127.0.0.1:8080}"
-TOKEN="${SOLUM_SIDECAR_TOKEN:-solum-demo-local-token-not-for-production}"
+TOKEN=""
 TOKEN_HEADER="X-Solum-Sidecar-Token"
 SKIP_UP="${SHOWCASE_SOLUM_SKIP_UP:-0}"
 SUBJECT="${SHOWCASE_CONSENT_SUBJECT:-patient/showcase-phenoflow-001}"
@@ -29,6 +29,11 @@ BEARER="${SHOWCASE_FERRUM_BEARER:-}"
 DRS_OBJECT_ID="${SHOWCASE_H21_DRS_OBJECT_ID:-}"
 
 mkdir -p "$OUT_DIR"
+
+# shellcheck source=lib/solum_sidecar_token.sh
+source "$SCRIPT_DIR/lib/solum_sidecar_token.sh"
+resolve_solum_sidecar_token || exit 1
+TOKEN="$RESOLVED_SOLUM_SIDECAR_TOKEN"
 
 auth_hdr=()
 if [[ -n "$BEARER" ]]; then

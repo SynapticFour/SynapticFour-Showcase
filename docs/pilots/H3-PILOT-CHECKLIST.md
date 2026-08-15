@@ -1,7 +1,7 @@
 # H3 — Clinical + genomic co-custody checklist
 
 **Horizon:** H3 from [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
-**Depends on:** [H2 signed off](../internal/pilots/H2-EXECUTION-RECORD.md)
+**Depends on:** [H2 founder rehearsal](../internal/pilots/H2-EXECUTION-RECORD.md)
 **Not H3:** Kenya PRODUCTION profile (H4), SaaS launch (H5), full Synaptic Four EHR UI
 
 Architecture (Solum): [ADR 0001](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0001-openehr-cdr-and-migration.md) · [ADR 0002 EHRbase](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0002-cdr-engine-ehrbase.md) · [ADR 0003 subject bridge](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0003-subject-bridge.md) · [H3-EHRBASE-SPIKE.md](https://github.com/SynapticFour/Solum/blob/main/docs/H3-EHRBASE-SPIKE.md)

@@ -16,7 +16,7 @@ SHOWCASE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SOLUM_DEMO_ROOT="${SHOWCASE_SOLUM_DEMO_ROOT:-$SHOWCASE_ROOT/../Solum-Demo}"
 OUT_DIR="${SHOWCASE_SOLUM_OUT:-$SHOWCASE_ROOT/artifacts/solum}"
 BASE_URL="${SHOWCASE_SOLUM_BASE_URL:-http://127.0.0.1:8080}"
-TOKEN="${SOLUM_SIDECAR_TOKEN:-solum-demo-local-token-not-for-production}"
+TOKEN=""
 TOKEN_HEADER="X-Solum-Sidecar-Token"
 WAIT_SECONDS="${SHOWCASE_SOLUM_WAIT_SECONDS:-300}"
 SKIP_UP="${SHOWCASE_SOLUM_SKIP_UP:-0}"
@@ -32,7 +32,8 @@ Environment:
   SHOWCASE_SOLUM_DEMO_ROOT   Path to Solum-Demo (default: ../Solum-Demo)
   SHOWCASE_SOLUM_OUT         Artefact directory (default: ./artifacts/solum)
   SHOWCASE_SOLUM_BASE_URL    Dashboard URL (default: http://127.0.0.1:8080)
-  SOLUM_SIDECAR_TOKEN        Shared demo token (must match Solum-Demo compose)
+  SOLUM_SIDECAR_TOKEN        Sidecar token (required unless SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1)
+  SHOWCASE_USE_DEMO_SIDECAR_TOKEN  If 1, use the well-known Solum-Demo local token
   SHOWCASE_SOLUM_WAIT_SECONDS  Max wait for /v1 readiness (default: 300)
   SHOWCASE_SOLUM_SKIP_UP     If 1, do not docker compose up
   SHOWCASE_SOLUM_SKIP_DOWN   If 1, leave compose running
@@ -54,6 +55,11 @@ while [[ $# -gt 0 ]]; do
       ;;
   esac
 done
+
+# shellcheck source=lib/solum_sidecar_token.sh
+source "$SCRIPT_DIR/lib/solum_sidecar_token.sh"
+resolve_solum_sidecar_token || exit 1
+TOKEN="$RESOLVED_SOLUM_SIDECAR_TOKEN"
 
 if [[ ! -d "$SOLUM_DEMO_ROOT" ]]; then
   echo "run-solum-stage: Solum-Demo missing: $SOLUM_DEMO_ROOT" >&2
@@ -292,6 +298,10 @@ if [[ "$SKIP_DOWN" != "1" ]]; then
   (cd "$SOLUM_DEMO_ROOT" && docker compose down)
 fi
 
-STATUS="$(python3 -c "import json; print(json.load(open('$OUT_DIR/solum-stage-result.json'))['status'])")"
+STATUS="$(python3 - "$OUT_DIR/solum-stage-result.json" <<'PY'
+import json, sys
+print(json.load(open(sys.argv[1], encoding="utf-8"))["status"])
+PY
+)"
 echo "[solum-stage] done status=$STATUS out=$OUT_DIR"
 [[ "$STATUS" == "ok" ]]

@@ -1,7 +1,7 @@
 # H4 — Edge / Pi + Kenya jurisdiction checklist
 
 **Horizon:** H4 from [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
-**Depends on:** [H3 signed off](../internal/pilots/H3-EXECUTION-RECORD.md)
+**Depends on:** [H3 engineering exit](../internal/pilots/H3-EXECUTION-RECORD.md)
 **Geography decision:** [H4-GEOGRAPHY-DECISION.md](H4-GEOGRAPHY-DECISION.md)
 **Not H4:** Nigeria/SA profiles (queued), PRODUCTION flip without counsel, SaaS (H5), EHRbase on Pi
 

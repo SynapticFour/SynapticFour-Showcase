@@ -8,11 +8,18 @@
 
 ## Was Sie hier sehen
 
-Dieses Repository zeigt, wie die Kernbausteine von Synaptic Four **in einer echten, durchgängigen Pipeline zusammenspielen** — von der Daten-API bis zum signierten Audit-Report. Kein Marketing-Deck. Kein Versprechen. Echte Artefakte aus echten Läufen.
+Dieses Repository ist der **öffentliche Integrator**: Skripte, Pins und Artefakte, mit denen Sie nachvollziehen können, wie Ferrum, HELIOS, optional Solum und Nachbarprodukte zusammenspielen.
 
-Wenn Sie evaluieren möchten ob diese Infrastruktur zu Ihrer Institution passt, sind Sie hier richtig.
+Zwei getrennte Nachweis-Ebenen — bitte nicht vermischen:
 
-**Einstieg in vier Schritten:** [docs/for-customers/start-here.md](docs/for-customers/start-here.md) (Fixtures → Golden Path → Passports → Solum).
+| Ebene | Was sie ist | Was sie nicht ist |
+|-------|-------------|-------------------|
+| **Fixture-Spine** (`make integration-suite`) | Syntax, Unit-Tests, Honesty-Gates, committed JSON-Formen. Läuft in GitHub Actions **ohne Docker**. | Kein laufender Ferrum-/HELIOS-/Solum-Stack |
+| **Live Golden Path** (`make up`) | Docker, Sibling-Checkouts **auf PINNED_VERSIONS.txt** (sonst `SHOWCASE_ALLOW_PIN_DRIFT=1`), echter Nextflow-WES + HELIOS | Nicht das, was CI bei jedem Push fährt |
+
+Eingecheckte Dateien unter `demo/results/` und `demo/verification/` stammen aus Läufen **oder** sind als Fixtures gekennzeichnet. HELIOS-Beispielreports dokumentieren, wenn `input_files` leer sind und Container-Checks vacuous (`containers_scanned=0`) — maschinenlesbar in [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json) (signiertes JSON unverändert).
+
+**Einstieg:** [docs/for-customers/start-here.md](docs/for-customers/start-here.md).
 
 ---
 
@@ -97,13 +104,13 @@ Ein typischer Durchlauf erzeugt:
 
 | Artefakt | Was es zeigt |
 |----------|-------------|
-| `benchmark.json` | Precision / Recall / F1 des Variant-Calling-Laufs |
+| `benchmark.json` | Precision / Recall / F1 auf dem **synthetischen Demo-Callset** (F1=1.0 ist für diesen Mini-Datensatz erwartet, keine klinische Güte) |
 | `metrics.json` | WES-Run-ID, Engine, Laufzeit |
-| `helios-report-*.json` | Signierter Audit-Trail: Input-Hashes, Output-Hashes, Check-Ergebnisse |
-| `showcase-report.md` | Menschenlesbare Zusammenfassung für Stakeholder-Reviews |
-| `drs-link-example.json` | Wie ein DRS-Objekt nach dem Import aussieht |
+| `helios-report-example.json` | HELIOS-Export: Output-Hashes; **`input_files` ist in diesem Beispiel leer**; `SEC-CONTAINER-001` mit `containers_scanned=0` ist kein Image-Pin-Beweis. Default-Config: [helios.toml](helios.toml) (minimale Checks wegen GRCh37) |
+| `showcase-report.md` | Menschenlesbare Zusammenfassung inkl. Honesty-Feld |
+| `drs-link-example.json` | Illustrative DRS-URI (`ferrum-gateway:8080` = Compose-Hostname; Host-Gateway ist **:18080**) |
 
-Sie müssen nichts installieren um diese Artefakte zu lesen — sie liegen bereits im Repository.
+Sie können diese Dateien ohne Installation lesen. Ob ein Artefakt ein **Fixture** oder ein **Live-Lauf** ist, steht in der jeweiligen README.
 
 ---
 
@@ -122,10 +129,10 @@ Realistisch: 10–30 Tage, abhängig von Ihrer Infrastruktur und Daten-Readiness
 Nein. Wir sagen das offen: Ferrum und HELIOS erzeugen technische Evidenz-Artefakte, die Compliance-Prozesse unterstützen. Die formale Compliance-Verantwortung liegt beim Betreiber. [Details dazu](docs/for-customers/compliance-framing.md).
 
 **„Was kostet das?"**
-Ferrum: BUSL-1.1 (für zulässige nicht-kommerzielle Forschung kostenfrei nutzbar, nach 4 Jahren Apache-2.0). BioResearch Assistant: Pilot (erster Kunde) kostenlos oder symbolisch. Ab zweitem Kunden: €3.500–4.000/Jahr all-in. Onboarding: €2.500 einmalig. HELIOS-Kern: Apache-2.0, kostenfrei. [Vollständige Preisinformation](https://synapticfour.com/de/software).
+Ferrum und Solum: BUSL-1.1 für zulässige nicht-kommerzielle Forschung; **Produktion** siehe [indicative pricing](docs/for-customers/pricing.md) (Ferrum-Knoten typisch €15–35k/Jahr, nicht „gratis"). BioResearch Assistant: Pilot (erster Kunde) kostenlos oder symbolisch; ab zweitem Kunden €3.500–4.000/Jahr plus Onboarding €2.500. HELIOS-Kern: Apache-2.0. Verbindlich ist nur ein schriftliches Angebot.
 
 **„Wer steht dahinter?"**
-Ein kleines Team aus Stuttgart, spezialisiert auf Bioinformatik-Infrastruktur, mit gelebtem Engagement für Neurodiversität und Inklusion. Keine VC-Finanzierung, kein Cloud-Abhängigkeits-Geschäftsmodell.
+Synaptic Four ist ein Founder-geführtes Unternehmen in Stuttgart (eine Person im Git dieses Repos). Spezialisiert auf Bioinformatik-Infrastruktur, mit Engagement für Neurodiversität. Keine VC-Finanzierung, kein Cloud-Zwangsmodell. Bus-Faktor 1 — das sagen wir, bevor Sie uns fragen.
 
 → [Alle Fragen und Antworten](docs/for-customers/faq.md)
 
@@ -140,7 +147,7 @@ Ein kleines Team aus Stuttgart, spezialisiert auf Bioinformatik-Infrastruktur, m
 | Ergebnisse sehen, ohne etwas zu installieren | [demo/results/](demo/results/) · [demo/verification/](demo/verification/) |
 | Die Demo lokal laufen lassen | [DEMO.md](DEMO.md) |
 | Verstehen welcher Teil des Stacks zu mir passt | [Welcher Einstieg passt zu mir?](docs/for-customers/which-path.md) |
-| Als Technical Lead tief evaluieren | [Technical Evaluation Kit](docs/for-evaluators/technical-evaluation-kit.md) |
+| Als Technical Lead tief evaluieren | [Technical Evaluation Kit](docs/for-evaluators/technical-evaluation-kit.md) · [Evaluate HEAD](docs/for-evaluators/evaluate-at-head.md) |
 | Direkt sprechen | [contact@synapticfour.com](mailto:contact@synapticfour.com) |
 
 ---
@@ -151,7 +158,7 @@ Weil größere Anbieter ein Cloud-Geschäftsmodell haben, das im Widerspruch zu 
 
 Wir sind klein genug, dass Sie mit dem Entwickler sprechen — nicht mit einem Account Manager. Und wir haben keine finanziellen Anreize, Sie in ein Abo zu locken das Sie nicht brauchen.
 
-Was wir nicht sind: ein Team mit hundert Referenzkunden und zertifizierten Installationen weltweit. Wir sind präzise in dem was wir anbieten, und ehrlich über was wir noch nicht sind.
+Was wir nicht sind: ein Team mit hundert Referenzkunden und zertifizierten Installationen weltweit. Horizon-Checklisten in `docs/internal/` sind **Founder-Rehearsals** auf einer Entwicklermaschine, keine Kundenstandorte.
 
 → [Über uns](https://synapticfour.com/de/about)
 
@@ -179,11 +186,18 @@ transparenten Schritten und einem prüfbaren Ergebnis.
 
 ## What you'll find here
 
-This repository shows how the core building blocks of Synaptic Four **work together in a real, end-to-end pipeline** — from the data API to a signed audit report. No marketing deck. No promises. Real artefacts from real runs.
+This repository is the **public integrator**: scripts, pins, and artefacts so you can see how Ferrum, HELIOS, optional Solum, and sibling products fit together.
 
-If you're evaluating whether this infrastructure fits your institution, you're in the right place.
+Two evidence layers — do not mix them:
 
-**Try it in four steps:** [docs/for-customers/start-here.md](docs/for-customers/start-here.md) (fixtures → golden path → Passports → Solum).
+| Layer | What it is | What it is not |
+|-------|------------|----------------|
+| **Fixture spine** (`make integration-suite`) | Syntax, unit tests, honesty gates, committed JSON shapes. GitHub Actions runs this **without Docker**. | A running Ferrum / HELIOS / Solum stack |
+| **Live golden path** (`make up`) | Docker, sibling checkouts **at PINNED_VERSIONS.txt** (or `SHOWCASE_ALLOW_PIN_DRIFT=1`), real Nextflow WES + HELIOS | What CI runs on every push |
+
+Checked-in files under `demo/results/` and `demo/verification/` are from runs **or** labeled fixtures. HELIOS example reports document empty `input_files` and vacuous container checks (`containers_scanned=0`) — machine-readable in [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json) (signed JSON unmodified).
+
+**Try it:** [docs/for-customers/start-here.md](docs/for-customers/start-here.md).
 
 ---
 
@@ -268,13 +282,13 @@ A typical run produces:
 
 | Artefact | What it shows |
 |----------|--------------|
-| `benchmark.json` | Precision / Recall / F1 of the variant calling run |
+| `benchmark.json` | Precision / Recall / F1 on the **synthetic demo callset** (F1=1.0 is expected here — not clinical quality) |
 | `metrics.json` | WES run ID, engine, elapsed time |
-| `helios-report-*.json` | Signed audit trail: input hashes, output hashes, check results |
-| `showcase-report.md` | Human-readable summary for stakeholder reviews |
-| `drs-link-example.json` | What a DRS object looks like after import |
+| `helios-report-example.json` | HELIOS export: output hashes; **`input_files` is empty in this example**; `SEC-CONTAINER-001` with `containers_scanned=0` is not an image-pin proof. Default config: [helios.toml](helios.toml) |
+| `showcase-report.md` | Human-readable summary including an honesty field |
+| `drs-link-example.json` | Illustrative DRS URI (`ferrum-gateway:8080` is the Compose hostname; host gateway is **:18080**) |
 
-You don't need to install anything to read these artefacts — they're already in the repository.
+You can read these files without installing anything. Whether an artefact is a **fixture** or a **live run** is stated in the local README.
 
 ---
 
@@ -293,7 +307,10 @@ Realistically: 10–30 days, depending on your infrastructure and data readiness
 No. We say this openly: Ferrum and HELIOS generate technical evidence artefacts that support compliance processes. Formal compliance responsibility rests with the operator. [Details here](docs/for-customers/compliance-framing.md).
 
 **"What does it cost?"**
-Ferrum: BUSL-1.1 (free for permitted non-commercial research, Apache-2.0 after 4 years). BioResearch Assistant: pilot (first customer) free or symbolic. From second customer: €3,500–4,000/year all-in. Onboarding: €2,500 one-time. HELIOS core: Apache-2.0, free. [Full pricing](https://synapticfour.com/en/software).
+Ferrum and Solum: BUSL-1.1 for permitted non-commercial research; **production** figures are in [indicative pricing](docs/for-customers/pricing.md) (Ferrum node typically €15–35k/year, not “free”). BioResearch Assistant: first-customer pilot free or symbolic; from the second customer €3,500–4,000/year plus €2,500 onboarding. HELIOS core: Apache-2.0. Only a written quote is binding.
+
+**"Who is behind this?"**
+Synaptic Four is founder-led in Stuttgart (one git author on this repo). Bioinformatics infrastructure, neurodiversity-aware. No VC, no forced-cloud business model. Bus factor 1 — we say that before you ask.
 
 → [All questions and answers](docs/for-customers/faq.md)
 
@@ -308,7 +325,7 @@ Ferrum: BUSL-1.1 (free for permitted non-commercial research, Apache-2.0 after 4
 | See results without installing anything | [demo/results/](demo/results/) · [demo/verification/](demo/verification/) |
 | Run the demo locally | [DEMO.md](DEMO.md) |
 | Understand which part of the stack fits my problem | [Which path fits me?](docs/for-customers/which-path.md) |
-| Evaluate deeply as technical lead | [Technical Evaluation Kit](docs/for-evaluators/technical-evaluation-kit.md) |
+| Evaluate deeply as technical lead | [Technical Evaluation Kit](docs/for-evaluators/technical-evaluation-kit.md) · [Evaluate HEAD](docs/for-evaluators/evaluate-at-head.md) |
 | Talk directly | [contact@synapticfour.com](mailto:contact@synapticfour.com) |
 
 ---
@@ -319,7 +336,7 @@ Because larger providers have a cloud business model that conflicts with your da
 
 We're small enough that you speak with the developer — not with an account manager. And we have no financial incentive to lock you into a subscription you don't need.
 
-What we're not: a team with a hundred reference customers and certified installations worldwide. We are precise about what we offer, and honest about what we're not yet.
+What we're not: a team with a hundred reference customers and certified installations worldwide. Horizon checklists under `docs/internal/` are **founder rehearsals** on a developer workstation, not named customer sites.
 
 → [About us](https://synapticfour.com/en/about)
 
@@ -335,7 +352,7 @@ and a verifiable result.
 
 ## License / Lizenz
 
-Apache License 2.0 — see [LICENSE](LICENSE).
+Apache License 2.0 — see [LICENSE](LICENSE). Sibling products (Ferrum, Solum, BioResearch Assistant) remain under **BUSL-1.1** unless their own LICENSE says otherwise — see [NOTICE](NOTICE).
 
 ---
 

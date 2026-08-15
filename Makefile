@@ -6,7 +6,7 @@
 	gatk-rs-smoke gatk-rs-smoke-fixtures gatk-rs-wes s4mp-evidence s4mp-evidence-fixtures \
 	co-deploy-harvest co-deploy-harvest-fixtures \
 	integration-suite integration-suite-fixtures verification-publish preflight \
-	path-eplus-smoke
+	path-eplus-smoke check-pins checkout-pins honesty
 
 help:
 	@echo "SynapticFour Showcase — local lifecycle"
@@ -34,10 +34,14 @@ help:
 	@echo "  make evidence-pack          Build Evidence Pack from latest/local artefacts"
 	@echo "  make evidence-pack-fixtures Evidence Pack from committed fixtures"
 	@echo "  make path-eplus-smoke       Live Path E+ (Solum CDR+subject-link; soft-fail)"
-	@echo "  make preflight              Local environment checks"
+	@echo "  make preflight              Environment checks (strict)"
+	@echo "  make check-pins             Compare PINNED_VERSIONS.txt to sibling HEAD (warn)"
+	@echo "  make checkout-pins          Detach siblings to pinned SHAs (required for make up)"
 	@echo "  make down / make destroy    Stop stacks"
 	@echo ""
 	@echo "Customer start: docs/for-customers/start-here.md"
+	@echo "Pins: make checkout-pins before make up, or SHOWCASE_ALLOW_PIN_DRIFT=1"
+	@echo "Solum token: SOLUM_SIDECAR_TOKEN or SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1"
 	@echo "Consent before WES: SHOWCASE_ENABLE_CONSENT_GATE=1 make golden-path"
 	@echo "W4 opt-in: SHOWCASE_ENABLE_GATK_RS=1 SHOWCASE_ENABLE_S4MP=1 make golden-path"
 	@echo "Passports harvest: SHOWCASE_ENABLE_CO_DEPLOY_HARVEST=1 make golden-path"
@@ -46,99 +50,84 @@ help:
 up: golden-path
 
 golden-path:
-	@chmod +x scripts/run-golden-path.sh scripts/stop-showcase.sh 2>/dev/null || true
 	./scripts/run-golden-path.sh
 
 golden-path-with-solum:
-	@chmod +x scripts/run-golden-path.sh scripts/run-solum-stage.sh scripts/stop-showcase.sh 2>/dev/null || true
 	SHOWCASE_ENABLE_SOLUM=1 ./scripts/run-golden-path.sh
 
 solum-stage:
-	@chmod +x scripts/run-solum-stage.sh 2>/dev/null || true
 	./scripts/run-solum-stage.sh
 
 consent-gate:
-	@chmod +x scripts/run-consent-gate.sh 2>/dev/null || true
 	./scripts/run-consent-gate.sh --allow
 
 consent-gate-deny:
-	@chmod +x scripts/run-consent-gate.sh 2>/dev/null || true
 	./scripts/run-consent-gate.sh --deny
 
 consent-gate-fixtures:
-	@chmod +x scripts/run-consent-gate.sh 2>/dev/null || true
 	./scripts/run-consent-gate.sh --fixtures --publish-examples
 
 h21-teeth:
-	@chmod +x scripts/run-h21-teeth.sh 2>/dev/null || true
 	./scripts/run-h21-teeth.sh
 
 h22-org-cap:
-	@chmod +x scripts/run-h22-org-cap.sh 2>/dev/null || true
 	./scripts/run-h22-org-cap.sh
 
 h23-ops-polish:
-	@chmod +x scripts/run-h23-ops-polish.sh 2>/dev/null || true
 	./scripts/run-h23-ops-polish.sh
 
 gatk-rs-smoke:
-	@chmod +x scripts/run-gatk-rs-smoke.sh 2>/dev/null || true
 	./scripts/run-gatk-rs-smoke.sh
 
 gatk-rs-smoke-fixtures:
-	@chmod +x scripts/run-gatk-rs-smoke.sh 2>/dev/null || true
 	./scripts/run-gatk-rs-smoke.sh --fixtures --publish-examples
 
 gatk-rs-wes:
-	@chmod +x scripts/run-gatk-rs-wes.sh 2>/dev/null || true
 	./scripts/run-gatk-rs-wes.sh
 
 s4mp-evidence:
-	@chmod +x scripts/attach-s4mp-evidence.sh 2>/dev/null || true
 	./scripts/attach-s4mp-evidence.sh
 
 s4mp-evidence-fixtures:
-	@chmod +x scripts/attach-s4mp-evidence.sh 2>/dev/null || true
 	./scripts/attach-s4mp-evidence.sh --fixtures --publish-examples
 
 co-deploy-harvest:
-	@chmod +x scripts/harvest-co-deploy.sh 2>/dev/null || true
 	./scripts/harvest-co-deploy.sh
 
 co-deploy-harvest-fixtures:
-	@chmod +x scripts/harvest-co-deploy.sh 2>/dev/null || true
 	./scripts/harvest-co-deploy.sh --fixtures --publish-examples
 
 integration-suite:
-	@chmod +x scripts/run-integration-suite.sh 2>/dev/null || true
 	./scripts/run-integration-suite.sh --fixtures --publish-verification
 
 integration-suite-fixtures: integration-suite
 
 verification-publish:
-	@chmod +x scripts/run-integration-suite.sh 2>/dev/null || true
 	./scripts/run-integration-suite.sh --fixtures --publish-verification
 
 evidence-pack:
-	@chmod +x scripts/evidence-pack.sh 2>/dev/null || true
 	./scripts/evidence-pack.sh
 
 evidence-pack-fixtures:
-	@chmod +x scripts/evidence-pack.sh 2>/dev/null || true
 	./scripts/evidence-pack.sh --fixtures
 
 path-eplus-smoke:
-	@chmod +x scripts/path-eplus-smoke.sh 2>/dev/null || true
 	./scripts/path-eplus-smoke.sh
 
 preflight:
-	@chmod +x scripts/preflight.sh 2>/dev/null || true
-	./scripts/preflight.sh
+	./scripts/preflight.sh --strict
+
+check-pins:
+	./scripts/check-pins.sh
+
+checkout-pins:
+	./scripts/checkout-pins.sh
+
+honesty:
+	./scripts/check-honesty.sh
 
 down:
-	@chmod +x scripts/stop-showcase.sh 2>/dev/null || true
 	./scripts/stop-showcase.sh
 
 destroy:
-	@chmod +x scripts/stop-showcase.sh 2>/dev/null || true
 	./scripts/stop-showcase.sh --hard

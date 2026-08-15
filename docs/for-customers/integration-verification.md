@@ -8,7 +8,7 @@
 
 Dieses Dokument beschreibt die **Integrations- / Claim-Verifikations-Suite** im Showcase:
 
-1. Was wir getestet haben (Konstellationen)
+1. What we tested (constellations) — **fixture spine vs live golden path are separate**
 2. Welche Evidenz im Repo liegt (`demo/verification/`, `demo/results/`)
 3. Wie Sie **dieselben Tests lokal** wiederholen
 
@@ -38,7 +38,7 @@ Make-Aliase: `make integration-suite` · `make integration-suite-fixtures` · `m
 
 | Modus | Docker? | Hard-Fail | Soft-Fail |
 |-------|---------|-----------|-----------|
-| `--fixtures` | Nein | Script-Syntax, Assembler, Pack-Rollen, Fixture-Stages | — |
+| `--fixtures` | Nein | Script-Syntax, Unit-Tests, Honesty-Gates, Pack-Rollen | — |
 | `--live` (Default-Stufen) | Teilweise | Nur wenn Stage hard und fehlschlägt | gatk-rs, S4MP, gatk-rs-wes, Solum/Consent wenn Stack fehlt |
 | `--live golden-path` | Ja, schwer | Demo + HELIOS | W4-Stufen weiterhin soft im Golden Path |
 
@@ -50,8 +50,8 @@ Ausgabe: `artifacts/integration-suite/SUITE-MANIFEST.json` (Pins, Stages, Honest
 
 | Claim (kurz) | Test | Erwartetes Ergebnis |
 |--------------|------|---------------------|
-| Showcase orchestriert Sibling-Pins | `PINNED_VERSIONS.txt` + Preflight | Dokumentierte Checkouts |
-| HELIOS-Audit nach Nextflow-WES | Golden path / fixtures HELIOS | Report mit Checks + Hashes |
+| Showcase pins vs sibling HEAD | `make check-pins` / `checkout-pins.sh` | `make up` requires Ferrum + HELIOS pins unless `SHOWCASE_ALLOW_PIN_DRIFT=1` |
+| HELIOS after Nextflow WES | Golden path (live) / fixtures (shape only) | Live: report on disk. Fixture: `SEC-CONTAINER-001` only; empty inputs documented |
 | Solum fail-closed Authz + Tamper | `make solum-stage` / fixtures | allow 200 / deny 403 / chain_broken |
 | Consent-Gate kann WES blockieren | allow vs deny | deny → `wes_may_proceed=false` |
 | Evidence Pack ist reviewbar | `evidence-pack --fixtures` | MANIFEST + README, keine Zertifikatsprache |

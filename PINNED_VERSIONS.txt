@@ -1,5 +1,8 @@
-# Pinned sibling revisions for reproducible demos (auto-generated).
-# Regenerate: ./scripts/refresh-pinned-versions.sh
+# Pinned sibling revisions for the last **published** demo/verification artefacts.
+# `make up` / golden-path requires Ferrum-GA4GH-Demo + HELIOS HEAD to match
+# unless SHOWCASE_ALLOW_PIN_DRIFT=1. Checkout: ./scripts/checkout-pins.sh
+# Report drift:        ./scripts/check-pins.sh
+# Refresh this file:   ./scripts/refresh-pinned-versions.sh
 # Generated: 2026-08-10T08:44:01Z
 #
 # Solum-tag is the Solum product git tag Solum-Demo builds against

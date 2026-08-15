@@ -1,6 +1,6 @@
-# H1 — Execution record (signed off)
+# H1 — Execution record (founder rehearsal)
 
-**Status:** **SIGNED OFF** (2026-08-06)
+**Status:** **FOUNDER REHEARSAL** (2026-08-06) — not a named customer / hospital site
 **Checklist:** [H1-PILOT-CHECKLIST.md](H1-PILOT-CHECKLIST.md)
 **Limitations:** [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md)
 
@@ -10,8 +10,8 @@
 
 | Field | Value |
 |-------|-------|
-| Pilot site / host | Synaptic Four ops — `MacBook-Air-von-Alexander` (dedicated H1 window; Ferrum-GA4GH-Demo + Solum-Demo stopped) |
-| Operator | Synaptic Four eng (Cursor-assisted) |
+| Pilot site / host | Founder workstation (hostname redacted; dedicated H1 window; Ferrum-GA4GH-Demo + Solum-Demo stopped) |
+| Operator | Founder (Cursor-assisted) — **not** a customer operator |
 | Date | 2026-08-06 |
 | Ferrum pin | `d7eb8c86` (`VERSIONS.lock` FERRUM_VERSION=v0.2.0) |
 | ga4gh-infra | checkout `a91713f` (compose build); lock tag `ga4gh-infra-v0.1.0` |

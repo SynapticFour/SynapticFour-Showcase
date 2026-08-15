@@ -14,8 +14,8 @@
 
 | Control | Status |
 |---------|--------|
-| Secret scan (Gitleaks) on push/PR | `.github/workflows/secret-scan.yml` |
-| Integration fixture CI | `.github/workflows/ci.yml` |
+| Secret scan (Gitleaks, **git history**) on push/PR | `.github/workflows/secret-scan.yml` |
+| Fixture-spine CI (no Docker) | `.github/workflows/ci.yml` |
 | Dependency Review (GitHub) | Optional — enable Dependency graph if PR dependency diffs are needed; not mandatory while no lockfile ecosystems dominate |
 
 ## Operator expectations

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "suite_kind": "synapticfour-showcase-integration-suite",
   "mode": "fixtures",
-  "generated_at": "2026-08-10T08:50:37.686943Z",
+  "generated_at": "2026-08-15T07:46:32.706645Z",
   "pins": {
     "Ferrum-GA4GH-Demo": "74c6456c90eecac98f601baf4dcf6d7d3dd2bcaa",
     "HELIOS": "0171294c608c38b713a22ad7a75cba903a8d6374",
@@ -20,7 +20,7 @@
       "status": "ok",
       "hard": true,
       "detail": null,
-      "at": "2026-08-10T08:50:37.651952Z"
+      "at": "2026-08-15T07:46:32.671662Z"
     }
   ],
   "summary": {

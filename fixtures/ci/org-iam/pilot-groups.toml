@@ -1,0 +1,21 @@
+# Snapshot of Solum config/org-iam/pilot-groups.toml for Showcase H2.2
+# contract-artefact gate when the Solum sibling is not checked out (CI).
+# This file proves the mapping *shape* is present. It does not prove JWT grant/deny.
+
+claim_path = "groups"
+
+[[map]]
+claim_value = "solum-consent-ops"
+capabilities = ["solum:consent:grant", "solum:consent:revoke", "solum:consent:read"]
+
+[[map]]
+claim_value = "solum-crypto-ops"
+capabilities = ["solum:crypto:encrypt", "solum:crypto:decrypt"]
+
+[[map]]
+claim_value = "solum-cdr-ops"
+capabilities = ["solum:cdr:write", "solum:cdr:read"]
+
+[[map]]
+claim_value = "solum-audit-ops"
+capabilities = ["solum:audit:export", "solum:audit:verify"]

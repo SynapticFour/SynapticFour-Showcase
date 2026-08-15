@@ -2,11 +2,12 @@
 # SynapticFour Showcase — customer-runnable integration / claim-verification suite.
 #
 # Modes:
-#   --fixtures   (default) No Docker required. Hard-fail on CI spine; publishable evidence.
+#   --fixtures   (default) No Docker. Fixture spine: syntax, unit tests, honesty
+#                gates, Evidence Pack from committed JSON. This is what GitHub CI runs.
 #   --live       Opt-in live stages (Docker / siblings). Soft-fail unstable gatk-rs/S4MP.
 #   --publish-verification  Copy fixture Evidence Pack + suite MANIFEST → demo/verification/
 #
-# Honesty: this suite tests technical integrations and claims as documented —
+# Honesty: fixtures are not a live stack. This suite tests documented integrations —
 # not legal compliance, clinical validity, or production equivalence.
 set -euo pipefail
 
@@ -307,7 +308,10 @@ PY
 This directory is a **frozen fixture Evidence Pack** plus `SUITE-MANIFEST.json` from
 `./scripts/run-integration-suite.sh --fixtures --publish-verification`.
 
-It is committed so anyone can inspect SynapticFour Showcase claims **without running Docker**.
+GitHub Actions runs this same command. It does **not** start Docker, Ferrum, HELIOS, or Solum.
+
+The genomic `helios-report.json` here matches default `helios.toml` (`SEC-CONTAINER-001` only).
+Clinical-plane evidence is `solum-audit-helios-chain.json`, not mixed into the genomic report.
 
 ## Re-run locally
 

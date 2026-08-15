@@ -133,7 +133,13 @@ if not isinstance(s, dict):
 ran = int(s.get("ran") or 0)
 skipped = int(s.get("skipped") or 0)
 errors = int(s.get("errors") or 0)
-all_passed = "true" if s.get("all_passed", True) else "false"
+ap = s.get("all_passed")
+if ap is True:
+    all_passed = "true"
+elif ap is False:
+    all_passed = "false"
+else:
+    all_passed = "unknown"
 print(f"{ran} {skipped} {errors} {all_passed}")
 PY
 }

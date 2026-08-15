@@ -4,9 +4,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
+
+_SCRIPTS = Path(__file__).resolve().parent
+if str(_SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(_SCRIPTS))
+
+from lib.helios_honesty import helios_honesty  # noqa: E402
 
 
 def _read_json(path: Path) -> dict[str, Any] | None:
@@ -14,8 +21,8 @@ def _read_json(path: Path) -> dict[str, Any] | None:
         return None
     try:
         return json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return None
+    except (OSError, json.JSONDecodeError) as exc:
+        return {"parse_error": True, "path": str(path), "error": str(exc)}
 
 
 def _benchmark_summary(bench: dict[str, Any] | None) -> dict[str, Any]:
@@ -34,6 +41,8 @@ def _helios_summary(helios_path: Path | None) -> dict[str, Any]:
     data = _read_json(helios_path)
     if not data:
         return {"report_path": str(helios_path), "parse_error": True}
+    if data.get("parse_error"):
+        return {"report_path": str(helios_path), **data}
     checks = data.get("checks") or []
     passed = sum(1 for c in checks if c.get("status") in ("pass", "info"))
     warned = sum(1 for c in checks if c.get("status") == "warn")
@@ -47,6 +56,7 @@ def _helios_summary(helios_path: Path | None) -> dict[str, Any]:
         "checks_passed": passed,
         "checks_warned": warned,
         "checks_failed": failed,
+        "honesty": helios_honesty(data),
     }
 
 
@@ -83,6 +93,7 @@ def _write_markdown_report(path: Path, report: dict[str, Any]) -> None:
         f"- Run ID: `{helios.get('run_id', 'n/a')}`",
         f"- Checks total: `{helios.get('checks_total', 'n/a')}`",
         f"- Passed / Warned / Failed: `{helios.get('checks_passed', 'n/a')} / {helios.get('checks_warned', 'n/a')} / {helios.get('checks_failed', 'n/a')}`",
+        f"- Honesty: `{(helios.get('honesty') or {}).get('note', 'n/a')}`",
         "",
     ]
     m2 = report.get("m2", {})

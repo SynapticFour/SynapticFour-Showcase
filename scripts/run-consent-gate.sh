@@ -19,7 +19,7 @@ SHOWCASE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SOLUM_DEMO_ROOT="${SHOWCASE_SOLUM_DEMO_ROOT:-$SHOWCASE_ROOT/../Solum-Demo}"
 OUT_DIR="${SHOWCASE_CONSENT_OUT:-$SHOWCASE_ROOT/artifacts/consent-gate}"
 BASE_URL="${SHOWCASE_SOLUM_BASE_URL:-http://127.0.0.1:8080}"
-TOKEN="${SOLUM_SIDECAR_TOKEN:-solum-demo-local-token-not-for-production}"
+TOKEN=""
 TOKEN_HEADER="X-Solum-Sidecar-Token"
 WAIT_SECONDS="${SHOWCASE_SOLUM_WAIT_SECONDS:-300}"
 SKIP_UP="${SHOWCASE_SOLUM_SKIP_UP:-0}"
@@ -43,8 +43,9 @@ Usage: scripts/run-consent-gate.sh [--allow|--deny|--fixtures] [--publish-exampl
 
 Environment:
   SHOWCASE_SOLUM_DEMO_ROOT / SHOWCASE_SOLUM_BASE_URL / SOLUM_SIDECAR_TOKEN
+  SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1  well-known Solum-Demo local token (live modes only)
   SHOWCASE_CONSENT_SUBJECT   default patient/showcase-phenoflow-001
-  SHOWCASE_CONSENT_PURPOSE   default wes_variant_calling
+  SHOWCASE_CONSENT_PURPOSE   default secondary_use_hdab
   SHOWCASE_CONSENT_TRY_BRA=1 Attempt POST /api/v1/phenopackets when BRA is up
   SHOWCASE_SOLUM_SKIP_DOWN   default 1 (leave Solum-Demo up for subsequent stages)
 
@@ -111,6 +112,13 @@ open(dest, "w", encoding="utf-8").write(json.dumps(doc, indent=2) + "\n")
 print(json.dumps({"wrote": dest}))
 PY
 }
+
+if [[ "$MODE" != "fixtures" ]]; then
+  # shellcheck source=lib/solum_sidecar_token.sh
+  source "$SCRIPT_DIR/lib/solum_sidecar_token.sh"
+  resolve_solum_sidecar_token || exit 1
+  TOKEN="$RESOLVED_SOLUM_SIDECAR_TOKEN"
+fi
 
 if [[ "$MODE" == "fixtures" ]]; then
   write_phenopacket_binding "$OUT_DIR/phenopacket-purpose-binding.json"

@@ -2,12 +2,17 @@
   "run_id": "00000000-0000-4000-8000-00000000c1a1",
   "pipeline_name": "tiny_hc_nextflow",
   "executor": "nextflow",
+  "input_files": [],
   "checks": [
     {
       "check_id": "SEC-CONTAINER-001",
       "status": "pass",
-      "message": "ok",
-      "evidence": {}
+      "message": "Fixture: empty evidence — genomic golden path uses helios.toml minimal set. Not a live container scan.",
+      "evidence": {
+        "containers_scanned": "0",
+        "fixture": true
+      }
     }
-  ]
+  ],
+  "honesty": "CI fixture matching default Showcase helios.toml (SEC-CONTAINER-001 only). CLIN-ACCESS-001 lives in fixtures/ci/solum/solum-audit-helios-chain.json, not here."
 }

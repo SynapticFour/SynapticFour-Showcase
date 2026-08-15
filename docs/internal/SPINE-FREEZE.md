@@ -3,13 +3,13 @@
 **Status:** Accepted
 **Date:** 2026-08-12
 **Audience:** founders, eng, ops, agents
-**Related:** [COORDINATED-PORTFOLIO-ROADMAP](./COORDINATED-PORTFOLIO-ROADMAP.md) · [HORIZON-OPEN-GATES](../pilots/HORIZON-OPEN-GATES.md) · [`ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md`](../../../synapticfour-business/strategy/org-level-up/ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md)
+**Related:** [COORDINATED-PORTFOLIO-ROADMAP](./COORDINATED-PORTFOLIO-ROADMAP.md) · [HORIZON-OPEN-GATES](../pilots/HORIZON-OPEN-GATES.md) · [org level-up plan](https://github.com/SynapticFour/synapticfour-business/blob/main/strategy/org-level-up/ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md) (private)
 
 ## Decision
 
 Until the org level-up exit criteria are met, **net-new feature work on the commercial spine is frozen**.
 
-Engineering exits for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, and optional **H5 preparedness** are already signed off. Remaining horizon work is mostly **human / commercial** (counsel, RA, MoU, reference customer).
+Engineering exits for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, and optional **H5 preparedness** are founder rehearsals on a developer host — not named customer sites. Remaining horizon work is mostly **human / commercial** (counsel, RA, MoU, reference customer).
 
 ### Freeze-ok (allowed)
 

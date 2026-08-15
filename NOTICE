@@ -1,0 +1,22 @@
+Synaptic Four Showcase — third-party notices
+==========================================
+
+This repository (orchestration scripts, fixtures, and documentation) is
+licensed under the Apache License 2.0. See LICENSE.
+
+Sibling products that the Showcase *orchestrates* are separately licensed.
+Cloning or running this repo does **not** grant rights to those products
+beyond their own licenses:
+
+- Ferrum — Business Source License 1.1 (converts to Apache-2.0 after 4 years)
+- Solum — Business Source License 1.1 (same conversion)
+- BioResearch Assistant — Business Source License 1.1 (same conversion)
+- HELIOS (core) — Apache License 2.0
+- Ferrum-GA4GH-Demo, Solum-Demo, ga4gh-infra, HelixTest, gatk-rs, S4MP —
+  see each repository’s LICENSE file
+
+Commercial use of BUSL-licensed products requires a license from
+Synaptic Four (contact@synapticfour.com) except as permitted by BUSL
+(non-production / additional use grant in those files).
+
+No NOTICE file in a sibling repo is superseded by this file.

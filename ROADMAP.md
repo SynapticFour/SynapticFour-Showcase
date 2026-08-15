@@ -8,8 +8,8 @@
 
 ## Was gerade in Arbeit ist
 
-🔨 **In Arbeit:**
-- One-command Demo-Setup (`showcase` CLI-Wrapper)
+🔨 **Backlog (not started):**
+- One-command Demo-Setup (`showcase` CLI-Wrapper) — not in this repo yet
 - Strukturiertes Run-Log (`artifacts/run.jsonl`)
 
 📋 **Geplant:**
@@ -33,7 +33,7 @@
 - ✅ Sync mit Nachbar-Repos (Ferrum-GA4GH-Demo, HELIOS, bioresearch-assistant) — Juni 2026 (23.06.)
 - ✅ `demo/results/` Host-Pfade bereinigt; `scripts/publish-demo-results.sh` für künftige Golden-Path-Läufe
 - ✅ `demo/results/` Artefakte neu generiert (Nextflow-Golden-Path, HELIOS-Audit)
-- ✅ `PINNED_VERSIONS.txt` auf aktuelle Git-HEADs
+- ✅ Neighbor pins recorded in `PINNED_VERSIONS.txt` (last **published artefact** SHAs; `make up` is pin-strict unless `SHOWCASE_ALLOW_PIN_DRIFT=1`)
 - ✅ Evaluator-Docs: Ferrum-Gateway-Port **18080**, HELIOS-CLI (`helios run`)
 - ✅ Kunden-orientiertes README mit DE/EN (April 2026)
 - ✅ Neue Dokumentenstruktur: `for-customers/` / `for-evaluators/` / `internal/` (April 2026)
@@ -44,7 +44,7 @@
 
 ## Was wir NICHT vorhaben
 
-- **Kein SaaS-Modell** für Ferrum oder HELIOS. On-Premise-first bleibt die Architektur.
+- **No SaaS model as the default** for Ferrum or HELIOS. On-premise-first remains the architecture. H5 docs describe optional managed single-tenant *preparedness*, not a launched SaaS.
 - **Keine automatischen Updates** die Ihre On-Premise-Instanz ohne Ihre Kontrolle verändern.
 - **Kein Vendor-Lock-in** durch proprietäre Datenformate. Alle Export-Formate sind offen spezifiziert.
 - **Keine Cloud-Abhängigkeit als Default.**
@@ -79,8 +79,8 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 
 ## What's currently in progress
 
-🔨 **In progress:**
-- One-command demo setup (`showcase` CLI wrapper)
+🔨 **Backlog (not started):**
+- One-command demo setup (`showcase` CLI wrapper) — not in this repo yet
 - Structured run log (`artifacts/run.jsonl`)
 
 📋 **Planned:**
@@ -101,14 +101,14 @@ Wenn Sie evaluiert haben — egal ob positiv, negativ, oder „hat nicht gepasst
 - ✅ Neighbor-repo sync (Ferrum-GA4GH-Demo, HELIOS, bioresearch-assistant) — June 2026 (23 Jun)
 - ✅ Sanitized `demo/results/` host paths; added `scripts/publish-demo-results.sh` for future golden-path runs
 - ✅ Regenerated `demo/results/` artefacts (Nextflow golden path + HELIOS audit)
-- ✅ Updated `PINNED_VERSIONS.txt` to current Git HEADs
+- ✅ Neighbor pins recorded in `PINNED_VERSIONS.txt` (last published artefact SHAs; `make up` is pin-strict unless `SHOWCASE_ALLOW_PIN_DRIFT=1`)
 - ✅ Evaluator docs: Ferrum gateway port **18080**, HELIOS CLI (`helios run`)
 
 ---
 
 ## What we will NOT do
 
-- **No SaaS model** for Ferrum or HELIOS. On-premise-first remains the architecture.
+- **No SaaS as the default** for Ferrum or HELIOS. On-premise-first remains the architecture. H5 docs are optional managed single-tenant *preparedness*, not a launched SaaS.
 - **No automatic updates** that change your on-premise instance without your control.
 - **No vendor lock-in** through proprietary data formats.
 - **No cloud dependency as default.**

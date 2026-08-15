@@ -1,6 +1,6 @@
 # Demo-Ergebnisse — Was Sie hier sehen
 
-*Sie müssen nichts installieren um diese Artefakte zu lesen. Sie stammen aus einem echten Showcase-Lauf.*
+*Sie müssen nichts installieren um diese Artefakte zu lesen. Jede Datei sagt, ob sie aus einem Lauf stammt oder ein Fixture ist.*
 
 [🇬🇧 English below](#english)
 
@@ -18,7 +18,7 @@
 }
 ```
 
-**Was das bedeutet:** Der Variant-Calling-Lauf im Demo-Datensatz (synthetischer GRCh37-Datensatz) erreicht volle Übereinstimmung mit dem Referenz-Callset. Dieser Wert ist für den Demo-Datensatz erwartet — er zeigt dass die Pipeline korrekt ausgeführt wird.
+**Was das bedeutet:** Der Variant-Calling-Lauf im Demo-Datensatz (synthetischer GRCh37-Mini-Callset) erreicht volle Übereinstimmung mit dem Referenz-Callset. **F1=1.0 ist für diesen Datensatz erwartet** — das zeigt, dass die Demo-Pipeline durchläuft, nicht dass ein klinischer Caller validiert wurde.
 
 ---
 
@@ -36,17 +36,20 @@
 
 ---
 
-### helios-report-example.json — Signierter Audit-Trail
+### helios-report-example.json — HELIOS-Export (Golden-Path-Minimum)
 
-**Was darin steht:**
-- `run_id` — eindeutige UUID des Laufs
-- `pipeline_name` und `executor` — was ausgeführt wurde
-- `start_time` / `end_time` — reproduzierbare Zeitstempel
-- `input_files` — mit SHA256-Hash jeder Input-Datei
-- `output_files` — mit SHA256-Hash jeder Output-Datei
-- `checks` — welche Checks liefen und was das Ergebnis war
+**Was darin steht (dieses committed Beispiel, 23. Jun. 2026):**
+- `run_id` — UUID des Exports
+- `pipeline_name`: `unknown-pipeline` (HELIOS hat den Nextflow-Namen nicht aufgelöst)
+- `input_files`: **empty** — dieses Beispiel enthält **keine** Input-Hashes
+- `output_files` — SHA256 von Dateien unter `results/` und Nextflow-Workdir (inkl. Cache-LOCK)
+- `checks`: genau `SEC-CONTAINER-001` mit `"containers_scanned": "0"` — **vacuous pass**, kein Beweis dass Images gepinnt waren
+- `signature` — Ed25519 über diesen Export; Schlüssel liegen lokal unter `.cache/` (gitignored)
+- Sidecar **[helios-report-example.honesty.json](helios-report-example.honesty.json)** — maschinenlesbare Honesty (das signierte JSON wird nicht verändert)
 
-**Was das für Sie bedeutet:** Jeder Lauf ist unveränderlich dokumentiert. Wenn jemand sechs Monate später fragt „Mit welchen Daten und welchem Code wurde Ergebnis X erzeugt?", gibt es eine maschinenlesbare Antwort.
+Default-Golden-Path nutzt [helios.toml](../../helios.toml): nur `SEC-CONTAINER-001`, weil das Demo-Referenzgenom GRCh37 ist. Klinische Checks (`CLIN-ACCESS-001`) gehören zu `helios-solum.toml` / Solum-Audit-Export, nicht in diesen genomischen Report.
+
+**Was das für Sie bedeutet:** Sie sehen, dass ein HELIOS-Export nach dem WES-Lauf geschrieben wurde. Sie sehen **nicht** eine vollständige Input-Provenance und **nicht** einen bestandenen Container-Pin-Scan. Für Stakeholder-Reviews: Honesty-Feld im Showcase-Report lesen.
 
 ---
 
@@ -60,7 +63,7 @@
 }
 ```
 
-**Was das bedeutet:** Illustratives Beispiel, wie ein Ergebnis-VCF als adressierbares DRS-Objekt referenziert werden kann (URI-Schema und Checksummen aus einem echten Lauf). Der Demo-Workflow kopiert `query.vcf.gz` nach `results/`; automatische DRS-Registrierung des Outputs ist nicht Teil des Standard-Golden-Paths — Partner-Institutionen nutzen ingest/import oder WES-Provenance je nach Deployment.
+**Was das bedeutet:** Illustratives DRS-URI-Schema. `ferrum-gateway:8080` ist der **Compose-interne** Hostname; vom Host ist das Gateway **:18080**. Automatische DRS-Registrierung des WES-Outputs ist nicht Teil des Default-Golden-Paths.
 
 ---
 
@@ -105,7 +108,7 @@ Live erzeugen: `make solum-stage` (optional `--` → `./scripts/run-solum-stage.
 
 # Demo results — what you see here (English)
 
-*You don't need to install anything to read these artefacts. They come from a real showcase run.*
+*You don't need to install anything to read these artefacts. Each file states whether it is from a live run or a fixture.*
 
 ---
 
@@ -115,9 +118,9 @@ Live erzeugen: `make solum-stage` (optional `--` → `./scripts/run-solum-stage.
 
 **metrics.json:** Ferrum's WES endpoint accepted the Nextflow run, executed it, and returned the run ID. This ID links the HELIOS audit trail to the WES run.
 
-**helios-report-example.json:** Contains run_id, pipeline_name, executor, timestamps, input file hashes, output file hashes, and check results. Every run is immutably documented.
+**helios-report-example.json:** HELIOS export after the Nextflow demo. In this committed file `input_files` is **empty** and `SEC-CONTAINER-001` has `containers_scanned=0` (vacuous pass). Not a full provenance certificate. Machine-readable honesty: [helios-report-example.honesty.json](helios-report-example.honesty.json) (signed JSON is not mutated). Clinical `CLIN-ACCESS-001` is a separate Solum artefact (`helios-solum.toml`).
 
-**drs-link-example.json:** Illustrative DRS object reference for the result VCF (URI scheme and checksums from a real run). The demo copies `query.vcf.gz` to `results/`; automatic DRS registration of outputs is not part of the default golden path.
+**drs-link-example.json:** Illustrative DRS URI. `ferrum-gateway:8080` is the Compose hostname; host port is **18080**. Automatic DRS registration of WES outputs is not part of the default golden path.
 
 **drs-micro-example.json:** DRS `/stream` micro-benchmark timings (median/p95 throughput) from the same run.
 

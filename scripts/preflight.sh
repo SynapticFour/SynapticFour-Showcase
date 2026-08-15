@@ -79,6 +79,12 @@ check_dir "HelixTest (optional Evidence Pack)" "${SHOWCASE_HELIXTEST_ROOT:-$SHOW
 check_dir "gatk-rs (optional W4 smoke)" "${SHOWCASE_GATK_RS_ROOT:-$SHOWCASE_ROOT/../gatk-rs}"
 check_dir "S4MP (optional W4 sidecar)" "${SHOWCASE_S4MP_ROOT:-$SHOWCASE_ROOT/../S4MP}"
 
+if [[ -x "$SHOWCASE_ROOT/scripts/check-pins.sh" ]]; then
+  echo "[preflight] sibling pin drift (PINNED_VERSIONS.txt = last published artefacts):"
+  "$SHOWCASE_ROOT/scripts/check-pins.sh" || note_warn "check-pins exited non-zero"
+  echo "[preflight] pin drift is informational here; make golden-path fails on required-sibling drift unless SHOWCASE_ALLOW_PIN_DRIFT=1"
+fi
+
 # Soft warning only: Solum stage is opt-in (SHOWCASE_ENABLE_SOLUM=1 / make solum-stage).
 if [[ "${SHOWCASE_ENABLE_SOLUM:-0}" == "1" ]]; then
   SOLUM_DEMO="${SHOWCASE_SOLUM_DEMO_ROOT:-$SHOWCASE_ROOT/../Solum-Demo}"

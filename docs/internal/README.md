@@ -1,7 +1,8 @@
 # Internal engineering notes
 
-Pilot execution records, evidence-chain work plans, and portfolio coordination
-notes for Synaptic Four maintainers.
+**Not a contract. Not a customer site. Not CI.**
 
-**Not required for customer evaluation.** Start with
+Pilot execution records and horizon checklists in this folder are **founder
+rehearsals** (developer workstation, Cursor-assisted). They do not name a
+paying customer or a hospital. Start evaluation at
 [docs/for-customers/start-here.md](../for-customers/start-here.md).

@@ -118,7 +118,7 @@ Hinweis: Ephemeral Demo-Keys — kein Produktions-Deploy. Produkt: [Solum](https
 |-----------|-------|
 | [DEMO.md](../../DEMO.md) | Vollständiges Runbook |
 | [demo/results/](../../demo/results/) | Vorgeneriete Artefakte ohne Installation |
-| [PINNED_VERSIONS.txt](../../PINNED_VERSIONS.txt) | Reproduzierbare Git-HEADs (+ Solum-tag) |
+| [PINNED_VERSIONS.txt](../../PINNED_VERSIONS.txt) | Publizierte Artefakt-SHAs (`make checkout-pins`; `make up` ist pin-strict) |
 | [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../internal/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md) | W0–W4 Evidence-Chain Plan |
 | [evidence-pack.md](../for-customers/evidence-pack.md) | Evidence Pack honesty + commands |
 | [helixtest-gate.md](helixtest-gate.md) | Optional HelixTest against gateway :18080 |
@@ -224,7 +224,7 @@ Success criterion: fail-closed authorization (200 vs 403) and `chain_broken` aft
 |----------|---------|
 | [DEMO.md](../../DEMO.md) | Complete runbook |
 | [demo/results/](../../demo/results/) | Pre-generated artefacts, no installation needed |
-| [PINNED_VERSIONS.txt](../../PINNED_VERSIONS.txt) | Reproducible Git HEADs (+ Solum-tag) |
+| [PINNED_VERSIONS.txt](../../PINNED_VERSIONS.txt) | Published artefact SHAs (`make checkout-pins`; `make up` is pin-strict) |
 | [IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md](../internal/IMPLEMENTATION-PLAN-EVIDENCE-CHAIN.md) | W0–W4 evidence-chain plan |
 | [evidence-pack.md](../for-customers/evidence-pack.md) | Evidence Pack honesty + commands |
 | [helixtest-gate.md](helixtest-gate.md) | Optional HelixTest against gateway :18080 |

@@ -2,9 +2,15 @@
 
 ## Was diese Repo ist / What this repo is
 
-Dies ist ein kunden-orientierter Showcase für Synaptic Fours Bioinformatik-Infrastruktur-Produkte. Die primäre Zielgruppe sind potentielle Kunden — nicht Entwickler die zu den Produkten selbst beitragen.
+Dies ist ein kunden-orientierter **Integrator** (Skripte, Pins, Fixtures). Die primäre Zielgruppe sind Evaluator:innen. Produkt-Issues gehören in die Upstream-Repos.
 
-This is a customer-facing showcase for Synaptic Four's bioinformatics infrastructure products. The primary audience is prospective customers — not developers contributing to the products themselves.
+`docs/internal/` sind Founder-Notizen — **kein Vertrag**.
+
+Please open a **pull request** against `main` rather than pushing commits directly. GitHub Actions fixture-spine + secret-scan must be green. Do not describe fixture CI as a live stack.
+
+Evaluators should judge **HEAD of `main`**, not older commits — see [docs/for-evaluators/evaluate-at-head.md](docs/for-evaluators/evaluate-at-head.md). We do not rewrite public git history.
+
+This is a customer-facing showcase. Audience: prospective customers. `docs/internal/` is engineering notes, not a contract.
 
 ## Dokumenten-Struktur / Document structure
 

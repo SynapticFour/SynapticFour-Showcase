@@ -10,7 +10,7 @@
 
 | Schritt | Was | Zeit | Docker? |
 |---------|-----|------|---------|
-| **0** | Fixtures / CI-Spine | ~2 Min | Nein |
+| **0** | Fixture-Spine (kein Docker; = CI) | ~2 Min | Nein |
 | **1** | Golden Path (Ferrum + HELIOS) | ~30–90 Min | Ja |
 | **2** | Passports / ga4gh-infra | +Stack | Ja |
 | **3** | Solum (klinische Plane) | ~10–20 Min | Optional |
@@ -21,15 +21,17 @@ Vollständige Clone-Liste und Ports: [DEMO.md](../../DEMO.md) · Portfolio-Karte
 
 ---
 
-## Schritt 0 — Ohne Installation (Empfehlung zum ersten Lesen)
+## Schritt 0 — Ohne Installation (Fixture-Spine, kein Docker)
 
 ```bash
 cd SynapticFour-Showcase
-make preflight
+make preflight                 # strict: Docker/Python (pin drift informational)
 make integration-suite-fixtures   # Spine + Evidence Pack + demo/verification/
 ```
 
-Sie sehen: `demo/verification/` mit `MANIFEST.json`, HELIOS-/Solum-/Consent-/gatk-rs-/S4MP- und **Passports-Co-Deploy**-Fixtures.
+Das ist **dieselbe Ebene wie GitHub Actions**. Es startet keinen Ferrum-/HELIOS-/Solum-Stack.
+
+Sie sehen: `demo/verification/` mit `MANIFEST.json` und als Fixtures gekennzeichneten HELIOS-/Solum-/Consent-Dateien. CLIN-ACCESS liegt im Solum-Audit-Artefakt, nicht im genomischen HELIOS-Report.
 
 → [Evidence Pack — was es beweist](evidence-pack.md) · [Integration verification](integration-verification.md)
 
@@ -40,8 +42,10 @@ Sie sehen: `demo/verification/` mit `MANIFEST.json`, HELIOS-/Solum-/Consent-/gat
 Sibling-Repos: `Ferrum-GA4GH-Demo`, `HELIOS` (siehe DEMO.md).
 
 ```bash
+make checkout-pins      # Ferrum + HELIOS at published SHAs
 make up                 # = golden-path: Demo --nextflow + HELIOS
 make evidence-pack      # nach erfolgreichem Lauf
+# Entwicklung auf Sibling-HEAD: SHOWCASE_ALLOW_PIN_DRIFT=1 make up
 ```
 
 Artefakte: `demo/results/`, `helios-reports/`, optional `artifacts/evidence-pack-*`.
@@ -79,10 +83,10 @@ Evidence: `artifacts/ga4gh-infra/co_deploy_results.json` · Rolle im Pack: `ga4g
 ## Schritt 3 — Solum (klinische Plane, Companion)
 
 ```bash
-make solum-stage
+SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1 make solum-stage
 # oder:
-make golden-path-with-solum
-make consent-gate          # Zweckbindung vor WES
+SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1 make golden-path-with-solum
+SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1 make consent-gate          # Zweckbindung vor WES
 ```
 
 Smokes auch direkt in [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) (`make smoke-all`).
@@ -107,7 +111,7 @@ Smokes auch direkt in [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) (
 
 | Step | What | Time | Docker? |
 |------|------|------|---------|
-| **0** | Fixtures / CI spine | ~2 min | No |
+| **0** | Fixture spine (no Docker; = CI) | ~2 min | No |
 | **1** | Golden path (Ferrum + HELIOS) | ~30–90 min | Yes |
 | **2** | Passports / ga4gh-infra | +stack | Yes |
 | **3** | Solum (clinical plane) | ~10–20 min | Optional |
@@ -126,6 +130,7 @@ make integration-suite-fixtures
 ### Step 1 — golden path
 
 ```bash
+make checkout-pins
 make up
 make evidence-pack
 ```
@@ -140,8 +145,8 @@ cd ../SynapticFour-Showcase && make co-deploy-harvest && make evidence-pack
 ### Step 3 — Solum
 
 ```bash
-make solum-stage   # or make golden-path-with-solum
-make consent-gate
+SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1 make solum-stage   # or make golden-path-with-solum
+SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1 make consent-gate
 ```
 
 *Synaptic Four · Stuttgart · contact@synapticfour.com*

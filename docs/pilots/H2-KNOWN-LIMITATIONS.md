@@ -3,7 +3,7 @@
 **Date:** 2026-08-06
 **Companion:** [H2-PILOT-CHECKLIST.md](H2-PILOT-CHECKLIST.md) · [H2-EXECUTION-RECORD.md](../internal/pilots/H2-EXECUTION-RECORD.md)
 
-**Full H2 exit signed** (spine v1 + H2.1–H2.4 + second-pass B–D). Outstanding items below are **documented**, not silent gaps.
+**Founder rehearsal** of the H2 engineering pack (spine v1 + H2.1–H2.4 + second-pass B–D) on a developer host — **not** a named customer site. Outstanding items below are **documented**, not silent gaps.
 
 | Area | Status |
 |------|--------|
@@ -19,7 +19,7 @@
 | CLI CAP_* / org-IAM | **Intentional** — CLI `--capability` offline; org-IAM **sidecar-only** (ADR 0002 wontfix) |
 | Zeroize | **Best-effort** ZeroizeOnDrop on held seeds; not a TEE / not proof against memory dump |
 | SAML | ga4gh-infra: OIDC bridge only; SAML via Keycloak if demanded |
-| HelixTest Auth Level live | Optional; not required for this sign-off |
+| HelixTest Auth Level live | Optional; not required for this founder rehearsal |
 | Kenya counsel / ODPC PRODUCTION | **Outstanding (H4)** — Vorprüfung is engineering prior art; real counsel still required |
 | Non-AWS cloud KMS adapters | **Outstanding** — Azure/Alibaba/Hetzner/custom use CustomerHeld files |
 | KMS EncryptionContext / IRSA | **Outstanding** — env credentials only; no AAD binding |

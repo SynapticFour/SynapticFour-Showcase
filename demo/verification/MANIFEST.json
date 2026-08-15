@@ -2,12 +2,13 @@
   "schema_version": 1,
   "pack_kind": "synapticfour-showcase-evidence-pack",
   "pack_id": "fixtures",
-  "generated_at": "2026-08-10T08:50:37.606600Z",
+  "generated_at": "2026-08-15T07:46:32.176724Z",
   "mode": "fixtures-published",
   "showcase_root": "(portable; see repo SynapticFour-Showcase)",
   "honesty": {
     "proves": [
-      "Presence of signed/structured HELIOS audit artefacts from a run or fixture",
+      "Presence of a HELIOS report (live or fixture) plus SHA-256 of files in this pack",
+      "HELIOS honesty fields: empty input_files and vacuous container checks are called out",
       "Declared DRS checksums when a DRS object JSON is included",
       "Optional HelixTest / Solum Stage-1 digests when included",
       "Optional Solum H3 CDR + subject-link fixtures (Path E+) when included",
@@ -39,7 +40,22 @@
       "checks_passed": 1,
       "checks_warned": 0,
       "checks_failed": 0,
-      "output_file_hashes": []
+      "output_file_hashes": [],
+      "honesty": {
+        "present": true,
+        "input_files_recorded": false,
+        "input_file_count": 0,
+        "output_file_count": 0,
+        "vacuous_checks": [
+          "SEC-CONTAINER-001"
+        ],
+        "clinical_checks": [],
+        "fixture_flagged_checks": [
+          "SEC-CONTAINER-001"
+        ],
+        "pipeline_name": "tiny_hc_nextflow",
+        "note": "No input_files hashes in this report. Output hashes (if any) are post-run filesystem hashes, not a complete provenance of pipeline inputs. SEC-CONTAINER-001 passed without scanning container images (containers_scanned=0 or empty evidence). That is not proof that images were pinned. Checks flagged as fixtures (not a live run): SEC-CONTAINER-001."
+      }
     },
     "drs": {
       "object_id": "drs://ferrum-gateway:8080/01KVTCN5H7BRXN1RS4C39PDQJ1/query.vcf.gz",
@@ -127,8 +143,8 @@
       "role": "helios_report",
       "name": "helios-report.json",
       "source": "fixtures/ci/helios/report.json",
-      "sha256": "c6a002954bda96354a5928c1622e2f4758b50bec01c788648d4fa880e5a85230",
-      "size_bytes": 258
+      "sha256": "471fc19b449b29bd03527e05c41aebc638af5531fcf331e680c8ee4d0f3edc23",
+      "size_bytes": 622
     },
     {
       "role": "drs_object",
@@ -180,6 +196,13 @@
       "size_bytes": 381
     },
     {
+      "role": "solum_audit_export",
+      "name": "solum-audit-helios-chain.json",
+      "source": "fixtures/ci/solum/solum-audit-helios-chain.json",
+      "sha256": "3fe1d9fe920600175f44f33f96578a1c55d264b510164e796a004e560bbe1db1",
+      "size_bytes": 709
+    },
+    {
       "role": "consent_gate",
       "name": "consent-gate-result.json",
       "source": "fixtures/ci/consent-gate/consent-gate-result.json",
@@ -218,7 +241,7 @@
       "role": "ga4gh_infra_co_deploy_harvest",
       "name": "co-deploy-harvest.json",
       "source": "co-deploy-harvest.json",
-      "sha256": "556fed01ee765f2da9aad23be7e6d049a96c2d0b1c338d9253d43325d2a7a6bf",
+      "sha256": "ea3164779142ac49973a351d8b4ce903a9b828c36cdf46d4a7a0e8b2ac966bc0",
       "size_bytes": 775
     },
     {

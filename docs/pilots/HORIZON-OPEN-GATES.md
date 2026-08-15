@@ -5,7 +5,7 @@
 **Source of truth for execution packs:** this folder’s H1–H5 checklists
 **Roadmap:** [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
 
-Engineering exits for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, and optional **H5 preparedness** are done. Remaining work is mostly **human / commercial**, plus deliberate product follow-ons that are **not** required to claim those engineering exits.
+Engineering packs for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, and optional **H5 preparedness** are **founder rehearsals on a developer host**, not named customer sites. Remaining work is mostly **human / commercial**, plus deliberate product follow-ons that are **not** required to claim those engineering packs.
 
 ---
 
@@ -13,8 +13,8 @@ Engineering exits for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, an
 
 | Horizon | Eng status | Still missing |
 |---------|------------|---------------|
-| **H1** | Signed off | Optional HelixTest auth-on live (not required) |
-| **H2** | Full exit signed | Optional HelixTest Auth Level; non-AWS KMS; Kenya counsel moved to H4 |
+| **H1** | Founder rehearsal | Optional HelixTest auth-on live (not required) |
+| **H2** | Founder rehearsal | Optional HelixTest Auth Level; non-AWS KMS |
 | **H3** | Full eng + depth harden | External RA before *marketing* clinical claims; patient-summary OPT pin; Synaptic Four EHR UI (**never** in H) |
 | **H4** | K2 eng exit | Counsel send + PRODUCTION flip; named site; field reconcile wiring |
 | **H5** | Optional preparedness exit | Paying managed-host customer; multi-tenant (**deferred**); TEE (**sketch only**) |
@@ -56,7 +56,7 @@ Engineering exits for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, an
 
 | Item | Status | Owner |
 |------|--------|-------|
-| Full H2 exit (teeth, org-IAM, ops, KMS optional) | Done | — |
+| H2 engineering pack (teeth, org-IAM, ops, KMS optional) | Founder rehearsal | — |
 | HelixTest Auth Level live | Open (optional) · **backlog-only** | Ops |
 | Non-AWS / EncryptionContext / IRSA depth | Documented outstanding · **backlog-only** | Eng backlog |
 | Kenya PRODUCTION | Moved to H4 · **human** | Counsel |

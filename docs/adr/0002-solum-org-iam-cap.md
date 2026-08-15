@@ -29,7 +29,7 @@ Optional **org-IAM mode** on `solum-sidecar`:
 
 - Integrators must issue IdP groups that match the site mapping file.
 - ADS dataset grants and Solum CAP_* remain separate planes.
-- Full H2 exit does **not** require CLI JWT wiring.
+- H2 engineering exit (founder rehearsal) does **not** require CLI JWT wiring.
 
 ## Links
 

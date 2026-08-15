@@ -9,7 +9,7 @@
 Der SynapticFour-Showcase demonstriert wie Bausteine in einer realen Pipeline zusammenspielen:
 
 1. **Ferrum** nimmt einen Variant-Calling-Job über seine WES-Schnittstelle entgegen und führt ihn aus
-2. **HELIOS** erzeugt dabei automatisch einen signierten Audit-Trail mit SHA256-Hashes aller Input- und Output-Dateien
+2. **HELIOS** erzeugt dabei automatisch einen **signierten** Audit-Export (Output-Hashes). Das committed Beispiel `demo/results/helios-report-example.json` hat **leere** `input_files` und einen vacuous Container-Check — siehe Sidecar [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json). Live-Läufe schreiben nach `helios-reports/`.
 3. **BioResearch Assistant** (optional, M2) bekommt das Ergebnis-VCF und die Run-Metadaten übergeben — bereit für Downstream-Analyse
 4. **Solum** (optional, `make solum-stage` / `make golden-path-with-solum`) zeigt fail-closed Autorisierung und tamper-evident Audit als klinischen Companion
 
@@ -28,13 +28,13 @@ Am Ende haben Sie: einen Benchmark-Report, eine HELIOS-Audit-Datei, einen DRS-Ob
 The SynapticFour Showcase demonstrates how building blocks work together in a real pipeline:
 
 1. **Ferrum** accepts a variant calling job via its WES interface and executes it
-2. **HELIOS** automatically generates a signed audit trail with SHA256 hashes of all input and output files
+2. **HELIOS** automatically generates a **signed** audit export (output hashes). The committed example `demo/results/helios-report-example.json` has **empty** `input_files` and a vacuous container check — see [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json). Live runs write to `helios-reports/`.
 3. **BioResearch Assistant** (optional, M2) receives the result VCF and run metadata — ready for downstream analysis
 4. **Solum** (optional, `make solum-stage` / `make golden-path-with-solum`) demonstrates fail-closed authorization and tamper-evident audit as a clinical companion
 
 **You don't need to install anything to see the results.**
 
-→ **[demo/results/](demo/results/)** — all artefacts from a real run, directly readable
+→ **[demo/results/](demo/results/)** — committed examples (live, fixture, or historical export — each README says which), directly readable
 
 ---
 
@@ -74,17 +74,25 @@ git clone https://github.com/SynapticFour/bioresearch-assistant.git
 # HelixTest / gatk-rs / S4MP / Ferrum / Solum — as needed
 
 cd SynapticFour-Showcase
-# Optional: pin siblings to PINNED_VERSIONS.txt SHAs, then:
-./scripts/preflight.sh
+./scripts/checkout-pins.sh    # detach siblings to published artefact SHAs (needed for make up)
+make preflight                # strict Docker/Python; pin drift is informational here
+make up                       # fails if Ferrum/HELIOS HEAD drifted unless SHOWCASE_ALLOW_PIN_DRIFT=1
 ```
 
-Reproduzierbare Stände: [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) · Refresh: `./scripts/refresh-pinned-versions.sh`
+Reproduzierbare Stände: [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) sind die SHAs der **zuletzt committeden** Artefakte. `make up` verlangt, dass Ferrum-GA4GH-Demo und HELIOS auf genau diesen SHAs stehen (`make checkout-pins`). Entwicklung auf Sibling-HEAD: `SHOWCASE_ALLOW_PIN_DRIFT=1 make up`.
 
 **Schnellcheck vor dem Termin:**
 ```bash
-./scripts/preflight.sh
-# Streng (Exit-Code bei Problem):
-./scripts/preflight.sh --strict
+make preflight
+make checkout-pins
+./scripts/check-pins.sh --strict
+```
+
+Solum-Live-Skripte setzen **kein** Demo-Token still. Lokal gegen Solum-Demo compose:
+
+```bash
+SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1 make solum-stage
+SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1 make consent-gate
 ```
 
 ---
@@ -92,10 +100,11 @@ Reproduzierbare Stände: [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) · Refresh: 
 ## Ein Befehl (Happy Path)
 
 ```bash
+make checkout-pins
 make up
-# oder ausführlich:
-chmod +x scripts/run-golden-path.sh
-# Optional: lokales venv mit HELIOS (empfohlen auf macOS/Homebrew-Python)
+# or, to run on sibling HEAD instead of published pins:
+# SHOWCASE_ALLOW_PIN_DRIFT=1 make up
+# Optional: local venv with HELIOS (recommended on macOS/Homebrew Python)
 python3.12 -m venv .venv && .venv/bin/pip install -e ../HELIOS
 SHOWCASE_PYTHON="$(pwd)/.venv/bin/python" \
 SHOWCASE_HELIOS_ROOT=/path/to/HELIOS \
@@ -107,9 +116,9 @@ SHOWCASE_HELIOS_ROOT=/path/to/HELIOS \
 ### Optional: Solum Stage-1
 
 ```bash
-make solum-stage
+SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1 make solum-stage
 # oder zusammen mit dem genomic golden path:
-make golden-path-with-solum
+SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1 make golden-path-with-solum
 ```
 
 Siehe [docs/for-customers/start-here.md](docs/for-customers/start-here.md) und [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) (`Solum-Demo`, `Solum-tag`).

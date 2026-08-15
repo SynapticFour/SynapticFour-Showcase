@@ -10,6 +10,7 @@ Procurement / purchasing should use the customer short path instead — do not m
 ---
 
 - [Technical Evaluation Kit](technical-evaluation-kit.md) — steps, checks, resources
+- [Evaluate HEAD](evaluate-at-head.md) — due diligence surface is `main` tip, not git archaeology
 - [Deployment and integration paths](deployment-paths.md) — Path A–E detail
 - [HelixTest gate](helixtest-gate.md) — optional Evidence Pack input (gateway :18080)
 - Evidence Pack (customer honesty): [../for-customers/evidence-pack.md](../for-customers/evidence-pack.md)

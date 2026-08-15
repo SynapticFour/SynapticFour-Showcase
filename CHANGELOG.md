@@ -4,6 +4,11 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- **Honesty pass (customer confidence):** Fixture CI no longer asserts `CLIN-ACCESS-001` on the genomic HELIOS report (clinical plane is `solum-audit-helios-chain.json`). HELIOS example is a signed historical export plus `helios-report-example.honesty.json` sidecar (empty `input_files`, vacuous `containers_scanned=0`; the signed JSON is not mutated). H2.2/H2.3 gates report `contract_artefact_present` / `docs_present` (H2.3 path fixed). `make up` is pin-strict (Ferrum + HELIOS) unless `SHOWCASE_ALLOW_PIN_DRIFT=1`. Live Solum scripts refuse a silent demo token (`SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1` or `SOLUM_SIDECAR_TOKEN`). README: founder (bus factor 1), production pricing, fixture vs live. NOTICE for sibling BUSL. Gitleaks scans git history with tarball SHA-256. Unit tests under `tests/`. Horizon records labeled founder rehearsal; evaluate HEAD of `main` (history is not rewritten).
+
+
 ### Added
 
 - **Start-here map** — [docs/for-customers/start-here.md](docs/for-customers/start-here.md): fixtures → golden path → Passports → Solum.
@@ -11,12 +16,12 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 - **H5 SaaS-ready preparedness (optional)** — [H5-SAAS-READY-CHECKLIST](docs/internal/pilots/H5-SAAS-READY-CHECKLIST.md) · [H5-MANAGED-SINGLE-TENANT](docs/pilots/H5-MANAGED-SINGLE-TENANT.md) · [ADR 0003 tenant boundaries](docs/adr/0003-tenant-boundaries.md); not a SaaS launch.
 - **Horizon open gates** — [HORIZON-OPEN-GATES.md](docs/pilots/HORIZON-OPEN-GATES.md) lists remaining counsel/site/deferred items after H1–H5 eng exits.
 - **H3 full engineering exit** — Path E+ CDR + subject-link fixtures; [H3-PILOT-CHECKLIST](docs/pilots/H3-PILOT-CHECKLIST.md) / [H3-EXECUTION-RECORD](docs/internal/pilots/H3-EXECUTION-RECORD.md); evidence-pack roles `solum_cdr` / `solum_subject_link`.
-- **H2.4 AWS KMS CLI/sidecar signed off** — optional `aws-kms` feature; second-pass §A closed; not HSM.
+- **H1 / H2 founder rehearsals** — checklists + execution records (developer host, not a customer site).
 - **Kenya K1 Vorprüfung applied (non-counsel)** — Solum `kenya-dpa` → PROVISIONAL-PRODUCTION-CANDIDATE; H4 docs updated; real counsel still required.
-- **H2.2 Org CAP signed off** — sidecar OIDC groups → CAP_*; [ADR 0002](docs/adr/0002-solum-org-iam-cap.md); `make h22-org-cap`.
-- **H2.1 Teeth signed off** — Solum revoke → Ferrum DRS/WES 403 when configured; [ADR 0001](docs/adr/0001-solum-ferrum-consent-access.md); `make h21-teeth`.
-- **H2 spine v1 signed off** — WES fail-closed under `require_auth`, visa/ops honesty, Solum zeroize cross-links; see `docs/pilots/H2-*.md · docs/internal/pilots/`.
-- **H1 signed off** — checklist + [H1-EXECUTION-RECORD.md](docs/internal/pilots/H1-EXECUTION-RECORD.md) + [H1-KNOWN-LIMITATIONS.md](docs/pilots/H1-KNOWN-LIMITATIONS.md) (auth-on Ferrum + docker TES + Solum CustomerHeld + Evidence Pack + MinIO/Solum restore, 2026-08-06).
+- **H2.2 Org CAP contract artefact** — mapping file gate (`decision: contract_artefact_present`); JWT proof is Solum HTTP tests.
+- **H2.1 Teeth script** — Solum revoke → Ferrum DRS/WES 403 when configured; [ADR 0001](docs/adr/0001-solum-ferrum-consent-access.md); `make h21-teeth`.
+- **H2 spine v1 founder rehearsal** — WES fail-closed under `require_auth` on a developer host; see `docs/pilots/H2-*.md`.
+- **H1 founder rehearsal** — [H1-EXECUTION-RECORD.md](docs/internal/pilots/H1-EXECUTION-RECORD.md) (developer workstation, not a customer site).
 - **H1 / H4 pilot packs** — `docs/pilots/H1-PILOT-CHECKLIST.md`, `H4-GEOGRAPHY-DECISION.md` (Kenya first).
 - **Coordinated portfolio roadmap** — `docs/internal/COORDINATED-PORTFOLIO-ROADMAP.md` (H0–H5 on-prem first; Solum dual-track; SaaS-ready backseat).
 - **Customer integration suite** — `scripts/run-integration-suite.sh`, `make integration-suite`, published `demo/verification/`, overview + verification docs.

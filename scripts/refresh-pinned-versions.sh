@@ -27,7 +27,9 @@ rev_or_unknown() {
 }
 
 {
-  echo "# Pinned sibling revisions for reproducible demos (auto-generated)."
+  echo "# Pinned sibling revisions for the last published demo/verification artefacts."
+  echo "# make up requires Ferrum-GA4GH-Demo + HELIOS to match unless SHOWCASE_ALLOW_PIN_DRIFT=1."
+  echo "# Reproduce: ./scripts/checkout-pins.sh   Drift: ./scripts/check-pins.sh"
   echo "# Regenerate: ./scripts/refresh-pinned-versions.sh"
   echo "# Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
   echo "#"
