@@ -8,7 +8,7 @@
 
 ## Was Sie hier sehen
 
-Dieses Repository ist der **öffentliche Integrator**: Skripte, Pins und Artefakte, mit denen Sie nachvollziehen können, wie Ferrum, HELIOS, optional Solum und Nachbarprodukte zusammenspielen.
+Dieses Repository ist der **öffentliche Evidence-Pack / Outreach-Integrator** — **kein Produkt, kein SKU**. Skripte, Pins und Artefakte, mit denen Sie nachvollziehen können, wie die **vier Produkte** (Ferrum, ga4gh-infra, Solum, BioResearch Assistant) und die **freien Botschafter** (HelixTest, HELIOS) zusammenspielen. Lab-Kit und ferrum-meta kommen mit Ferrum, sie werden hier nicht verkauft.
 
 Zwei getrennte Nachweis-Ebenen — bitte nicht vermischen:
 
@@ -32,7 +32,7 @@ Ihr Institut arbeitet mit genomischen Daten. Sie haben:
 - Pipelines die heute laufen — und die niemand neu schreiben will
 - Compliance-Druck, der konkrete technische Nachweise verlangt, nicht Policy-Folien
 
-Ferrum, HELIOS, BioResearch Assistant und Solum sind Bausteine die diesen Knoten lösen — einzeln einsetzbar, zusammen stärker. Die durchgängige Evidenz-Kette (Genomic + Audit + Research AI + Clinical) ist der Zielzustand dieses Showcase; Solum ist über [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) lokal erlebbar (Stage-1 Authz/Audit/Consent + optionales Track-B-Overlay, `make smoke-all`) — orchestrierte Integration: [DEMO.md](DEMO.md) und [Start here](docs/for-customers/start-here.md).
+Ferrum, ga4gh-infra, Solum und BioResearch Assistant sind **eigene Produkte** (verschiedene Käufer), komplementär über GA4GH — kein Bundle-SKU. HELIOS und HelixTest sind **freie Botschafter** (Apache), keine Kaufprodukte. Solum ist über [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) lokal erlebbar. Evidence-Kette in diesem Repo: [DEMO.md](DEMO.md) und [Start here](docs/for-customers/start-here.md). Portfolio: [Ferrum PORTFOLIO.md](https://github.com/SynapticFour/Ferrum/blob/main/docs/PORTFOLIO.md).
 
 ---
 
@@ -91,7 +91,7 @@ Solum adressiert fail-closed Autorisierung, Jurisdiction-Profile und tamper-evid
 
 Die Identity-Schicht (OIDC-Broker, Passports/Visas, ADS) liegt in [ga4gh-infra](https://github.com/SynapticFour/ga4gh-infra). Der **Standard-Showcase-Golden-Path** läuft bewusst open-auth (schnell evaluierbar). Co-Deploy mit Passports: Sibling [Ferrum-GA4GH-Demo](https://github.com/SynapticFour/Ferrum-GA4GH-Demo) `./run --with-infra` · danach `make co-deploy-harvest` · [COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md) · [Start here](docs/for-customers/start-here.md).
 
-**Heute im Showcase orchestriert:** Ferrum-GA4GH-Demo → HELIOS · optional Solum-Stage · Consent-Gate · Evidence Pack · Passports-Harvest (soft) · BRA (M2) · gatk-rs/S4MP (soft) · Path E+.
+**Heute im Showcase als Evidence-Pfad verdrahtet:** Ferrum-GA4GH-Demo → HELIOS · optional Solum-Stage · Consent-Gate · Evidence Pack · Passports-Harvest (soft) · BRA (M2) · gatk-rs/S4MP (soft). Das ist kein Produkt-Orchester und kein SKU.
 **Als Nächstes (human / optional):** Kenya-Counsel (H4), named field site, Beacon-Tiefe, Showcase-CLI — siehe [Start here](docs/for-customers/start-here.md) und [DEMO.md](DEMO.md).
 
 ---
@@ -210,7 +210,7 @@ Your institution works with genomic data. You have:
 - Pipelines that run today — that nobody wants to rewrite
 - Compliance pressure that demands concrete technical evidence, not policy slides
 
-Ferrum, HELIOS, BioResearch Assistant, and Solum are building blocks that untangle this. Deployable individually. Stronger together. The end-to-end evidence chain (genomic + audit + research AI + clinical) is this Showcase’s target; Solum is runnable via [Solum-Demo](https://github.com/SynapticFour/Solum-Demo) (Stage-1 authz/audit/consent + optional Track B overlay, `make smoke-all`) — orchestrated integration: [DEMO.md](DEMO.md) and [Start here](docs/for-customers/start-here.md).
+Ferrum, ga4gh-infra, Solum, and BioResearch Assistant are **separate products** (different buyers), complementary via GA4GH — not a bundle SKU. HELIOS and HelixTest are **free ambassadors** (Apache). Solum is runnable locally via [Solum-Demo](https://github.com/SynapticFour/Solum-Demo). Evidence chain in this repo: [DEMO.md](DEMO.md) and [Start here](docs/for-customers/start-here.md). Portfolio: [Ferrum PORTFOLIO.md](https://github.com/SynapticFour/Ferrum/blob/main/docs/PORTFOLIO.md).
 
 ---
 

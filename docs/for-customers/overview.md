@@ -6,8 +6,8 @@
 
 ## Kurz
 
-SynapticFour liefert **on-premise-first** Bausteine für genomische / biomedizinische Workflows mit GA4GH-Schnittstellen, Audit und (optional) klinischer Consent-/Authz-Begleitung.
-Das **Showcase**-Repository orchestriert die Produkte als Demo- und Verifikationspfad — ohne Produkte in ein Monorepo zu zwingen.
+Synaptic Four liefert **vier eigenständige Produkte** (Ferrum, ga4gh-infra, Solum, BioResearch Assistant) plus **freie Botschafter** (HelixTest, HELIOS). Glue ist GA4GH; Solum erweitert in die Klinik. **Kein Bundle-SKU.**
+Das **Showcase**-Repository ist ein Evidence-Pack (Demo- und Verifikationspfad) — kein Produkt.
 
 **Sofort starten (ohne Docker):**
 
@@ -24,17 +24,15 @@ open demo/verification/README.md      # eingefrorene Evidenz im Repo
 
 | Produkt / Repo | Zweck (eine Zeile) | Reife / Hinweis |
 |----------------|--------------------|-----------------|
-| **Ferrum** | GA4GH Gateway (TRS/DRS/WES/TES u. a.) | Kernprodukt |
-| **Ferrum-GA4GH-Demo** | Ein-Kommando GIAB-/Benchmark-Demo über Ferrum (+ optional `--with-infra`) | Referenzpfad WES+hap.py · [COVERAGE](https://github.com/SynapticFour/Ferrum-GA4GH-Demo/blob/main/docs/COVERAGE.md) |
-| **ga4gh-infra** | Identity plane (Broker, Passports/Visas, ADS) | Co-Deploy via Demo `./run --with-infra` — nicht Default-Golden-Path |
-| **HELIOS** | Post-run Audit (Container-Pinning, Report) | Kernprodukt |
-| **bioresearch-assistant (BRA)** | PhenoFlow / Research-Assistenz, Phenopackets | Optional M2 im Showcase |
-| **Solum / Solum-Demo** | Klinischer Companion: Authz + Audit + Consent; optional Track B CDR | Stage-1 Demo + `make smoke-all` ([COVERAGE](https://github.com/SynapticFour/Solum-Demo/blob/main/docs/COVERAGE.md)) |
-| **Ferrum-Lab-Kit / Field / Edge** | Ops-Install, Pi/Edge, field sync | **Nicht** Showcase-Stage — siehe Ferrum Field-Docs / Lab-Kit; H4 pilots |
-| **HelixTest** | Conformance-/Service-Info Scores (optional) | Evidence Pack optional |
-| **gatk-rs** | Alpha Rust-HaplotypeCaller | Soft-fail / optional |
-| **S4MP** | Method-/Port-Diff-Wissen (nicht Executor) | Sidecar-Evidenz |
-| **SynapticFour-Showcase** | Integrator: Pins, Scripts, Evidence Pack, Suite | Demo + Verifikation |
+| **Ferrum** | GA4GH data/compute (DRS/WES/TES/…) | **Produkt** (BUSL) |
+| **ga4gh-infra** | Identity plane (Passports, DUO, ADS) | **Produkt**, Apache open-core — Co-Deploy via Demo `./run --with-infra` |
+| **Solum / Solum-Demo** | Klinische Overlay; Demo ist Proof | **Produkt** / Proof-Walkthrough |
+| **bioresearch-assistant (BRA)** | Researcher workbench | **Produkt** — optional im Showcase |
+| **HELIOS** | Pipeline-Audit (Datei-Ingest, kein Orchester) | **Freier Botschafter** (Apache), nicht SKU |
+| **HelixTest** | GA4GH-Conformance CLI | **Freier Botschafter** (Apache) |
+| **Ferrum-Lab-Kit** | Subset-Install für Ferrum | **Kommt mit Ferrum**, nicht separat |
+| **Ferrum-GA4GH-Demo** | Lokaler `./run` pipeline smoke | **Proof / Outreach** |
+| **SynapticFour-Showcase** | Pins, Scripts, Evidence Pack | **Proof**, kein Produkt |
 
 ---
 
