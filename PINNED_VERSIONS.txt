@@ -3,24 +3,24 @@
 # unless SHOWCASE_ALLOW_PIN_DRIFT=1. Checkout: ./scripts/checkout-pins.sh
 # Report drift:        ./scripts/check-pins.sh
 # Refresh this file:   ./scripts/refresh-pinned-versions.sh
-# Generated: 2026-08-15T19:03:42Z
+# Last refreshed 2026-08-16. Proof-repo pins are SHAs of sibling HEADs after the GATK-digest / Solum v0.1.0 cuts (push those repos before a remote checkout).
 #
-# Solum-tag is the Solum git ref Solum-Demo builds (Dockerfile ARG SOLUM_REF),
-# not a local checkout SHA. Live Stage-1 artefacts were regenerated against
-# this baseline (6b4519c), not the retired stage1 git tag.
+# Solum-tag is the Solum git ref Solum-Demo builds (Dockerfile ARG SOLUM_REF).
+# Tag v0.1.0. Live Stage-1 artefacts before that tag used 6b4519c.
 # HelixTest is optional (Evidence Pack / conformance gate).
 # ga4gh-infra is optional (Passports co-deploy via Ferrum-GA4GH-Demo --with-infra).
 # gatk-rs / S4MP are optional W4 (Alpha smoke + port-diff sidecar; soft-fail).
 # Pins must be commits that are ancestors of origin/main (git tags preferred).
 # HELIOS = tag v0.1.0. BRA = tag v0.2.0. HelixTest = tag v0.1.1.
-# ga4gh-infra = tag ga4gh-infra-v0.2.3 (peeled commit). Ferrum-GA4GH-Demo HEAD.
+# ga4gh-infra = tag ga4gh-infra-v0.2.3. Solum-tag = v0.1.0 (push Solum before remote checkout).
+# Pins are git tags (or peeled commits that are tags). No rewritten-history SHAs.
 
-Ferrum-GA4GH-Demo=b4e4e0a8ff0fb02162946e3c9a517d1b9afddfa9
-HELIOS=bfa4b570e82d7672d7b7091b1237dd81673777a2
-ga4gh-infra=613bd14932b57e30cfdca7b413841fe5b07a80fd
-bioresearch-assistant=7272a6e3c29a6b32392c8489dfadfeff7b4d0255
-Solum-Demo=ae02bb149a5452116824ad044fac53089467a283
-Solum-tag=6b4519c98f5c1e905ab5cf3f517787021d1e2604
-HelixTest=a8aabf30fa8a8963ca95a4e8c1e6c04cddf34a12
+Ferrum-GA4GH-Demo=dc33ef0fe66e2520df0a613f96929103094fcf6b
+HELIOS=v0.1.0
+ga4gh-infra=ga4gh-infra-v0.2.3
+bioresearch-assistant=v0.2.0
+Solum-Demo=5abfa0ea318517e3fb019794fd7f5df836411e3f
+Solum-tag=v0.1.0
+HelixTest=v0.1.1
 gatk-rs=88a203f85c6b7542ddd44ed81f8732f74d89682c
 S4MP=9f4c3533726b61747e91a76958ff9bab0dcf94c3

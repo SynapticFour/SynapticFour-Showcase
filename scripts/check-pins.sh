@@ -95,13 +95,15 @@ while IFS= read -r line || [[ -n "$line" ]]; do
     MISSING=$((MISSING + 1))
     continue
   fi
-  if [[ "$head" == "$pin" ]]; then
-    echo "[check-pins] OK   $key ${pin:0:12} matches HEAD"
+  pin_sha="$(git -C "$repo" rev-parse "${pin}^{commit}" 2>/dev/null || true)"
+  compare="${pin_sha:-$pin}"
+  if [[ "$head" == "$compare" ]]; then
+    echo "[check-pins] OK   $key $pin matches HEAD ${head:0:12}"
     MATCH=$((MATCH + 1))
     continue
   fi
-  ahead="$(git -C "$repo" rev-list --count "${pin}..HEAD" 2>/dev/null || echo "?")"
-  echo "[check-pins] DRIFT $key pin=${pin:0:12} HEAD=${head:0:12} (+${ahead} commits)"
+  ahead="$(git -C "$repo" rev-list --count "${compare}..HEAD" 2>/dev/null || echo "?")"
+  echo "[check-pins] DRIFT $key pin=$pin (${compare:0:12}) HEAD=${head:0:12} (+${ahead} commits)"
   DRIFT=$((DRIFT + 1))
   if [[ "$is_required" == "1" ]]; then
     REQUIRED_DRIFT=$((REQUIRED_DRIFT + 1))

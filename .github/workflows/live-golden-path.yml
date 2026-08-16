@@ -1,0 +1,39 @@
+# Live golden path — opt-in, not on every PR.
+# Needs Docker, sibling checkouts, 15–30+ min. Honesty-unit CI stays on push.
+name: Live golden path
+
+on:
+  workflow_dispatch:
+    inputs:
+      skip_demo:
+        description: "Skip Ferrum-GA4GH-Demo (HELIOS-only against existing artefacts)"
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: live-golden-path
+  cancel-in-progress: true
+
+jobs:
+  golden-path:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Preflight note
+        run: |
+          echo "This job expects sibling Ferrum-GA4GH-Demo + HELIOS at PINNED_VERSIONS.txt tags."
+          echo "GitHub-hosted runners do not clone siblings. Use a self-hosted runner or a workstation:"
+          echo "  make golden-path"
+          echo "Exits 0 here unless repository variable SHOWCASE_LIVE_SIBLINGS=1."
+
+      - name: Golden path
+        if: ${{ vars.SHOWCASE_LIVE_SIBLINGS == '1' }}
+        run: |
+          if [ "${{ inputs.skip_demo }}" = "true" ]; then
+            SHOWCASE_SKIP_DEMO=1 ./scripts/run-golden-path.sh
+          else
+            ./scripts/run-golden-path.sh
+          fi
