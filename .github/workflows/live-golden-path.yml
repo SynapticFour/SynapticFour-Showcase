@@ -1,5 +1,8 @@
-# Live golden path — opt-in, not on every PR.
-# Needs Docker, sibling checkouts, 15–30+ min. Honesty-unit CI stays on push.
+# Live golden path — not GitHub-hosted evidence.
+#
+# Sibling Ferrum-GA4GH-Demo + HELIOS checkouts, Docker, 15–30+ min.
+# Default github-hosted dispatch fails closed. Set repository variable
+# SHOWCASE_LIVE_SIBLINGS=1 only on a runner that already has those siblings.
 name: Live golden path
 
 on:
@@ -16,21 +19,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  hosted-is-not-proof:
+    if: ${{ vars.SHOWCASE_LIVE_SIBLINGS != '1' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub-hosted is not live evidence
+        run: |
+          echo "GitHub-hosted runners do not clone sibling proof repos."
+          echo "Live golden path is: make golden-path on a workstation."
+          echo "This workflow is not a green badge. Fixture CI remains the push check."
+          exit 1
+
   golden-path:
+    if: ${{ vars.SHOWCASE_LIVE_SIBLINGS == '1' }}
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v6
 
-      - name: Preflight note
-        run: |
-          echo "This job expects sibling Ferrum-GA4GH-Demo + HELIOS at PINNED_VERSIONS.txt tags."
-          echo "GitHub-hosted runners do not clone siblings. Use a self-hosted runner or a workstation:"
-          echo "  make golden-path"
-          echo "Exits 0 here unless repository variable SHOWCASE_LIVE_SIBLINGS=1."
-
       - name: Golden path
-        if: ${{ vars.SHOWCASE_LIVE_SIBLINGS == '1' }}
         run: |
           if [ "${{ inputs.skip_demo }}" = "true" ]; then
             SHOWCASE_SKIP_DEMO=1 ./scripts/run-golden-path.sh

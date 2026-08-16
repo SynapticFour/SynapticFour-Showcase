@@ -15,7 +15,7 @@ Zwei getrennte Nachweis-Ebenen — bitte nicht vermischen:
 | Ebene | Was sie ist | Was sie nicht ist |
 |-------|-------------|-------------------|
 | **Fixture-Spine** (`make integration-suite`) | Syntax, Unit-Tests, Honesty-Gates, committed JSON-Formen. Läuft in GitHub Actions **ohne Docker**. | Kein laufender Ferrum-/HELIOS-/Solum-Stack |
-| **Live Golden Path** (`make up`) | Docker, Sibling-Checkouts **auf PINNED_VERSIONS.txt** (sonst `SHOWCASE_ALLOW_PIN_DRIFT=1`), echter Nextflow-WES + HELIOS | Nicht das, was CI bei jedem Push fährt |
+| **Live Golden Path** (`make up` / `make golden-path`) | Docker, Sibling-Checkouts **auf PINNED_VERSIONS.txt** (sonst `SHOWCASE_ALLOW_PIN_DRIFT=1`), echter Nextflow-WES + HELIOS | Nicht GitHub-hosted. `live-golden-path.yml` schlägt auf github-hosted fehl, außer `SHOWCASE_LIVE_SIBLINGS=1` |
 
 Eingecheckte Dateien unter `demo/results/` und `demo/verification/` stammen aus Läufen **oder** sind als Fixtures gekennzeichnet. Der HELIOS-Beispielreport hasht Nextflow-Config/Log (nicht BAM) und **warnt** bei GATK `4.4.0.0` ohne Digest — maschinenlesbar in [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json) (signiertes JSON unverändert).
 
@@ -193,7 +193,7 @@ Two evidence layers — do not mix them:
 | Layer | What it is | What it is not |
 |-------|------------|----------------|
 | **Fixture spine** (`make integration-suite`) | Syntax, unit tests, honesty gates, committed JSON shapes. GitHub Actions runs this **without Docker**. | A running Ferrum / HELIOS / Solum stack |
-| **Live golden path** (`make up`) | Docker, sibling checkouts **at PINNED_VERSIONS.txt** (or `SHOWCASE_ALLOW_PIN_DRIFT=1`), real Nextflow WES + HELIOS | What CI runs on every push |
+| **Live golden path** (`make up` / `make golden-path`) | Docker, sibling checkouts **at PINNED_VERSIONS.txt** (or `SHOWCASE_ALLOW_PIN_DRIFT=1`), real Nextflow WES + HELIOS | Not GitHub-hosted. `live-golden-path.yml` fails on github-hosted unless `SHOWCASE_LIVE_SIBLINGS=1` |
 
 Checked-in files under `demo/results/` and `demo/verification/` are from runs **or** labeled fixtures. The HELIOS example hashes Nextflow config/log (not BAM) and **warns** on GATK `4.4.0.0` without a digest — machine-readable in [helios-report-example.honesty.json](demo/results/helios-report-example.honesty.json) (signed JSON unmodified).
 

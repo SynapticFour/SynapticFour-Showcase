@@ -13,7 +13,8 @@ concurrency:
 
 # This job is the fixture spine: syntax, unit tests, honesty gates, and
 # committed JSON shapes. It does **not** start Docker, Ferrum, HELIOS, or Solum.
-# Live golden path is make golden-path / workflow_dispatch on a workstation.
+# Live golden path is `make golden-path` on a workstation. GitHub-hosted
+# `live-golden-path.yml` fails closed unless SHOWCASE_LIVE_SIBLINGS=1.
 
 jobs:
   fixture-spine:

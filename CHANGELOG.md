@@ -4,6 +4,10 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- **GitHub-hosted live golden path** fails closed unless `SHOWCASE_LIVE_SIBLINGS=1`. Fixture CI remains the push check. Workstation proof is still `make golden-path`.
+
 ### Added
 
 - **Persona evidence sheet** — [docs/for-customers/persona-evidence.md](docs/for-customers/persona-evidence.md): Solum Stage-1 live regen 15 Aug; consent-gate live allow/deny the same day; golden-path WES pins follow a full Nextflow re-run.
