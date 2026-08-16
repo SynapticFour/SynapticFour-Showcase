@@ -356,4 +356,4 @@ Apache License 2.0 — see [LICENSE](LICENSE). Sibling products (Ferrum, Solum, 
 
 ---
 
-*Synaptic Four · Stuttgart, Germany · [synapticfour.com](https://synapticfour.com/en)*
+**Synaptic Four** · [contact@synapticfour.com](mailto:contact@synapticfour.com) · [synapticfour.com](https://synapticfour.com) · this repo Apache-2.0; Ferrum/Solum/BRA remain BUSL-1.1
