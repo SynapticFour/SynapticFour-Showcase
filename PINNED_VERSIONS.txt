@@ -15,7 +15,7 @@
 # ga4gh-infra = tag ga4gh-infra-v0.2.3. Solum-tag = v0.1.0 (push Solum before remote checkout).
 # Pins are git tags (or peeled commits that are tags). No rewritten-history SHAs.
 
-Ferrum-GA4GH-Demo=dc33ef0fe66e2520df0a613f96929103094fcf6b
+Ferrum-GA4GH-Demo=fa9ed3354fa4adb5da1116c93f58d87580c20126
 HELIOS=v0.1.0
 ga4gh-infra=ga4gh-infra-v0.2.3
 bioresearch-assistant=v0.2.0
