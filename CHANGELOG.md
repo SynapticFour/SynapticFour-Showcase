@@ -7,6 +7,7 @@ All notable changes to SynapticFour-Showcase are documented in this file.
 ### Changed
 
 - **GitHub-hosted live golden path** fails closed unless `SHOWCASE_LIVE_SIBLINGS=1`. Fixture CI remains the push check. Workstation proof is still `make golden-path`.
+- Default golden path is a **subset** (Demo + HELIOS), not live proof of product `main`. Pins follow suite 2026.08-draft.
 - HelixTest pin **`4a10e126c219`** (Ferrum `HELIXTEST_SHA`; tag label v0.1.2). Optional Evidence Pack input; hosted golden path is still not a default CI proof.
 
 ### Added

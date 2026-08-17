@@ -3,7 +3,7 @@
 # unless SHOWCASE_ALLOW_PIN_DRIFT=1. Checkout: ./scripts/checkout-pins.sh
 # Report drift:        ./scripts/check-pins.sh
 # Refresh this file:   ./scripts/refresh-pinned-versions.sh
-# Last refreshed 2026-08-16. Proof-repo pins are SHAs of sibling HEADs after the GATK-digest / Solum v0.1.0 cuts (push those repos before a remote checkout).
+# Last refreshed 2026-08-17. Proof-repo pins follow suite 2026.08-draft (`_suite/suite-manifest.toml` in the operator workspace).
 #
 # Solum-tag is the Solum git ref Solum-Demo builds (Dockerfile ARG SOLUM_REF).
 # Tag v0.1.0. Live Stage-1 artefacts before that tag used 6b4519c.
@@ -11,16 +11,16 @@
 # ga4gh-infra is optional (Passports co-deploy via Ferrum-GA4GH-Demo --with-infra).
 # gatk-rs / S4MP are optional W4 (Alpha smoke + port-diff sidecar; soft-fail).
 # Pins must be commits that are ancestors of origin/main (git tags preferred).
-# HELIOS = tag v0.1.0. BRA = tag v0.2.0. HelixTest = Ferrum HELIXTEST_SHA 4a10e126c219 (tag label v0.1.2; SHA is ahead of the tag peel).
+# HELIOS = tag v0.1.0. BRA = tag v0.2.1 (suite join; v0.2.0 lacks Ferrum HTTP proxy). HelixTest = Ferrum HELIXTEST_SHA 4a10e126c219 (tag label v0.1.2; SHA is ahead of the tag peel).
 # ga4gh-infra = tag ga4gh-infra-v0.2.3. Solum-tag = v0.1.0 (push Solum before remote checkout).
 # Pins are git tags (or peeled commits that are tags), except HelixTest which
 # follows Ferrum HELIXTEST_SHA (ahead of tag v0.1.2). No rewritten-history SHAs.
 
-Ferrum-GA4GH-Demo=fa9ed3354fa4adb5da1116c93f58d87580c20126
+Ferrum-GA4GH-Demo=639d21e95c3ccd0411b8e70837147ee3cd5f4f2d
 HELIOS=v0.1.0
 ga4gh-infra=ga4gh-infra-v0.2.3
-bioresearch-assistant=v0.2.0
-Solum-Demo=5abfa0ea318517e3fb019794fd7f5df836411e3f
+bioresearch-assistant=v0.2.1
+Solum-Demo=64cc8d4928ed085fe426137730791829e0549b28
 Solum-tag=v0.1.0
 HelixTest=4a10e126c21960471f439f26d23180058422b507
 gatk-rs=88a203f85c6b7542ddd44ed81f8732f74d89682c
