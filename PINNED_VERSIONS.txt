@@ -11,13 +11,13 @@
 # ga4gh-infra is optional (Passports co-deploy via Ferrum-GA4GH-Demo --with-infra).
 # gatk-rs / S4MP are optional W4 (Alpha smoke + port-diff sidecar; soft-fail).
 # Pins must be commits that are ancestors of origin/main (git tags preferred).
-# HELIOS = tag v0.1.0. BRA = tag v0.2.1 (suite join; v0.2.0 lacks Ferrum HTTP proxy). HelixTest = Ferrum HELIXTEST_SHA 4a10e126c219 (tag label v0.1.2; SHA is ahead of the tag peel).
+# HELIOS = tag v0.1.1. BRA = tag v0.2.1 (suite join; v0.2.0 lacks Ferrum HTTP proxy). HelixTest = Ferrum HELIXTEST_SHA 4a10e126c219 (tag label v0.1.2; SHA is ahead of the tag peel).
 # ga4gh-infra = tag ga4gh-infra-v0.2.3. Solum-tag = v0.1.0 (push Solum before remote checkout).
 # Pins are git tags (or peeled commits that are tags), except HelixTest which
 # follows Ferrum HELIXTEST_SHA (ahead of tag v0.1.2). No rewritten-history SHAs.
 
-Ferrum-GA4GH-Demo=639d21e95c3ccd0411b8e70837147ee3cd5f4f2d
-HELIOS=v0.1.0
+Ferrum-GA4GH-Demo=1dd2b2b951dceeb8db58b0c2850d8cfcd1f87216
+HELIOS=v0.1.1
 ga4gh-infra=ga4gh-infra-v0.2.3
 bioresearch-assistant=v0.2.1
 Solum-Demo=64cc8d4928ed085fe426137730791829e0549b28
