@@ -23,4 +23,4 @@ Literature-heavy, pseudonymization-sensitive clinical research. You want on-prem
 
 ## Honest limits
 
-BRA is not Ferrum and not Solum. Cloud LLM features transmit data if enabled — local Ollama path exists for privacy-sensitive use. Pricing: see synapticfour-business / BRA docs.
+BRA is not Ferrum and not Solum. Cloud LLM features transmit data if enabled — local Ollama path exists for privacy-sensitive use.

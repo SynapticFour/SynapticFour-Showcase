@@ -1,7 +1,7 @@
 # H1 — Known limitations (pilot sign-off)
 
 **Date:** 2026-08-06
-**Companion:** [H1-EXECUTION-RECORD.md](../internal/pilots/H1-EXECUTION-RECORD.md) · [H1-PILOT-CHECKLIST.md](H1-PILOT-CHECKLIST.md)
+**Companion:** [H1-PILOT-CHECKLIST.md](H1-PILOT-CHECKLIST.md). Execution records are not published in this repository.
 
 These are acceptable for **H1 pilot-ready** claims. They are **not** production SoR / EHDS certification.
 

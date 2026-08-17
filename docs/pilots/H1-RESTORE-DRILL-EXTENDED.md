@@ -2,7 +2,7 @@
 
 **Status:** Procedure pack + operator execution log
 **Date opened:** 2026-08-12 · org level-up **D2**
-**Extends:** [H1-EXECUTION-RECORD.md](../internal/pilots/H1-EXECUTION-RECORD.md) · [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md)
+**Extends:** [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md). The H1 execution record is not published in this repository.
 
 ---
 

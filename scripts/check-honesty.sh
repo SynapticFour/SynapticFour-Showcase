@@ -68,7 +68,7 @@ if grep -n 'SOLUM_SIDECAR_TOKEN:-solum-demo-local-token' scripts/run-*.sh; then
 fi
 
 echo "[honesty] H2.3 second-pass path exists"
-test -f docs/internal/pilots/H2-SECOND-PASS.md
+test -f docs/pilots/H2-SECOND-PASS.md
 test -f docs/pilots/H2-OPS-RUNBOOK.md
 
 echo "[honesty] NOTICE + LICENSE present"

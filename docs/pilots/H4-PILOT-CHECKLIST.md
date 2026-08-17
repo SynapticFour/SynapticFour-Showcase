@@ -1,7 +1,7 @@
 # H4 — Edge / Pi + Kenya jurisdiction checklist
 
-**Horizon:** H4 from [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
-**Depends on:** [H3 engineering exit](../internal/pilots/H3-EXECUTION-RECORD.md)
+**Horizon:** H4 (edge / Pi + Kenya jurisdiction)
+**Depends on:** H3 engineering exit (execution record not published in this repository)
 **Geography decision:** [H4-GEOGRAPHY-DECISION.md](H4-GEOGRAPHY-DECISION.md)
 **Not H4:** Nigeria/SA profiles (queued), PRODUCTION flip without counsel, SaaS (H5), EHRbase on Pi
 
@@ -57,6 +57,6 @@ Full H4 production-ready exit additionally requires **K1.3–K1.4** (counsel) an
 |-------|-------|
 | Host | Synaptic Four eng |
 | Date | 2026-08-10 |
-| Evidence | [H4-EXECUTION-RECORD.md](../internal/pilots/H4-EXECUTION-RECORD.md) |
+| Evidence | Not published in this repository |
 | Profile | `kenya-dpa` PROVISIONAL-PRODUCTION-CANDIDATE |
 | Notes | Counsel send + named site remain open |

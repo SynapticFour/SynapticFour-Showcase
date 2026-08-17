@@ -1,6 +1,6 @@
 # H1 — Pilot-ready on-prem checklist (week-by-week)
 
-**Horizon:** H1 from [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
+**Horizon:** H1 (auth-on Ferrum + HELIOS + optional Solum sidecar)
 **Goal:** One site can run **Ferrum (auth on, real TES) + HELIOS + optional Solum sidecar** with customer-held keys and a restore drill — without Synaptic Four inventing a monorepo.
 
 **Not H1:** openEHR CDR (H3), Kenya production profile (H4), SaaS (H5).
@@ -19,7 +19,7 @@ A named pilot operator (not the founder’s laptop alone) can:
 
 Sign-off: operator name + date at bottom.
 
-**Status:** **FOUNDER REHEARSAL** 2026-08-06 — see [H1-EXECUTION-RECORD.md](../internal/pilots/H1-EXECUTION-RECORD.md) · [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md). Not a named customer operator.
+**Status:** **FOUNDER REHEARSAL** 2026-08-06 — [H1-KNOWN-LIMITATIONS.md](H1-KNOWN-LIMITATIONS.md). Not a named customer operator. Execution records are not published in this repository.
 
 ---
 

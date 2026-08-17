@@ -1,7 +1,7 @@
 # H3 — Clinical + genomic co-custody checklist
 
-**Horizon:** H3 from [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
-**Depends on:** [H2 founder rehearsal](../internal/pilots/H2-EXECUTION-RECORD.md)
+**Horizon:** H3 (clinical + genomic co-custody)
+**Depends on:** H2 founder rehearsal (execution record not published in this repository)
 **Not H3:** Kenya PRODUCTION profile (H4), SaaS launch (H5), full Synaptic Four EHR UI
 
 Architecture (Solum): [ADR 0001](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0001-openehr-cdr-and-migration.md) · [ADR 0002 EHRbase](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0002-cdr-engine-ehrbase.md) · [ADR 0003 subject bridge](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0003-subject-bridge.md) · [H3-EHRBASE-SPIKE.md](https://github.com/SynapticFour/Solum/blob/main/docs/H3-EHRBASE-SPIKE.md)
@@ -18,7 +18,7 @@ Architecture (Solum): [ADR 0001](https://github.com/SynapticFour/Solum/blob/main
 | 3.0.2 | Image pins in Solum `VERSIONS` | [x] | `ehrbase:2.34.0` + `ehrbase-v2-postgres:16.2` |
 | 3.0.3 | Minimal Solum façade write/read (one pinned template) | [x] | `solum-openehr` + sidecar `/v1/cdr/*` |
 | 3.0.4 | Audit on façade write | [x] | `cdr.ehr.created` / `cdr.composition.committed` |
-| 3.0.5 | H3.0 sign-off | [x] | [H3-EXECUTION-RECORD.md](../internal/pilots/H3-EXECUTION-RECORD.md) |
+| 3.0.5 | H3.0 sign-off | [x] | Execution record not published in this repository |
 
 ### Full H3 MVP
 
@@ -54,7 +54,7 @@ Architecture (Solum): [ADR 0001](https://github.com/SynapticFour/Solum/blob/main
 | Date | 2026-08-10 |
 | Solum | H3.0–H3.6 working tree |
 | EHRbase pin | `ehrbase/ehrbase:2.34.0` |
-| Evidence | [H3-EXECUTION-RECORD.md](../internal/pilots/H3-EXECUTION-RECORD.md) |
+| Evidence | Not published in this repository |
 | Notes | External RA counsel before marketing clinical claims remains open |
 
 ---

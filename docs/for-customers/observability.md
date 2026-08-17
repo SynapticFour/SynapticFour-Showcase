@@ -2,7 +2,7 @@
 
 **Audience:** operators standing up Ferrum ± Solum pilots
 **Status:** 2026-08-12 · org level-up **D8**
-**Depth pack:** [H2 observability README](../internal/pilots/observability/README.md) · [prometheus-alerts.yml](../internal/pilots/observability/prometheus-alerts.yml)
+**Depth pack:** [H2 observability README](../pilots/observability/README.md) · [prometheus-alerts.yml](../pilots/observability/prometheus-alerts.yml)
 
 ---
 
@@ -47,7 +47,7 @@ Same pattern works on bare metal, Hetzner, Azure, Alibaba, AWS VPC, or air-gappe
 - [ ] Health URLs documented for the site
 - [ ] Blackbox **or** cron curls installed
 - [ ] Alert destination (email/PagerDuty/…) named
-- [ ] On-call = customer unless Enterprise SOW says otherwise ([support-tiers.md](support-tiers.md))
+- [ ] On-call = customer unless a written SOW says otherwise
 
 ---
 

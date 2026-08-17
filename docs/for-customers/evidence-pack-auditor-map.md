@@ -2,7 +2,7 @@
 
 **Audience:** quality, ethics, procurement reviewers
 **Status:** 2026-08-12 · org K3
-**Related:** [evidence-pack.md](evidence-pack.md) · [evidence-pack-sales-blurb.md](legal/evidence-pack-sales-blurb.md) · [compliance-framing.md](compliance-framing.md)
+**Related:** [evidence-pack.md](evidence-pack.md) · [compliance-framing.md](compliance-framing.md)
 
 This map shows **which technical artefacts speak to common questions**. It does **not** answer the questions for you, and it is **not** a certificate of compliance.
 

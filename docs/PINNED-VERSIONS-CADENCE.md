@@ -1,7 +1,7 @@
 # PINNED_VERSIONS — monthly cadence (G7)
 
 **Owner:** eng / founder
-**Cadence:** Align with [`MONTHLY-GATES-CALENDAR`](https://github.com/SynapticFour/synapticfour-business/blob/main/strategy/org-level-up/MONTHLY-GATES-CALENDAR.md) (first business Monday CET).
+**Cadence:** First business Monday CET, aligned with the operator pin refresh.
 
 ## Steps
 

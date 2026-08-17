@@ -2,7 +2,7 @@
 
 [🇬🇧 English below](#english)
 
-> **Sales wording (locked):** use [legal/evidence-pack-sales-blurb.md](legal/evidence-pack-sales-blurb.md) verbatim in outreach — do not soften into certification claims.
+> Evidence Packs and HELIOS reports are **technical artefacts**, not certificates. Do not describe them as certification, accreditation, or a legal determination.
 
 ---
 

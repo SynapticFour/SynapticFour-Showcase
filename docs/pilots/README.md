@@ -2,8 +2,7 @@
 
 Customer-facing pilot **checklists** and geography notes for Synaptic Four evaluations.
 
-Maintainer execution records and portfolio coordination live under
-[`docs/internal/`](../internal/README.md) and are not required for a first evaluation.
+Maintainer execution records live outside this public tree and are not required for a first evaluation.
 
 | Doc | Use |
 |-----|-----|

@@ -9,7 +9,7 @@ OUT_DIR="${SHOWCASE_H23_OUT:-$SHOWCASE_ROOT/artifacts/h23-ops-polish}"
 mkdir -p "$OUT_DIR"
 
 OPS="$SHOWCASE_ROOT/docs/pilots/H2-OPS-RUNBOOK.md"
-SECOND="$SHOWCASE_ROOT/docs/internal/pilots/H2-SECOND-PASS.md"
+SECOND="$SHOWCASE_ROOT/docs/pilots/H2-SECOND-PASS.md"
 KENYA_SEND="${SHOWCASE_SOLUM_ROOT:-$SHOWCASE_ROOT/../Solum}/docs/counsel/KENYA-K1-SEND-CHECKLIST.md"
 
 missing=()

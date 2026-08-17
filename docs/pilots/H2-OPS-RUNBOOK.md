@@ -2,7 +2,7 @@
 
 **Audience:** on-prem operators after H1
 **Related:** Ferrum [customer-runbook](https://github.com/SynapticFour/Ferrum/blob/main/docs/customer-runbook.md) · Solum [DEPLOYMENT-RUNBOOK](https://github.com/SynapticFour/Solum/blob/main/docs/customer/DEPLOYMENT-RUNBOOK.md)
-**Second pass (KMS / full metrics / HELIOS):** [H2-SECOND-PASS.md](../internal/pilots/H2-SECOND-PASS.md)
+**Second pass (KMS / full metrics / HELIOS):** [H2-SECOND-PASS.md](H2-SECOND-PASS.md)
 
 ---
 

@@ -13,7 +13,7 @@
 | **Customer** | Hosts, volumes, object store, IdP, Crypt4GH keys, backup media, restore drills, RPO/RTO targets |
 | **Synaptic Four** (if support contracted) | Product docs, restore *procedures*, paid upgrade/restore assistance per SOW |
 
-Default org BCDR framing: [synapticfour-business BCDR](https://github.com/SynapticFour/synapticfour-business/blob/main/security/business-continuity-disaster-recovery.md) (private).
+Synaptic Four products are customer-operated. You own RPO/RTO, offsite copies, and restore drills. Product restore procedures live in the product repositories.
 
 ---
 
@@ -35,7 +35,7 @@ Default org BCDR framing: [synapticfour-business BCDR](https://github.com/Synapt
 | Object store (MinIO/S3) | Bucket versioning or volume snapshots |
 | Auth / ga4gh-infra | Infra DB + visa signing material if co-deployed |
 
-H1 pilot timed **MinIO + Solum** restore (~9s) — see [H1-EXECUTION-RECORD](../internal/pilots/H1-EXECUTION-RECORD.md). Hub Postgres timing: [H1-RESTORE-DRILL-EXTENDED](../pilots/H1-RESTORE-DRILL-EXTENDED.md).
+H1 pilot timed **MinIO + Solum** restore (~9s) on a founder rehearsal host — not a named customer site. Hub Postgres timing: [H1-RESTORE-DRILL-EXTENDED](../pilots/H1-RESTORE-DRILL-EXTENDED.md).
 
 ### Solum — Track A (sidecar stores)
 
@@ -77,6 +77,6 @@ Restoring EHRbase alone without Solum stores breaks co-custody evidence.
 
 ## Related
 
-- [key-custody.md](key-custody.md) · [co-custody.md](co-custody.md) · [legal/](legal/) · [support-tiers.md](support-tiers.md)
+- [key-custody.md](key-custody.md) · [co-custody.md](co-custody.md) · [legal/](legal/)
 - [observability.md](observability.md)
 - H2 ops: [H2-OPS-RUNBOOK.md](../pilots/H2-OPS-RUNBOOK.md)

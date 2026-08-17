@@ -3,7 +3,7 @@
 **Date:** 2026-08-10
 **Audience:** founders, eng, ops, website/content
 **Source of truth for execution packs:** this folder’s H1–H5 checklists
-**Roadmap:** [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
+**Roadmap:** coordinated portfolio notes are not published in this repository.
 
 Engineering packs for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, and optional **H5 preparedness** are **founder rehearsals on a developer host**, not named customer sites. Remaining work is mostly **human / commercial**, plus deliberate product follow-ons that are **not** required to claim those engineering packs.
 
@@ -21,7 +21,7 @@ Engineering packs for **H1**, **H2**, **H3** (incl. depth harden), **H4 K2**, an
 
 **Next concrete human action:** send Kenya K1 brief (counsel package (contact Synaptic Four — not published in the public Solum tree)).
 
-**Spine freeze (2026-08-12):** Net-new spine features are frozen. See [SPINE-FREEZE.md](../internal/SPINE-FREEZE.md) and [`synapticfour-business/strategy/org-level-up/ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md`](../../../synapticfour-business/strategy/org-level-up/ORG-LEVEL-UP-IMPLEMENTATION-PLAN.md). Tag legend below: **freeze-ok** = allowed during freeze; **backlog-only** = do not start unless a paying customer / signed pilot requires it; **human** = counsel/commercial, not eng feature work.
+**Spine freeze (2026-08-12):** Net-new spine features are frozen. Tag legend below: **freeze-ok** = allowed during freeze; **backlog-only** = do not start unless a signed pilot requires it; **human** = counsel/commercial, not eng feature work.
 
 ---
 
@@ -95,7 +95,7 @@ See [H4-PILOT-CHECKLIST.md](H4-PILOT-CHECKLIST.md).
 | TEE / confidential computing | Sketch only · **backlog-only** | Future programme |
 | Actual managed hosting for a customer | Open · **human** | Commercial |
 
-See [H5-SAAS-READY-CHECKLIST.md](../internal/pilots/H5-SAAS-READY-CHECKLIST.md).
+H5 SaaS-ready checklist is not published in this repository.
 
 ---
 
@@ -123,4 +123,4 @@ When updating [synapticfour-website](https://github.com/SynapticFour/synapticfou
 |------|------|
 | H3 | [H3-PILOT-CHECKLIST.md](H3-PILOT-CHECKLIST.md) |
 | H4 | [H4-PILOT-CHECKLIST.md](H4-PILOT-CHECKLIST.md) |
-| H5 | [H5-SAAS-READY-CHECKLIST.md](../internal/pilots/H5-SAAS-READY-CHECKLIST.md) |
+| H5 | Not published in this repository |
