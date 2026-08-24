@@ -20,11 +20,11 @@ Sequencing capacity is arriving faster than **governed, interoperable, locally o
 1. Ferrum Field / Edge docs + Showcase H4 materials
 2. Solum Kenya profile status (**provisional** until counsel PRODUCTION flip)
 3. [key-custody.md](../key-custody.md) · [evidence-pack.md](../evidence-pack.md)
-4. Workspace opportunities doc (KEMRI-adjacent channels)
+4. Workspace opportunities for field / national-node deployments (no named site in this tree)
 
 ## Sequencing
 
-Org plan: **send Kenya K1 counsel brief** before marketing PRODUCTION claims. Named site MoU next.
+Counsel review of the Kenya profile is required before any PRODUCTION claims. This persona is an evaluator pattern, not a named customer or MoU.
 
 ## Honest limits
 

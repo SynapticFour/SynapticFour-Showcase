@@ -1,19 +1,20 @@
-# genomDE Symposium one-pager — Ferrum beside GHGA · Solum beside EHR
+# Clinic / lab-edge one-pager — Ferrum beside a national archive · Solum beside EHR
 
-**Use:** print / PDF for Bonn 2026-09-28/29 · also email attachment after first contact
-**Org plan:** **I3**
-**Audience:** DIC / Genome Data Center / university-hospital IT & research leads
+**Use:** print / PDF for technical intro conversations
+**Audience:** data-centre / university-hospital IT and research leads
 **Contact:** contact@synapticfour.com · https://synapticfour.com/en/pilot
+
+Not affiliated with, endorsed by, or part of GA4GH, ELIXIR, GHGA, genomDE, or any national archive programme.
 
 ---
 
 ## One sentence
 
-**Ferrum** is an on-premise GA4GH runtime for the clinic/lab edge — complementary to the **GHGA** archive, not a competing national store. **Solum** adds a clinical compliance plane (consent · FHIR interchange · evidence) beside your EHR when both genomic and clinical planes matter.
+**Ferrum** is an on-premise GA4GH runtime for the clinic/lab edge — a node you run, not a competing national store. **Solum** adds a clinical compliance plane (consent · FHIR interchange · evidence) beside your EHR when both genomic and clinical planes matter.
 
 ---
 
-## Why this matters for genomDE / GHGA sites
+## Why this pattern shows up
 
 | Pain | What we show |
 |------|----------------|
@@ -26,7 +27,7 @@
 ## What to try (technical owners)
 
 1. Showcase [start-here](https://github.com/SynapticFour/SynapticFour-Showcase/blob/main/docs/for-customers/start-here.md)
-2. Persona [DIC / genomDE](https://github.com/SynapticFour/SynapticFour-Showcase/blob/main/docs/for-customers/personas/dic-genomde.md)
+2. Persona [clinic / national-node evaluator](https://github.com/SynapticFour/SynapticFour-Showcase/blob/main/docs/for-customers/personas/dic-genomde.md)
 3. Public repos: Ferrum · Ferrum-GA4GH-Demo · HelixTest · Solum-Demo
 
 Procurement: [procurement short path](https://github.com/SynapticFour/SynapticFour-Showcase/blob/main/docs/for-customers/procurement-short-path.md)
@@ -38,7 +39,8 @@ Procurement: [procurement short path](https://github.com/SynapticFour/SynapticFo
 - Evidence Packs / HELIOS ≠ certificates of EHDS, ISO, or MDR compliance
 - Default: **you** host; **you** hold keys
 - Support is founder-scale, business hours CET — not a 24/7 NOC unless SOW says so
-- We are seeking a **first productive pilot** — prefer MoU / paid scope over vague partnership claims
+- We are seeking a **first productive pilot** — prefer a written scope over partnership claims
+- Hypothetical evaluator personas in this tree are **not** customers and **not** named-site commitments
 
 ---
 
@@ -46,4 +48,4 @@ Procurement: [procurement short path](https://github.com/SynapticFour/SynapticFo
 
 20-minute intro call or a scoped 60–90 day pilot. Tell us your residency constraint and whether Solum’s clinical plane is in or out of scope.
 
-*Synaptic Four · Stuttgart · autism-founded · open engineering, honest limits*
+*Synaptic Four · Stuttgart · open engineering, honest limits*

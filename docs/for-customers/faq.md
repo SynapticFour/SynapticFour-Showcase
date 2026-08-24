@@ -81,20 +81,17 @@ Für einen produktiven Einsatz: Ferrum unterstützt PostgreSQL, S3-kompatiblen O
 
 ### Was kostet das?
 
-**Ferrum:** BUSL-1.1 Lizenz. Für zulässige nicht-kommerzielle Forschung und Evaluierung kostenfrei nutzbar; nach vier Jahren automatischer Wechsel zu Apache-2.0. Kommerzielle Nutzung erfordert Lizenzvereinbarung.
+**Ferrum:** BUSL-1.1 Lizenz. Für zulässige nicht-kommerzielle Forschung und Evaluierung kostenfrei nutzbar; nach vier Jahren automatischer Wechsel zu Apache-2.0. Kommerzielle Nutzung erfordert eine schriftliche Lizenzvereinbarung.
 
-**HELIOS-Kern:** Apache-2.0, kostenfrei. Synaptic Four bietet kostenpflichtigen Support und optionales Dashboard-Hosting.
+**HELIOS:** Apache-2.0, kostenfrei. Synaptic Four bietet optional kostenpflichtigen Support und Dashboard-Hosting — das ist Support, keine zweite Softwarelizenz.
 
-**BioResearch Assistant:**
-- Institutionslizenz: €5.000 einmalig + €3.000/Jahr
-- Onboarding: €2.000–5.000
-- Support: €500–1.000/Monat
+**BioResearch Assistant:** BUSL-1.1 wie Ferrum. Kommerzielle Nutzung nur mit schriftlicher Vereinbarung.
 
-Diese Zahlen stehen offen auf der Website. Wir verstecken keine Preise hinter Verkaufsgesprächen.
+Indikative Preise stehen **nicht** in diesem Repository. Nur ein schriftliches Angebot ist bindend. Kontakt: [contact@synapticfour.com](mailto:contact@synapticfour.com).
 
 ### Was passiert wenn Synaptic Four aufhört zu existieren?
 
-Eine berechtigte Frage. Ferrum und HELIOS wechseln nach vier Jahren zu Apache-2.0 — im Lizenztext festgelegt. Der Code ist öffentlich auf GitHub. Sie sind nicht auf uns angewiesen um die Software zu betreiben.
+Eine berechtigte Frage. **Ferrum, Lab Kit und Solum** (BUSL) wechseln nach der im Lizenztext festgelegten Change Date zu Apache-2.0. **HELIOS, HelixTest und ga4gh-infra** sind bereits Apache-2.0. Der Code ist öffentlich auf GitHub. Sie sind nicht auf uns angewiesen um die Software zu betreiben.
 
 ---
 
@@ -102,9 +99,7 @@ Eine berechtigte Frage. Ferrum und HELIOS wechseln nach vier Jahren zu Apache-2.
 
 ### Wer sind Sie?
 
-Ein kleines Bioinformatik-Infrastruktur-Team aus Stuttgart. Keine VC-Finanzierung, kein Cloud-Abhängigkeits-Geschäftsmodell. Sie sprechen mit den Entwicklern — nicht mit Account Managern.
-
-Neurodiversität und Inklusion sind kein „CSR-Anhängsel" für uns — Kolleg:innen im Autismus-Spektrum arbeiten in zentralen technischen Rollen.
+Ein kleines Bioinformatik-Infrastruktur-Unternehmen aus Stuttgart (Einzelunternehmen). Keine VC-Finanzierung, kein Cloud-Abhängigkeits-Geschäftsmodell. Sie sprechen mit den Leuten, die den Code schreiben — nicht mit einer Account-Manager-Schicht.
 
 → [Über uns](https://synapticfour.com/de/about)
 
@@ -178,20 +173,17 @@ Formal compliance responsibility rests with the operator. We don't promise certi
 
 ### What does it cost?
 
-**Ferrum:** BUSL-1.1 licence. Free for permitted non-commercial research and evaluation; after four years, automatic switch to Apache-2.0.
+**Ferrum:** BUSL-1.1 licence. Free for permitted non-commercial research and evaluation; after four years, automatic switch to Apache-2.0. Commercial use needs a written agreement.
 
-**HELIOS core:** Apache-2.0, free. Synaptic Four offers paid support and optional dashboard hosting.
+**HELIOS:** Apache-2.0, free. Synaptic Four offers optional paid support and dashboard hosting — support, not a second software licence.
 
-**BioResearch Assistant:**
-- Institutional licence: €5,000 one-time + €3,000/year
-- Onboarding: €2,000–5,000
-- Support: €500–1,000/month
+**BioResearch Assistant:** BUSL-1.1 like Ferrum. Commercial use needs a written agreement.
 
-These figures are openly listed on the website. We don't hide prices behind sales conversations.
+Indicative prices are **not** published in this repository. Only a written quote is binding. Contact: [contact@synapticfour.com](mailto:contact@synapticfour.com).
 
 ### What happens if Synaptic Four ceases to exist?
 
-A legitimate question. Ferrum and HELIOS switch to Apache-2.0 after four years — stated in the licence text. The code is publicly on GitHub. You are not dependent on us to operate the software.
+A legitimate question. **Ferrum, Lab Kit and Solum** (BUSL) convert to Apache-2.0 after the Change Date in the licence text. **HELIOS, HelixTest and ga4gh-infra** are already Apache-2.0. The code is public on GitHub. You are not dependent on us to operate the software.
 
 ---
 

@@ -1,7 +1,9 @@
-# Persona — German DIC / genomDE / GHGA submitter
+# Persona — clinic / national-node evaluator (GA4GH edge)
+
+**Evaluator pattern only.** Not a customer, not a named site, and **not affiliated with** genomDE, GHGA, ELIXIR, BfArM, or the GA4GH Alliance.
 
 **Primary products:** Ferrum (+ Solum)
-**Sales motion:** Direct + academic network; genomDE Symposium / GHGA venues
+**Context:** German university-hospital / genome-data-centre style deployments
 
 ---
 
@@ -13,7 +15,7 @@ You prepare genomic (and linked clinical) data for the **genomDE** model project
 
 | Your world | How we talk about Ferrum / Solum |
 |------------|----------------------------------|
-| **Genomrechenzentrum (GRZ)** / GHGA Data Hub | Ferrum as **pre-archive** GA4GH edge — complementary to GHGA, not a competing national store |
+| **Genomrechenzentrum (GRZ)** / national data hub | Ferrum as **pre-archive** GA4GH edge — a node you run, not a competing national store |
 | **Klinischer Datenknoten** / university hospital DIC | On-prem Ferrum (+ optional Solum consent/FHIR plane) |
 | **genomDE / GenDV** (incl. Funktionsfähigkeit themes) | Technical evidence & interchange — **not** a GenDV legal opinion or BfArM certificate |
 | **GHGA deposit** | Crypt4GH + standards APIs so deposit paths stay operator-controlled |
@@ -34,7 +36,7 @@ You prepare genomic (and linked clinical) data for the **genomDE** model project
 
 ## Positioning
 
-Ferrum is **complementary to GHGA**, not a competing national archive: standards plane at clinic/GDC edge. Solum is the optional clinical compliance companion (separate regulatory perimeter).
+Ferrum can sit **in front of** a national archive: a standards plane at the clinic/GDC edge, not a competing national store. That is an architectural claim, not an affiliation. Solum is the optional clinical compliance companion (separate regulatory perimeter).
 
 ## Honest limits
 

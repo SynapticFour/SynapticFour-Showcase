@@ -1,13 +1,15 @@
-# Personas — who should open what
+# Personas — evaluator patterns, not customers
 
-| Reader | File | Products in view |
-|--------|------|------------------|
-| German DIC / genomDE / GHGA | [dic-genomde.md](dic-genomde.md) | Ferrum + Solum |
-| EHDS lab / HMIS | [ehds-solum.md](ehds-solum.md) | Solum |
-| Kenya / Africa NPHI | [kenya-nphi.md](kenya-nphi.md) | Edge + Solum KE + HELIOS |
-| Academic BRA | [bra-research.md](bra-research.md) | BioResearch Assistant |
+These files describe **hypothetical readers**. They are not a customer list, not named-site commitments, and not affiliation with the programmes they mention.
 
-**Print / symposium:** [genomde-symposium-one-pager.md](genomde-symposium-one-pager.md)
+| Reader pattern | File | Products in view |
+|----------------|------|------------------|
+| Clinic / national-node evaluator | [dic-genomde.md](dic-genomde.md) | Ferrum + Solum |
+| EHDS lab / HMIS evaluator | [ehds-solum.md](ehds-solum.md) | Solum |
+| Field / national public-health lab evaluator | [kenya-nphi.md](kenya-nphi.md) | Edge + Solum KE + HELIOS |
+| Academic BRA evaluator | [bra-research.md](bra-research.md) | BioResearch Assistant |
+
+**Print / intro:** [genomde-symposium-one-pager.md](genomde-symposium-one-pager.md)
 
 **What artefacts exist today:** [../persona-evidence.md](../persona-evidence.md) (Solum Stage-1 live on 15 Aug 2026; golden-path WES not re-run).
 
