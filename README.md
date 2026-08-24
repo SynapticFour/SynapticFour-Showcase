@@ -34,3 +34,5 @@ Checked-in files under `demo/results/` and `demo/verification/` are from runs **
 ## License
 
 Apache License 2.0 — see [LICENSE](LICENSE). Product repositories keep their own licenses (commercial cores: BUSL-1.1).
+
+**Synaptic Four** · [contact@synapticfour.com](mailto:contact@synapticfour.com) · [synapticfour.com](https://synapticfour.com)
