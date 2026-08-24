@@ -2,16 +2,16 @@
   "schema_version": 1,
   "suite_kind": "synapticfour-showcase-integration-suite",
   "mode": "fixtures",
-  "generated_at": "2026-08-15T17:14:14.201107Z",
+  "generated_at": "2026-08-24T13:49:58.924242Z",
   "pins": {
-    "Ferrum-GA4GH-Demo": "74c6456c90eecac98f601baf4dcf6d7d3dd2bcaa",
-    "HELIOS": "0171294c608c38b713a22ad7a75cba903a8d6374",
-    "ga4gh-infra": "613bd14932b57e30cfdca7b413841fe5b07a80fd",
-    "bioresearch-assistant": "37313437900d3ddcb2bb0e4c9e66064393087d90",
-    "Solum-Demo": "ae02bb149a5452116824ad044fac53089467a283",
-    "Solum-tag": "6b4519c98f5c1e905ab5cf3f517787021d1e2604",
-    "HelixTest": "725ea7f2c03aba70384846723b75eedfefac0262",
-    "gatk-rs": "88a203f85c6b7542ddd44ed81f8732f74d89682c",
+    "Ferrum-GA4GH-Demo": "1dd2b2b951dceeb8db58b0c2850d8cfcd1f87216",
+    "HELIOS": "v0.1.1",
+    "ga4gh-infra": "ga4gh-infra-v0.2.3",
+    "bioresearch-assistant": "v0.2.1",
+    "Solum-Demo": "64cc8d4928ed085fe426137730791829e0549b28",
+    "Solum-tag": "v0.1.0",
+    "HelixTest": "v0.1.3",
+    "gatk-rs": "e8782e42c8bc3ffbbb51dba395c7dc9c4c72d519",
     "S4MP": "9f4c3533726b61747e91a76958ff9bab0dcf94c3"
   },
   "stages": [
@@ -20,7 +20,7 @@
       "status": "ok",
       "hard": true,
       "detail": null,
-      "at": "2026-08-15T17:14:14.168424Z"
+      "at": "2026-08-24T13:49:58.865519Z"
     }
   ],
   "summary": {
