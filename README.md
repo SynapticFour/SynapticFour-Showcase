@@ -1,5 +1,8 @@
 # Synaptic Four — Showcase
 
+Freeze status (2026-09): [STATUS.md](STATUS.md).
+
+
 Public evidence pack and pin checkout. **Reference / demo** — not a product and not a SKU.
 
 **Maturity: Reference / demo.** A green fixture job is not live proof of product `main`. The default golden path is a **Subset**: Ferrum-GA4GH-Demo + HELIOS.
