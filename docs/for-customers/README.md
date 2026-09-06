@@ -1,6 +1,6 @@
 # Evidence notes
 
-Technical artefacts and operator notes for this repository. Not a sales surface and not a product SKU.
+Technical artefacts and operator notes for this repository.
 
 - [Start here](start-here.md) — fixture spine → golden path → Passports → Solum
 - [Evidence pack — what it proves](evidence-pack.md)

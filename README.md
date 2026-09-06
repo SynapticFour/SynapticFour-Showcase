@@ -1,6 +1,6 @@
 # Synaptic Four — Showcase
 
-Public evidence pack and pin checkout. **Reference / demo** — not a product and not a SKU.
+Public evidence pack and pin checkout — a guided path through the tagged products running together.
 
 **Maturity: Reference / demo.** A green fixture job is not live proof of product `main`. The default golden path is a **Subset**: Ferrum-GA4GH-Demo + HELIOS.
 
