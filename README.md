@@ -1,6 +1,6 @@
 # Synaptic Four — Showcase
 
-Freeze status (2026-09): [STATUS.md](STATUS.md).
+Status: [STATUS.md](STATUS.md).
 
 
 Public evidence pack and pin checkout. **Reference / demo** — not a product and not a SKU.
