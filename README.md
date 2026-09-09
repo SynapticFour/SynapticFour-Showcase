@@ -15,7 +15,7 @@ make integration-suite    # fixture spine (no Docker; same class as GitHub Actio
 make up                   # live golden path (Docker; Demo + HELIOS subset)
 ```
 
-Pins: [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt). Stop: `make down`. Solum and BRA paths are opt-in (`SHOWCASE_ENABLE_SOLUM=1` / `make solum-stage`).
+Pins: [PINNED_VERSIONS.txt](PINNED_VERSIONS.txt) (**last refreshed 2026-08-24** — published demo, not live sibling HEAD). Stop: `make down`. Solum and BRA paths are opt-in (`SHOWCASE_ENABLE_SOLUM=1` / `make solum-stage`).
 
 Two layers — do not mix them:
 
@@ -29,7 +29,7 @@ Checked-in files under `demo/results/` and `demo/verification/` are from runs **
 ## Documentation
 
 - [Getting started](docs/GETTING-STARTED.md)
-- [DEMO.md](DEMO.md) · [Evidence pack](docs/for-customers/evidence-pack.md)
+- [DEMO.md](DEMO.md) · [Evidence pack](docs/for-customers/evidence-pack.md) · [FAQ](docs/for-evaluators/faq.md)
 
 ## License
 

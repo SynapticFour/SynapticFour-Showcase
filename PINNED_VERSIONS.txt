@@ -3,7 +3,10 @@
 # unless SHOWCASE_ALLOW_PIN_DRIFT=1. Checkout: ./scripts/checkout-pins.sh
 # Report drift:        ./scripts/check-pins.sh
 # Refresh this file:   ./scripts/refresh-pinned-versions.sh
-# Last refreshed 2026-08-24. Proof-repo pins follow suite 2026.08-draft (`_suite/suite-manifest.toml` in the operator workspace).
+#
+# Last refreshed **2026-08-24**. These pins are the published demo, not live sibling HEAD.
+# BRA/S4MP/gatk-rs HEADs on 2026-09-09 are newer; do not treat this file as current main.
+# Proof-repo pins follow suite 2026.08-draft (`_suite/suite-manifest.toml` in the operator workspace).
 #
 # Solum-tag is the Solum git ref Solum-Demo builds (Dockerfile ARG SOLUM_REF).
 # Tag v0.1.0. Live Stage-1 artefacts before that tag used 6b4519c.

@@ -8,7 +8,7 @@ Technical artefacts and operator notes for this repository.
 - [Co-custody](co-custody.md) · [Key custody](key-custody.md)
 - [Disaster recovery](disaster-recovery.md) · [Observability](observability.md)
 - [Legal pointers](legal/README.md)
-- [FAQ](faq.md) · [Which path](which-path.md)
+- [FAQ](../for-evaluators/faq.md) · [Which path](which-path.md)
 - [Consent gate](consent-gate.md) · [Compliance framing](compliance-framing.md)
 
 Pilot checklists: [../pilots/](../pilots/). Technical notes: [../for-evaluators/](../for-evaluators/).

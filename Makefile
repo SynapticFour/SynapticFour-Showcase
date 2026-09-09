@@ -39,7 +39,7 @@ help:
 	@echo "  make checkout-pins          Detach siblings to pinned SHAs (required for make up)"
 	@echo "  make down / make destroy    Stop stacks"
 	@echo ""
-	@echo "Customer start: docs/for-customers/start-here.md"
+	@echo "Evaluator start: docs/for-evaluators/faq.md · docs/for-customers/start-here.md"
 	@echo "Pins: make checkout-pins before make up, or SHOWCASE_ALLOW_PIN_DRIFT=1"
 	@echo "Solum token: SOLUM_SIDECAR_TOKEN or SHOWCASE_USE_DEMO_SIDECAR_TOKEN=1"
 	@echo "Consent before WES: SHOWCASE_ENABLE_CONSENT_GATE=1 make golden-path"

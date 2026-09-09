@@ -9,6 +9,7 @@ Procurement / purchasing should use the customer short path instead — do not m
 
 ---
 
+- [FAQ](faq.md) — evaluator questions (not a sales page)
 - [Technical Evaluation Kit](technical-evaluation-kit.md) — steps, checks, resources
 - [Evaluate HEAD](evaluate-at-head.md) — due diligence surface is `main` tip, not git archaeology
 - [Deployment and integration paths](deployment-paths.md) — Path A–E detail

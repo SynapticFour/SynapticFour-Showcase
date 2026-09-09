@@ -1,6 +1,6 @@
 # Häufige Fragen — Synaptic Four Showcase
 
-*Diese Seite ist direkt für Sie als potentielle:n Kunden geschrieben.*
+*Für Evaluator:innen und technische Leser:innen. Kein Vertriebsgespräch.*
 
 [🇬🇧 English below](#english)
 
@@ -18,7 +18,7 @@ Typische Einstiege:
 - **Ferrum + HELIOS:** Sie wollen sowohl Interoperabilität als auch Evidenz für Compliance-Prüfungen.
 - **Alles inkl. BioResearch Assistant:** Vollständiger Stack mit RAG auf Ihren eigenen Daten.
 
-→ [Welcher Einstieg passt zu mir?](which-path.md)
+→ [Welcher Einstieg passt zu mir?](../for-customers/which-path.md)
 
 ### Wie schnell sehen wir erste Ergebnisse?
 
@@ -47,7 +47,7 @@ Nein, und wir sagen das offen. Ferrum und HELIOS erzeugen **technische Evidenz-A
 
 Die formale Compliance-Verantwortung liegt beim Betreiber. Wir versprechen keine Zertifizierungen, weil ein Werkzeug allein keine Zertifizierung ersetzen kann.
 
-→ [Detailliertes Compliance-Framing](compliance-framing.md)
+→ [Detailliertes Compliance-Framing](../for-customers/compliance-framing.md)
 
 ### Was ist GA4GH — müssen wir das kennen?
 
@@ -73,7 +73,7 @@ Für einen produktiven Einsatz: Ferrum unterstützt PostgreSQL, S3-kompatiblen O
 3. **Eingegrenzter Pilot** — zwei Wochen, ein Datensatz, ein definiertes Erfolgskriterium
 4. **Stakeholder-Review** — technische und organisatorische Entscheidung
 
-→ [Technical Evaluation Kit](../for-evaluators/technical-evaluation-kit.md)
+→ [Technical Evaluation Kit](technical-evaluation-kit.md)
 
 ---
 
@@ -105,7 +105,7 @@ Ein kleines Bioinformatik-Infrastruktur-Unternehmen aus Stuttgart (Einzelunterne
 
 ### Warum Synaptic Four und nicht ein größerer Anbieter?
 
-Weil größere Anbieter ein Cloud-Geschäftsmodell haben, das im Widerspruch zu Ihrer Datensouveränität steht. Wir haben diesen Interessenkonflikt nicht.
+Weil größere Anbieter oft ein Cloud-Geschäftsmodell haben, das im Widerspruch zu On-Prem-Datensouveränität steht. Lizenzen und Evidence Pack prüfen; eine Vertriebsaussage ist kein Nachweis.
 
 Was wir nicht sind: ein Team mit hundert Referenzkunden und zertifizierten Installationen weltweit. Wir sind präzise in dem was wir anbieten, und ehrlich über was wir noch nicht sind.
 
@@ -123,7 +123,7 @@ Kein automatisches CRM, keine SDR-Pipeline. Sie schildern Ihr Anliegen, wir antw
 
 # Frequently Asked Questions (English)
 
-*This page is written directly for you as a prospective customer.*
+*Written for evaluators and technical readers. Not a sales pitch.*
 
 ---
 
@@ -139,7 +139,7 @@ Typical starting points:
 - **Ferrum + HELIOS:** You want both interoperability and evidence for compliance reviews.
 - **Full stack including BioResearch Assistant:** Complete stack with RAG over your own data.
 
-→ [Which path fits me?](which-path.md)
+→ [Which path fits me?](../for-customers/which-path.md)
 
 ### How quickly do we see first results?
 
@@ -165,7 +165,7 @@ No, and we say so openly. Ferrum and HELIOS generate **technical evidence artefa
 
 Formal compliance responsibility rests with the operator. We don't promise certifications because a tool alone cannot replace a certification.
 
-→ [Detailed compliance framing](compliance-framing.md)
+→ [Detailed compliance framing](../for-customers/compliance-framing.md)
 
 ---
 
@@ -191,7 +191,7 @@ A legitimate question. **Ferrum, Lab Kit and Solum** (BUSL) convert to Apache-2.
 
 ### Why Synaptic Four and not a larger established provider?
 
-Because larger providers have a cloud business model that conflicts with your data sovereignty. We don't have that conflict of interest.
+Because larger providers often have a cloud business model that conflicts with on-prem data sovereignty. Inspect the licences and the evidence pack; do not take a sales claim as the proof.
 
 What we're not: a team with a hundred reference customers and certified installations worldwide. We are precise about what we offer and honest about what we're not yet.
 

@@ -10,8 +10,8 @@ Evaluators should judge **HEAD of `main`**, not older commits — see [docs/for-
 
 | Directory | Audience | Purpose |
 |-----------|----------|---------|
-| `docs/for-customers/` | Operators and evaluators | Evidence notes, FAQ, paths |
-| `docs/for-evaluators/` | Technical leads | How to re-run claims |
+| `docs/for-customers/` | Operators | Evidence notes, start-here, paths |
+| `docs/for-evaluators/` | Technical leads | How to re-run claims, FAQ |
 | `demo/results/` | Everyone | Pre-generated or labelled fixtures |
 | `scripts/` | Technical teams | Demo orchestration and CI |
 
