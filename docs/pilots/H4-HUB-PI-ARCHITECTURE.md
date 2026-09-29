@@ -7,7 +7,7 @@
 
 ```text
 ┌──────────────────────────┐         sync / sneakernet        ┌──────────────────────────────┐
-│  Pi 5 (field Edge)       │ ────────────────────────────────► │  Hub (clinic / lab / NGO)    │
+│  Pi 5, 8 GB, 64-bit      │ ────────────────────────────────► │  Hub (clinic / lab / NGO)    │
 │  Ferrum Edge (SQLite)    │                                   │  Ferrum (WES/TES as needed)  │
 │  Solum Track A sidecar   │                                   │  Solum Track A + Track B     │
 │  Capture, consent, local │                                   │  EHRbase (hub-class only)    │
@@ -19,7 +19,7 @@
 
 | Workload | Where | Why |
 |----------|-------|-----|
-| MinION / file capture | Pi | Field custody |
+| MinION / file capture | Pi 5, 8 GB, 64-bit | Field custody. The sequencer stays the Mk1C or the ONT host PC |
 | Consent grant/revoke | Pi (local) → hub merge | Offline-first; hub authoritative on conflict |
 | Crypt4GH field encrypt | Pi or hub | CustomerHeld; no master keys left on Pi long-term |
 | Heavy WES / GIAB Demo | Hub | Pi is not Demo compose |
