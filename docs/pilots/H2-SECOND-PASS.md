@@ -90,5 +90,5 @@ Claim language: **full H2 exit** — operator runbook + pack with teeth across p
 
 - [H2-OPS-RUNBOOK.md](H2-OPS-RUNBOOK.md)
 - [H2-KNOWN-LIMITATIONS.md](H2-KNOWN-LIMITATIONS.md)
-- [COORDINATED-PORTFOLIO-ROADMAP.md](../COORDINATED-PORTFOLIO-ROADMAP.md) §7
+- Coordinated portfolio roadmap, section 7: not published in this repository.
 - Kenya counsel: Solum [KENYA-K1-BRIEF.md](https://github.com/SynapticFour/Solum/blob/main/docs/counsel/KENYA-K1-BRIEF.md)

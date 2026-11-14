@@ -1,6 +1,6 @@
 # H4 — Geography decision (first jurisdiction pack beyond EU)
 
-**Horizon:** H4 from [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
+**Horizon:** H4. The coordinated portfolio roadmap is not published in this repository.
 **Decision date:** 2026-08-06 (provisional — finalize when a field pilot is contracted)
 **Owner:** Solum profiles + Ferrum Edge / Lab Kit field path
 

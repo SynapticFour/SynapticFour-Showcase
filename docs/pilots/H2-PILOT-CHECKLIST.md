@@ -1,6 +1,6 @@
 # H2 — Production on-prem spine checklist
 
-**Horizon:** H2 from [COORDINATED-PORTFOLIO-ROADMAP.md](../internal/COORDINATED-PORTFOLIO-ROADMAP.md)
+**Horizon:** H2. The coordinated portfolio roadmap is not published in this repository.
 **Depends on:** H1 founder rehearsal (execution record is not published in this repository)
 **Not H2:** openEHR CDR (H3), Kenya PRODUCTION profile (H4), SaaS (H5)
 
