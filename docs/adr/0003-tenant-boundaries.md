@@ -28,5 +28,5 @@ Roadmap H5 asks for tenancy hygiene so managed hosting is a short path. Products
 
 ## Links
 
-- [H5-SAAS-READY-CHECKLIST.md](../pilots/H5-SAAS-READY-CHECKLIST.md)
+- H5 SaaS-ready checklist: not published in this repository. The managed single-tenant recipe is [H5-MANAGED-SINGLE-TENANT.md](../pilots/H5-MANAGED-SINGLE-TENANT.md).
 - Solum [ADR 0001](https://github.com/SynapticFour/Solum/blob/main/docs/adr/0001-openehr-cdr-and-migration.md) (CDR / SaaS note)
